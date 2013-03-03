@@ -66,14 +66,41 @@ textarea.input{
     resize: none;
     overflow-y: visible;
 }
-#upload-pic{
+.img-bg{
+    background: #777;
     height: 350px;
-    width: 235px;
+    width: 400px;
+}
+#upload-pic{
+}
+.none{
+    font-size: 31px;
+    color: #EEE;
+    text-align: center;
+    vertical-align: middle;
+    padding: 155px 0;
+    width: 400px;
 }
 .upload{
-    width: 150px;
-    height: 40px;
-    margin-left: 0;
+    background: #5db2ff;
+    color: #FFF;
+    cursor: pointer;
+    font-size: 14px;
+    height: 22px;
+    margin: 10px 0 0 3px;
+    padding: 3px 0;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    width: 84px;
+}
+#poster{
+    cursor: pointer;
+    font-size: 18px;
+    left: -100px;
+    position: absolute;
+    opacity: 0;
+    top:0;
 }
 div.btn-box{
     padding: 20px;
