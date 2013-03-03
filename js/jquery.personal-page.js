@@ -95,11 +95,12 @@ var activityAppend = function(data,eventParentID){
     }
     $.each(data.activity, function(){
         var $singleActivity = $("<li></li>");
-        var picSrc = "";
-        var alt = "pic";
-        var title = "title";
-        var $pic = $("<a></a>").html("<img src='"+picSrc+"' alt='"+alt+"' />");
-        var $title = $("<h5></h5>").html("<a>"+title+"</a>");
+        var picSrc = this.picSrc;
+        var alt = this.alt;
+        var title = this.title;
+        var href = this.href;
+        var $pic = $("<a></a>").attr('href',href).html("<img src='"+picSrc+"' alt='"+alt+"' />");
+        var $title = $("<h5></h5>").html("<a href='" + href + "'>"+title+"</a>");
         $pic.appendTo($singleActivity);
         $title.appendTo($singleActivity);
         $singleActivity.addClass("single-activity").appendTo($ul);

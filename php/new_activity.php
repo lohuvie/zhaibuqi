@@ -44,14 +44,14 @@
                     $dbc = mysqli_connect(host,user,password,database)
                         or die("error connect");
                     $user_id = $_SESSION['user_id'];
-                    $register_date = date('Y-m-d',time());
+                    $register_time = date("y-m-d h:i:s",time());
                     //将活动信息载入activity表
-                    $query="insert into activity values(null,$user_id,'$title','$category','$place','$introduction',$cost_class,'$register_date',0,$authority_class)";
+                    $query="insert into activity values(null,$user_id,'$title','$category','$place','$introduction',$cost_class,'$register_time',0,$authority_class)";
                     $result = mysqli_query($dbc,$query)
                         or die("error querying database");
 
                     //获取活动ID
-                    $query = "select activity_id from activity where name = '$title' and type = '$category' and site = '$place'";
+                    $query = "select activity_id from activity where name = '$title' and type = '$category' and site = '$place' and activity_register_time = '$register_time'";
                     $result = mysqli_query($dbc, $query)
                         or die("error querying data");
 
