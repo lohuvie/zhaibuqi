@@ -1,0 +1,32 @@
+/* header */
+.header{
+    height: 40px;
+}
+.nav-tabs{
+    height: 29px;
+    border-bottom: 1px solid #DDDDDD;
+}
+.nav-tabs li{
+    float: left;
+    list-style-type: none;
+    border: 1px solid transparent;
+    margin-bottom: -2px;
+}
+.nav-tabs li a{
+    font-size: 14px;
+    color: #5DB2FF;
+    padding: 9px 12px;
+    margin-right: 2px;
+    font-weight: bold;
+}
+.nav-tabs li a:hover{
+    color: #0072C6;
+    background: #EEEEEE;
+}
+.nav-tabs li.active a{
+    border: 1px solid #DDDDDD;
+    border-bottom-color: transparent;
+    cursor: default;
+    background: #FFFFFF;
+    color: #555555;
+}

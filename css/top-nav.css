@@ -1,0 +1,107 @@
+﻿* {
+	margin: auto;
+	padding: 0;
+}
+:focus{
+	outline:none;
+}
+a img{
+	border: 0px;
+}
+a {
+	text-decoration: none;cursor:pointer;
+}
+.top-nav {
+    position: fixed;
+    top:0;
+    width:100%;
+    font-size:15px;
+    font-family: "Microsoft Yahei","Helvetica Neue","Luxi Sans","DejaVu Sans",Tahoma,"Hiragino Sans GB";
+    margin: 0 auto;
+    height:38px;
+    background:url(../images/menu_bg1.gif) repeat-x ;
+    color: #ffffff;
+    text-align:center;
+    z-index: 100;
+}
+
+ /* Menu Part */
+#nav-wrapper{
+    margin:0 auto;
+    width:980px;
+    height:auto;
+}
+.menu-items ul{
+	list-style-type:none;
+}
+.menu-items li{
+	float:left;
+}
+.menu-items li:hover{
+	background:#000000;
+	color:#2b2f32;
+}
+.menu-items a{
+	color:#ffffff;
+    height:25px;
+	padding:8px 20px 5px 20px;
+	display:block;
+}
+.menu-items a:hover{
+	color:#ffffff;
+}
+/*
+li.menu-items-home{
+	background:#000000;
+    float:left;
+	color:#2b2f32;
+}
+.menu-items-home a{
+	color:#ffffff;
+}*/
+
+ /* Search Part Starts */
+.search-body{
+	margin-top:8px;
+    margin-right:20px;
+	color:#2b2f32;
+	width:220px;
+	height:20px;
+	float:right;
+	background:url(../images/search_input_bg1.gif) no-repeat;
+}
+.search-body a{
+	padding:0px;
+	display:inline-block;
+}
+.search-body a:hover{
+	padding:0px;
+	display:inline-block;
+}
+.search-body #search-text{
+	margin:1px 0px 0px 3px;
+	width:180px;
+	color:#2b2f32;
+	background:none;
+	border:none;
+	vertical-align:top;
+}
+.search-body #search-btn{
+	margin:1px 0px 0px 2px;
+}
+ /* Search Part Ends */
+.top-nav-info a{
+    float: right;
+    color: #CCCBBB;
+    padding-left:10px;
+    padding-right:10px;
+}
+.top-nav-info a:hover{
+    color: #FFFFFF;
+    text-shadow: 0.1em 0.1em 0.2em #CCCCCC;
+}
+#logo a{
+    float:left;
+    padding: 0;
+}
+ /* Menu Part Ends */

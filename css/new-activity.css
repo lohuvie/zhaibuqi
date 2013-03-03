@@ -1,0 +1,114 @@
+body{
+    font-family: "Microsoft Yahei","Helvetica Neue","Luxi Sans","DejaVu Sans",Tahoma,"Hiragino Sans GB";
+    font-size:14px;
+    color: #777777;
+}
+#container{
+    width:980px;
+    margin-top: 40px;
+}
+#new-activity{
+    position: relative;
+    width: 650px;
+    margin-left: 0;
+}
+#new-activity table{
+    margin-left: 0;
+    border-collapse:collapse;
+}
+#new-activity td{
+    padding: 15px 30px 15px 0px;
+    vertical-align: top;
+    border-bottom: 1px solid #EEEEEE;
+}
+#category{
+    height: 22px;
+    padding: 2px;
+}
+.input{
+    border: 1px solid #BBBBBB;
+    padding: 2px;
+    height: 22px;
+    font-family: inherit;
+}
+#title,#place{
+    width: 180px;
+}
+.date{
+    width: 101px;
+}
+.time-begin,.time-end{
+    width:103px;
+}
+
+input.date{
+  background: #FFFFFF url(../images/calendar.png) right center no-repeat;
+}
+#new-activity input{
+    color: #555555;
+}
+.input:focus{
+    border: 1px solid #84C43C;
+}
+.input:hover{
+    border: 1px solid #84C43C;
+}
+#new-activity>form>span{
+    font-size:x-large;
+    margin-left: 2px;
+}
+textarea.input{
+    height: 150px;
+    width: 400px;
+    max-width: 400px;
+    min-height: 100px;
+    padding: 2px;
+    resize: none;
+    overflow-y: visible;
+}
+#upload-pic{
+    height: 350px;
+    width: 235px;
+}
+.upload{
+    width: 150px;
+    height: 40px;
+    margin-left: 0;
+}
+div.btn-box{
+    padding: 20px;
+    margin-left: 40px;
+    margin-bottom: 50px;
+}
+#create,#cancel{
+    color: #FFFFFF;
+    font-family: inherit;
+}
+#create{
+    background: #222222;
+    border: 1px solid #222222;
+    margin-right: 20px;
+    font-size: 14px;
+    padding: 5px 27px;
+}
+#create:hover{
+    border: 1px solid #84C43C;
+    background: #84C43C ;
+}
+#cancel{
+    padding: 5px 20px;
+    background: #DDDDDD;
+    border: 1px solid #DDDDDD;
+}
+#cancel:hover{
+    background: #EE0404;
+    border: 1px solid #EE0404;
+}
+#help{
+    float:right;
+    position: relative;
+    width: 250px;
+    height: 320px;
+    border-style: solid;
+    padding: 10px;
+}

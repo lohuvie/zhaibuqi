@@ -1,0 +1,9 @@
+<?php
+define('host','localhost');
+define('user','root');
+define('password','root');
+define('database','zhaibuqi');
+define('UPLOADPATH','../upload-images/');
+define('UPLOAD_PATH_FRONT_TO_BACK','upload-images/');
+define('UPLOADPORTRAIT','../upload-portrait/');
+define('PORTRAIT','upload-portrait/');

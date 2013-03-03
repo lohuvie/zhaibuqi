@@ -1,0 +1,14 @@
+.footer-bar {
+	color: #999999;
+	border-top: 1px solid #CCCCCC;
+	margin-top: 40px;
+}
+.footer-bar-clearfix {
+	width: 980px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+.footer-bar-clearfix a {
+	color: #999999;
+	text-decoration: none;
+}

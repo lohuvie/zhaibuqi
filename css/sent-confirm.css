@@ -1,0 +1,44 @@
+body  {
+    font-size:13px;
+    color: #222222;
+    margin: 0 auto;
+    font-family: "Microsoft Yahei","Helvetica Neue","Luxi Sans","DejaVu Sans",Tahoma,"Hiragino Sans GB";
+}
+#container {
+    margin-top: 38px;
+    width: 980px;
+    margin-bottom: 40px;
+}
+#container-clear-fix{
+    width: 800px;
+    margin: 0 auto;
+}
+/* password-box */
+.mail-tips {
+     width: 294px;
+     margin-top: 60px;
+     margin-left: 0px;
+     padding:50px 40px;
+}
+
+.mail-tips h2{
+    color:#444444;
+    border-bottom: 3px solid #C3E99E;
+    font-size: 24px;
+    font-weight: normal;
+    padding: 5px 0;
+    margin-bottom: 20px;
+}
+.mail-tips p{
+    margin-left: 30px;
+    padding-bottom: 5px;
+}
+
+a#back {
+    color: #888888;
+    text-decoration: none;
+}
+a#back:hover {
+    color:#BBBBBB;
+    border-bottom: 1px dotted #84C43C;
+}

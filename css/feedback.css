@@ -1,0 +1,122 @@
+body  {
+    font-size:13px;
+    color: #222222;
+    margin: 0 auto;
+    font-family: "Microsoft Yahei","Helvetica Neue","Luxi Sans","DejaVu Sans",Tahoma,"Hiragino Sans GB";
+}
+#container {
+    margin-top: 38px;
+    width: 980px;
+}
+h2{
+    font-size: 18px;
+    font-weight: normal;
+    color: #444444;
+    margin-bottom: 16px;
+}
+/* fbk-content */
+#fbk-content {
+    width: 590px;
+    min-height: 600px;
+    margin-left: 0;
+    padding-right: 40px;
+    padding-top: 30px;
+    border-right: 2px solid #DDDDDD;
+}
+#fbk-content .fbk-header{
+    border-bottom: 1px solid #DDDDDD;
+}
+/* fbk-body */
+#fbk-content .fbk-body{
+    margin-top: 30px;
+}
+.user-post{
+    margin-bottom: 50px;
+    list-style-type: none;
+}
+.user-subject{
+    border-top:1px solid #CCCCCC;
+    padding: 15px 15px 5px 15px;
+}
+.user-photo{
+    float: left;
+    width: 45px;
+    height: 45px;
+}
+.reply-detail {
+    min-height: 45px;
+    margin-left: 60px;
+}
+.reply-detail a {
+    font-size: 13px;
+    color: inherit;
+}
+.reply-time {
+    text-align: right;
+    color: #CCCCCC;
+}
+/* page-nav */
+#fbk-content .page-nav{
+    float: right;
+}
+#fbk-content .page-nav a{
+    color: #777777;
+    padding: 5px;
+}
+#fbk-content .page-nav a:hover{
+    background: #C3E99E;
+}
+#fbk-content .page-nav a.active{
+    background: #C3E99E;
+}
+/* fbk-reply-box */
+#fbk-reply-box {
+    float: right;
+    width: 320px;
+    margin-left: 30px;
+    padding-top: 30px;
+    color: #777777;
+}
+#fbk-reply-box .fbk-form textarea{
+    font-family:inherit;
+    color:#555555;
+    width: 316px;
+    height: 115px;
+    overflow: hidden;
+    resize: none;
+}
+#fbk-reply-box .fbk-form table{
+    margin: 0;
+}
+#fbk-reply-box .fbk-form td {
+    padding-top: 10px;
+}
+#fbk-reply-box .fbk-form input[type=text]{
+    height: 20px;
+    color: #555555;
+    padding: 2px;
+    width: 310px;
+    border: 1px solid #BBBBBB;
+}
+#fbk-reply-box #submit-btn {
+    background: #84C43C;
+    border: 1px solid #84C43C;
+    color: white;
+    font-family: inherit;
+    padding: 5px 10px;
+    margin: 20px 0;
+}
+#fbk-reply-box #submit-btn:hover {
+    background: #C3E99E;
+    border-color: #C3E99E;
+    cursor: pointer;
+}
+#fbk-reply-box .fbk-contact{
+    background: #EEEEEE;
+    padding: 15px;
+}
+#fbk-reply-box h3{
+     color: #515151;
+     margin-bottom: 10px;
+ }
+

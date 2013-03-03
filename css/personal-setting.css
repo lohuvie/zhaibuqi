@@ -1,0 +1,71 @@
+body{
+    font-family: "Microsoft Yahei","Helvetica Neue","Luxi Sans","DejaVu Sans",Tahoma,"Hiragino Sans GB";
+    font-size:14px;
+    color: #777777;
+}
+#container{
+    margin-top: 40px;
+    padding:10px;
+    width:980px;
+}
+.fields{
+    margin-bottom: 50px;
+}
+.fields h3{
+    font-size: 18px;
+    color: #555555;
+    padding: 15px 10px;
+}
+.fields hr{
+    border-top: 1px solid #FFFFFF;
+    border-bottom: 1px solid #EEEEEE;
+}
+.fields table{
+    margin: 0 0px;
+    padding-top: 10px;
+}
+.fields td{
+    padding: 10px;
+    vertical-align: top;
+}
+.personal-setting input[type=password]{
+    border: 1px solid #BBBBBB;
+    padding: 2px;
+    width: 220px;
+    height: 22px;
+}
+.personal-setting input{
+    color: #555555;
+}
+.personal-setting input:focus{
+    border: 1px solid #84C43C;
+}
+.personal-setting input:hover{
+    border: 1px solid #84C43C;
+}
+.submit-btn{
+    padding: 5px 20px;
+    background: #BBBBBB ;
+    color: #FFFFFF;
+}
+.submit-btn:hover{
+    background: #222222;
+}
+/* link-btn */
+#renren-link:hover{
+    background: #0072C6;
+}
+#qq-link{
+    padding: 5px 23px;
+}
+#qq-link:hover{
+    background: #5DB2FF;
+}
+#sina-link:hover{
+    background: #D24726;
+}
+/* mail */
+#mail-fiels p{
+    margin-top: 20px;
+    color: #555555;
+}

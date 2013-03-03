@@ -1,0 +1,110 @@
+﻿body  {
+	font: 100% ;
+	background: #FFFFFF;
+	margin: 0 auto;
+	font-family: "Microsoft Yahei","Helvetica Neue","Luxi Sans","DejaVu Sans",Tahoma,"Hiragino Sans GB";
+}
+#header-nav li{
+	font-size:15px;
+    float:left;
+    list-style-type: none;
+    padding: 10px 30px 10px 0px;
+}
+#header-nav li a{
+	color:#777777;
+	padding:10px 5px 8px 5px;
+}
+#header-nav li a:hover{
+	color:#84C43C;
+	border-bottom: 3px solid #84C43C;
+}
+.create-new{
+	float: right;
+	margin-top: 11px;
+}
+.create-btn span{
+	padding: 10px 55px;
+	background-image:url(../images/create-btn-normal.png);
+	background-repeat: no-repeat;
+}
+.create-btn span:hover{
+	padding: 10px 55px;
+	background-image:url(../images/create-btn-hover.png); 
+}
+.create-btn span:active{
+	background-image:url(../images/create-btn-active.png); 
+}
+#container {
+    position: relative;
+	width: 980px;
+	background: #FFFFFF;
+	margin: 0 auto; /* 自动边距 会将页面居中 */
+    margin-top: 40px;
+	text-align: left;
+} 
+#header {
+	height: 40px;
+	border-bottom: 1px solid #DDDDDD;
+} 
+#sidebar {
+	float: right;
+	width: 200px;
+	background: #EBEBEB;
+	padding: 15px 5px;
+    margin-top: 20px;
+}
+#waterfall {
+	width:780px;
+	height: 500px;
+	margin-right: 200px;
+	padding-top: 10px;
+} 
+
+.single-activity {
+	width:225px;
+	height:auto;
+	background: #EFEFEF;
+	padding:10px 5px;
+	margin:10px 3px 10px 3px;
+}
+.single-activity:hover {
+	background: #C3E99E;
+}
+.single-activity img{
+	margin: 5px;
+}
+.single-activity .activity-title{
+	margin-left: 5px;
+	font-size:15px;
+	font-weight: bold;
+	color: #222222; 
+}
+.single-activity p{
+	margin-left: 5px;
+	font-size:13px;
+	color: #555555;
+}
+
+#to-top{
+    background: url(../images/back-to-top.png);
+    height:50px;
+    position: fixed;
+    bottom: 50px;
+    right: 300px;
+    z-index: 100;
+    width:50px;
+    cursor: pointer;
+}
+#to-top:hover{
+    background-position: -50px 0;
+}
+
+#add-tips{
+    background: #C3E99E;
+    padding: 5px 10px;
+    color: #777;
+    width: 450px;
+    margin: 20px 130px 40px;
+    text-align: center;
+}
+

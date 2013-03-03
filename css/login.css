@@ -1,0 +1,154 @@
+body{
+    font-family: "Microsoft Yahei","Helvetica Neue","Luxi Sans","DejaVu Sans",Tahoma,"Hiragino Sans GB";
+    font-size:13px;
+    color: #222222;
+    margin: 0 auto;
+}
+/*header */
+.header-bar {
+	height: 70px;
+	background: #EEEEEE
+}
+.header-content-clearfix{
+	margin: 0px 60px 10px 60px;
+}
+a#link-signup {
+	margin-left: 10px;
+	padding: 5px 10px;
+	background: #84C43C;
+	color: #FFFFFF;
+	text-decoration: none;
+}
+a#link-signup:hover {
+	background: #C3E99E;
+}
+img.logo {
+	margin-top: 5px;
+	margin-left: 0px;
+	height: 65px;
+	width: 135px;
+}
+.signup-button {
+	float: right;
+	margin-top: 25px;
+}
+/* header ends */
+/* main-content */
+.main-content {
+	width: 100%;
+	margin-top: 30px;
+}
+.main-content-clearfix {
+	width: 980px;
+	margin: 0 auto;
+}
+#main-content-clearfix{
+	width: 895px;
+}
+#left-brand{
+	margin-left: 50px;
+	width: 475px;
+	height:500px;
+}
+#brand-photo {
+	position: relative;
+	overflow: hidden;
+	width: 475px;
+	height: 344px;
+}
+#brand-photo img{
+	position: absolute;
+	left: 0;
+	top:0;
+}
+#brand-words {
+	position: absolute;
+	width: 475px;
+	height: 140px;
+	background: #84C43C;
+
+}
+p#brand-title {
+	padding:20px 300px 0px 40px;
+	color: #FFFFFF;
+	font-size: 30px;
+}
+p#small-title{
+	margin-top: -20px;
+	padding-left:40px;
+	color: #FFFFFF;
+	font-size: 15px;
+}
+#right-signin{
+	float: right;
+	width: 420px;
+}
+
+#signin-form{
+    padding-left: 70px;
+    width: 250px;
+
+}
+#singin-content h2 {
+	padding-left: 70px;
+	color: #444444;
+	font-size:32px;
+	font-weight: lighter;
+}
+
+
+#singin-content input[type=text],input[type=password]{
+    border: 1px solid #BBBBBB;
+    padding: 4px 8px;
+    color: #555555;
+    height: 20px;
+    width: 220px;
+    float: left;
+    font-family: inherit;
+    margin-bottom: 15px;
+
+}
+
+#singin-checkbox label{
+	height: 20px;
+}
+#signin-cb {
+    float: left;
+    margin-left: 1px;
+}
+
+
+a#forget {
+	color: #888888;
+	text-decoration: none;
+}
+a#forget:hover{
+	color:#BBBBBB;
+	border-bottom: 1px dotted #84C43C;
+
+}
+#singin-content input:focus{
+    border: 1px solid #84C43C;
+}
+#singin-content input:hover{
+    border: 1px solid #84C43C;
+}
+.validate-part {
+	display: none;
+}
+#error {
+    color: #f00;
+    margin: 15px 0 0;
+}
+.submit-btn{
+	padding: 5px 20px;
+	background: #84C43C;
+    color: #FFFFFF;
+    font-family: inherit;
+    border: 1px solid #84C43C;
+    margin: 15px 0 0;
+}
+.submit-btn:hover{
+    background: #222222;
+    border: 1px solid #222222;
+}

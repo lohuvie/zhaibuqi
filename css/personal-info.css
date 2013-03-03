@@ -1,0 +1,67 @@
+body{
+    font-family: "Microsoft Yahei","Helvetica Neue","Luxi Sans","DejaVu Sans",Tahoma,"Hiragino Sans GB";
+    font-size:14px;
+    color: #777777;
+}
+#container{
+    margin-top: 40px;
+    padding:10px;
+    width:980px;
+}
+/*personal-info*/
+.personal-info{
+    margin-bottom: 50px;
+}
+.personal-info table{
+    margin: 0 0px;
+    padding-top: 10px;
+}
+.personal-info td{
+    padding: 10px;
+    vertical-align: top;
+}
+#head-portrait-small{
+    height: 45px;
+    width: 45px;
+}#head-portrait-origin{
+    height: 165px;
+    width: 165px;
+ }
+ #update{
+     color: #84C43C;
+ }
+
+ #brief-intro{
+     width: 220px;
+     height: 60px;
+     padding: 2px;
+     resize: none;
+     overflow: hidden;
+ }
+ .personal-info input[type=text]{
+     border: 1px solid #BBBBBB;
+     padding: 2px;
+     width: 220px;
+     height: 22px;
+ }
+ .personal-info input,.personal-info textarea{
+     color: #555555;
+ }
+ .personal-info input[type=text]:focus,,.personal-info textarea:focus{
+     border: 1px solid #84C43C;
+ }
+ .personal-info input[type=text]:hover,.personal-info textarea:hover{
+     border: 1px solid #84C43C;
+ }
+ .personal-info #save-btn{
+     cursor: pointer;
+     border: 1px solid #BBBBBB;
+     padding: 5px 20px;
+     background: #BBBBBB;
+     color: #FFFFFF;
+ }
+.personal-info #save-btn:hover{
+    background: #222222;
+    border: 1px solid #222222;
+}
+

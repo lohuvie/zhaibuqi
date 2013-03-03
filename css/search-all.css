@@ -1,0 +1,27 @@
+#main .result h2{
+    position: relative;
+    top: -10px;
+    border-bottom: 1px solid #DDDDDD;
+    font-size: 17px;
+    color: #000000;
+}
+#main .result h2 span,#main .result h2 a{
+    padding: 5px;
+    position: relative;
+    background: white;
+    bottom: -16px;
+}
+#main .result h2 span{
+    float: left;
+}
+#main .result h2 a{
+    float: right;
+    color: #5DB2FF;
+    font-weight: normal;
+}
+#main .result h2 .num{
+    padding-left: 0;
+    font-weight: normal;
+    color: #555555;
+ }
+

@@ -1,0 +1,165 @@
+body{
+    font-family: "Microsoft Yahei","Helvetica Neue","Luxi Sans","DejaVu Sans",Tahoma,"Hiragino Sans GB";
+    font-size:13px;
+    color: #222222;
+    margin: 0 auto;
+}
+/*header */
+.header-bar {
+    height: 70px;
+    background: #EEEEEE;
+}
+.header-content-clearfix{
+    margin: 0px 60px 10px 60px;
+}
+a#link-signup {
+    margin-left: 10px;
+    padding: 5px 10px;
+    background: #84C43C;
+    color: #FFFFFF;
+    text-decoration: none;
+}
+a#link-signup:hover {
+    background: #C3E99E;
+}
+img.logo {
+    margin-top: 5px;
+    margin-left: 0px;
+    height: 65px;
+    width: 135px;
+}
+.signup-button {
+    float: right;
+    margin-top: 25px;
+}
+/* header ends */
+#container{
+    width:980px;
+    margin:auto;
+    margin-top: 30px;
+}
+#content{
+    width: 400px;
+    height: 460px;
+    padding: 0px 0 15px 0;
+    margin-left: 580px;
+    margin-bottom: 55px;
+    background: #EEEEEE;
+}
+#header h2{
+    padding-top: 20px;
+    padding-bottom: 10px;
+    font-size: 30px;
+    margin-top: 0px;
+    margin-bottom: 0;
+    font-weight: normal;
+    color: #008A17;
+}
+.tips{
+    float: left;
+    height: 420px;
+    width: 520px;
+}
+.single-tips{
+    margin-top: 30px;
+    height: 180px;
+}
+.tips-content{
+    width: 245px;
+}
+#tips-content1{
+    padding-left: 20px;
+    float: right;
+}
+#tips-content2{
+    padding-right: 30px;
+    float: left;
+}
+.tips-content h3{
+    padding: 5px;
+    margin: 0;
+    font-weight: normal;
+    font-size: 25px;
+    color: #FEFEFE;
+    background: #84C43C;
+}
+.tips-content p{
+    color: #777777;
+    margin: 0;
+    margin-top: 13px;
+}
+#register-form{
+    padding: 20px 10px 0px 30px;
+}
+#register-form input{
+    border: 1px solid #BBBBBB;
+    padding: 4px 8px;
+    color: #555555;
+    line-height: 16px;
+    float: left;
+    font-family: inherit;
+    margin-bottom: 15px;
+}
+#register-form label{
+    float: left;
+    width: 337px;
+    margin-bottom: 5px;
+}
+#email,#nickname, #passwd,#passwd-repeat{
+    width: 320px;
+}
+#register-form input:focus{
+    border: 1px solid #84C43C;
+    outline: none;
+    color: #555555;
+}
+#register-form input:hover{
+    border: 1px solid #84C43C;
+}
+#register-form #validate{
+    width: 145px;
+    height: 30px;
+}
+#register-form img{
+    float: left;
+    height: 40px;
+    width: 165px;
+    margin-left: 10px;
+}
+#error{
+    color: #f00;
+    float: right;
+}
+.agreement-box{
+    float: left;
+    margin-top: 5px;
+}
+#agreement{
+    margin: 2px 8px 0 0;
+}
+.agreement-box label a{
+    text-decoration: none;
+    color: #018EE8;
+}
+/*button*/
+.submit-btn{
+    padding: 5px 20px;
+    color: #FFFFFF;
+    background: #BBBBBB ;
+    margin-right: 10px;
+    text-decoration: none;
+    font-size: 15px;
+}
+#create-btn{
+    float: right;
+    font-size: 13px;
+    font-family: inherit;
+    border: 1px solid #84C43C;
+    background: #84C43C;
+    margin: 10px 20px 0 0;
+}
+#create-btn:hover{
+    border: 1px solid #C3E99E;
+    background: #C3E99E;
+    cursor: pointer;
+}

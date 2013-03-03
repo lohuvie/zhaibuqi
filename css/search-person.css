@@ -1,0 +1,119 @@
+body  {
+    font-size:13px;
+    color: #666666;
+    margin: 0 auto;
+    font-family: "Microsoft Yahei","Helvetica Neue","Luxi Sans","DejaVu Sans",Tahoma,"Hiragino Sans GB";
+}
+#container {
+    margin-top: 40px;
+    width: 980px;
+}
+/* header */
+.header{
+    padding: 10px 25px;
+    border-bottom: 1px solid #DDDDDD;
+}
+.header h1{
+    font-size: 18px;
+    font-weight: bold;
+}
+.header span{
+    color: #84C43C;
+}
+/* aside */
+.aside{
+    float: right;
+    width: 250px;
+    height: 300px;
+    margin-top: 50px;
+    border: 1px solid #EEEEEE;
+    border-top: none;
+}
+.aside .box-head{
+    padding: 10px 15px;
+    color: #EEEEEE;
+    width: 220px;
+    background: #444444;
+}
+
+/* main */
+#main{
+    padding:10px 0;
+    width:640px;
+    margin-left: 0px;
+    overflow: auto;
+}
+/* selection */
+.selection{
+    margin-left: 10px;
+    width: 568px;
+    padding-top: 12px;
+}
+.selection a{
+    float: left;
+    margin: 0 15px 0 0;
+    font-size: 16px;
+    font-weight: normal;
+    color: #FFFFFF;
+    padding: 3px 15px;
+    background: #C3E99E;
+}
+.selection a:hover,.selection a.active{
+    background: #84C43C;
+}
+/* result */
+#main .result{
+    padding-left: 10px;
+    border-top: 5px solid #84C43C;
+}
+#main .result .result-body{
+    margin-top: 20px;
+}
+#main .result .user-display{
+    float: left;
+    width: 180px;
+    height: 118px;
+    margin: 0 10px 15px 0;
+    padding: 10px;
+    background: #F0F0F0;
+}
+#main .result .user-display .pic{
+    float: left;
+    width: 85px;
+    height: 85px;
+    border: 4px solid white;
+}
+#main .result .user-display .user-info{
+    float: left;
+    width: 80px;
+    margin-left: 5px;
+}
+#main .result .user-display .user-info .name{
+    font-size: 16px;
+    font-weight: normal;
+    color: #222222;
+}
+#main .result .user-display .user-info .name:hover{
+    color: #84C43C;
+}
+.add{
+    color: #666666;
+}
+
+/* page-nav */
+#main .result .page-nav{
+    float: right;
+    clear: left;
+    margin: 10px 48px 0 0;
+    padding: 15px 0;
+}
+#main .result .page-nav a{
+    color: #777777;
+    padding: 5px;
+}
+#main .result .page-nav a:hover{
+    background: #C3E99E;
+}
+#main .result .page-nav a.active{
+    background: #C3E99E;
+}

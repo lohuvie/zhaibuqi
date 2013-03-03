@@ -1,0 +1,16 @@
+/*
+__________________________
+author:G.J.8
+date:11/24/2012
+__________________________
+*/
+body{
+    margin: 0 auto;
+}
+.container{
+    margin-top: 38px;
+    width: 980px;
+}
+.sidebar{
+    float: right;
+}
