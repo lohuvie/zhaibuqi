@@ -64,7 +64,7 @@ var ZHAIBUQI = {
             });
             $.ajax({type : "POST",
                 dataType : "JSON",
-                url : "json/event.json",
+                url : "json/event.php",
                 data : send,
                 success : function(data){
                     $chosen.appendTo(ZHAIBUQI.$dustbin);
@@ -94,7 +94,7 @@ var ZHAIBUQI = {
             $.ajax({type : "POST",
                 dataType : "JSON",
                 data : send,
-                url : "json/event.json",
+                url : "json/event.php",
                 success : function(data){
                     $chosen.appendTo(ZHAIBUQI.$dustbin);
                     var $a = $("<a>撤销</a>");
@@ -160,7 +160,7 @@ var ZHAIBUQI = {
             $.ajax({type : "POST",
                 dataType : "JSON",
                 data : send,
-                url : "json/event.json",
+                url : "json/event.php",
                 success : function(data){
                     $chosen.removeClass("active");
                     ZHAIBUQI.tipsHtml("关注成功");
@@ -252,7 +252,7 @@ var ZHAIBUQI = {
                     $.ajax({
                         type:"POST",
                         dataType:"JSON",
-                        url:"json/event.json",
+                        url:"json/event.php",
                         success:function(){
                             $li.html(value);
                             $(".move ul").remove();
@@ -299,7 +299,7 @@ var ZHAIBUQI = {
                         $.ajax({
                             type:"POST",
                             dataType:"JSON",
-                            url:"json/event.json",
+                            url:"json/event.php",
                             success:function(){
                                 $target.html(value);
                                 $(".move ul").remove();
@@ -368,7 +368,7 @@ var ZHAIBUQI = {
                         $.ajax({
                             type:"POST",
                             dataType:"JSON",
-                            url:"json/event.json",
+                            url:"json/event.php",
                             data:groupName,
                             success:function(){
                                 var $ul = $li.parent();
@@ -437,7 +437,7 @@ $(function(){
         $.ajax({
             type : "POST",
             dataType : "JSON",
-            url : "json/event.json",
+            url : "json/event.php",
             success : function(){
                 $("#dustbin .active").prependTo(ZHAIBUQI.$contacsBody);
                 $(".active").removeClass("active");

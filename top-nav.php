@@ -19,7 +19,7 @@ require_once('php/start-session.php')
                     <?php
                         if(isset ($_SESSION['user_id'])){
                     ?>
-                    <a href="personal-page.php">个人主页</a>
+                    <a href="personal-page.php?id=<?php echo $_SESSION['user_id']; ?>">个人主页</a>
                     <?php
                         }else{
                     ?>

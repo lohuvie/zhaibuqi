@@ -3,12 +3,17 @@ require_once "php/start-session.php";
 require_once("php/util.php");
 
 $user_id = $_SESSION['user_id'];
+$personal_id = $_GET['id'];
+
 $dbc = mysqli_connect(host,user,password,database);
-$query = "select * from portrait where user_id = $user_id";
+$query = "select * from user u join portrait p on u.user_id = p.user_id where p.user_id = $personal_id";
 $data = mysqli_query($dbc,$query);
 $result = mysqli_fetch_array($data);
-$portrait = $result['icon'];
+$portrait = $result['icon'];//头像
 $portrait_path = PORTRAIT.$portrait;
+$intro = $result['intro'];
+
+mysqli_close($dbc);
 ?>
 <!DOCTYPE html
     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
@@ -18,20 +23,20 @@ $portrait_path = PORTRAIT.$portrait;
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
     <title>Personal Page</title>
     <link type="text/css" rel="stylesheet" href="css/personal-page.css"/>
-    <link href="css/top-nav.css" type="text/css" rel="stylesheet" />
-    <link href="css/footer.css" type="text/css" rel="stylesheet"/>
 </head>
 <body>
 <?php require_once("top-nav.php"); ?>
 <div id="container">
 <div id="sidebar">
     <!-- introduction -->
-    <div id="introduction">
+    <div id="introduction" value="<?php echo $personal_id;?>">
         <img src="<?php echo $portrait_path?>" alt="用户"/><br/>
+        <?php if($personal_id == $user_id){?>
         <a href="personal-info.php">编辑个人资料</a>
+        <?php }?>
         <div id="brief-intro">
             <h4>简介</h4>
-            <p>最后，来说一下这次争议对用户的影响。可以肯定，这对安卓开发者和用户来说，是个大利好消息，因为谷歌表现出了安卓4.0后逐步在系统层面进行统一、限制明显的分裂行为。</p>
+            <p><?php echo $intro;?></p>
         </div>
     </div>
     <!-- end introduction -->
@@ -40,7 +45,7 @@ $portrait_path = PORTRAIT.$portrait;
     <div id="attention">
         <div id="attention-person">
             <h4>
-                <span>···</span>关注的人<span>···</span>
+                <span>···关注的人···</span>
                 <span class="more"><a>(更多)</a></span>
             </h4>
             <div class="attention-display">
@@ -88,7 +93,7 @@ $portrait_path = PORTRAIT.$portrait;
         </div>
         <div id="attention-host">
             <h4>
-                <span>···</span>关注的主办方<span>···</span>
+                <span>···关注的主办方···</span>
                 <span class="more"><a>(更多)</a></span>
             </h4>
             <div class="attention-display">
@@ -104,7 +109,7 @@ $portrait_path = PORTRAIT.$portrait;
         </div>
         <div id="attention-me">
             <h4>
-                <span>···</span>我的粉丝<span>···</span>
+                <span>···粉丝···</span>
                 <span class="more"><a>(更多)</a></span>
             </h4>
             <div class="attention-display">

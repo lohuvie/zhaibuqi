@@ -107,7 +107,7 @@ var nextPage = function(event){
         var $activities = $ul.find(".single-activity");
         var currentPage = -parseInt($ul.css("marginLeft"),10)/pageWidth;
         var cachePage = Math.floor(($activities.length-1)/4);
-        var url = "json/event.json";
+        var url = "json/event.php";
         if(currentPage===cachePage){
             if(state.end[eventParentID] !== "end"){
                 ajaxLoading($event, "loading");
@@ -162,13 +162,13 @@ $(document).ready(function(){
     btnEnable($nextBtn);
     $preBtn.on("click", prePage );
     $nextBtn.on("click", nextPage );
-    /* 加载初始4个活动 */
+    /* 加载初始第5-8个活动 */
     $.each($ul,function(){
             var eventParentID = $(this).parents(".event").attr("id");
             ajaxLoading($("#"+eventParentID+" .loading"), "loading");
             $.ajax({type:"GET",
                 dataType:"JSON",
-                url:"json/event.json",
+                url:"json/event.php",
                 success:function(data){
                     activityAppend(data,eventParentID);
                 }
