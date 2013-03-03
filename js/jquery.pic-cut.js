@@ -38,22 +38,46 @@
             width = Math.floor(width * resizeRate);
             height = Math.floor(height * resizeRate);
             $img.css({
+                position:'absolute',
                 width: width,
-                height: height
+                height: height,
+                top:Math.floor((max_h - height)/2),
+                left:Math.floor((max_w - width)/2)
             });
             //插入图片
             if($picShow.hasClass("none")){
                 $picShow.removeClass("none");
                 $picShow.css({
-                    paddingTop:Math.floor((max_h - height)/2),
-                    paddingLeft:Math.floor((max_w - width)/2)
                 });
             }
             $picShow.empty();
             $picShow.append($img);
+            ZHAIBUQI.cutDiv.call($picShow,$img);
         }
     }
     window.ZHAIBUQI.picLoaded = picLoaded;
+
+    function cutDiv($img){
+        //创建图像副本
+        var $image = $img.clone();
+        //创建阴影层
+        var shadeCSS = {
+                height:$image.height(),
+                width:$image.width(),
+                opacity:0.7,
+                zIndex:10000,
+                filter:'alpha(opacity=70)',
+                backgroundColor:'#5db2ff',
+                position:'absolute',
+                top:$image.css('top'),
+                left:$image.css('left')
+            },
+            $shade = $("<div></div>").addClass('shade').css(shadeCSS);
+        $shade.appendTo($(this));
+        //创建编辑器
+        //添加
+    }
+    window.ZHAIBUQI.cutDiv = cutDiv;
 
 })();
 
