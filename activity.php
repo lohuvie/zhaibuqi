@@ -111,7 +111,6 @@ if($user_id == $creater_id || $approved != 0){
         <div id="relevant-activity">
             <h3>相关活动</h3>
             <p>此 div 上显示相关活动
-                <?php echo $user_id." ".$creater_id." ";?>
             </p>
         </div>
         <div id="recently-like">

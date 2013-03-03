@@ -139,22 +139,6 @@ mysqli_close($dbc);
         </h3>
         <div class="display">
             <ul>
-                <li class="single-activity">
-                    <a><img src="" alt="活动图片" /></a>
-                    <h5><a>标题</a></h5>
-                </li>
-                <li class="single-activity">
-                    <a><img src="" alt="活动图片" /></a>
-                    <h5><a>标题</a></h5>
-                </li>
-                <li class="single-activity">
-                    <a><img src="" alt="活动图片" /></a>
-                    <h5><a>标题</a></h5>
-                </li>
-                <li class="single-activity">
-                    <a><img src="" alt="活动图片" /></a>
-                    <h5><a>标题</a></h5>
-                </li>
             </ul>
         </div>
     </div>
@@ -166,14 +150,6 @@ mysqli_close($dbc);
         </h3>
         <div class="display">
             <ul>
-                <li class="single-activity">
-                    <a><img src="" alt="活动图片" /></a>
-                    <h5><a>标题</a></h5>
-                </li>
-                <li class="single-activity">
-                    <a><img src="" alt="活动图片"/></a>
-                    <h5><a>标题</a></h5>
-                </li>
             </ul>
         </div>
     </div>
@@ -185,14 +161,6 @@ mysqli_close($dbc);
         </h3>
         <div class="display">
             <ul>
-                <li class="single-activity">
-                    <a><img src="" alt="活动图片"/></a>
-                    <h5><a>标题</a></h5>
-                </li>
-                <li class="single-activity">
-                    <a><img src="" alt="活动图片"/></a>
-                    <h5><a>标题</a></h5>
-                </li>
             </ul>
         </div>
     </div>
