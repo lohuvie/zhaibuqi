@@ -55,7 +55,6 @@
     }
     window.ZHAIBUQI.picLoaded = picLoaded;
 
-    function
 })();
 
 $(function(){

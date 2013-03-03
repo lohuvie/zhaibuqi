@@ -166,6 +166,6 @@
         </div>
     </div>
     <?php require_once("footer.php"); ?>
-    <script src="js/jquery-pic-cut.js"></script>
+    <script src="js/jquery.pic-cut.js"></script>
 </body>
 </html>
