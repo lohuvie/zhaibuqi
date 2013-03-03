@@ -1,4 +1,4 @@
-<!DOCTYPE html
+﻿<!DOCTYPE html
         PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
@@ -142,14 +142,19 @@
                    </tr>
                    <tr class="pic-show">
                        <td><label for="upload-pic">海报</label></td>
-                       <td><img id="upload-pic" src="" alt="活动图片"/></td>
+                       <td>
+                           <div class="img-bg">
+                               <div id="upload-pic" class="none">请上传照片</div>
+                           </div>
+                           <div class="upload">
+                               <span>选择图片</span>
+                               <input type="file" id="poster"  name="poster"/>
+                           </div>
+                       </td>
                    </tr>
                    <tr class="pic-choose">
                        <td></td>
                        <td>
-                           <div class="upload">
-                               <input type="file" id="poster"  name="poster"/>
-                           </div>
                        </td>
                    </tr>
                </table>
@@ -161,5 +166,6 @@
         </div>
     </div>
     <?php require_once("footer.php"); ?>
+    <script src="js/jquery-pic-cut.js"></script>
 </body>
 </html>
