@@ -72,6 +72,7 @@ textarea.input{
     width: 400px;
 }
 #upload-pic{
+    position: relative;
 }
 .none{
     font-size: 31px;
