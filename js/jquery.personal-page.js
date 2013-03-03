@@ -4,6 +4,12 @@
     * Time: 下午3:50
     * To change this template use File | Settings | File Templates.
 */
+var introId = $('#introduction').attr('value');
+var pageCount = {
+    like:0,
+    join:0,
+    host:0
+};
 var pageWidth = 620;
 var next = "-="+pageWidth;
 var pre = "+="+pageWidth;
@@ -69,6 +75,9 @@ var slide = function($object,slideWidth,end){
         }
         if(slideWidth === pre){
             btnEnable($nextBtn);
+            pageCount[eventParentID] -= 1;
+        } else{
+            pageCount[eventParentID] += 1;
         }
         state.loading[eventParentID] = "";
     });
@@ -80,6 +89,9 @@ var activityAppend = function(data,eventParentID){
     var end = data.achieveEnd;
     if(end === "end"){
         state.end[eventParentID] = "end";
+    } else{
+        var $nextBtn = $("#"+eventParentID+" .next-btn");
+        btnEnable($nextBtn);
     }
     $.each(data.activity, function(){
         var $singleActivity = $("<li></li>");
@@ -94,7 +106,7 @@ var activityAppend = function(data,eventParentID){
     });
     ajaxLoading($("#"+eventParentID+" .loading"), "");
     /*滑动*/
-    if($ul.find("li").length>8){
+    if($ul.find("li").length>4){
         slide($ul,next,end);
     }
 };
@@ -107,7 +119,9 @@ var nextPage = function(event){
         var $activities = $ul.find(".single-activity");
         var currentPage = -parseInt($ul.css("marginLeft"),10)/pageWidth;
         var cachePage = Math.floor(($activities.length-1)/4);
-        var url = "json/event.php";
+        var url = "json/event.php?page=" + (pageCount[eventParentID] + 1) +
+            "&type=" + eventParentID + "&id=" + introId;
+        console.log(url);
         if(currentPage===cachePage){
             if(state.end[eventParentID] !== "end"){
                 ajaxLoading($event, "loading");
@@ -159,16 +173,19 @@ $(document).ready(function(){
     });
     pic.appendTo($parent);
     /* 初始化按钮事件 */
-    btnEnable($nextBtn);
+    //btnEnable($nextBtn);
     $preBtn.on("click", prePage );
     $nextBtn.on("click", nextPage );
-    /* 加载初始第5-8个活动 */
+    /* 加载初始4个活动 */
     $.each($ul,function(){
             var eventParentID = $(this).parents(".event").attr("id");
+            var url = "json/event.php?page=0"  +
+                "&type=" +eventParentID + "&id=" + introId;
             ajaxLoading($("#"+eventParentID+" .loading"), "loading");
+            console.log(url);
             $.ajax({type:"GET",
                 dataType:"JSON",
-                url:"json/event.php",
+                url:url,
                 success:function(data){
                     activityAppend(data,eventParentID);
                 }
