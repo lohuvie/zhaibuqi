@@ -9,15 +9,15 @@
     <!-- 在head标签内 引入Jquery -->
     <script src="js/jquery-1.8.3.min.js" type="text/javascript"></script>
     <!-- 在head标签内 引入Jquery 验证插件 -->
-    <script src="js/jquery.validationEngine-cn.js" type="text/javascript"></script>
     <script src="js/jquery.validationEngine.js" type="text/javascript"></script>
 
     <script type="text/javascript">  
         $(document).ready(function() {
             //验证留言表单
             $("#fbk-form").validationEngine({ 
-                promptPosition: "bottomRight",   //topLeft, topRight, bottomLeft, centerRight, bottomRight
-                inlineValidation: false
+              //  promptPosition: "bottomRight",   //topLeft, topRight, bottomLeft, centerRight, bottomRight
+              //  inlineValidation: false
+              scroll:false
             })
         });
     </script>
@@ -35,7 +35,7 @@
             <form id="fbk-form" class="fbk-form" action="">
                 <p><label for="comment-area">评论内容 (*必填)</label></p>
                 <div>
-                    <textarea class="validate[required,length[6,300]] text-input" id="comment-area" name="comment-area" cols="30" rows="10" ></textarea>
+                    <textarea class="validate[required,minSize[6],maxSize[300]] text-input" id="comment-area" name="comment-area" cols="30" rows="10" ></textarea>
                 </div>
                 <table>
                     <tbody>

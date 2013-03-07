@@ -6,7 +6,6 @@
     <!-- 在head标签内 引入Jquery -->
     <script src="js/jquery-1.8.3.min.js" type="text/javascript"></script>
     <!-- 在head标签内 引入Jquery 验证插件 -->
-    <script src="js/jquery.validationEngine-cn.js" type="text/javascript"></script>
     <script src="js/jquery.validationEngine.js" type="text/javascript"></script>
 
     <script type="text/javascript">  
@@ -42,10 +41,10 @@
                     <div class="input-box">
                         <p>新的密码</p>
                         <input id="new-password" name="new-password" type="password" size="20"
-                        class="validate[required,length[6,18]] text-input" />
+                        class="validate[required,minSize[6],maxSize[18]] text-input" />
                         <p>确认密码</p>
                         <input id="confirm-password" name="confirm-password" type="password" size="20"
-                        class="validate[required,confirm[password]] text-input" />
+                        class="validate[required,equals[new-password]] text-input" />
                     </div>
                     <div class="tool-bar">
                         <input type="submit" class="sent-btn" value="更改密码" />
