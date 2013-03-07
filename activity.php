@@ -1,18 +1,11 @@
 <?php
 require_once "php/start-session.php";
-
 ?>
-<!DOCTYPE html
-    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!DOCTYPE html>
 <head>
-
-
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="Keywords" content="宅不起 大学生 活动 推送" />
     <meta name="description" content="宅不起 大学生 活动 推送" />
-
     <title>宅不起 | 活动介绍</title>
     <link href="css/activity.css" type="text/css" rel="stylesheet" />
     <!--[if IE]>
@@ -38,8 +31,12 @@ if(isset($_SESSION['user_id'])){
 $dbc = mysqli_connect(host,user,password,database);
 
 
-$query12 = "select * from user u join activity a on u.user_id = a.user_id left join activity_time atime on a.activity_id = atime.activity_id left join activity_photo ap on a.activity_id = ap.activity_id where a.activity_id = $activity_id";
-$data = mysqli_query($dbc,$query12);
+$query = "select * from user u
+join activity a on u.user_id = a.user_id
+left join activity_time atime on a.activity_id = atime.activity_id
+left join activity_photo ap on a.activity_id = ap.activity_id
+where a.activity_id = $activity_id";
+$data = mysqli_query($dbc,$query);
 $result = mysqli_fetch_array($data);
 
 $creater_id = $result['user_id'];
@@ -100,6 +97,15 @@ if($user_id == $creater_id || $approved != 0){
     $poster =  $result['photo'];
     $poster_path = UPLOAD_PATH_FRONT_TO_BACK.$poster;
 
+    //查询活动喜欢人数
+    $query = "select * from activity_love where activity_id = $activity_id";
+    $data = mysqli_query($dbc,$query);
+    $love_activity_count = mysqli_num_rows($data);
+
+    //查询活动参加人数
+    $query = "select * from activity_join where activity_id = $activity_id";
+    $data = mysqli_query($dbc,$query);
+    $join_activity_count = mysqli_num_rows($data);
     //根据是否通过 显示活动
     if($approved == 0){
         //未通过 标签、用户评论、我也喜欢、我要参与按钮 不显示
@@ -146,18 +152,18 @@ if($user_id == $creater_id || $approved != 0){
                         <span class="pl">发布者:</span><?php echo $publisher?>
                     </div>
                     <div class="interest-attend pl">
-                        <span class="num" id="like-num">35 </span>
+                        <span class="num" id="like-num"><?php echo $love_activity_count;?></span>
                         <span class="pl">人喜欢   </span>
-                        <span class="num" id="attend-num">10 </span>
+                        <span class="num" id="attend-num"><?php echo $join_activity_count;?></span>
                         <span class="pl">人参加</span>
                     </div>
                 </div>
                 <?php if($approved != 0){?>
                 <div id="event-act">
-                    <a class="collect-btn"  href="#" >
+                    <a class="collect-btn">
                         <span>我也喜欢</span>
                     </a>
-                    <a class="collect-btn"  href="#" >
+                    <a class="collect-btn">
                         <span>我要参与</span>
                     </a>
                 </div>
