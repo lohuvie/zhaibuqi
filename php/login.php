@@ -30,7 +30,7 @@ $error = 0;
 
         if (mysqli_num_rows($data) == 1) {
             // The log-in is OK so set the user ID and username session vars (and cookies), and redirect to the home page
-            $row = mysqli_fetch_array($data);
+            $row = mysqli_fetch_array($data,MYSQLI_BOTH);
             $_SESSION['user_id'] = $row['user_id'];
             $_SESSION['email'] = $row['email'];
             if($_POST['signin-cb']=="yes"){

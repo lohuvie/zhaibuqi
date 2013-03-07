@@ -28,7 +28,7 @@ switch($type){
 }
 //判断页数
 $page *= 4;
-$dbc = mysqli_connect(host,user,password,database) or die("byebye");
+$dbc = mysqli_connect(host,user,password,database);
 $query = "select * from activity a
 join activity_photo on a.activity_id = activity_photo.activity_id ".$typeStr.
 " where ".$typeStr2.".user_id = $user_id and a.approved = 1 limit ".$page.",4";
