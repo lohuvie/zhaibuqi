@@ -24,15 +24,8 @@ switch ($error){
     <!-- 在head标签内 引入Jquery -->
     <script src="js/jquery-1.8.3.min.js" type="text/javascript"></script>
     <!-- 在head标签内 引入Jquery 验证插件 -->
-    <script src="js/jquery.validationEngine-cn.js" type="text/javascript"></script>
     <script src="js/jquery.validationEngine.js" type="text/javascript"></script>
-
-    <script type="text/javascript">  
-        $(document).ready(function() {
-            //验证注册表单
-            $("#register-form").validationEngine()
-        });
-    </script>
+    <script src="js/jquery.register.js" type="text/javascript"></script>
     <link rel="stylesheet" href="css/validationEngine.jquery.css" type="text/css" media="screen" title="no title" charset="utf-8" />
 
     <link type="text/css" rel="stylesheet" href="css/register.css"/>
@@ -78,37 +71,24 @@ switch ($error){
               </div>-->
               <div>
                   <label for="email">登陆邮箱 <span id="error"><?php echo $error_message;?></span> </label>
-                  <input name="email" id="email" type="text" value="登陆邮箱"
-                         onblur="if(value == ''){value = '登陆邮箱';}" onfocus="if(value == '登陆邮箱'){value = '';}"
-                         class="validate[required,custom[email]] text-input"/>
+                  <input name="email" id="email" type="text" class="validate[required,custom[email],ajax[ajaxUserCallPhp]] text-input"/>
               </div>
               <div>
                   <label for="nickname">昵称</label>
-                  <input name="nickname" id="nickname" type="text" value="昵称"
-                         onblur="if(value == ''){value = '昵称';}" onfocus="if(value == '昵称'){value = '';}"
-                         class="validate[required,custom[nickname],length[4,30]] text-input"/>
+                  <input name="nickname" id="nickname" type="text" class="validate[required,custom[nickname],minSize[2],maxSize[15]] text-input"/>
               </div>
               <div>
                   <label for="passwd">设置密码</label>
-                  <input name="passwd" id="passwd" type="text" value="登陆密码"
-                         onblur="if(value == ''){value = '登陆密码';this.setAttribute('type','text');}"
-                         onfocus="if(value == '登陆密码'){value = '';this.setAttribute('type','password');}"
-                         class="validate[required,length[6,18]] text-input" />
+                  <input name="passwd" id="passwd" type="password" class="validate[required,minSize[6],maxSize[18]] text-input" />
               </div>
               <div>
                   <label for="passwd-repeat">确认密码</label>
-                  <input name="passwd-repeat" id="passwd-repeat" type="text" value="确认密码"
-                         onblur="if(value == ''){value = '确认密码';this.setAttribute('type','text');}"
-                         onfocus="if(value == '确认密码'){value = '';this.setAttribute('type','password');}"
-                         class="validate[required,confirm[passwd]] text-input" />
+                  <input name="passwd-repeat" id="passwd-repeat" type="password" class="validate[required,equals[passwd]] text-input" />
               </div>
               <div>
                   <label for="validate">验证码</label>
 
-                  <input name="validate" id="validate" type="text" value="验证码(点击刷新)"
-                         onblur="if(value == ''){value = '验证码(点击刷新)';}" 
-                         onfocus="if(value == '验证码(点击刷新)'){value = '';}"
-                         class="validate[required] text-input"/>
+                  <input name="validate" id="validate" type="text" class="validate[required] text-input"/>
               </div>
               <div>
                   <img src="php/captcha.php" alt="验证码" id="captcha" onclick="document.getElementById('captcha').setAttribute('src','php/captcha.php')"/>
