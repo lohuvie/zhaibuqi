@@ -12,7 +12,6 @@ require_once "php/start-session.php";
     <!-- 在head标签内 引入Jquery -->
     <script src="js/jquery-1.8.3.min.js" type="text/javascript"></script>
     <!-- 在head标签内 引入Jquery 验证插件 -->
-    <script src="js/jquery.validationEngine-cn.js" type="text/javascript"></script>
     <script src="js/jquery.validationEngine.js" type="text/javascript"></script>
 
     <script type="text/javascript">  
@@ -59,21 +58,21 @@ require_once "php/start-session.php";
                                 <td><label for="current-password">当前密码</label></td>
                                 <td>
                                     <input id="current-password" name="current-password" type="password" 
-                                    class="validate[required,length[6,18]] text-input"/>
+                                    class="validate[required,minSize[6],maxSize[18]] text-input"/>
                                 </td>
                             </tr>
                             <tr>
                                 <td><label for="new-password">新密码</label></td>
                                 <td>
                                     <input id="new-password" name="new-password" type="password"
-                                    class="validate[required,length[6,18]] text-input" />
+                                    class="validate[required,minSize[6],maxSize[18]] text-input" />
                                 </td>
                             </tr>
                             <tr>
                                 <td><label for="password-confirmation">确认密码</label></td>
                                 <td>
                                     <input id="password-confirmation" name="password-confirmation" type="password" 
-                                    class="validate[required,confirm[password]] text-input" />
+                                    class="validate[required,equals[new-password]] text-input" />
                                 </td>
                             </tr>
                             <tr>

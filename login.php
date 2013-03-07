@@ -22,7 +22,6 @@ switch ($error){
     <!-- 在head标签内 引入Jquery -->
     <script src="js/jquery-1.8.3.min.js" type="text/javascript"></script>
     <!-- 在head标签内 引入Jquery 验证插件 -->
-    <script src="js/jquery.validationEngine-cn.js" type="text/javascript"></script>
     <script src="js/jquery.validationEngine.js" type="text/javascript"></script>
 
     <script type="text/javascript">
@@ -59,19 +58,13 @@ switch ($error){
 										<label for="email">登录邮箱</label>
 										<br />
 										<br />
-										<input name="email" id="email" type="text" value="someone@example.com"
-											onblur="if(value == ''){value = 'someone@example.com';}"
-											onfocus="if(value == 'someone@example.com'){value = '';}"
-											class="validate[required,custom[email]] text-input"/>
+										<input name="email" id="email" type="text" class="validate[required,custom[email]] text-input"/>
 										<br />
 										<br />
 										<label for="passwd">登陆密码</label>
 										<br />
 										<br />
-										<input name="passwd" id="passwd" type="password" value="登陆密码"
-											onblur="if(value == ''){value = '登陆密码';this.setAttribute('type','text');}"
-											onfocus="if(value == '登陆密码'){value = '';this.setAttribute('type','password');}"
-											class="validate[required,length[6,11]] text-input"/>
+										<input name="passwd" id="passwd" type="password" class="validate[required,minSize[6],maxSize[18]] text-input"/>
 										<br />
 										<br />
 										<!--验证码隐藏部分   待修改-->                 
