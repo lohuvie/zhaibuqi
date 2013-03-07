@@ -22,7 +22,7 @@ a {
     background:url(../images/menu_bg1.gif) repeat-x ;
     color: #ffffff;
     text-align:center;
-    z-index: 100;
+    z-index: 10000;
 }
 
  /* Menu Part */
