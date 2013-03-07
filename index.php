@@ -53,7 +53,7 @@ require_once "php/start-session.php";
                         <?php }else{ ?>
                             <a href="new-activity.php" title="新建" class="create-btn">
                         <?php }?>
-                            <span>&nbsp;&nbsp;</span>
+                            &nbsp;
                         </a>
                     </div>
 				</div>

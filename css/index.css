@@ -22,17 +22,16 @@
 	float: right;
 	margin-top: 11px;
 }
-.create-btn span{
-	padding: 10px 55px;
-	background-image:url(../images/create-btn-normal.png);
+.create-btn{
+    padding: 10px 55px 5px;
+	background-image:url(../images/create-btn.png);
 	background-repeat: no-repeat;
 }
-.create-btn span:hover{
-	padding: 10px 55px;
-	background-image:url(../images/create-btn-hover.png); 
+.create-btn:hover{
+    background-position: 0 -72px;
 }
-.create-btn span:active{
-	background-image:url(../images/create-btn-active.png); 
+.create-btn:active{
+    background-position: 0 -36px;
 }
 #container {
     position: relative;

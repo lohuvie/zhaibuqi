@@ -66,19 +66,18 @@ textarea.input{
     resize: none;
     overflow-y: visible;
 }
-.img-bg{
+#upload-pic{
+    position: relative;
     background: #777;
     height: 350px;
     width: 400px;
 }
-#upload-pic{
-    position: relative;
-}
-.none{
+#upload-pic.none{
     font-size: 31px;
     color: #EEE;
     text-align: center;
     vertical-align: middle;
+    height: 40px;
     padding: 155px 0;
     width: 400px;
 }
@@ -95,10 +94,13 @@ textarea.input{
     text-align: center;
     width: 84px;
 }
+.upload span{
+    cursor: pointer;
+}
 #poster{
     cursor: pointer;
     font-size: 18px;
-    left: -100px;
+    left: -200px;
     position: absolute;
     opacity: 0;
     top:0;

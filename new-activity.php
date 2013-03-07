@@ -32,6 +32,7 @@
     <link rel="stylesheet" type="text/css" href="css/jquery.tagit.css" />
     <link type="text/css" rel="stylesheet" href="css/validationEngine.jquery.css" />
     <link type="text/css" rel="stylesheet" href="css/jquery-ui-1.9.2.custom.css" />
+    <link type="text/css" rel="stylesheet" href="js/Jcrop/css/jquery.Jcrop.min.css" />
 
     <link type="text/css" rel="stylesheet" href="css/new-activity.css"/>
     <link type="text/css" rel="stylesheet" href="css/top-nav.css"/>
@@ -143,18 +144,11 @@
                    <tr class="pic-show">
                        <td><label for="upload-pic">海报</label></td>
                        <td>
-                           <div class="img-bg">
-                               <div id="upload-pic" class="none">请上传照片</div>
-                           </div>
+                           <div id="upload-pic" class="none">请上传照片</div>
                            <div class="upload">
                                <span>选择图片</span>
-                               <input type="file" id="poster"  name="poster"/>
+                               <input type="file" id="poster"  name="poster" accept='image/*'/>
                            </div>
-                       </td>
-                   </tr>
-                   <tr class="pic-choose">
-                       <td></td>
-                       <td>
                        </td>
                    </tr>
                </table>
@@ -166,6 +160,7 @@
         </div>
     </div>
     <?php require_once("footer.php"); ?>
+    <script src="js/Jcrop/js/jquery.Jcrop.min.js"></script>
     <script src="js/jquery.pic-cut.js"></script>
 </body>
 </html>
