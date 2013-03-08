@@ -135,13 +135,13 @@
 					"alertTextLoad":"* 正在确认用户名是否有其他人使用，请稍等。"
 				},
 				"ajaxUserCallPhp":{
-					"url":"../php/ajaxValidateFieldUser.php?fieldValue=&fieldId=",
+					"url":"../php/ajaxValidateFieldUser.php",
 					// you may want to pass extra data on the ajax call
 					"extraData":"name=eric",
-					// if you provide an "alertTextOk", it will show as a green prompt when the field validates
-					"alertTextOk":"* 此用户名可以使用",
-					"alertText":"* 此用户名已被其他人使用",
-					"alertTextLoad":"* 正在确认用户名是否有其他人使用，请稍等。"
+					// 如果取消注释 "alertTextOk",可以有提示
+					//"alertTextOk":"* 此邮箱地址可以使用",
+					"alertText":"* 此邮箱地址已被使用",
+					"alertTextLoad":"* 正在确认邮箱地址是否被使用，请稍等..."
 				},
 				"ajaxNameCall":{
 					// remote json service location
