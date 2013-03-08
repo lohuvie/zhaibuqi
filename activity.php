@@ -26,7 +26,7 @@ $activity_id = $_GET['activity'];
 if(isset($_SESSION['user_id'])){
     $user_id = $_SESSION['user_id'];
 }else{
-    $user_id = 0;
+    $user_id = -1;
 }
 $dbc = mysqli_connect(host,user,password,database);
 

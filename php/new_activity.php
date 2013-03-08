@@ -20,9 +20,8 @@
     $cost_class = $_POST['cost-class'];
     $authority_class = $_POST['authority-class'];
     $tags = $_POST['tags'];
-    $photo_type = $_FILES['poster']['type'];
-    $photo_size = $_FILES['poster']['size'];
-    $photo= time().".".substr($photo_type,6);       //上传海报名字 time()+后缀名\
+
+    $photo= $_SESSION['photo_name'];      //上传海报名字 time()+后缀名\
 
     //开始时间结束时间判定
     if($time_begin == "开始时间"){
@@ -31,22 +30,82 @@
     if($time_end == "结束时间"){
         $time_end = "00:00:00";
     }
+// 切图。。。
+//获取图片百分比
+$coordinate_line = $_POST['pos'];
+$coordinate_line1 = explode(",",$coordinate_line);
+$coordinate = $_POST['size'];
+$coordinate_line2 = explode(",",$coordinate);
+
+//获取图片坐标
+$image_size   =   getimagesize(UPLOADPATH.$photo);
+$width = $image_size['0'];
+$height =$image_size['1'];
+$y = $height*$coordinate_line1['0'];  // y坐标
+$x = $width*$coordinate_line1['1'];   //    x坐标
+$w =  $width*$coordinate_line2['0'];     //       宽度
+$z =  $height*$coordinate_line2['1'];      //         高度
+echo $width.'</br>'.$height.'</br>'.$x.'</br>'.$y.'</br>'.$w.'</br>'.$coordinate_line2['0'].'</br>'.$z;
+//function sliceBanner(){
+//    $x = (int)$coordinate_line1['1'];
+//    $y = (int)$_POST['y'];
+//    $w = (int)$_POST['w'];
+//    $h = (int)$_POST['h'];
+
+//剪切后小图片的名字
+//    $pic = $_POST['poster'];
+//    $str = explode(".",$pic);
+//    $type = $str[1];
+$cut_name = 'cut_'. $photo;
+//$_SESSION['cut_name'] = $cut_name;
+//    $cut_name = 'cut_'. $photo;
+$uploadBanner =UPLOADPATH.$photo;
+$sliceBanner = UPLOADPATH. $cut_name;//剪切后的图片存放的位置
+
+//创建图片
+
+
+$dst_pic = imagecreatetruecolor($w, $z);    //  目标图像
+$src_pic = getImageHander($uploadBanner);     //        源图像
+imagecopyresampled($dst_pic, $src_pic, 0, 0,$x,$y,$w,$z,$w,$z);
+imagejpeg($dst_pic, $sliceBanner);
+imagedestroy($src_pic);
+imagedestroy($dst_pic);
+
+//    //返回新图片的位置
+//    echo  $sliceBanner;
+//}
+
+//初始化图片
+function getImageHander ($url) {
+    $size=@getimagesize($url);
+    switch($size['mime']){
+        case 'image/jpeg': $im = imagecreatefromjpeg($url);break;
+        case 'image/gif' : $im = imagecreatefromgif($url);break;
+        case 'image/png' : $im = imagecreatefrompng($url);break;
+        default: $im=false;break;
+    }
+
+    return $im;
+}
 
     if(!empty($title)&&!empty($date)&&!empty($time_begin)&&!empty($time_end)&&!empty($place)
-        &&!empty($introduction)){
+        &&!empty($introduction)&& (isset($_SESSION['load_picture']))){
         //判定图片类型
-         if ((($photo_type == 'image/gif') || ($photo_type == 'image/jpeg') || ($photo_type == 'image/pjpeg') || ($photo_type == 'image/png'))
-             && ($photo_size > 0)) {
-            if ($_FILES['poster']['error'] == 0) {
-                // Move the file to the target upload folder
-                $target = UPLOADPATH.$photo;
-                if (move_uploaded_file($_FILES['poster']['tmp_name'], $target)) {
+//         if ((($photo_type == 'image/gif') || ($photo_type == 'image/jpeg') || ($photo_type == 'image/pjpeg') || ($photo_type == 'image/png'))
+//             && ($photo_size > 0)) {
+//            if ($_FILES['poster']['error'] == 0) {
+//                // Move the file to the target upload folder
+//                $target = UPLOADPATH.$photo;
+//                if (move_uploaded_file($_FILES['poster']['tmp_name'], $target)) {
                     $dbc = mysqli_connect(host,user,password,database)
                         or die("error connect");
                     $user_id = $_SESSION['user_id'];
                     $register_time = date("y-m-d h:i:s",time());
                     //将活动信息载入activity表
+        echo"null,$user_id,'$title','$category','$place','$introduction',$cost_class,'$register_time',0,$authority_class";
                     $query="insert into activity values(null,$user_id,'$title','$category','$place','$introduction',$cost_class,'$register_time',0,$authority_class)";
+                    echo $query;
                     $result = mysqli_query($dbc,$query)
                         or die("error querying database");
 
@@ -58,7 +117,7 @@
                     $row = mysqli_fetch_array($result) or die("ddd");
                     $activity_id = $row['activity_id'];
                     //将活动信息载入activity-photo表
-                    $query = "insert into activity_photo values(null,'$activity_id','$photo')";
+                    $query = "insert into activity_photo values(null,'$activity_id','$cut_name')";
                     $result = mysqli_query($dbc,$query)
                         or die("error querying database1");
                     //将活动信息载入activity-time表
@@ -96,19 +155,19 @@
                     $home_url = 'http://' . $_SERVER['HTTP_HOST'] . dirname(dirname($_SERVER['PHP_SELF'])) . '/activity.php?activity='.$activity_id;
                     header('Location: ' . $home_url);
                 }
-                else {
-                    echo '<p class="error">Sorry, there was a problem uploading your activity.</p>';
-                }
-            }
-         }
-         else {
-             echo '<p class="error">文件类型必须是jpg，GIF，PNG并且大小大于0KB</p>';
-         }
-
-        // Try to delete the temporary screen shot image file
-        @unlink($_FILES['poster']['tmp_name']);
-
-    }
+//                else {
+//                    echo '<p class="error">Sorry, there was a problem uploading your activity.</p>';
+//                }
+//            }
+//         }
+//         else {
+//             echo '<p class="error">文件类型必须是jpg，GIF，PNG并且大小大于0KB</p>';
+//         }
+//
+//        // Try to delete the temporary screen shot image file
+//        @unlink($_FILES['poster']['tmp_name']);
+//
+//    }
     else {
         echo '<p class="error">请填入所有信息.</p>';
     }
