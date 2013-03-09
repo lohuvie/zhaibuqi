@@ -167,7 +167,7 @@ if($user_id == $creater_id || $approved != 0){
                         <span class="pl">类型:  </span><?php echo $type?>
                     </div>
                     <div id="event-host">
-                        <span class="pl">发布者:</span><?php echo $publisher?>
+                        <span class="pl">发布者:</span><a href="personal-page.php?=<?php echo $creater_id?>"><?php echo $publisher?></a>
                     </div>
                     <div class="interest-attend pl">
                         <span class="num" id="like-num"><?php echo $love_activity_count;?></span>
