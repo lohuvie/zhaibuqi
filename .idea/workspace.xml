@@ -2,7 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="001244dc-9f77-4839-bb42-ea9af295a304" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/jquery.pic-cut.js" afterPath="$PROJECT_DIR$/js/jquery.pic-cut.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/jquery.personal-info-pic.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/jquery.picUpdate.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/new-activity.php" afterPath="$PROJECT_DIR$/new-activity.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/personal-info.php" afterPath="$PROJECT_DIR$/personal-info.php" />
+      <change type="MOVED" beforePath="G:\apache\Apache24\htdocs\zhaibuqi\js\jquery.pic-cut.js" afterPath="$PROJECT_DIR$/js/jquery.new-activity-pic.js" />
     </list>
     <ignored path="zhaibuqi.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -25,10 +30,50 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="jquery.pic-cut.js" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/js/jquery.pic-cut.js">
+      <file leaf-file-name="jquery.new-activity-pic.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/jquery.new-activity-pic.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="255" column="7" selection-start="8881" selection-end="8881" vertical-scroll-proportion="0.0">
+            <state line="7" column="0" selection-start="155" selection-end="155" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="jquery.personal-info-pic.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/jquery.personal-info-pic.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="10" column="32" selection-start="246" selection-end="246" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="e#0#157#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="new-activity.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/new-activity.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="150" column="9" selection-start="9244" selection-end="9244" vertical-scroll-proportion="0.65636367">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="jquery.picUpdate.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/jquery.picUpdate.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="30" column="21" selection-start="848" selection-end="848" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="personal-info.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/personal-info.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="128" column="19" selection-start="4999" selection-end="4999" vertical-scroll-proportion="-0.42857143">
               <folding />
             </state>
           </provider>
@@ -50,22 +95,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/json/event.php" />
-        <option value="$PROJECT_DIR$/json/test.php" />
-        <option value="$PROJECT_DIR$/json/upload_picture.php" />
-        <option value="F:/github/Jcrop/demos/styling.html" />
-        <option value="F:/github/Jcrop/demos/test.html" />
         <option value="F:/github/Jcrop/js/jquery.Jcrop.js" />
         <option value="$PROJECT_DIR$/css/new-activity.css" />
         <option value="$PROJECT_DIR$/css/top-nav.css" />
         <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/css/index.css" />
         <option value="$PROJECT_DIR$/contacts.html" />
-        <option value="$PROJECT_DIR$/new-activity.php" />
         <option value="$PROJECT_DIR$/php/new_activity.php" />
         <option value="$PROJECT_DIR$/php/util.php" />
         <option value="$PROJECT_DIR$/php/upload_picture.php" />
+        <option value="$PROJECT_DIR$/js/Jcrop/jquery.picUpdate.js" />
+        <option value="$PROJECT_DIR$/js/jquery.picUpdate.js" />
         <option value="$PROJECT_DIR$/js/jquery.pic-cut.js" />
+        <option value="$PROJECT_DIR$/js/jquery.new-activity-pic.js" />
+        <option value="$PROJECT_DIR$/new-activity.php" />
+        <option value="$PROJECT_DIR$/personal-info.php" />
+        <option value="$PROJECT_DIR$/js/jquery.personal-info-pic.js" />
       </list>
     </option>
   </component>
@@ -204,6 +249,9 @@
       <recent name="F:\Apache2.2\htdocs\zhaibuqi\php" />
       <recent name="F:\Apache2.2\htdocs\zhaibuqi\css" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="G:\apache\Apache24\htdocs\zhaibuqi\js" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration default="false" name="register.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/php/register.php">
@@ -288,14 +336,14 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="784" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.47004607" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.46935484" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32903227" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22445937" sideWeight="0.5145161" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22644377" sideWeight="0.5299539" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22644377" sideWeight="0.67096776" order="1" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22445937" sideWeight="0.5209677" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3279743" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
@@ -383,21 +431,6 @@
     </PATH>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/css/top-nav.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="17" selection-start="462" selection-end="462" vertical-scroll-proportion="0.7715736" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/new-activity.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="122" column="0" selection-start="2140" selection-end="2140" vertical-scroll-proportion="0.964467" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/index.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="0" selection-start="463" selection-end="463" vertical-scroll-proportion="0.7394247" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="55" column="33" selection-start="1600" selection-end="1600" vertical-scroll-proportion="0.6108291" />
@@ -421,11 +454,6 @@
     <entry file="file://$PROJECT_DIR$/contacts.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="3" column="0" selection-start="30" selection-end="30" vertical-scroll-proportion="0.10124334" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/new-activity.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="29" selection-start="329" selection-end="329" vertical-scroll-proportion="0.0642978" />
       </provider>
     </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/com/jetbrains/php/lang/psi/stubs/data/standard_1.php">
@@ -458,9 +486,41 @@
         <state line="23" column="37" selection-start="774" selection-end="774" vertical-scroll-proportion="0.7945455" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/jquery.pic-cut.js">
+    <entry file="file://$PROJECT_DIR$/js/jquery.picUpdate.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="255" column="7" selection-start="8881" selection-end="8881" vertical-scroll-proportion="0.0">
+        <state line="30" column="21" selection-start="848" selection-end="848" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/jquery.new-activity-pic.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="0" selection-start="155" selection-end="155" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/jquery.personal-info-pic.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="32" selection-start="246" selection-end="246" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#0#157#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/personal-info.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="128" column="19" selection-start="4999" selection-end="4999" vertical-scroll-proportion="-0.42857143">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/new-activity.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="150" column="9" selection-start="9244" selection-end="9244" vertical-scroll-proportion="0.65636367">
           <folding />
         </state>
       </provider>
