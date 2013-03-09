@@ -8,25 +8,15 @@
 
     <!-- 在head标签内 引入Jquery -->
     <script src="js/jquery-1.8.3.min.js" type="text/javascript" ></script>
+
     <!-- 引入Juqery-ui custom 1.9.2-->
     <script src="js/jquery-ui-1.9.2.custom.min.js" type="text/javascript" ></script>
-    <!-- 在head标签内 引入Jquery 验证插件 -->
-    <script src="js/jquery.validationEngine-cn.js" type="text/javascript" ></script>
-    <script src="js/jquery.validationEngine.js" type="text/javascript" ></script>
-    <script src="js/loadDatePicker.js" type="text/javascript" ></script>
-    <script src="js/jquery.editable-select.pack.js" type="text/javascript" ></script>
-    <script src="js/loadEditableSelect.js" type="text/javascript" ></script>
-    <script src="js/tag-it.js" type="text/javascript" ></script>
-    <script src="js/loadTags.js" type="text/javascript" ></script>
 
-    <script type="text/javascript">  
-        $(document).ready(function() {
-            //验证新建活动表单
-            $("#frmNew").validationEngine({
-                promptPosition: "centerRight"   //topLeft, topRight, bottomLeft, centerRight, bottomRight
-            })
-        }); 
-    </script>
+    <!-- 在head标签内 引入Jquery 验证插件 -->
+    <script src="js/jquery.validationEngine.js" type="text/javascript" ></script>
+    <script src="js/jquery.editable-select.pack.js" type="text/javascript" ></script>
+    <script src="js/tag-it.js" type="text/javascript" ></script>
+    <script src="js/jquery.new-activity.js" type="text/javascript"></script>
 
     <link type="text/css" rel="stylesheet" href="css/jquery.editable-select.css" />
     <link rel="stylesheet" type="text/css" href="css/jquery.tagit.css" />
@@ -52,7 +42,7 @@
                        <td><label for="title">标题</label></td>
                        <td>
                             <input type="text" id="title" name="title"  tabindex="1"
-                            class="validate[required,length[2,40]] text-input input"/>
+                            class="validate[required,minSize[2],maxSize[40]] text-input input"/>
                       </td>
                    </tr>
                    <tr class="catogory">
@@ -70,9 +60,9 @@
                        <td><label>时间</label></td>
                        <td id="time-part">
                            <span>活动日期 </span><br />
-                           <input type="text" class="date input" name="date" /><span>（日期格式为:YYYY-MM-DD）</span>
+                           <input type="text" class="validate[required,custom[date]] datepicker input " name="date" /><span>（日期格式为:YYYY-MM-DD）</span>
                            <br /><br />
-                           <select name="time-begin" class="time-begin editable-select">
+                           <select name="time-begin" class="time-begin editable-select validate[dateTimeRange[grp1]]">
                                 <option>开始时间</option>
                                 <option>08:00</option><option>08:30</option><option>09:00</option><option>09:30</option>
                                 <option>10:00</option><option>10:30</option><option>11:00</option><option>11:30</option>
@@ -88,7 +78,7 @@
                                 <option>06:00</option><option>06:30</option><option>07:00</option><option>07:30</option>
                            </select>
                            <span>&nbsp;至&nbsp;</span>
-                           <select name="time-end" class="time-end editable-select">
+                           <select name="time-end" class="time-end editable-select validate[dateTimeRange[grp1]]">
                                 <option>结束时间</option>
                                 <option>08:00</option><option>08:30</option><option>09:00</option><option>09:30</option>
                                 <option>10:00</option><option>10:30</option><option>11:00</option><option>11:30</option>
@@ -109,7 +99,7 @@
                        <td><label for="place">地点</label></td>
                        <td>
                           <input type="text" id="place" name="place"  tabindex="4"
-                          class="validate[required,length[2,30]] text-input input"/>
+                          class="validate[required,minSize[2],maxSize[30]] text-input input"/>
                        </td>
                    </tr>
                    <tr class="introduction">
@@ -139,7 +129,7 @@
                    </tr>
                    <tr class="label">
                        <td><label for="tags">标签</label></td>
-                       <td><input type="text" id="tags" name="tags" value="电影, 社团" tabindex="10"/></td>
+                       <td><input type="text" id="tags" name="tags" value="电影,社团" tabindex="10"/></td>
                    </tr>
                    <tr class="pic-show">
                        <td><label for="upload-pic">海报</label></td>
@@ -147,7 +137,7 @@
                            <div id="upload-pic" class="none">请上传照片</div>
                            <div class="upload">
                                <span>选择图片</span>
-                               <input type="file" id="poster"  name="poster" accept='image/*'/>
+                               <input type="file" id="poster" name="poster" accept='image/*'/>
                            </div>
                        </td>
                    </tr>
