@@ -64,7 +64,7 @@ require_once "php/start-session.php";
 		</div>
 		<!-- end #sidebar -->
 		<div id="waterfall">
-	    	<div class="single-activity" >
+	    	<!--<div class="single-activity" >
                 <a class="activity-pic" href=""><img src="images/test.png" alt="图片示例235*350" /></a>
                 <a class="activity-title" href="">活动标题</a><br/>
                 <p>时间：</p>
@@ -102,7 +102,7 @@ require_once "php/start-session.php";
                 <p>时间：</p>
                 <p>地点：</p>
                 <p>活动介绍简介:</p>
-            </div>
+            </div> -->
 		</div>
 		<!-- end #Waterfall -->
         <p id="add-tips">正在加载更多活动...</p>

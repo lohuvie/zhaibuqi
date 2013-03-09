@@ -35,7 +35,6 @@ join activity_photo on a.activity_id = activity_photo.activity_id ".$typeStr.
 $data = mysqli_query($dbc,$query);
 $echoStr = "";
 $i = 0;
-$href = 'http://' . $_SERVER['HTTP_HOST'] . dirname(dirname($_SERVER['PHP_SELF'])) . '/activity.php?activity=';
 //json
 echo "{";
 echo "\"activity\":[";
@@ -43,7 +42,7 @@ while($result = mysqli_fetch_array($data,MYSQLI_ASSOC)){
     $echoStr .= "{\"picSrc\":\"".UPLOAD_PATH_FRONT_TO_BACK.$result['photo']."\",";
     $echoStr .= "\"alt\":\"".$result['name']."\",";
     $echoStr .= "\"title\":\"".$result['name']."\",";
-    $echoStr .= "\"href\":\"".$href.$result['activity_id']."\"},";
+    $echoStr .= "\"href\":\"activity.php?activity=".$result['activity_id']."\"},";
     $i++;
 }
 $echoStr = substr($echoStr,0,strlen($echoStr)-1);//删除最后一个逗号
