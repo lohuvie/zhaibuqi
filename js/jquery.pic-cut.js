@@ -205,29 +205,31 @@
     }
     window.ZHAIBUQI.cutDiv = cutDiv;
 
-    function uploadPic(url,submitted){
-        var $oldDiv = $('#frameDiv');
-        if($oldDiv){
-            $oldDiv.remove();
-        }
-        console.log($(this).val());
-        $(this).clone().insertAfter($(this));
-        var $ajaxForm = $('<form></form>').attr({
-                action: url,
-                method: 'post',
-                enctype:'multipart/form-data',
-                target:'uploadTargetFrame'
-            }),
-            $frameDiv = $('<div></div>').attr('id','frameDiv'),
+    function uploadPic(options){
+        var $uploadTargetFrame = $('#uploadTargetFrame');
+        if($uploadTargetFrame.length === 0){
             $uploadTargetFrame = $('<iframe></iframe>').attr({
                 id:'uploadTargetFrame',
                 name:'uploadTargetFrame'
-            });
-        $frameDiv.append($uploadTargetFrame,$ajaxForm.append($(this)));
-        $frameDiv.appendTo($(document.body));
-        $frameDiv.hide();
-        $ajaxForm.submit(submitted);
-        $ajaxForm.trigger('submit');
+            }).hide();
+            $uploadTargetFrame.appendTo($(document.body));
+        }
+        console.log($(this).val());
+        $(this).clone().insertAfter($(this));
+        var $picForm = $('#picForm');
+        if($picForm.length === 0){
+            $picForm = $('<form></form>').attr({
+                id:'picForm',
+                action: options.url,
+                method: 'post',
+                enctype:'multipart/form-data',
+                target:'uploadTargetFrame'
+            }).hide();
+        }
+        $picForm.empty();
+        $(document.body).append($picForm.append($(this)));
+        $picForm.submit(options.submitted);
+        $picForm.trigger('submit');
     }
     window.ZHAIBUQI.uploadPic = uploadPic;
 
@@ -235,10 +237,9 @@
 
 $(function(){
     "use strict";
-    var $form = $("#frmNew"),
-        $picShow = $("#upload-pic");
     //隐藏输入，以填入切图框的位置及大小
-    var $pos = $('<input type=text>').attr({
+    var $form = $("#frmNew"),
+        $pos = $('<input type=text>').attr({
             'id':'pos',
             'name':'pos'
         }).hide(),
@@ -248,9 +249,13 @@ $(function(){
         }).hide();
     $form.append($pos, $size);
     //选择文件事件
+    var $picShow = $("#upload-pic");
     $form.on('change','#poster',function(){
         if(/.+\.(jpg|jpeg|png|gif)$/.test($(this).val())){
-            ZHAIBUQI.uploadPic.call($(this),'php/upload_picture.php',submitted);
+            ZHAIBUQI.uploadPic.call($(this),{
+                url:'php/upload_picture.php',
+                submitted:submitted
+            });
         } else{
             console.log('error');
         }
@@ -279,7 +284,6 @@ $(function(){
             clearInterval(complete);
         },3000);
     }
-
 });
 
 
