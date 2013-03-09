@@ -9,8 +9,8 @@
 require_once "start-session.php";
 require_once("util.php");
 
-$loveActivity = $_GET['love'];
-$activity_id = $_GET['activity'];
+$loveActivity = $_POST['love'];
+$activity_id = $_POST['activity'];
 $user_id = $_SESSION['user_id'];
 
 $dbc = mysqli_connect(host,user,password,database);

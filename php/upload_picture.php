@@ -24,11 +24,10 @@ $_SESSION['photo_name'] = $photo;
         if ($_FILES['poster']['error'] == 0) {
             // Move the file to the target upload folder
             $target = UPLOADPATH.$photo;
-            $target1=upload.$photo;
+            $target1=UPLOAD_PATH_FRONT_TO_BACK.$photo;
 
             move_uploaded_file($_FILES['poster']['tmp_name'], $target) ;
             $_SESSION['load_picture'] = $target;
-            echo"dasdsadsda";
 
          echo " <p id='complete'>$target1<p> ";
 
