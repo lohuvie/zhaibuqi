@@ -8,7 +8,7 @@
 			$.validationEngineLanguage.allRules = {
 				"required":{ // Add your regex rules here, you can take telephone as an example
 					"regex":"none",
-					"alertText":"* 此处不可空白",
+					"alertText":"* 此处不能为空",
 					"alertTextCheckboxMultiple":"* 请选择一个项目",
 					"alertTextCheckboxe":"* 该选项为必选",
 					"alertTextDateRange":"* 日期范围不可空白"
@@ -135,11 +135,11 @@
 					"alertTextLoad":"* 正在确认用户名是否有其他人使用，请稍等。"
 				},
 				"ajaxUserCallPhp":{
-					"url":"../php/ajaxValidateFieldUser.php",
+					"url":"php/ajaxValidateFieldUser.php",
 					// you may want to pass extra data on the ajax call
 					"extraData":"name=eric",
 					// 如果取消注释 "alertTextOk",可以有提示
-					//"alertTextOk":"* 此邮箱地址可以使用",
+					"alertTextOk":"* 此邮箱地址可以使用",
 					"alertText":"* 此邮箱地址已被使用",
 					"alertTextLoad":"* 正在确认邮箱地址是否被使用，请稍等..."
 				},
