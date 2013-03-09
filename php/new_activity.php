@@ -117,7 +117,7 @@ function getImageHander ($url) {
                     $row = mysqli_fetch_array($result) or die("ddd");
                     $activity_id = $row['activity_id'];
                     //将活动信息载入activity-photo表
-                    $query = "insert into activity_photo values(null,'$activity_id','$cut_name')";
+                    $query = "insert into activity_photo values(null,'$activity_id','$cut_name',1)";
                     $result = mysqli_query($dbc,$query)
                         or die("error querying database1");
                     //将活动信息载入activity-time表

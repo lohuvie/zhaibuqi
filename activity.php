@@ -106,6 +106,24 @@ if($user_id == $creater_id || $approved != 0){
     $query = "select * from activity_join where activity_id = $activity_id";
     $data = mysqli_query($dbc,$query);
     $join_activity_count = mysqli_num_rows($data);
+
+    //查询用户是否喜欢该活动
+    $query = "select * from activity_love where user_id = $user_id and activity_id = $activity_id";
+    $data = mysqli_query($dbc,$query);
+    $isLoveActivity = false;
+    if(mysqli_num_rows($data))
+        $isLoveActivity = false;
+    else
+        $isLoveActivity = true;
+
+    //查询用户是否参加该活动
+    $query = "select * from activity_join where user_id = $user_id and activity_id = $activity_id";
+    $data = mysqli_query($dbc,$query);
+    $isJoinActivity = false;
+    if(mysqli_num_rows($data))
+        $isJoinActivity = false;
+    else
+        $isJoinActivity = true;
     //根据是否通过 显示活动
     if($approved == 0){
         //未通过 标签、用户评论、我也喜欢、我要参与按钮 不显示
@@ -149,7 +167,7 @@ if($user_id == $creater_id || $approved != 0){
                         <span class="pl">类型:  </span><?php echo $type?>
                     </div>
                     <div id="event-host">
-                        <span class="pl">发布者:</span><?php echo $publisher?>
+                        <span class="pl">发布者:</span><a href="personal-page.php?=<?php echo $creater_id?>"><?php echo $publisher?></a>
                     </div>
                     <div class="interest-attend pl">
                         <span class="num" id="like-num"><?php echo $love_activity_count;?></span>
@@ -160,7 +178,7 @@ if($user_id == $creater_id || $approved != 0){
                 </div>
                 <?php if($approved != 0){?>
                 <div id="event-act">
-                    <a class="collect-btn">
+                    <a class="collect-btn" >
                         <span>我也喜欢</span>
                     </a>
                     <a class="collect-btn">

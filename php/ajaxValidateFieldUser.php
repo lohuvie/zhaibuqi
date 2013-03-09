@@ -23,14 +23,8 @@
 		$arrayToJs[1] = true;			// RETURN TRUE
 		echo json_encode($arrayToJs);			// RETURN ARRAY WITH success
 	}else{
-		for($x=0;$x<1000000;$x++){
-			if($x == 990000){
-				$arrayToJs[1] = false;
-				echo json_encode($arrayToJs);		// RETURN ARRAY WITH ERROR
-			}
-		}
-		
-	}
-
+        $arrayToJs[1] = false;
+        echo json_encode($arrayToJs);		// RETURN ARRAY WITH ERROR
+    }
 	mysqli_close($dbc);
 ?>
