@@ -23,7 +23,14 @@ body{
 #head-portrait-small{
     height: 45px;
     width: 45px;
-}#head-portrait-origin{
+}
+#head-portrait-origin{
+    position: relative;
+    height: 165px;
+    width: 165px;
+    padding: 5px;
+}
+#head-portrait-origin img{
     height: 165px;
     width: 165px;
  }

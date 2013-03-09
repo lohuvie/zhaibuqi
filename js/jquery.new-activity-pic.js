@@ -21,13 +21,16 @@ $(function(){
     //选择文件事件
     var $picShow = $("#upload-pic");
     $form.on('change','#poster',function(){
-        if(/.+\.(jpg|jpeg|png|gif)$/.test($(this).val())){
+        var file = this.files[0];
+        if(file.size >= 2097152){
+            console.log('too big');
+        } else if(!(/^image\/.*$/.test(file.type))){
+            console.log('not pic');
+        } else{
             ZHAIBUQI.uploadPic.call($(this),{
                 url:'php/upload_picture.php',
                 submitted:submitted
             });
-        } else{
-            console.log('error');
         }
     });
     //图片提交函数

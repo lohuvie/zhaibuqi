@@ -94,15 +94,14 @@ $portrait_path = PORTRAIT.$portrait;
                     <label for="update">头像</label>
                 </td>
                 <td>
-                    <img src="<?php echo $portrait_path?>" alt="头像" id="head-portrait-origin"/>
-                    <br/>
+                    <div id="head-portrait-origin">
+                        <img src="<?php echo $portrait_path?>" alt="头像"/>
+                    </div>
                     <input id="update" type="file" name="portrait"/>
                 </td>
-                <!--
                 <td id="head-portrait">
-                    <img src="" alt="" id="head-portrait-small"/>
+                    <img src="<?php echo $portrait_path?>" alt="" id="head-portrait-small"/>
                 </td>
-                -->
                 <td>
                 </td>
             </tr>
@@ -148,5 +147,6 @@ $portrait_path = PORTRAIT.$portrait;
 <?php require_once("footer.php"); ?>
 <script src="js/Jcrop/js/jquery.Jcrop.min.js"></script>
 <script src="js/jquery.picUpdate.js"></script>
+<script src="js/jquery.personal-info-pic.js"></script>
 </body>
 </html>

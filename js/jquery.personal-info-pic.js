@@ -19,15 +19,39 @@ $(function(){
         }).hide();
     $form.append($pos, $size);
     //选择文件事件
-    var $picShow = $("#upload-pic");
-    $form.on('change','#poster',function(){
-        if(/.+\.(jpg|jpeg|png|gif)$/.test($(this).val())){
+    var $picShow = $("#head-portrait-origin");
+    $form.on('change','#update',function(){
+        var file = this.files[0];
+        if(file.size >= 2097152){
+            console.log('too big');
+        } else if(!(/^image\/.*$/.test(file.type))){
+            console.log('not pic');
+        } else{
             ZHAIBUQI.uploadPic.call($(this),{
                 url:'php/upload_picture.php',
                 submitted:submitted
             });
-        } else{
-            console.log('error');
         }
     });
+    function submitted(){
+        //检测iframe是否成功接收到数据
+        var complete = setInterval(function(){
+            if($('#uploadTargetFrame').contents().find('#complete').length !== 0){
+                clearInterval(complete);
+                console.log($('#uploadTargetFrame').contents().find('#complete').text());
+                //var $img = $('<img/>').attr('src',$('#uploadTargetFrame').contents().find('#complete').text());
+                var $img = $('<img />').attr('src','images/test.png');
+                //呈现图片
+                ZHAIBUQI.picLoaded({
+                    $img:$img,
+                    maxW:165,
+                    maxH:165,
+                    $picShow:$picShow
+                });
+            }
+        },5);
+        setTimeout(function(){
+            clearInterval(complete);
+        },3000);
+    }
 });
