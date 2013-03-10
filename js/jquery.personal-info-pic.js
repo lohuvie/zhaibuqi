@@ -28,15 +28,23 @@ $(function(){
     });
     var $headOriginDiv = $('#head-portrait-origin').parent();
     $picShow.insertBefore($headOriginDiv);
+<<<<<<< HEAD
     $form.on('change','#update',function(){
+=======
+    $form.on('change','#update-btn',function(){
+>>>>>>> 最新版本
         var file = this.files[0];
         if(file.size >= 2097152){
             console.log('too big');
         } else if(!(/^image\/.*$/.test(file.type))){
             console.log('not pic');
         } else{
+<<<<<<< HEAD
+=======
+            console.log('success');
+>>>>>>> 最新版本
             ZHAIBUQI.uploadPic.call($(this),{
-                url:'php/upload_picture.php',
+                url:'php/up_portrait.php',
                 submitted:submitted
             });
         }
@@ -44,6 +52,7 @@ $(function(){
 
     function submitted(){
         //检测iframe是否成功接收到数据
+<<<<<<< HEAD
         var complete = setInterval(function(){
             if($('#uploadTargetFrame').contents().find('#complete').length !== 0){
                 clearInterval(complete);
@@ -80,6 +89,38 @@ $(function(){
         setTimeout(function(){
             clearInterval(complete);
         },3000);
+=======
+        if($('#uploadTargetFrame').contents().find('#complete').length !== 0){
+            $('#pos,#size').val('');
+            console.log($('#uploadTargetFrame').contents().find('#complete').text());
+            var $img = $('<img/>').attr('src',$('#uploadTargetFrame').contents().find('#complete').text());
+            //var $img = $('<img />').attr('src','images/test.png');
+
+            var loaded = setInterval(function(){
+                if($img.get(0).complete && $img.get(0).width !== 0){
+                    clearInterval(loaded);
+                    $headOriginDiv.animate({marginLeft:220},60,function(){
+                        $picShow.show();
+                        //呈现图片
+                        ZHAIBUQI.picLoaded({
+                            $img:$img,
+                            maxW:200,
+                            maxH:165,
+                            $picShow:$picShow,
+                            loaded:function(){
+                                cutDiv({
+                                    $img:this.$img
+                                });
+                            }
+                        });
+                    });
+                }
+            },30);
+            setTimeout(function(){
+                clearInterval(loaded);
+            },3000);
+        }
+>>>>>>> 最新版本
     }
     function cutDiv(options){
         //设置默认options
@@ -128,8 +169,13 @@ $(function(){
                 width:xSmall,
                 height:ySmall
             }),
+<<<<<<< HEAD
             $originPic = options.$img.clone(),
             $smallPic = options.$img.clone();
+=======
+            $originPic = options.$img.clone().attr('id','head-portrait-origin'),
+            $smallPic = options.$img.clone().attr('id','head-portrait-small');
+>>>>>>> 最新版本
         $originDiv.empty().css('overflow','hidden').append($originPic);
         $smallDiv.empty().css('overflow','hidden').append($smallPic);
 

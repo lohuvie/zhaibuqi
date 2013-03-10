@@ -14,6 +14,7 @@
 
     <!-- 在head标签内 引入Jquery 验证插件 -->
     <script src="js/jquery.validationEngine.js" type="text/javascript" ></script>
+    <script src="js/jquery-ui-timepicker-addon.js" type="text/javascript" ></script> 
     <script src="js/jquery.editable-select.pack.js" type="text/javascript" ></script>
     <script src="js/tag-it.js" type="text/javascript" ></script>
     <script src="js/jquery.new-activity.js" type="text/javascript"></script>
@@ -23,6 +24,7 @@
     <link type="text/css" rel="stylesheet" href="css/validationEngine.jquery.css" />
     <link type="text/css" rel="stylesheet" href="css/jquery-ui-1.9.2.custom.css" />
     <link type="text/css" rel="stylesheet" href="js/Jcrop/css/jquery.Jcrop.min.css" />
+    <link type="text/css" rel="stylesheet" href="css/jquery-ui-timepicker-addon.css" />    
 
     <link type="text/css" rel="stylesheet" href="css/new-activity.css"/>
     <link type="text/css" rel="stylesheet" href="css/top-nav.css"/>
@@ -62,37 +64,9 @@
                            <span>活动日期 </span><br />
                            <input type="text" class="validate[required,custom[date]] datepicker input " name="date" /><span>（日期格式为:YYYY-MM-DD）</span>
                            <br /><br />
-                           <select name="time-begin" class="time-begin editable-select">
-                                <option>开始时间</option>
-                                <option>08:00</option><option>08:30</option><option>09:00</option><option>09:30</option>
-                                <option>10:00</option><option>10:30</option><option>11:00</option><option>11:30</option>
-                                <option>12:00</option><option>12:30</option><option>13:00</option><option>13:30</option>
-                                <option>14:00</option><option>14:30</option><option>15:00</option><option>15:30</option>
-                                <option>16:00</option><option>16:30</option><option>17:00</option><option>17:30</option>
-                                <option>18:00</option><option>18:30</option><option>19:00</option><option>19:30</option>
-                                <option>20:00</option><option>20:30</option><option>21:00</option><option>21:30</option>
-                                <option>22:00</option><option>22:30</option><option>23:00</option><option>23:30</option>
-                                <option>00:00</option><option>00:30</option><option>01:00</option><option>01:30</option>
-                                <option>02:00</option><option>02:30</option><option>03:00</option><option>03:30</option>
-                                <option>04:00</option><option>04:30</option><option>05:00</option><option>05:30</option>
-                                <option>06:00</option><option>06:30</option><option>07:00</option><option>07:30</option>
-                           </select>
+                           <input type="text" name="time-begin" id="time-begin" class="input"/>
                            <span>&nbsp;至&nbsp;</span>
-                           <select name="time-end" class="time-end editable-select">
-                                <option>结束时间</option>
-                                <option>08:00</option><option>08:30</option><option>09:00</option><option>09:30</option>
-                                <option>10:00</option><option>10:30</option><option>11:00</option><option>11:30</option>
-                                <option>12:00</option><option>12:30</option><option>13:00</option><option>13:30</option>
-                                <option>14:00</option><option>14:30</option><option>15:00</option><option>15:30</option>
-                                <option>16:00</option><option>16:30</option><option>17:00</option><option>17:30</option>
-                                <option>18:00</option><option>18:30</option><option>19:00</option><option>19:30</option>
-                                <option>20:00</option><option>20:30</option><option>21:00</option><option>21:30</option>
-                                <option>22:00</option><option>22:30</option><option>23:00</option><option>23:30</option>
-                                <option>00:00</option><option>00:30</option><option>01:00</option><option>01:30</option>
-                                <option>02:00</option><option>02:30</option><option>03:00</option><option>03:30</option>
-                                <option>04:00</option><option>04:30</option><option>05:00</option><option>05:30</option>
-                                <option>06:00</option><option>06:30</option><option>07:00</option><option>07:30</option>
-                           </select>
+                           <input type="text" name="time-end" id="time-end" class="input"/>
                        </td>
                    </tr>
                    <tr class="place">

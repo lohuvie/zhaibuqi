@@ -8,6 +8,8 @@ require_once "php/start-session.php";
     <meta name="description" content="宅不起 大学生 活动 推送" />
     <title>宅不起 | 活动介绍</title>
     <link href="css/activity.css" type="text/css" rel="stylesheet" />
+    <script src="js/jquery-1.8.3.min.js" type="text/javascript"></script>
+    <script src="js/even-act.js" type="text/javascript" ></script>
     <!--[if IE]>
     <style type="text/css">
             /* 请将所有版本的 IE 的 css 修复放在这个条件注释中 */
@@ -106,24 +108,6 @@ if($user_id == $creater_id || $approved != 0){
     $query = "select * from activity_join where activity_id = $activity_id";
     $data = mysqli_query($dbc,$query);
     $join_activity_count = mysqli_num_rows($data);
-
-    //查询用户是否喜欢该活动
-    $query = "select * from activity_love where user_id = $user_id and activity_id = $activity_id";
-    $data = mysqli_query($dbc,$query);
-    $isLoveActivity = false;
-    if(mysqli_num_rows($data))
-        $isLoveActivity = false;
-    else
-        $isLoveActivity = true;
-
-    //查询用户是否参加该活动
-    $query = "select * from activity_join where user_id = $user_id and activity_id = $activity_id";
-    $data = mysqli_query($dbc,$query);
-    $isJoinActivity = false;
-    if(mysqli_num_rows($data))
-        $isJoinActivity = false;
-    else
-        $isJoinActivity = true;
     //根据是否通过 显示活动
     if($approved == 0){
         //未通过 标签、用户评论、我也喜欢、我要参与按钮 不显示
@@ -151,8 +135,8 @@ if($user_id == $creater_id || $approved != 0){
                     <img src="<?php echo $poster_path?>" alt="活动海报" width="215" height="255"/>
                 </a>
             </div>
-            <div id="event-info">
-                <div class="event-info">
+            <div id="event-info" activity="<?php echo $activity_id?>" user="<?php echo $user_id?>">
+                <div class="event-info" >
                     <h1><?php echo $activity_name?></h1>
                     <div id="event-time">
                         <span class="pl">时间:  </span><?php echo $month.'月'.$day.'日 '.$week.' '.date("H:i",strtotime($time_begin))." - ".date("H:i",strtotime($time_end)); ?>
@@ -167,21 +151,21 @@ if($user_id == $creater_id || $approved != 0){
                         <span class="pl">类型:  </span><?php echo $type?>
                     </div>
                     <div id="event-host">
-                        <span class="pl">发布者:</span><a href="personal-page.php?=<?php echo $creater_id?>"><?php echo $publisher?></a>
+                        <span class="pl">发布者:</span><?php echo $publisher?>
                     </div>
                     <div class="interest-attend pl">
-                        <span class="num" id="like-num"><?php echo $love_activity_count;?></span>
+                        <span class="num" id="love-num"></span>
                         <span class="pl">人喜欢   </span>
-                        <span class="num" id="attend-num"><?php echo $join_activity_count;?></span>
+                        <span class="num" id="join-num"></span>
                         <span class="pl">人参加</span>
                     </div>
                 </div>
                 <?php if($approved != 0){?>
                 <div id="event-act">
-                    <a class="collect-btn" >
+                    <a class="collect-btn" id="love">
                         <span>我也喜欢</span>
                     </a>
-                    <a class="collect-btn">
+                    <a class="collect-btn" id="join">
                         <span>我要参与</span>
                     </a>
                 </div>
