@@ -21,13 +21,16 @@ $(function(){
     //选择文件事件
     var $picShow = $("#upload-pic");
     $form.on('change','#poster',function(){
-        if(/.+\.(jpg|jpeg|png|gif)$/.test($(this).val())){
+        var file = this.files[0];
+        if(file.size >= 2097152){
+            console.log('too big');
+        } else if(!(/^image\/.*$/.test(file.type))){
+            console.log('not pic');
+        } else{
             ZHAIBUQI.uploadPic.call($(this),{
                 url:'php/upload_picture.php',
                 submitted:submitted
             });
-        } else{
-            console.log('error');
         }
     });
     //图片提交函数
@@ -101,8 +104,8 @@ $(function(){
 
         //求出编辑框居中的坐标
         var centerCursor = [
-            Math.floor((imgWidth-opt.minSize[0])/2,10),
-            Math.floor((imgHeight-opt.minSize[1])/2,10)
+            Math.floor((imgWidth-opt.minSize[0])/2),
+            Math.floor((imgHeight-opt.minSize[1])/2)
         ];
         centerCursor.push(centerCursor[0]+opt.minSize[0]);
         centerCursor.push(centerCursor[1]+opt.minSize[1]);
