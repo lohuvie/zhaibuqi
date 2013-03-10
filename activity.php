@@ -37,7 +37,7 @@ left join activity_time atime on a.activity_id = atime.activity_id
 left join activity_photo ap on a.activity_id = ap.activity_id
 where a.activity_id = $activity_id";
 $data = mysqli_query($dbc,$query);
-$result = mysqli_fetch_array($data);
+$result = mysqli_fetch_array($data,MYSQLI_BOTH);
 
 $creater_id = $result['user_id'];
 $approved = $result['approved'];

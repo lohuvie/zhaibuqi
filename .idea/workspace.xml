@@ -23,58 +23,22 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="new-activity.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/new-activity.php">
+      <file leaf-file-name="love_activity.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/php/love_activity.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="80" column="82" selection-start="4881" selection-end="4881" vertical-scroll-proportion="-14.076923">
+            <state line="33" column="0" selection-start="938" selection-end="938" vertical-scroll-proportion="-16.038462">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="new_activity.php" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/php/new_activity.php">
+      <file leaf-file-name="activity.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/activity.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="92" column="49" selection-start="2830" selection-end="2830" vertical-scroll-proportion="0.63909775">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="start-session.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/php/start-session.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="13" selection-start="106" selection-end="106" vertical-scroll-proportion="-2.6153846">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="login.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/php/login.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="37" column="19" selection-start="1523" selection-end="1523" vertical-scroll-proportion="-6.8431373">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="upload_picture.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/php/upload_picture.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="29" column="46" selection-start="1096" selection-end="1096" vertical-scroll-proportion="-7.470588">
+            <state line="39" column="46" selection-start="1100" selection-end="1100" vertical-scroll-proportion="0.6714542">
               <folding>
-                <marker date="1362891977726" expanded="true" signature="1142:1201" placeholder="..." />
+                <marker date="1362898191499" expanded="true" signature="396:456" placeholder="..." />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="util.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/php/util.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="18" selection-start="277" selection-end="277" vertical-scroll-proportion="-5.230769">
-              <folding />
             </state>
           </provider>
         </entry>
@@ -95,7 +59,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="F:/github/Jcrop/js/jquery.Jcrop.js" />
         <option value="$PROJECT_DIR$/css/new-activity.css" />
         <option value="$PROJECT_DIR$/css/top-nav.css" />
         <option value="$PROJECT_DIR$/index.php" />
@@ -111,6 +74,7 @@
         <option value="$PROJECT_DIR$/php/util.php" />
         <option value="$PROJECT_DIR$/php/upload_picture.php" />
         <option value="$PROJECT_DIR$/php/new_activity.php" />
+        <option value="$PROJECT_DIR$/activity.php" />
       </list>
     </option>
   </component>
@@ -156,16 +120,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope">
-        <subPane subId="Project Files">
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -198,18 +152,14 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scope">
+        <subPane subId="Project Files">
           <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="zhaibuqi" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="zhaibuqi" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
@@ -219,12 +169,12 @@
   <component name="PropertiesComponent">
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="recentsLimit" value="5" />
     <property name="options.lastSelected" value="preferences.fileTypes" />
+    <property name="recentsLimit" value="5" />
     <property name="restartRequiresConfirmation" value="true" />
     <property name="DefaultHtmlFileTemplate" value="Html5" />
-    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -246,14 +196,14 @@
     <configuration default="true" type="PhpLocalRunConfigurationType" factoryName="PHP Console">
       <method />
     </configuration>
-    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
-      <method />
-    </configuration>
     <configuration default="true" type="JavascriptDebugSession" factoryName="Local">
       <JSDebuggerConfigurationSettings>
         <option name="engineId" value="embedded" />
         <option name="fileUrl" />
       </JSDebuggerConfigurationSettings>
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
       <method />
     </configuration>
     <list size="1">
@@ -315,7 +265,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32903227" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22445937" sideWeight="0.5145161" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2344992" sideWeight="0.67096776" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23847377" sideWeight="0.67096776" order="1" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22445937" sideWeight="0.5209677" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3279743" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
@@ -401,47 +351,24 @@
     </PATH>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/contacts.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="0" selection-start="30" selection-end="30" vertical-scroll-proportion="0.10124334" />
-      </provider>
-    </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/com/jetbrains/php/lang/psi/stubs/data/standard_1.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="919" column="9" selection-start="27315" selection-end="27315" vertical-scroll-proportion="0.34991118" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/php/register.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="66" selection-start="548" selection-end="548" vertical-scroll-proportion="0.37122557" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/jquery.picUpdate.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="21" selection-start="848" selection-end="848" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="30" column="21" selection-start="848" selection-end="848" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/jquery.new-activity-pic.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="0" selection-start="155" selection-end="155" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="7" column="0" selection-start="155" selection-end="155" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/jquery.personal-info-pic.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="32" selection-start="246" selection-end="246" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="10" column="32" selection-start="246" selection-end="246" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/personal-info.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="128" column="19" selection-start="4999" selection-end="4999" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="128" column="19" selection-start="4999" selection-end="4999" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/personal-page.php">
@@ -458,56 +385,77 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/activity.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding>
-            <marker date="1362821104897" expanded="true" signature="396:456" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/new-activity.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="80" column="82" selection-start="4881" selection-end="4881" vertical-scroll-proportion="-14.076923">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/php/util.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="18" selection-start="277" selection-end="277" vertical-scroll-proportion="-5.230769">
+        <state line="8" column="18" selection-start="277" selection-end="277" vertical-scroll-proportion="0.23859648">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/php/start-session.php">
+    <entry file="file://$PROJECT_DIR$/json/waterfall.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="13" selection-start="106" selection-end="106" vertical-scroll-proportion="-2.6153846">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/php/login.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="37" column="19" selection-start="1523" selection-end="1523" vertical-scroll-proportion="-6.8431373">
+        <state line="17" column="6" selection-start="292" selection-end="292" vertical-scroll-proportion="0.518851">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/php/upload_picture.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="46" selection-start="1096" selection-end="1096" vertical-scroll-proportion="-7.470588">
-          <folding>
-            <marker date="1362891977726" expanded="true" signature="1142:1201" placeholder="..." />
-          </folding>
+        <state line="29" column="46" selection-start="1125" selection-end="1125" vertical-scroll-proportion="0.17594256">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/php/login.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="37" column="19" selection-start="1523" selection-end="1523" vertical-scroll-proportion="0.030520646">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/php/start-session.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="22" selection-start="222" selection-end="222" vertical-scroll-proportion="0.17894737">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/new-activity.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="114" column="90" selection-start="7425" selection-end="7426" vertical-scroll-proportion="-3.4705882">
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/php/new_activity.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="92" column="49" selection-start="2830" selection-end="2830" vertical-scroll-proportion="0.63909775">
+        <state line="92" column="49" selection-start="2831" selection-end="2831" vertical-scroll-proportion="0.030520646">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/jquery.register.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="3" selection-start="110" selection-end="110" vertical-scroll-proportion="0.11908932">
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/php/love_activity.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="33" column="0" selection-start="938" selection-end="938" vertical-scroll-proportion="-16.038462">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/activity.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="39" column="46" selection-start="1100" selection-end="1100" vertical-scroll-proportion="0.6714542">
+          <folding>
+            <marker date="1362898191499" expanded="true" signature="396:456" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
