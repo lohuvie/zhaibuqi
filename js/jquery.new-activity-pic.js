@@ -104,8 +104,8 @@ $(function(){
 
         //求出编辑框居中的坐标
         var centerCursor = [
-            Math.floor((imgWidth-opt.minSize[0])/2,10),
-            Math.floor((imgHeight-opt.minSize[1])/2,10)
+            Math.floor((imgWidth-opt.minSize[0])/2),
+            Math.floor((imgHeight-opt.minSize[1])/2)
         ];
         centerCursor.push(centerCursor[0]+opt.minSize[0]);
         centerCursor.push(centerCursor[1]+opt.minSize[1]);

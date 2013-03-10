@@ -47,7 +47,8 @@ $portrait_path = PORTRAIT.$portrait;
     </script>
     <link rel="stylesheet" href="css/validationEngine.jquery.css" type="text/css" media="screen" title="no title" charset="utf-8" />
     <link type="text/css" rel="stylesheet" href="css/jquery-ui-1.9.2.custom.css" />
-    
+    <link type="text/css" rel="stylesheet" href="js/Jcrop/css/jquery.Jcrop.min.css" />
+
     <link type="text/css" rel="stylesheet" href="css/personal-info.css"/>
     <link href="css/top-nav.css" type="text/css" rel="stylesheet" />
     <link href="css/footer.css" type="text/css" rel="stylesheet"/>
@@ -94,15 +95,18 @@ $portrait_path = PORTRAIT.$portrait;
                     <label for="update">头像</label>
                 </td>
                 <td>
-                    <div id="head-portrait-origin">
-                        <img src="<?php echo $portrait_path?>" alt="头像"/>
+                    <div>
+                        <img  id='head-portrait-origin' src="<?php echo $portrait_path?>" alt="头像"/>
                     </div>
-                    <input id="update" type="file" name="portrait"/>
-                </td>
-                <td id="head-portrait">
-                    <img src="<?php echo $portrait_path?>" alt="" id="head-portrait-small"/>
+                    <div class="update">
+                        <span>更换头像</span>
+                        <input type="file" id="update-btn" name="portrait" accept='image/*'/>
+                    </div>
                 </td>
                 <td>
+                    <div>
+                        <img src="<?php echo $portrait_path?>" alt="" id="head-portrait-small"/>
+                    </div>
                 </td>
             </tr>
             <tr>

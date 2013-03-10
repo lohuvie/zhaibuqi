@@ -25,17 +25,27 @@ body{
     width: 45px;
 }
 #head-portrait-origin{
-    position: relative;
     height: 165px;
     width: 165px;
-    padding: 5px;
 }
-#head-portrait-origin img{
-    height: 165px;
-    width: 165px;
- }
- #update{
-     color: #84C43C;
+.update{
+    color:#fff;
+    background: #5db2ff;
+    padding: 4px 9px;
+    float: left;
+    height: 20px;
+    overflow: hidden;
+    position: relative;
+    width: 56px;
+    cursor: pointer;
+}
+ #update-btn{
+     cursor: pointer;
+     left: -202px;
+     font-size:18px;
+     opacity: 0;
+     position: absolute;
+     top:0;
  }
 
  #brief-intro{
