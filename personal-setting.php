@@ -153,5 +153,6 @@ require_once "php/start-session.php";
         </div>
     </div>
     <?php require_once("footer.php"); ?>
+    <script type="text/javascript" src='js/jquery.personal-setting-password..js'></script>
 </body>
 </html>
