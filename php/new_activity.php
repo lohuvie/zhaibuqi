@@ -22,7 +22,7 @@
     $tags = $_POST['tags'];
 
     $photo= $_SESSION['photo_name'];      //上传海报名字 time()+后缀名\
-
+    echo $photo.'gg';
     //开始时间结束时间判定
     if($time_begin == "开始时间"){
         $time_begin = "00:00:00";
@@ -103,9 +103,7 @@ function getImageHander ($url) {
                     $user_id = $_SESSION['user_id'];
                     $register_time = date("y-m-d h:i:s",time());
                     //将活动信息载入activity表
-        echo"null,$user_id,'$title','$category','$place','$introduction',$cost_class,'$register_time',0,$authority_class";
                     $query="insert into activity values(null,$user_id,'$title','$category','$place','$introduction',$cost_class,'$register_time',0,$authority_class)";
-                    echo $query;
                     $result = mysqli_query($dbc,$query)
                         or die("error querying database");
 
