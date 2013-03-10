@@ -6,4 +6,5 @@ define('database','zhaibuqi');
 define('UPLOADPATH','../upload-images/');
 define('UPLOAD_PATH_FRONT_TO_BACK','upload-images/');
 define('UPLOADPORTRAIT','../upload-portrait/');
+define('UPLOAD_PORTRAIT_FRONT_TO_BACK','upload-portrait/');
 define('PORTRAIT','upload-portrait/');

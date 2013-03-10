@@ -99,7 +99,10 @@
         }
         $picForm.empty();
         $(document.body).append($picForm.append($(this)));
-        $picForm.submit(options.submitted);
+        $picForm.submit(function(){
+            $uploadTargetFrame.off();
+            $uploadTargetFrame.on('load',options.submitted);
+        });
         $picForm.trigger('submit');
     }
     window.ZHAIBUQI.uploadPic = uploadPic;

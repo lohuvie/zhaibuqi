@@ -36,22 +36,109 @@
     <leaf />
 =======
     <leaf>
-      <file leaf-file-name="love_activity.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/php/love_activity.php">
+      <file leaf-file-name="activity.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/activity.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="33" column="0" selection-start="938" selection-end="938" vertical-scroll-proportion="-16.038462">
+            <state line="180" column="23" selection-start="5795" selection-end="5795" vertical-scroll-proportion="-5.3333335">
+              <folding>
+                <marker date="1362908423845" expanded="true" signature="396:456" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="agreement.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/agreement.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
+              <folding>
+                <marker date="1362737194502" expanded="true" signature="21:11278" placeholder="..." />
+                <marker date="1362737194502" expanded="true" signature="28:345" placeholder="..." />
+                <marker date="1362737194502" expanded="true" signature="352:11270" placeholder="..." />
+                <marker date="1362737194502" expanded="true" signature="415:11225" placeholder="..." />
+                <marker date="1362737194502" expanded="true" signature="474:729" placeholder="..." />
+                <marker date="1362737194502" expanded="true" signature="512:714" placeholder="..." />
+                <marker date="1362737194502" expanded="true" signature="563:695" placeholder="..." />
+                <marker date="1362737194502" expanded="true" signature="780:11214" placeholder="..." />
+                <marker date="1362737194502" expanded="true" signature="817:1012" placeholder="..." />
+                <marker date="1362737194502" expanded="false" signature="974:986" placeholder="..." />
+                <marker date="1362737194502" expanded="true" signature="1047:11199" placeholder="..." />
+                <marker date="1362737194502" expanded="true" signature="3166:3320" placeholder="..." />
+                <marker date="1362737194502" expanded="true" signature="3934:4994" placeholder="..." />
+                <marker date="1362737194502" expanded="true" signature="3959:4288" placeholder="..." />
+                <marker date="1362737194502" expanded="true" signature="4030:4262" placeholder="..." />
+                <marker date="1362737194502" expanded="true" signature="5263:5503" placeholder="..." />
+                <marker date="1362737194502" expanded="true" signature="5724:5993" placeholder="..." />
+                <marker date="1362737194502" expanded="true" signature="7777:8569" placeholder="..." />
+                <marker date="1362737194502" expanded="true" signature="8031:8380" placeholder="..." />
+                <marker date="1362737194502" expanded="true" signature="8092:8359" placeholder="..." />
+                <marker date="1362737194502" expanded="true" signature="8747:9124" placeholder="..." />
+                <marker date="1362737194502" expanded="true" signature="10349:10575" placeholder="..." />
+                <marker date="1362737194502" expanded="true" signature="10650:11179" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="love_activity_count.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/json/love_activity_count.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="2" column="0" selection-start="6" selection-end="1070" vertical-scroll-proportion="-0.65384614">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="activity.php" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/activity.php">
+      <file leaf-file-name="join_activity_count.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/json/join_activity_count.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="39" column="46" selection-start="1100" selection-end="1100" vertical-scroll-proportion="0.6714542">
-              <folding>
-                <marker date="1362898191499" expanded="true" signature="396:456" placeholder="..." />
-              </folding>
+            <state line="17" column="2" selection-start="456" selection-end="456" vertical-scroll-proportion="-11.115385">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="waterfall.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/json/waterfall.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="29" column="0" selection-start="654" selection-end="664" vertical-scroll-proportion="-3.2692308">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="test.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/json/test.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="love_activity.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/php/love_activity.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="40" column="18" selection-start="1085" selection-end="1085" vertical-scroll-proportion="-11.769231">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="util.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/php/util.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="3" column="23" selection-start="80" selection-end="80" vertical-scroll-proportion="0.09289618">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="event.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/json/event.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="4" column="0" selection-start="81" selection-end="157" vertical-scroll-proportion="-2.6153846">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -74,6 +161,7 @@
     <option name="changedFiles">
       <list>
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
         <option value="$PROJECT_DIR$/css/new-activity.css" />
 >>>>>>> 063f95ff3ae173403d7ead99ed35e1f0e4508012
@@ -95,6 +183,8 @@
         <option value="$PROJECT_DIR$/personal-info.php" />
         <option value="$PROJECT_DIR$/css/personal-info.css" />
 =======
+=======
+>>>>>>> 最新版本
         <option value="$PROJECT_DIR$/js/Jcrop/jquery.picUpdate.js" />
         <option value="$PROJECT_DIR$/js/jquery.picUpdate.js" />
         <option value="$PROJECT_DIR$/js/jquery.pic-cut.js" />
@@ -102,11 +192,19 @@
         <option value="$PROJECT_DIR$/personal-info.php" />
         <option value="$PROJECT_DIR$/js/jquery.personal-info-pic.js" />
         <option value="$PROJECT_DIR$/new-activity.php" />
-        <option value="$PROJECT_DIR$/php/util.php" />
         <option value="$PROJECT_DIR$/php/upload_picture.php" />
         <option value="$PROJECT_DIR$/php/new_activity.php" />
+        <option value="$PROJECT_DIR$/php/love_activity_count.php5" />
+        <option value="$PROJECT_DIR$/php/love_activity_count.php" />
+        <option value="$PROJECT_DIR$/php/love_activity.php" />
+        <option value="$PROJECT_DIR$/json/love_activity_count.php" />
+        <option value="$PROJECT_DIR$/json/join_activity_count.php" />
         <option value="$PROJECT_DIR$/activity.php" />
+<<<<<<< HEAD
 >>>>>>> 063f95ff3ae173403d7ead99ed35e1f0e4508012
+=======
+        <option value="$PROJECT_DIR$/php/util.php" />
+>>>>>>> 最新版本
       </list>
     </option>
   </component>
@@ -152,6 +250,16 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope">
+        <subPane subId="Project Files">
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -188,14 +296,18 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-        </subPane>
-      </pane>
-      <pane id="Scope">
-        <subPane subId="Project Files">
           <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
+            <PATH_ELEMENT>
+              <option name="myItemId" value="zhaibuqi" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="zhaibuqi" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="images" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
@@ -218,6 +330,7 @@
       <recent name="F:\Apache2.2\htdocs\zhaibuqi\css" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\Apache2.2\htdocs\zhaibuqi\json" />
       <recent name="G:\apache\Apache24\htdocs\zhaibuqi\js" />
     </key>
   </component>
@@ -404,6 +517,7 @@
   </component>
   <component name="editorHistoryManager">
 <<<<<<< HEAD
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/images/logo.png">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -444,36 +558,48 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/jquery.new-activity-pic.js">
+=======
+    <entry file="file://$PROJECT_DIR$/php/upload_picture.php">
+>>>>>>> 最新版本
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="0" selection-start="155" selection-end="155" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/jquery.personal-info-pic.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="32" selection-start="246" selection-end="246" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/personal-info.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="128" column="19" selection-start="4999" selection-end="4999" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/personal-page.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="16" selection-start="1058" selection-end="1058" vertical-scroll-proportion="-0.65384614">
+        <state line="29" column="46" selection-start="1125" selection-end="1125" vertical-scroll-proportion="0.17594256">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/jquery.new-activity.js">
+    <entry file="file://$PROJECT_DIR$/php/new_activity.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="92" column="49" selection-start="2831" selection-end="2831" vertical-scroll-proportion="-0.65384614">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/php/start-session.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="13" selection-start="106" selection-end="106" vertical-scroll-proportion="-2.6153846">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/php/ajaxValidateFieldUser.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/php/util.php">
+    <entry file="file://$PROJECT_DIR$/js/waterfall.js">
       <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="0" selection-start="159" selection-end="159" vertical-scroll-proportion="0.19966443">
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/jquery.index.js">
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state line="8" column="18" selection-start="277" selection-end="277" vertical-scroll-proportion="0.23859648">
 >>>>>>> 063f95ff3ae173403d7ead99ed35e1f0e4508012
           <folding />
@@ -489,10 +615,23 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="17" column="6" selection-start="292" selection-end="292" vertical-scroll-proportion="0.518851">
 >>>>>>> 063f95ff3ae173403d7ead99ed35e1f0e4508012
+=======
+        <state line="12" column="69" selection-start="291" selection-end="328" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/json/test.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+>>>>>>> 最新版本
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
 <<<<<<< HEAD
     <entry file="file://F:/github/Jcrop/demos/tutorial3.html">
       <provider selected="true" editor-type-id="text-editor">
@@ -502,10 +641,16 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="29" column="46" selection-start="1125" selection-end="1125" vertical-scroll-proportion="0.17594256">
 >>>>>>> 063f95ff3ae173403d7ead99ed35e1f0e4508012
+=======
+    <entry file="file://$PROJECT_DIR$/json/waterfall.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="29" column="0" selection-start="654" selection-end="664" vertical-scroll-proportion="-3.2692308">
+>>>>>>> 最新版本
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
 <<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/js/jquery.personal-info-pic.js">
       <provider selected="true" editor-type-id="text-editor">
@@ -515,10 +660,16 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="37" column="19" selection-start="1523" selection-end="1523" vertical-scroll-proportion="0.030520646">
 >>>>>>> 063f95ff3ae173403d7ead99ed35e1f0e4508012
+=======
+    <entry file="file://$PROJECT_DIR$/json/event.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="0" selection-start="81" selection-end="157" vertical-scroll-proportion="-2.6153846">
+>>>>>>> 最新版本
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
 <<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/js/jquery.new-activity-pic.js">
       <provider selected="true" editor-type-id="text-editor">
@@ -528,10 +679,16 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="6" column="22" selection-start="222" selection-end="222" vertical-scroll-proportion="0.17894737">
 >>>>>>> 063f95ff3ae173403d7ead99ed35e1f0e4508012
+=======
+    <entry file="file://$PROJECT_DIR$/json/love_activity_count.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="0" selection-start="6" selection-end="1070" vertical-scroll-proportion="-0.65384614">
+>>>>>>> 最新版本
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
 <<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/css/new-activity.css">
       <provider selected="true" editor-type-id="text-editor">
@@ -541,10 +698,16 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="114" column="90" selection-start="7425" selection-end="7426" vertical-scroll-proportion="-3.4705882">
 >>>>>>> 063f95ff3ae173403d7ead99ed35e1f0e4508012
+=======
+    <entry file="file://$PROJECT_DIR$/json/join_activity_count.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="2" selection-start="456" selection-end="456" vertical-scroll-proportion="-11.115385">
+>>>>>>> 最新版本
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
 <<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/css/personal-info.css">
       <provider selected="true" editor-type-id="text-editor">
@@ -565,10 +728,44 @@
           <folding />
 =======
     <entry file="file://$PROJECT_DIR$/js/jquery.register.js">
+=======
+    <entry file="file://$PROJECT_DIR$/agreement.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="3" selection-start="110" selection-end="110" vertical-scroll-proportion="0.11908932">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding>
-            <element signature="n#!!doc" expanded="true" />
+            <marker date="1362737194502" expanded="true" signature="21:11278" placeholder="..." />
+            <marker date="1362737194502" expanded="true" signature="28:345" placeholder="..." />
+            <marker date="1362737194502" expanded="true" signature="352:11270" placeholder="..." />
+            <marker date="1362737194502" expanded="true" signature="415:11225" placeholder="..." />
+            <marker date="1362737194502" expanded="true" signature="474:729" placeholder="..." />
+            <marker date="1362737194502" expanded="true" signature="512:714" placeholder="..." />
+            <marker date="1362737194502" expanded="true" signature="563:695" placeholder="..." />
+            <marker date="1362737194502" expanded="true" signature="780:11214" placeholder="..." />
+            <marker date="1362737194502" expanded="true" signature="817:1012" placeholder="..." />
+            <marker date="1362737194502" expanded="false" signature="974:986" placeholder="..." />
+            <marker date="1362737194502" expanded="true" signature="1047:11199" placeholder="..." />
+            <marker date="1362737194502" expanded="true" signature="3166:3320" placeholder="..." />
+            <marker date="1362737194502" expanded="true" signature="3934:4994" placeholder="..." />
+            <marker date="1362737194502" expanded="true" signature="3959:4288" placeholder="..." />
+            <marker date="1362737194502" expanded="true" signature="4030:4262" placeholder="..." />
+            <marker date="1362737194502" expanded="true" signature="5263:5503" placeholder="..." />
+            <marker date="1362737194502" expanded="true" signature="5724:5993" placeholder="..." />
+            <marker date="1362737194502" expanded="true" signature="7777:8569" placeholder="..." />
+            <marker date="1362737194502" expanded="true" signature="8031:8380" placeholder="..." />
+            <marker date="1362737194502" expanded="true" signature="8092:8359" placeholder="..." />
+            <marker date="1362737194502" expanded="true" signature="8747:9124" placeholder="..." />
+            <marker date="1362737194502" expanded="true" signature="10349:10575" placeholder="..." />
+            <marker date="1362737194502" expanded="true" signature="10650:11179" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/activity.php">
+>>>>>>> 最新版本
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="180" column="23" selection-start="5795" selection-end="5795" vertical-scroll-proportion="-5.3333335">
+          <folding>
+            <marker date="1362908423845" expanded="true" signature="396:456" placeholder="..." />
           </folding>
 >>>>>>> 063f95ff3ae173403d7ead99ed35e1f0e4508012
         </state>
@@ -577,14 +774,19 @@
     <entry file="file://$PROJECT_DIR$/php/love_activity.php">
       <provider selected="true" editor-type-id="text-editor">
 <<<<<<< HEAD
+<<<<<<< HEAD
         <state line="102" column="56" selection-start="3968" selection-end="3968" vertical-scroll-proportion="0.5786802">
 =======
         <state line="33" column="0" selection-start="938" selection-end="938" vertical-scroll-proportion="-16.038462">
 >>>>>>> 063f95ff3ae173403d7ead99ed35e1f0e4508012
+=======
+        <state line="40" column="18" selection-start="1085" selection-end="1085" vertical-scroll-proportion="-11.769231">
+>>>>>>> 最新版本
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
 <<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/php/upload_picture.php">
       <provider selected="true" editor-type-id="text-editor">
@@ -598,6 +800,17 @@
             <marker date="1362898191499" expanded="true" signature="396:456" placeholder="..." />
           </folding>
 >>>>>>> 063f95ff3ae173403d7ead99ed35e1f0e4508012
+=======
+    <entry file="file://$PROJECT_DIR$/images/create-btn.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/php/util.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="23" selection-start="80" selection-end="80" vertical-scroll-proportion="0.09289618">
+          <folding />
+>>>>>>> 最新版本
         </state>
       </provider>
     </entry>

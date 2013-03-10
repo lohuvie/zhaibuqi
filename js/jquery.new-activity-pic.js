@@ -36,26 +36,20 @@ $(function(){
     //图片提交函数
     function submitted(){
         //检测iframe是否成功接收到数据
-        var complete = setInterval(function(){
-            if($('#uploadTargetFrame').contents().find('#complete').length !== 0){
-                clearInterval(complete);
-                console.log($('#uploadTargetFrame').contents().find('#complete').text());
-                var $img = $('<img/>').attr('src',$('#uploadTargetFrame').contents().find('#complete').text());
-                //呈现图片
-                ZHAIBUQI.picLoaded({
-                    $img:$img,
-                    $picShow:$picShow,
-                    loaded:function(){
-                        cutDiv({
-                            $img:this.$img
-                        });
-                    }
-                });
-            }
-        },5);
-        setTimeout(function(){
-            clearInterval(complete);
-        },3000);
+        if($('#uploadTargetFrame').contents().find('#complete').length !== 0){
+            console.log($('#uploadTargetFrame').contents().find('#complete').text());
+            var $img = $('<img/>').attr('src',$('#uploadTargetFrame').contents().find('#complete').text());
+            //呈现图片
+            ZHAIBUQI.picLoaded({
+                $img:$img,
+                $picShow:$picShow,
+                loaded:function(){
+                    cutDiv({
+                        $img:this.$img
+                    });
+                }
+            });
+        }
     }
 
     function cutDiv(options){

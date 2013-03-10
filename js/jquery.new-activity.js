@@ -1,4 +1,5 @@
 $(document).ready(function() {
+
     //验证新建活动表单
     $("#frmNew").validationEngine({
         promptPosition: "centerRight"   //topLeft, topRight, bottomLeft, centerRight, bottomRight
@@ -35,15 +36,37 @@ $(document).ready(function() {
 		isRTL: false  
 	};  
 	$.datepicker.setDefaults($.datepicker.regional['zh-CN']);  
-	$('.datepicker').datepicker();  
+	$('.datepicker').datepicker();
+	 $("#ui-datepicker-div").css('font-size','12px') //改变大小
 
-    //下拉可编辑
-	$('.editable-select').editableSelect({
-		bg_iframe: true,
-		onSelect: function(list_item) {
-			$('#results').html('List item text: '+ list_item.text() +'<br > \
-			Input value: '+ this.text.val());
-		}
+    //Load Timepicker
+	$.timepicker.regional['zh-CN'] = {
+		timeOnlyTitle: '选择时间',
+		timeText: '时间',
+		hourText: '小时',
+		minuteText: '分钟',
+		secondText: '秒钟',
+		millisecText: '微秒',
+		timezoneText: '时区',
+		currentText: '当前时间',
+		closeText: '完成',
+		timeFormat: 'HH:mm',
+		amNames: ['AM', 'A'],
+		pmNames: ['PM', 'P'],
+		isRTL: false
+	};
+	$.timepicker.setDefaults($.timepicker.regional['zh-CN']);
+	$('#time-begin').timepicker({
+		hour: 8,
+		minute:30,
+		hourGrid: 4,
+		minuteGrid: 30
+	});
+	$('#time-end').timepicker({
+		hour: 17,
+		minute:30,
+		hourGrid: 4,
+		minuteGrid: 30				
 	});
 
 	//Load Tagsit
