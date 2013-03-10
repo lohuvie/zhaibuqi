@@ -21,8 +21,8 @@
     $authority_class = $_POST['authority-class'];
     $tags = $_POST['tags'];
 
-    $photo= $_SESSION['photo_name'];      //上传海报名字 time()+后缀名\
-
+    $photo= $_COOKIE['photo_name'];      //上传海报名字 time()+后缀名\
+    echo $photo.'gg';
     //开始时间结束时间判定
     if($time_begin == "开始时间"){
         $time_begin = "00:00:00";
@@ -90,7 +90,7 @@ function getImageHander ($url) {
 }
 
     if(!empty($title)&&!empty($date)&&!empty($time_begin)&&!empty($time_end)&&!empty($place)
-        &&!empty($introduction)&& (isset($_SESSION['load_picture']))){
+        &&!empty($introduction)&& (isset($_COOKIE['load_picture']))){
         //判定图片类型
 //         if ((($photo_type == 'image/gif') || ($photo_type == 'image/jpeg') || ($photo_type == 'image/pjpeg') || ($photo_type == 'image/png'))
 //             && ($photo_size > 0)) {

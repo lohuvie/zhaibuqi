@@ -13,9 +13,9 @@ require_once('util.php');
 
 $photo_type = $_FILES['poster']['type'];
 $photo_size = $_FILES['poster']['size'];
-global $photo;
+
 $photo= time().".".substr($photo_type,6);       //上传海报名字 time()+后缀名
-$_SESSION['photo_name'] = $photo;
+    setcookie('photo_name',$photo);
 
 
     //判定图片类型
@@ -27,7 +27,7 @@ $_SESSION['photo_name'] = $photo;
             $target1=UPLOAD_PATH_FRONT_TO_BACK.$photo;
 
             move_uploaded_file($_FILES['poster']['tmp_name'], $target) ;
-            $_SESSION['load_picture'] = $target;
+            setcookie('load_picture' ,$target);
 
          echo " <p id='complete'>$target1<p> ";
 

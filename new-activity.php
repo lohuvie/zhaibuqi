@@ -62,7 +62,7 @@
                            <span>活动日期 </span><br />
                            <input type="text" class="validate[required,custom[date]] datepicker input " name="date" /><span>（日期格式为:YYYY-MM-DD）</span>
                            <br /><br />
-                           <select name="time-begin" class="time-begin editable-select validate[dateTimeRange[grp1]]">
+                           <select name="time-begin" class="time-begin editable-select">
                                 <option>开始时间</option>
                                 <option>08:00</option><option>08:30</option><option>09:00</option><option>09:30</option>
                                 <option>10:00</option><option>10:30</option><option>11:00</option><option>11:30</option>
@@ -78,7 +78,7 @@
                                 <option>06:00</option><option>06:30</option><option>07:00</option><option>07:30</option>
                            </select>
                            <span>&nbsp;至&nbsp;</span>
-                           <select name="time-end" class="time-end editable-select validate[dateTimeRange[grp1]]">
+                           <select name="time-end" class="time-end editable-select">
                                 <option>结束时间</option>
                                 <option>08:00</option><option>08:30</option><option>09:00</option><option>09:30</option>
                                 <option>10:00</option><option>10:30</option><option>11:00</option><option>11:30</option>
