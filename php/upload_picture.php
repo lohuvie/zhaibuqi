@@ -9,13 +9,13 @@
 <?php
 header("Content-Type:text/html;charset=utf-8");
 require_once('util.php');
-
+require_once('start-session.php');
 
 $photo_type = $_FILES['poster']['type'];
 $photo_size = $_FILES['poster']['size'];
 
 $photo= time().".".substr($photo_type,6);       //上传海报名字 time()+后缀名
-    setcookie('photo_name',$photo);
+$_SESSION['photo_name']=$photo;
 
 
     //判定图片类型
@@ -23,11 +23,11 @@ $photo= time().".".substr($photo_type,6);       //上传海报名字 time()+后�
         && ($photo_size > 0)&&($photo_size <2097152)) {
         if ($_FILES['poster']['error'] == 0) {
             // Move the file to the target upload folder
-            $target = UPLOADPATH.$photo;
+            $target =UPLOADPATH.$photo;
             $target1=UPLOAD_PATH_FRONT_TO_BACK.$photo;
 
             move_uploaded_file($_FILES['poster']['tmp_name'], $target) ;
-            setcookie('load_picture' ,$target);
+            $_SESSION['load_picture']=$target;
 
          echo " <p id='complete'>$target1<p> ";
 
