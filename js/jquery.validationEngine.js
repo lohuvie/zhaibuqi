@@ -137,11 +137,20 @@
 				"ajaxUserCallPhp":{
 					"url":"php/ajaxValidateFieldUser.php",
 					// you may want to pass extra data on the ajax call
-					"extraData":"name=eric",
+					//"extraData":"name=eric",
 					// 如果取消注释 "alertTextOk",可以有提示
 					"alertTextOk":"* 此邮箱地址可以使用",
 					"alertText":"* 此邮箱地址已被使用",
 					"alertTextLoad":"* 正在确认邮箱地址是否被使用，请稍等..."
+				},
+				"ajaxPasswordCallPhp":{
+					"url":"php/checkPassword.php",
+					// you may want to pass extra data on the ajax call
+					//"extraData":"name=eric",
+					// 如果取消注释 "alertTextOk",可以有提示
+					//"alertTextOk":"* 当前密码正确",
+					"alertText":"* 当前密码错误",
+					"alertTextLoad":"* 正在确认当前密码是否正确，请稍等..."
 				},
 				"ajaxNameCall":{
 					// remote json service location

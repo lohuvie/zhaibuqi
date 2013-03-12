@@ -1,4 +1,13 @@
-$(function() {
+/* 
+ * User: lemonz-
+ * Date: 13-3-12
+ */
+
+$(document).ready(function() {
+    //验证基本信息
+    $("#personal-info").validationEngine({
+        promptPosition: "centerRight"   //topLeft, topRight, bottomLeft, centerRight, bottomRight
+    });
     var availableTags = [
         "经济学院",
         "水利水电学院",

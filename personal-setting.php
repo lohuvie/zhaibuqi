@@ -13,16 +13,9 @@ require_once "php/start-session.php";
     <script src="js/jquery-1.8.3.min.js" type="text/javascript"></script>
     <!-- 在head标签内 引入Jquery 验证插件 -->
     <script src="js/jquery.validationEngine.js" type="text/javascript"></script>
+    <script src="js/jquery.personal-setting.js" type="text/javascript"></script>
 
-    <script type="text/javascript">  
-        $(document).ready(function() {
-            //验证密码输入框
-            $("#password-form").validationEngine()
-        });
-    </script>
     <link rel="stylesheet" href="css/validationEngine.jquery.css" type="text/css" media="screen" title="no title" charset="utf-8" />
-
-
     <link type="text/css" rel="stylesheet" href="css/personal-setting.css"/>
     <link href="css/top-nav.css" type="text/css" rel="stylesheet" />
     <link href="css/footer.css" type="text/css" rel="stylesheet"/>
@@ -51,7 +44,7 @@ require_once "php/start-session.php";
             <div class="fields">
                 <h3>修改密码</h3>
                 <hr/>
-                <form id="password-form" action="" class="password-form" method="post">
+                <form id="password-form" action="php/change_password.php" class="password-form" method="post">
                     <table>
                         <tbody>
                             <tr>
@@ -78,7 +71,7 @@ require_once "php/start-session.php";
                             <tr>
                                 <td></td>
                                 <td>
-                                    <a class="submit-btn" name="password-submit">修改密码</a>
+                                    <button type="submit" class="submit-btn" id="change-password" name="password-submit" >修改密码</button>
                                 </td>
                             </tr>
                         </tbody>
@@ -153,6 +146,5 @@ require_once "php/start-session.php";
         </div>
     </div>
     <?php require_once("footer.php"); ?>
-    <script type="text/javascript" src='js/jquery.personal-setting-password..js'></script>
 </body>
 </html>
