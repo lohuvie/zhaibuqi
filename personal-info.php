@@ -33,18 +33,9 @@ $portrait_path = PORTRAIT.$portrait;
     <!-- 引入Juqery-ui custom 1.9.2-->
     <script src="js/jquery-ui-1.9.2.custom.min.js" type="text/javascript" ></script>
     <!-- 在head标签内 引入Jquery 验证插件 -->
-    <script src="js/jquery.validationEngine-cn.js" type="text/javascript"></script>
     <script src="js/jquery.validationEngine.js" type="text/javascript"></script>
-    <script src="js/loadCollegeHint.js" type="text/javascript"></script>
+    <script src="js/jquery.personal-info.js" type="text/javascript"></script>
 
-    <script type="text/javascript">  
-        $(document).ready(function() {
-            //验证基本信息
-            $("#personal-info").validationEngine({
-                promptPosition: "centerRight"   //topLeft, topRight, bottomLeft, centerRight, bottomRight
-            })
-        });
-    </script>
     <link rel="stylesheet" href="css/validationEngine.jquery.css" type="text/css" media="screen" title="no title" charset="utf-8" />
     <link type="text/css" rel="stylesheet" href="css/jquery-ui-1.9.2.custom.css" />
     <link type="text/css" rel="stylesheet" href="js/Jcrop/css/jquery.Jcrop.min.css" />

@@ -51,6 +51,28 @@ body{
 .submit-btn:hover{
     background: #222222;
 }
+#change-password {
+    border: 1px solid #BBBBBB;
+    font-size: 14px;
+    font-family: inherit;
+    cursor: pointer;
+} 
+#change-password:hover{
+    border: 1px solid #222222;
+} 
+
+/* message 
+#msg{
+    color: #666;
+    padding: 7px 15px;
+    background-color: #FFF5CA;
+    border:1px solid #F8E4A0;
+    width: 300px;
+    margin-top: 20px;
+    margin-left: 0px;
+}
+*/
+
 /* link-btn */
 #renren-link:hover{
     background: #0072C6;
