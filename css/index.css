@@ -70,7 +70,8 @@
 	background: #C3E99E;
 }
 .single-activity img{
-    width: 235px;
+    margin-left: 5px;
+    width: 215px;
 }
 .single-activity .activity-title{
 	margin-left: 5px;
