@@ -20,24 +20,25 @@ body{
     padding: 10px;
     vertical-align: top;
 }
-#head-portrait-small{
-    height: 45px;
-    width: 45px;
+.origin-div{
+    height: 165px;
+    margin: 0 0 20px;
+    width: 165px;
 }
 #head-portrait-origin{
     height: 165px;
     width: 165px;
 }
 .update{
-    color:#fff;
     background: #5db2ff;
+    color:#fff;
+    cursor: pointer;
     padding: 4px 9px;
     float: left;
     height: 20px;
     overflow: hidden;
     position: relative;
     width: 56px;
-    cursor: pointer;
 }
  #update-btn{
      cursor: pointer;
