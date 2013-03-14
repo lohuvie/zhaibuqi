@@ -41,6 +41,15 @@ body{
     width:103px;
 }
 
+.time_error{
+    color: #FF0000;
+    padding: 4px 15px;
+    background-color: #FFF5CA;
+    border:1px solid #F8E4A0;
+    margin: 15px 0 0 0;
+    width: 276px;
+}
+
 input.date{
   background: #FFFFFF url(../images/calendar.png) right center no-repeat;
 }
