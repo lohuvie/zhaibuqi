@@ -55,14 +55,11 @@ $(function(){
     function cutDiv(options){
         //设置默认options
         var opt = {
-            maxSize: [235,350],
-            minSize: [235,200],
-            bgColor: '#000',
+            minSize: [215,150],
+            bgColor: '#fff',
             bgOpacity: 0.5,
             allowSelect: false,
-            aspectRatio:0,
-            createHandles:null,
-            createDragbars:['n','s']
+            aspectRatio:0
         };
 
         //按options修改opt
@@ -79,21 +76,14 @@ $(function(){
         //按比例修改编辑框的边界
         var imgWidth = opt.$img.width() || opt.$img.get(0).width,
             imgHeight = opt.$img.height() || opt.$img.get(0).height,
-            rateMin = [1,1],
-            rateMax = [1,1];
+            rateMin = [1,1];
         if(imgWidth < opt.minSize[0]){
             rateMin[0] = imgWidth/opt.minSize[0];
         } else if(imgHeight < opt.minSize[1]){
             rateMin[1] = imgHeight/opt.minSize[1];
         }
-        if(imgWidth < opt.maxSize[0]){
-            rateMax[0] = imgWidth/opt.maxSize[0];
-        } else if(imgHeight < opt.maxSize[1]){
-            rateMax[1] = imgHeight/opt.maxSize[1];
-        }
         $.extend(opt,{
             minSize:[Math.floor(opt.minSize[0]*rateMin[0]),Math.floor(opt.minSize[1]*rateMin[1])],
-            maxSize:[Math.floor(opt.maxSize[0]*rateMax[0]),Math.floor(opt.maxSize[1]*rateMax[1])]
         });
 
         //求出编辑框居中的坐标

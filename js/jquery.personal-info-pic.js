@@ -24,9 +24,9 @@ $(function(){
         width:200,
         height:165,
         display:'none',
-        background:'#777'
+        outline:'3px solid #c3e99e'
     });
-    var $headOriginDiv = $('#head-portrait-origin').parent();
+    var $headOriginDiv = $('.origin-div');
     $picShow.insertBefore($headOriginDiv);
     $form.on('change','#update-btn',function(){
         var file = this.files[0];
@@ -54,9 +54,29 @@ $(function(){
             var loaded = setInterval(function(){
                 if($img.get(0).complete && $img.get(0).width !== 0){
                     clearInterval(loaded);
-                    $headOriginDiv.animate({marginLeft:220},60,function(){
-                        $picShow.show();
-                        //呈现图片
+                    if($headOriginDiv.css('marginLeft') !== '236px'){
+                        //第一次选择图片
+                        $headOriginDiv.animate({opacity:0},200,function(){
+                            $headOriginDiv.animate({
+                                marginLeft:236,
+                                opacity:1
+                            },200);
+                            $picShow.show(200,function(){
+                                //呈现图片
+                                ZHAIBUQI.picLoaded({
+                                    $img:$img,
+                                    maxW:200,
+                                    maxH:165,
+                                    $picShow:$picShow,
+                                    loaded:function(){
+                                        cutDiv({
+                                            $img:this.$img
+                                        });
+                                    }
+                                });
+                            });
+                        });
+                    } else{
                         ZHAIBUQI.picLoaded({
                             $img:$img,
                             maxW:200,
@@ -68,7 +88,7 @@ $(function(){
                                 });
                             }
                         });
-                    });
+                    }
                 }
             },30);
             setTimeout(function(){
@@ -79,7 +99,8 @@ $(function(){
     function cutDiv(options){
         //设置默认options
         var opt = {
-            bgColor: '#000',
+            minSize:[45,45],
+            bgColor: '#fff',
             bgOpacity: 0.5,
             aspectRatio:1,
             allowSelect:false,
@@ -115,16 +136,27 @@ $(function(){
             xSmall = 45,
             ySmall = 45,
             boundx,boundy,
-            $originDiv = $('#head-portrait-origin').parent().css({
-                width:xOrigin,
-                height:xOrigin
-            }),
-            $smallDiv = $('#head-portrait-small').parent().css({
-                width:xSmall,
-                height:ySmall
-            }),
+            $originDiv = $('.origin-div'),
+            $smallDiv = $('.small-div'),
             $originPic = options.$img.clone().attr('id','head-portrait-origin'),
             $smallPic = options.$img.clone().attr('id','head-portrait-small');
+        if($smallDiv.length === 0){
+            var $td = $('<td></td>'),
+                $smallText = $('<span></span>').css('font-size','1px').text('小头像45x45'),
+                $originText = $('<span></span>').css({
+                    fontSize:'1px',
+                    margin:'-15px 40px 0 0',
+                    float:'right'
+                }).text('大头像165x165') ;
+            $smallDiv = $('<div></div>').css({
+                width:xSmall,
+                height:ySmall,
+                outline:'3px solid #c3e99e'
+            }).addClass('small-div');
+            $originDiv.css('outline','3px solid #c3e99e');
+            $originText.insertAfter($originDiv);
+            $td.append($smallDiv,$smallText).insertAfter($originDiv.parent());
+        }
         $originDiv.empty().css('overflow','hidden').append($originPic);
         $smallDiv.empty().css('overflow','hidden').append($smallPic);
 
