@@ -62,11 +62,11 @@
                        <td><label>时间</label></td>
                        <td id="time-part">
                            <span>活动日期 </span><br />
-                           <input type="text" class="validate[required,custom[date]] datepicker input " name="date" /><span>（日期格式为:YYYY-MM-DD）</span>
+                           <input type="text" id="date" class="validate[required,custom[date]] datepicker input " name="date" /><span>（日期格式为:YYYY-MM-DD）</span>
                            <br /><br />
-                           <input type="text" name="time-begin" id="time-begin" class="input"/>
+                           <input type="text" name="time-begin" id="time-begin" class="input validate[required] datepicker" value="开始时间"/>
                            <span>&nbsp;至&nbsp;</span>
-                           <input type="text" name="time-end" id="time-end" class="input"/>
+                           <input type="text" name="time-end" id="time-end" class="input validate[required] datepicker" value="结束时间"/>
                        </td>
                    </tr>
                    <tr class="place">
@@ -124,8 +124,8 @@
         </div>
     </div>
     <?php require_once("footer.php"); ?>
-    <script src="js/Jcrop/js/jquery.Jcrop.min.js"></script>
-    <script src="js/jquery.picUpdate.js"></script>
-    <script src="js/jquery.new-activity-pic.js"></script>
+    <script src="js/Jcrop/js/jquery.Jcrop.min.js" type="text/javascript"></script>
+    <script src="js/jquery.picUpdate.js" type="text/javascript"></script>
+    <script src="js/jquery.new-activity-pic.js" type="text/javascript"></script>
 </body>
 </html>
