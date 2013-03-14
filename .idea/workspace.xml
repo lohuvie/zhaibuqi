@@ -3,10 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="92563efb-133a-4a85-a27f-23f4c0b8f224" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/personal-info.css" afterPath="$PROJECT_DIR$/css/personal-info.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/jquery.new-activity-pic.js" afterPath="$PROJECT_DIR$/js/jquery.new-activity-pic.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/jquery.personal-info-pic.js" afterPath="$PROJECT_DIR$/js/jquery.personal-info-pic.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/personal-info.php" afterPath="$PROJECT_DIR$/personal-info.php" />
     </list>
     <ignored path="zhaibuqi.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -28,19 +26,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="jquery.personal-info-pic.js" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/js/jquery.personal-info-pic.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="192" column="22" selection-start="7042" selection-end="7042" vertical-scroll-proportion="0.678511">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="personal-info.css" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="personal-info.css" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/css/personal-info.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="25" column="0" selection-start="470" selection-end="470" vertical-scroll-proportion="0.0">
+            <state line="25" column="0" selection-start="470" selection-end="470" vertical-scroll-proportion="0.4500846">
               <folding />
             </state>
           </provider>
@@ -73,9 +62,9 @@
         <option value="$PROJECT_DIR$/json/test.json" />
         <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/js/jquery.index.js" />
-        <option value="$PROJECT_DIR$/js/jquery.new-activity-pic.js" />
         <option value="$PROJECT_DIR$/personal-info.php" />
         <option value="$PROJECT_DIR$/css/personal-info.css" />
+        <option value="$PROJECT_DIR$/js/jquery.new-activity-pic.js" />
         <option value="$PROJECT_DIR$/js/jquery.personal-info-pic.js" />
       </list>
     </option>
@@ -128,6 +117,20 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="zhaibuqi" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="zhaibuqi" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="zhaibuqi" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -342,15 +345,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/jquery.new-activity-pic.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="84" column="0" selection-start="2559" selection-end="2559" vertical-scroll-proportion="0.2250423">
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/personal-info.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="88" column="41" selection-start="3345" selection-end="3345" vertical-scroll-proportion="-10.857142">
@@ -358,16 +352,25 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/personal-info.css">
+    <entry file="file://$PROJECT_DIR$/js/jquery.personal-info-pic.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="0" selection-start="470" selection-end="470" vertical-scroll-proportion="0.0">
+        <state line="30" column="25" selection-start="833" selection-end="833" vertical-scroll-proportion="0.964467">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/jquery.personal-info-pic.js">
+    <entry file="file://$PROJECT_DIR$/js/jquery.new-activity-pic.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="192" column="22" selection-start="7042" selection-end="7042" vertical-scroll-proportion="0.678511">
+        <state line="30" column="25" selection-start="875" selection-end="875" vertical-scroll-proportion="0.964467">
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/personal-info.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="25" column="0" selection-start="470" selection-end="470" vertical-scroll-proportion="0.4500846">
           <folding />
         </state>
       </provider>

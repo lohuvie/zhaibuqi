@@ -101,7 +101,7 @@ $(function(){
         var opt = {
             minSize:[45,45],
             bgColor: '#fff',
-            bgOpacity: 0.4,
+            bgOpacity: 0.5,
             aspectRatio:1,
             allowSelect:false,
             onChange:updatePreview

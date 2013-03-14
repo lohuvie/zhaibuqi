@@ -56,7 +56,7 @@ $(function(){
         //设置默认options
         var opt = {
             minSize: [215,150],
-            bgColor: '#000',
+            bgColor: '#fff',
             bgOpacity: 0.5,
             allowSelect: false,
             aspectRatio:0
