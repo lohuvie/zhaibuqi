@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="92563efb-133a-4a85-a27f-23f4c0b8f224" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/jquery.new-activity-pic.js" afterPath="$PROJECT_DIR$/js/jquery.new-activity-pic.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/jquery.personal-info-pic.js" afterPath="$PROJECT_DIR$/js/jquery.personal-info-pic.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/personal-info.css" afterPath="$PROJECT_DIR$/css/personal-info.css" />
     </list>
     <ignored path="zhaibuqi.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -29,7 +27,7 @@
       <file leaf-file-name="personal-info.css" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/css/personal-info.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="25" column="0" selection-start="470" selection-end="470" vertical-scroll-proportion="0.4500846">
+            <state line="82" column="29" selection-start="1644" selection-end="1644" vertical-scroll-proportion="0.81556684">
               <folding />
             </state>
           </provider>
@@ -63,9 +61,9 @@
         <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/js/jquery.index.js" />
         <option value="$PROJECT_DIR$/personal-info.php" />
-        <option value="$PROJECT_DIR$/css/personal-info.css" />
         <option value="$PROJECT_DIR$/js/jquery.new-activity-pic.js" />
         <option value="$PROJECT_DIR$/js/jquery.personal-info-pic.js" />
+        <option value="$PROJECT_DIR$/css/personal-info.css" />
       </list>
     </option>
   </component>
@@ -213,7 +211,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="784" extended-state="7" />
+    <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -370,7 +368,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/css/personal-info.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="0" selection-start="470" selection-end="470" vertical-scroll-proportion="0.4500846">
+        <state line="82" column="29" selection-start="1644" selection-end="1644" vertical-scroll-proportion="0.81556684">
           <folding />
         </state>
       </provider>

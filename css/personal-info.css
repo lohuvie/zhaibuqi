@@ -65,7 +65,7 @@ body{
  .personal-info input,.personal-info textarea{
      color: #555555;
  }
- .personal-info input[type=text]:focus,,.personal-info textarea:focus{
+ .personal-info input[type=text]:focus,.personal-info textarea:focus{
      border: 1px solid #84C43C;
  }
  .personal-info input[type=text]:hover,.personal-info textarea:hover{
