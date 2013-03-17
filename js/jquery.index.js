@@ -40,9 +40,11 @@
                         $place = $("<p></p>").html(place);
                     console.log($singleActivity,$title,$pic,$time,$place);
                     $img.on('load',function(){
-                        $singleActivity.append($pic,$title,$time,$place).hide().appendTo($waterfall);
-                        $waterfall.masonry('appended',$singleActivity,true);
-                        $singleActivity.fadeIn(100);
+                        if($img.get(0).complete && $img.get(0).width !== 0){
+                            $singleActivity.append($pic,$title,$time,$place).hide().appendTo($waterfall);
+                            $waterfall.masonry('appended',$singleActivity,true);
+                            $singleActivity.fadeIn(100);
+                        }
                     });
                 }
                 /*处理json数据，添加到html中*/

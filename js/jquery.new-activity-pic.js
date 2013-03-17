@@ -4,6 +4,13 @@
  * Time: 下午3:50
  * To change this template use File | Settings | File Templates.
  */
+(function(){
+    "use strict";
+    if(!window.ZHAIBUQI){
+        window.ZHAIBUQI = {};
+    }
+    ZHAIBUQI.picValidate = false;//已确认切图框
+})();
 
 $(function(){
     "use strict";
@@ -12,16 +19,48 @@ $(function(){
         $pos = $('<input type=text>').attr({
             'id':'pos',
             'name':'pos'
-        }).hide(),
+        }).val('0,0').hide(),
         $size = $('<input type=text>').attr({
             'id':'size',
             'name':'size'
-        }).hide();
+        }).val('1,1').hide(),
+        $picShow = $("#upload-pic"),
+        $picNotChoose = $('<div></div>').text('请选择图片').hide(),
+        $picNotValidate = $('<div></div>').text('请确认修改尺寸范围').hide(),
+        errorCss = {
+            background: '#393939',
+            border: '2px solid #ddd',
+            borderRadius: '6px',
+            boxShadow: '0 0 6px #000',
+            color: '#fff',
+            font: '12px/1.7 "宋体b8b\\4f53",Tahoma',
+            padding: '4px 10px 4px 10px',
+            position: 'absolute',
+            width: 120,
+            zIndex: 5001
+        },
+        picShowOffset = $picShow.offset();
+
+
     $form.append($pos, $size);
+
+    //图片出错框
+    $picNotChoose.css(errorCss).css({
+        top:picShowOffset.top+355,
+        left:picShowOffset.left-160
+    });
+    $picNotValidate.css(errorCss).css({
+        top:picShowOffset.top+355,
+        left:picShowOffset.left+420
+    });
+    $(document.body).append($picNotChoose,$picNotValidate);
+
     //选择文件事件
-    var $picShow = $("#upload-pic");
     $form.on('change','#poster',function(){
         var file = this.files[0];
+        ZHAIBUQI.picValidate = false;
+        $picNotChoose.hide();
+        $picNotValidate.hide();
         if(file.size >= 2097152){
             console.log('too big');
         } else if(!(/^image\/.*$/.test(file.type))){
@@ -33,6 +72,21 @@ $(function(){
             });
         }
     });
+
+    //图片剪切函数
+    $form.submit(function(){
+        var $jcropSelection = $('.jcrop-selection');
+        if($jcropSelection.length === 0 ){
+            $picNotChoose.show();
+            $('body,html').animate({scrollTop:$picNotChoose.offset().top},50);
+            return false;
+        } else if((!ZHAIBUQI.picValidate && $jcropSelection.width() !== 0)){
+            $picNotValidate.show();
+            $('body,html').animate({scrollTop:$picNotValidate.offset().top},50);
+            return false;
+        }
+    });
+
     //图片提交函数
     function submitted(){
         //检测iframe是否成功接收到数据
@@ -59,6 +113,7 @@ $(function(){
             bgColor: '#fff',
             bgOpacity: 0.5,
             allowSelect: false,
+            allowResize:false,
             aspectRatio:0
         };
 
@@ -100,7 +155,7 @@ $(function(){
 
         opt.$img.Jcrop(opt,function(){
             jcrop_api = this;
-            jcrop_api.setSelect(centerCursor);
+            //jcrop_api.setSelect(centerCursor);
             jcrop_api.setOptions({ bgFade: true });
             jcrop_api.ui.selection.addClass('jcrop-selection');
             createValidate();
@@ -121,6 +176,7 @@ $(function(){
                 pos = [(selectTop/holderHeight).toFixed(2) , (selectLeft/holderWidth).toFixed(2)];
                 $('#pos').val(pos);
                 $('#size').val(size);
+                ZHAIBUQI.picValidate = true;
                 console.log('pos',$('#pos').val());
                 console.log('size',$('#size').val());
             }
@@ -128,13 +184,15 @@ $(function(){
 
         //建立确认剪切按钮
         function createValidate(){
-            var $btn = $('#picValidate');
+            var $btn = $('#picValidate'),
+                $pos = $('#pos'),
+                $size = $('#size');
             if($btn.length === 0){
                 $btn = $('<span></span>').attr('id','picValidate').css({
                     marginTop: 10,
                     marginRight: 3,
                     padding: '4px',
-                    background: '#84c43c',
+                    background: '#bbb',
                     textAlign: 'center',
                     float: 'right',
                     width: 76,
@@ -143,16 +201,19 @@ $(function(){
                 });
                 $btn.insertBefore($('.upload'));
             }
+            $pos.val('0,0');
+            $size.val('1,1');
             //清空pos,size输入框
-            $('#pos,#size').val('');
             $btn.off();
             $btn.click(function(){
                 if($btn.text() === '确定'){
                     jcrop_api.setOptions({
                         bgOpacity:0,
-                        allowMove:false
+                        allowMove:false,
+                        allowResize:false
                     });
-                    $btn.text('重新选择');
+                    $picNotValidate.hide();
+                    $btn.text('修改尺寸');
                     $btn.css('background','#bbb');
                     updatePicCut(jcrop_api.ui.selection,jcrop_api.ui.holder);
                 } else{
@@ -162,11 +223,18 @@ $(function(){
                     });
                     $btn.text('确定');
                     $btn.css('background','#84c43c');
-                    $('#pos,#size').val('');
+                    if(jcrop_api.ui.selection.width() === 0){
+                        jcrop_api.setSelect(centerCursor);
+                    }
+                    jcrop_api.setOptions({
+                        allowMove:true,
+                        allowResize:true
+                    });
+                    ZHAIBUQI.picValidate = false;
                 }
             });
-            $btn.css('background','#84c43c');
-            $btn.text('确定');
+            $btn.css('background','#bbb');
+            $btn.text('修改尺寸');
         }
     }
 });

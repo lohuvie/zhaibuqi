@@ -132,7 +132,7 @@ if($user_id == $creater_id || $approved != 0){
         <div class="event-wrap">
             <div id="poster">
                 <a href="#">
-                    <img src="<?php echo $poster_path?>" alt="活动海报" width="215" height="255"/>
+                    <img src="<?php echo $poster_path?>" alt="活动海报" width="215"/>
                 </a>
             </div>
             <div id="event-info" activity="<?php echo $activity_id?>" user="<?php echo $user_id?>">
