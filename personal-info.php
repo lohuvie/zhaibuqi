@@ -83,20 +83,15 @@ $portrait_path = PORTRAIT.$portrait;
             </tr>
             <tr>
                 <td>
-                    <label for="update">头像</label>
+                    <label for="update-btn">头像</label>
                 </td>
                 <td>
-                    <div>
+                    <div class="origin-div">
                         <img  id='head-portrait-origin' src="<?php echo $portrait_path?>" alt="头像"/>
                     </div>
                     <div class="update">
                         <span>更换头像</span>
                         <input type="file" id="update-btn" name="portrait" accept='image/*'/>
-                    </div>
-                </td>
-                <td>
-                    <div>
-                        <img src="<?php echo $portrait_path?>" alt="" id="head-portrait-small"/>
                     </div>
                 </td>
             </tr>
