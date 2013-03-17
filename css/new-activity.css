@@ -106,6 +106,13 @@ textarea.input{
 .upload span{
     cursor: pointer;
 }
+.waiting{
+    padding: 10px 32px;
+    color: #eee;
+    background: url(../images/waiting-pic.gif) no-repeat 0 center;
+    font-size: 21px;
+    position: absolute;
+}
 #poster{
     cursor: pointer;
     font-size: 18px;
@@ -129,6 +136,7 @@ div.btn-box{
     margin-right: 20px;
     font-size: 14px;
     padding: 5px 27px;
+    cursor: pointer;
 }
 #create:hover{
     border: 1px solid #84C43C;
@@ -138,6 +146,7 @@ div.btn-box{
     padding: 5px 20px;
     background: #DDDDDD;
     border: 1px solid #DDDDDD;
+    cursor: pointer;
 }
 #cancel:hover{
     background: #EE0404;

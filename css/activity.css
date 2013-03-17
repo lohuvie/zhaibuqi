@@ -18,8 +18,11 @@ body  {
 }
 #poster{
     float: left;
+    height: 255px;
     margin: 10px;
+    overflow: hidden;
     padding-right: 10px;
+    width: 215px;
 }
 .event-info {
 	font-size: 13px;
