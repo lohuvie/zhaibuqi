@@ -106,12 +106,12 @@ textarea.input{
 .upload span{
     cursor: pointer;
 }
-.waiting{
-    padding: 10px 32px;
+.loading {
     color: #eee;
-    background: url(../images/waiting-pic.gif) no-repeat 0 center;
     font-size: 21px;
+    margin: 154px 0 0 175px;
     position: absolute;
+    z-index: 6000;
 }
 #poster{
     cursor: pointer;
