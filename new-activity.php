@@ -108,9 +108,8 @@
                    <tr class="pic-show">
                        <td><label for="upload-pic">海报</label></td>
                        <td>
-                           <div id="upload-pic" class="none">请上传照片
-                               <div class="waiting">正在加载图片</div>
-                           </div>
+                           <div class="loading" id="canvasloader-container"></div>
+                           <div id="upload-pic" class="none">请上传照片</div>
                            <div class="upload">
                                <span>选择图片</span>
                                <input type="file" id="poster" name="poster" accept='image/*'/>
@@ -128,6 +127,7 @@
     <?php require_once("footer.php"); ?>
     <script src="js/Jcrop/js/jquery.Jcrop.min.js" type="text/javascript"></script>
     <script src="js/jquery.picUpdate.js" type="text/javascript"></script>
+    <script src="js/heartcode-canvasloader-min.js" type="text/javascript"></script>
     <script src="js/jquery.new-activity-pic.js" type="text/javascript"></script>
 </body>
 </html>

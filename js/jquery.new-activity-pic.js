@@ -44,7 +44,7 @@ $(function(){
 
     $form.append($pos, $size);
 
-    //图片出错框
+    //选择图片出错框
     $picNotChoose.css(errorCss).css({
         top:picShowOffset.top+355,
         left:picShowOffset.left-160
@@ -55,12 +55,21 @@ $(function(){
     });
     $(document.body).append($picNotChoose,$picNotValidate);
 
+    //等待图标
+    var loading = new CanvasLoader('canvasloader-container');
+    loading.setColor('#508fc7'); // default is '#000000'
+    loading.setShape('spiral'); // default is 'oval'
+    loading.setDiameter(43); // default is 40
+    loading.setDensity(57); // default is 40
+    loading.setFPS(31); // default is 24
+
     //选择文件事件
     $form.on('change','#poster',function(){
         var file = this.files[0];
         ZHAIBUQI.picValidate = false;
         $picNotChoose.hide();
         $picNotValidate.hide();
+        loading.show();
         if(file.size >= 2097152){
             console.log('too big');
         } else if(!(/^image\/.*$/.test(file.type))){
@@ -98,6 +107,7 @@ $(function(){
                 $img:$img,
                 $picShow:$picShow,
                 loaded:function(){
+                    loading.hide();
                     cutDiv({
                         $img:this.$img
                     });
@@ -138,7 +148,7 @@ $(function(){
             rateMin[1] = imgHeight/opt.minSize[1];
         }
         $.extend(opt,{
-            minSize:[Math.floor(opt.minSize[0]*rateMin[0]),Math.floor(opt.minSize[1]*rateMin[1])],
+            minSize:[Math.floor(opt.minSize[0]*rateMin[0]),Math.floor(opt.minSize[1]*rateMin[1])]
         });
 
         //求出编辑框居中的坐标
