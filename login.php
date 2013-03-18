@@ -68,11 +68,7 @@ switch ($error){
 										<br />
 										<br />
                                         <?php
-<<<<<<< HEAD
-                                        if( $_COOKIE['N']>1){?>
-=======
                                         if( $_COOKIE['number_of_time']>3){?>
->>>>>>> geng xin
                                             <div>
                                                 <label for="validate">验证码</label>
 
