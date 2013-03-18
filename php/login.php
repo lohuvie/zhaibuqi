@@ -13,6 +13,7 @@ session_start();
 
 // Clear the error message
 $error = 0;
+$number_of_time=0;
 
 // If the user isn't logged in, try to log them in
     $dbc = mysqli_connect(host, user, password, database)
@@ -27,6 +28,19 @@ $error = 0;
         $query = "SELECT user_id, email FROM user WHERE email = '$email' AND password = SHA('$passwd')";
         $data = mysqli_query($dbc, $query)
             or die('Error query');
+
+        if(isset($_COOKIE['number_of_time'])){
+
+            setcookie('number_of_time',$_COOKIE['number_of_time']+1 , time() + (60),"/");
+        }else{
+            setcookie('number_of_time',1 , time() + (60),"/");
+
+        }
+
+//        setcookie('number_of_time',1 , time() + (60*60));     //一分钟超过5次现实验证码
+//        $number_of_time = $_COOKIE['number_of_time']+1;
+//        setcookie('number_of_time',$number_of_time , time() + (60*60));
+
 
         if (mysqli_num_rows($data) == 1) {
             // The log-in is OK so set the user ID and username session vars (and cookies), and redirect to the home page

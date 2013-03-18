@@ -44,25 +44,33 @@ span.pl{
 	margin-bottom: 6px;
 }
 .interest-attend {
-	margin-top: 20px;
+	margin-top: 15px;
 }
 #event-act{
 	margin-top:25px;
 }
+
 a.collect-btn {
-	font-size: 13px;
-	padding: 3px 15px 3px 15px;
+	padding: 3px 15px;
 	border: 1px solid #C3E99E;
 	background: #D9F2C0;
 	color: #008A17;
-	margin-right:10px;
-	margin-bottom:10px;
+	margin:10px 10px 10px 0;
 }
 a.collect-btn:hover {
 	border: 1px solid #84C43C;
 	background: #82BA00;
 	color: #FFFFFF;
 }
+
+a.already-btn {
+	padding: 3px 15px 3px 15px;
+	background: #FF5473;
+	border: 1px solid #FF001E;
+	color:#FFF;
+	margin:10px 10px 10px 0;
+}
+
 .event-tags{
 	height: 25px;
 	padding: 10px 0;

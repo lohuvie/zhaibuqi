@@ -9,6 +9,9 @@
 <?php
     require_once('util.php');
     require_once('start-session.php');
+if(isset($_SESSION['user_id'])){
+    $user_id = $_SESSION['user_id'];
+
 
     $title = $_POST['title'];
     $category = $_POST['category'];
@@ -62,9 +65,20 @@ $cut_name = 'cut_'. $photo;
 $uploadBanner =UPLOADPATH.$photo;
 $sliceBanner = UPLOADPATH. $cut_name;//剪切后的图片存放的位置
 
+
+//初始化图片
+    function getImageHander ($url) {
+        $size=@getimagesize($url);
+        switch($size['mime']){
+            case 'image/jpeg': $im = imagecreatefromjpeg($url);break;
+            case 'image/gif' : $im = imagecreatefromgif($url);break;
+            case 'image/png' : $im = imagecreatefrompng($url);break;
+            default: $im=false;break;
+        }
+
+        return $im;
+    }
 //创建图片
-
-
 $dst_pic = imagecreatetruecolor($w, $z);    //  目标图像
 $src_pic = getImageHander($uploadBanner);     //        源图像
 imagecopyresampled($dst_pic, $src_pic, 0, 0,$x,$y,$w,$z,$w,$z);
@@ -76,18 +90,7 @@ imagedestroy($dst_pic);
 //    echo  $sliceBanner;
 //}
 
-//初始化图片
-function getImageHander ($url) {
-    $size=@getimagesize($url);
-    switch($size['mime']){
-        case 'image/jpeg': $im = imagecreatefromjpeg($url);break;
-        case 'image/gif' : $im = imagecreatefromgif($url);break;
-        case 'image/png' : $im = imagecreatefrompng($url);break;
-        default: $im=false;break;
-    }
 
-    return $im;
-}
 
     if(!empty($title)&&!empty($date)&&!empty($time_begin)&&!empty($time_end)&&!empty($place)
         &&!empty($introduction)&& (isset($_SESSION['load_picture']))){
@@ -100,11 +103,12 @@ function getImageHander ($url) {
 //                if (move_uploaded_file($_FILES['poster']['tmp_name'], $target)) {
                     $dbc = mysqli_connect(host,user,password,database)
                         or die("error connect");
-                    $user_id = $_SESSION['user_id'];
+
                     $register_time = date("y-m-d h:i:s",time());
                     //将活动信息载入activity表
                     $query="insert into activity values(null,$user_id,'$title','$category','$place','$introduction',$cost_class,'$register_time',0,$authority_class)";
-                    $result = mysqli_query($dbc,$query)
+                    echo $query;
+        $result = mysqli_query($dbc,$query)
                         or die("error querying database");
 
                     //获取活动ID
@@ -169,7 +173,11 @@ function getImageHander ($url) {
     else {
         echo '<p class="error">请填入所有信息.</p>';
     }
-
+}else{
+    //跳转至登陆页面
+    $home_url = 'http://' . $_SERVER['HTTP_HOST'] . dirname(dirname($_SERVER['PHP_SELF'])) . '/login.php';
+    header('Location: ' . $home_url);
+}
 
 
 ?>

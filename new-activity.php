@@ -62,7 +62,7 @@
                        <td><label>时间</label></td>
                        <td id="time-part">
                            <span>活动日期 </span><br />
-                           <input type="text" id="date" class="validate[required,custom[date]] datepicker input " name="date" /><span>（日期格式为:YYYY-MM-DD）</span>
+                           <input type="text" id="date" class="validate[required,custom[date],past[NOW]] datepicker input " name="date" /><span>（日期格式为:YYYY-MM-DD）</span>
                            <br /><br />
                            <input type="text" name="time-begin" id="time-begin" class="input validate[required] datepicker" value="开始时间"/>
                            <span>&nbsp;至&nbsp;</span>
@@ -108,7 +108,9 @@
                    <tr class="pic-show">
                        <td><label for="upload-pic">海报</label></td>
                        <td>
-                           <div id="upload-pic" class="none">请上传照片</div>
+                           <div id="upload-pic" class="none">请上传照片
+                               <div class="waiting">正在加载图片</div>
+                           </div>
                            <div class="upload">
                                <span>选择图片</span>
                                <input type="file" id="poster" name="poster" accept='image/*'/>

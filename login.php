@@ -67,6 +67,18 @@ switch ($error){
 										<input name="passwd" id="passwd" type="password" class="validate[required,minSize[6],maxSize[18]] text-input"/>
 										<br />
 										<br />
+                                        <?php
+                                        if( $_COOKIE['number_of_time']>3){?>
+                                            <div>
+                                                <label for="validate">验证码</label>
+
+                                                <input name="validate" id="validate" type="text" class="validate[required] text-input"/>
+                                            </div>
+                                            <div>
+                                                <img src="php/captcha.php" alt="验证码" id="captcha" onclick="document.getElementById('captcha').setAttribute('src','php/captcha.php')"/>
+                                            </div>
+                                                                          <?php } ?>
+
 										<!--验证码隐藏部分   待修改-->                 
 										<!--
 										<label for="validate">验证码</label>
