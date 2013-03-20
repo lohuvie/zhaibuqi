@@ -16,20 +16,44 @@ $(function(){
         $size = $('<input type=text>').attr({
             'id':'size',
             'name':'size'
+        }).hide(),
+        $headOriginDiv = $('.origin-div'),
+        $picShow = $("<div></div>").attr('id','picCut').css({
+            position:'absolute',
+            width:200,
+            height:165,
+            display:'none',
+            outline:'3px solid #c3e99e'
+        }),
+        $loading = $('<div></div>').attr('id','loading').css({
+            position:'absolute',
+            margin:'62px',
+            zIndex:6000
+        }),
+        $loadedError = $('<div></div>').text('非常抱歉，图片载入失败，请重试').css({
+            position:'absolute',
+            color:'red',
+            marginTop:-21
         }).hide();
+
     $form.append($pos, $size);
-    //选择文件事件
-    var $picShow = $("<div></div>").attr('id','picCut').css({
-        position:'absolute',
-        width:200,
-        height:165,
-        display:'none',
-        outline:'3px solid #c3e99e'
-    });
-    var $headOriginDiv = $('.origin-div');
     $picShow.insertBefore($headOriginDiv);
+    $loading.insertBefore($picShow);
+    $loadedError.insertAfter($headOriginDiv);
+
+    //等待图标
+    var loading = new CanvasLoader('loading');
+    loading.setColor('#508fc7'); // default is '#000000'
+    loading.setShape('spiral'); // default is 'oval'
+    loading.setDiameter(43); // default is 40
+    loading.setDensity(57); // default is 40
+    loading.setFPS(31); // default is 24
+
+
+    //选择文件事件
     $form.on('change','#update-btn',function(){
         var file = this.files[0];
+        loading.show();
         if(file.size >= 2097152){
             console.log('too big');
         } else if(!(/^image\/.*$/.test(file.type))){
@@ -49,10 +73,21 @@ $(function(){
             $('#pos,#size').val('');
             console.log($('#uploadTargetFrame').contents().find('#complete').text());
             var $img = $('<img/>').attr('src',$('#uploadTargetFrame').contents().find('#complete').text());
-            //var $img = $('<img />').attr('src','images/test.png');
 
             var loaded = setInterval(function(){
                 if($img.get(0).complete && $img.get(0).width !== 0){
+                    var picLoadedOption = {
+                        $img:$img,
+                        maxW:200,
+                        maxH:165,
+                        $picShow:$picShow,
+                        loaded:function(){
+                            loading.hide();
+                            cutDiv({
+                                $img:this.$img
+                            });
+                        }
+                    };
                     clearInterval(loaded);
                     if($headOriginDiv.css('marginLeft') !== '236px'){
                         //第一次选择图片
@@ -63,37 +98,22 @@ $(function(){
                             },200);
                             $picShow.show(200,function(){
                                 //呈现图片
-                                ZHAIBUQI.picLoaded({
-                                    $img:$img,
-                                    maxW:200,
-                                    maxH:165,
-                                    $picShow:$picShow,
-                                    loaded:function(){
-                                        cutDiv({
-                                            $img:this.$img
-                                        });
-                                    }
-                                });
+                                ZHAIBUQI.picLoaded(picLoadedOption);
                             });
                         });
                     } else{
-                        ZHAIBUQI.picLoaded({
-                            $img:$img,
-                            maxW:200,
-                            maxH:165,
-                            $picShow:$picShow,
-                            loaded:function(){
-                                cutDiv({
-                                    $img:this.$img
-                                });
-                            }
-                        });
+                        ZHAIBUQI.picLoaded(picLoadedOption);
                     }
                 }
             },30);
             setTimeout(function(){
                 clearInterval(loaded);
             },3000);
+        } else{
+            loading.hide();
+            for(var i = 0; i < 3; i++){
+                $loadedError.fadeIn(500).fadeOut(500);
+            }
         }
     }
     function cutDiv(options){

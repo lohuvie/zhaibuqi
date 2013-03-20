@@ -76,6 +76,10 @@
     }
     window.ZHAIBUQI.picLoaded = picLoaded;
 
+    /*
+    * @param options{ url:提交的目标地址,
+    *                 submitted:提交成功后的处理函数}
+    * */
     function uploadPic(options){
         var $uploadTargetFrame = $('#uploadTargetFrame');
         if($uploadTargetFrame.length === 0){
