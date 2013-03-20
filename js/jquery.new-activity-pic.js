@@ -27,6 +27,15 @@ $(function(){
         $picShow = $("#upload-pic"),
         $picNotChoose = $('<div></div>').text('请选择图片').hide(),
         $picNotValidate = $('<div></div>').text('请确认修改尺寸范围').hide(),
+        $loadError = $('<div></div>').html('非常抱歉<br />图片载入失败，请重试').css({
+            color:'#000',
+            fontSize:31,
+            position:'absolute',
+            zIndex: 6000,
+            textAlign: 'center',
+            margin: '135px 45px'
+        }).hide(),
+        $wrongFormat = $('<div></div>').hide(),
         errorCss = {
             background: '#393939',
             border: '2px solid #ddd',
@@ -43,6 +52,7 @@ $(function(){
 
 
     $form.append($pos, $size);
+    $loadError.insertBefore($picShow);
 
     //选择图片出错框
     $picNotChoose.css(errorCss).css({
@@ -53,7 +63,11 @@ $(function(){
         top:picShowOffset.top+355,
         left:picShowOffset.left+420
     });
-    $(document.body).append($picNotChoose,$picNotValidate);
+    $wrongFormat.css(errorCss).css({
+        top:picShowOffset.top+355,
+        left:picShowOffset.left+100
+    });
+    $(document.body).append($picNotChoose,$picNotValidate,$wrongFormat);
 
     //等待图标
     var loading = new CanvasLoader('canvasloader-container');
@@ -69,12 +83,16 @@ $(function(){
         ZHAIBUQI.picValidate = false;
         $picNotChoose.hide();
         $picNotValidate.hide();
-        loading.show();
+        $loadError.hide();
+        $wrongFormat.hide();
         if(file.size >= 2097152){
-            console.log('too big');
+            //console.log('too big');
+            $wrongFormat.text('上传图片不能大于2M').show();
         } else if(!(/^image\/.*$/.test(file.type))){
-            console.log('not pic');
+            //console.log('not pic');
+            $wrongFormat.text('你上传的文件不是图片').show();
         } else{
+            loading.show();
             ZHAIBUQI.uploadPic.call($(this),{
                 url:'php/upload_picture.php',
                 submitted:submitted
@@ -100,6 +118,7 @@ $(function(){
     function submitted(){
         //检测iframe是否成功接收到数据
         if($('#uploadTargetFrame').contents().find('#complete').length !== 0){
+            //成功接收
             console.log($('#uploadTargetFrame').contents().find('#complete').text());
             var $img = $('<img/>').attr('src',$('#uploadTargetFrame').contents().find('#complete').text());
             //呈现图片
@@ -113,9 +132,18 @@ $(function(){
                     });
                 }
             });
+        } else{
+            //接收失败
+            if(!$picShow.hasClass('none')){
+                $('#picValidate').remove();
+            }
+            $picShow.empty();
+            $loadError.show();
+            loading.hide();
         }
     }
 
+    //切图框
     function cutDiv(options){
         //设置默认options
         var opt = {
