@@ -30,7 +30,7 @@ $(function(){
             margin:'62px',
             zIndex:6000
         }),
-        $loadedError = $('<div></div>').text('非常抱歉，图片载入失败，请重试').css({
+        $loadedError = $('<div></div>').css({
             position:'absolute',
             color:'red',
             marginTop:-21
@@ -53,12 +53,18 @@ $(function(){
     //选择文件事件
     $form.on('change','#update-btn',function(){
         var file = this.files[0];
-        loading.show();
         if(file.size >= 2097152){
-            console.log('too big');
+            //console.log('too big');
+            for(var i = 0; i < 3; i++){
+                $loadedError.text('上传图片不能大于2M').fadeIn(500).fadeOut(500);
+            }
         } else if(!(/^image\/.*$/.test(file.type))){
-            console.log('not pic');
+            //console.log('not pic');
+            for(var j = 0; j < 3; j++){
+                $loadedError.text('你上传的文件不是图片').fadeIn(500).fadeOut(500);
+            }
         } else{
+            loading.show();
             console.log('success');
             ZHAIBUQI.uploadPic.call($(this),{
                 url:'php/up_portrait.php',
@@ -112,7 +118,7 @@ $(function(){
         } else{
             loading.hide();
             for(var i = 0; i < 3; i++){
-                $loadedError.fadeIn(500).fadeOut(500);
+                $loadedError.text('非常抱歉，图片载入失败，请重试').fadeIn(500).fadeOut(500);
             }
         }
     }
