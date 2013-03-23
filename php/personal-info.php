@@ -30,7 +30,7 @@ $coordinate = $_POST['size'];
 $coordinate_line2 = explode(",",$coordinate);
 
 //获取图片坐标
-$image_size   =   getimagesize(UPLOADPORTRAIT.$photo);
+$image_size   =   getimagesize(UPLOAD_PORTRAIT.$photo);
 $width = $image_size['0'];
 $height =$image_size['1'];
 $y = $height*$coordinate_line1['0'];  // y坐标
@@ -51,8 +51,8 @@ echo $width.'</br>'.$height.'</br>'.$x.'</br>'.$y.'</br>'.$w.'</br>'.$coordinate
 $cut_name = 'cut_'. $photo;
 //$_SESSION['cut_name'] = $cut_name;
 //    $cut_name = 'cut_'. $photo;
-$uploadBanner =UPLOADPORTRAIT.$photo;
-$sliceBanner = UPLOADPORTRAIT. $cut_name;//剪切后的图片存放的位置
+$uploadBanner =UPLOAD_PORTRAIT.$photo;
+$sliceBanner = UPLOAD_PORTRAIT. $cut_name;//剪切后的图片存放的位置
 
 //创建图片
 
