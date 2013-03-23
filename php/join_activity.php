@@ -17,12 +17,13 @@ $user_id = $_SESSION['user_id'];
 if(isset($_SESSION['user_id'])){
     $user_id = $_SESSION['user_id'];
 }else{
-    $user_id = -1;
+    $user_id = USER_NO_LOGIN;
 }
 
 $dbc = mysqli_connect(host,user,password,database);
 $query = "";
-if($user_id != -1){
+if($user_id != USER_NO_LOGIN){
+    try{
     if($joinActivity == 0){
         //喜欢该活动 向数据库添加该活动
         $query = "insert into activity_join values($activity_id,$user_id)";
@@ -45,11 +46,14 @@ if($user_id != -1){
     $isJoin = mysqli_num_rows($result);
     //返回json数据
     $arr = array('join_count'=>$joinCount,'is_join'=>$isJoin);
-    echo json_encode($arr);
-
-    mysqli_close($dbc);
+    }catch (Exception $e){
+        $arr = array('join_count'=>DATABASE_ERROR,'is_join'=>DATABASE_ERROR);
+    }
 }else{
-    //跳转至登陆页面
-
+    //返回用户未登陆
+    $arr = array('join_count'=>USER_NO_LOGIN,'is_join'=>USER_NO_LOGIN);
 }
+
+echo json_encode($arr);
+mysqli_close($dbc);
 ?>

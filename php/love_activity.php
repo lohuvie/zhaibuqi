@@ -11,44 +11,46 @@ require_once("util.php");
 header('Content-type: text/json');
 header('Content-type: application/json');
 
-$loveActivity = $_POST['love'];
+$isLoveActivity = $_POST['love'];
 $activity_id = $_POST['activity'];
 $user_id = $_SESSION['user_id'];
 if(isset($_SESSION['user_id'])){
     $user_id = $_SESSION['user_id'];
 }else{
-    $user_id = -1;
+    $user_id = USER_NO_LOGIN;
 }
-$url = 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF'].'?'.$_SERVER['QUERY_STRING']; //包含端口号的完整url
+
 $dbc = mysqli_connect(host,user,password,database);
 $query = "";
-if($user_id != -1){
-	if($loveActivity == 0){
-	    //喜欢该活动 向数据库添加该活动
-	    $query = "insert into activity_love values($activity_id,$user_id)";
-	    $result = mysqli_query($dbc,$query) or die("already love");
+if($user_id != USER_NO_LOGIN){
+    try{
+        if($isLoveActivity == 0){
+            //喜欢该活动 向数据库添加该活动
+            $query = "insert into activity_love values($activity_id,$user_id)";
+            $result = mysqli_query($dbc,$query);
+            $isLoveActivity = 1;
+        }else{
+            //不喜欢该活动 从数据库删除该活动
+            $query = "delete from activity_love where activity_id = $activity_id and user_id = $user_id";
+            $result = mysqli_query($dbc,$query);
+            $isLoveActivity = 0;
+        }
 
-	}else{
-	    //不喜欢该活动 从数据库删除该活动
-	    $query = "delete from activity_love where activity_id = $activity_id and user_id = $user_id";
-	    $result = mysqli_query($dbc,$query) or die("already unlove");
-	}
+        //返回喜欢人数
+        $query = "select * from activity_love where activity_id = $activity_id";
+        $result = mysqli_query($dbc,$query);
+        $loveCount = mysqli_num_rows($result);
 
-	//返回喜欢人数
-    $query = "select * from activity_love where activity_id = $activity_id";
-    $result = mysqli_query($dbc,$query);
-    $loveCount = mysqli_num_rows($result);
-
-	//返回用户是否喜欢活动
-	$query = "select * from activity_love where activity_id = $activity_id and user_id = $user_id";
-	$result = mysqli_query($dbc,$query);
-	$isLove = mysqli_num_rows($result);
-	//返回json数据
-	$arr = array('love_count'=>$loveCount,'is_love'=>$isLove);
-	echo json_encode($arr);
-
-	mysqli_close($dbc);
+        //返回json数据
+        $arr = array('love_count'=>$loveCount,'is_love'=>$isLoveActivity);
+    }catch (Exception $e){
+        //返回数据库错误
+        $arr = array('love_count'=>DATABASE_ERROR,'is_love'=>DATABASE_ERROR);
+    }
 }else{
-	//跳转至登陆页面
+    //返回用户未登陆
+    $arr = array('love_count'=>USER_NO_LOGIN,'is_love'=>USER_NO_LOGIN);
 }
-?>
+
+echo json_encode($arr);
+mysqli_close($dbc);

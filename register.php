@@ -58,7 +58,7 @@ switch ($error){
           </div>
       </div>
       <div id="content">
-          <form id="register-form" action="php/register.php" method="post">
+          <form id="register-form" action="php/register_send_email.php" method="post">
               <!--<div id="link">
                   <a href="#" id="renren-link" class="submit-btn">用人人账号注册</a>
                   <a href="#" id="qq-link" class="submit-btn">用QQ账号注册</a>
