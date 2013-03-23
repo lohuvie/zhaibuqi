@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>宅不起 | 发送成功</title>
+    <link type="text/css" rel="stylesheet" href="css/top-nav.css"/>
+    <link type="text/css" rel="stylesheet" href="css/footer.css"/>
+    <link type="text/css" rel="stylesheet" href="css/sent-confirm.css"/>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
+<body>
+    <?php require_once("top-nav.php"); ?>
+    <div id="container">
+        <div id="container-clear-fix">
+            <div class="tips">
+                <h2>账号注册已成功</h2>
+                <p>确认信已经发到你的邮箱<?php //echo $email; ?>，你需要点击邮件中的确认链接来完成注册。</p>
+                <a href="" name="email_domain_name" >登录<?php echo ''?>邮箱查收确认信</a>  <br/><br/>
+                <p>没有收到确认信怎么办？······
+
+                检查一下上面Email地址是否正确，错了就<a>重新注册</a>一次吧:)
+                    看看是否在邮箱的垃圾箱里
+                    稍等几分钟，若仍旧没收到确认信，让豆瓣<a >重发一封</a>
+                </p>
+                <br /><br />
+                <a id="back" href="index.php" >返回首页</a>
+            </div>
+        </div>
+    </div>
+    <?php require_once("footer.php"); ?>
+</body>
+</html>
