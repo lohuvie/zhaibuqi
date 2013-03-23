@@ -9,7 +9,7 @@ $user_id = $_SESSION['user_id'];
 if(isset($_SESSION['user_id'])){
     $user_id = $_SESSION['user_id'];
 }else{
-    $user_id = -1;
+    $user_id = USER_NO_LOGIN;
 }
 
 $dbc = mysqli_connect(host,user,password,database);

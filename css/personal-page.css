@@ -133,6 +133,13 @@ body{
     margin-top: 10px;
     width: 280px;
 }
+#introduction h3{
+    display:inline-block;
+    float: right;
+    width: 95px;
+    font-size: 18px;
+    color: #222222
+}
 #introduction img{
     height: 165px;
     width: 165px;
@@ -140,11 +147,11 @@ body{
 }
 #introduction a{
     color: #FFFFFF;
-    background: #BBBBBB;
+    background: #555555;
     padding: 2px 5px;
 }
 #introduction a:hover{
-    background: #555555;
+    background: #BBBBBB;
     color: #FFFFFF;
 }
 #introduction h4{
