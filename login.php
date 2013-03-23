@@ -8,6 +8,8 @@ switch ($error){
     break;
     case 2: $error_message ="对不起，您必须输入有效邮箱和密码来登录";
     break;
+    case 3: $error_message ="验证码输入错误，请重新输入";
+    break;
 
 }
 ?>
@@ -67,7 +69,7 @@ switch ($error){
 										<input name="passwd" id="passwd" type="password" class="validate[required,minSize[6],maxSize[18]] text-input"/>
 										<br />
 										<br />
-                                        <?php
+                                        <?php  if(isset($_COOKIE['number_of_time'])){
                                         if( $_COOKIE['number_of_time']>3){?>
                                             <div>
                                                 <label for="validate">验证码</label>
@@ -77,7 +79,7 @@ switch ($error){
                                             <div>
                                                 <img src="php/captcha.php" alt="验证码" id="captcha" onclick="document.getElementById('captcha').setAttribute('src','php/captcha.php')"/>
                                             </div>
-                                                                          <?php } ?>
+                                                                          <?php } }?>
 
 										<!--验证码隐藏部分   待修改-->                 
 										<!--
