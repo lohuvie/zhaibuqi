@@ -24,7 +24,7 @@ if ((($photo_type == 'image/gif') || ($photo_type == 'image/jpeg') || ($photo_ty
     && ($photo_size > 0)&&($photo_size <2097152)) {
     if ($_FILES['portrait']['error'] == 0) {
         // Move the file to the target upload folder
-        $target =UPLOADPORTRAIT.$photo;
+        $target =UPLOAD_PORTRAIT.$photo;
         $target1=UPLOAD_PORTRAIT_FRONT_TO_BACK.$photo;
 
         move_uploaded_file($_FILES['portrait']['tmp_name'], $target) ;

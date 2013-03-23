@@ -37,7 +37,7 @@
             </div>
             <div class="password-box">
                 <h2>找回密码</h2>
-                <form id="sent-mail" action="#" method="post">
+                <form id="sent-mail" action="php/send_email.php" method="post">
                     <div class="input-box">
                         <p>使用您的邮箱地址重设密码</p>
                         <input id="user-email" name="email" type="text" size="20"

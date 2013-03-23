@@ -135,6 +135,7 @@ $portrait_path = PORTRAIT.$portrait;
     </form>
 </div>
 <?php require_once("footer.php"); ?>
+<script src="js/heartcode-canvasloader-min.js"></script>
 <script src="js/Jcrop/js/jquery.Jcrop.min.js"></script>
 <script src="js/jquery.picUpdate.js"></script>
 <script src="js/jquery.personal-info-pic.js"></script>
