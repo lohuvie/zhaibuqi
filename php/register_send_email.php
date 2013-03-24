@@ -8,9 +8,25 @@ $email = mysqli_real_escape_string($dbc,trim($_POST['email']));
 $passwd1 = mysqli_real_escape_string($dbc,trim($_POST['passwd']));
 $passwd2 = mysqli_real_escape_string($dbc,trim($_POST['passwd-repeat']));
 $nickname = mysqli_real_escape_string($dbc,trim($_POST['nickname']));
+if((isset($_COOKIE['a'])&&($_COOKIE['a']!=$email)&&(!empty($email)))||!isset($_COOKIE['a'])){//换号注册和第一次注册
+
+setcookie('a',$email,time()+(60*10));//10分钟
+    echo"sdadsa";
+setcookie('b',$nickname,time()+(60*10));
+}
+
+if(!empty($email)){
+    $email = $email;
+}else{
+    $email = $_COOKIE['a'];
+    $nickname = $_COOKIE['b'];
+
+}
 $error =0;
 $domain_name="";
-
+$domain=explode("@",$email);
+$domain1 = explode(".",$domain[1]);
+$domain_name = $domain1[0];
 //判定验证码是否正确
 $user_pass_phrase = sha1($_POST['validate']);
 if ($_SESSION['pass_phrase'] == $user_pass_phrase) {
@@ -21,27 +37,6 @@ if ($_SESSION['pass_phrase'] == $user_pass_phrase) {
         $data = mysqli_query($dbc, $query)
             or die('Error querying database1');
         if (mysqli_num_rows($data) == 0) {
-            $home_url = 'http://' . $_SERVER['HTTP_HOST'] . dirname(dirname($_SERVER['PHP_SELF'])) . '/register_send_email.php'.'?error='.$error;
-            header('Location: ' . $home_url);
-//            $query = "insert into user(user_id,email,password,nickname,register_date) values (null,'$email',SHA('$passwd1'),'$nickname',now())";
-//            $result = mysqli_query($dbc,$query)
-//                or die('Error querying database2');
-//            //注册成功后自动登录
-//            $query = "SELECT user_id, email FROM user WHERE email = '$email' AND password = SHA('$passwd1')";
-//            $data = mysqli_query($dbc, $query)
-//                or die('Error query');
-//
-//            if (mysqli_num_rows($data) == 1) {
-//                // The log-in is OK so set the user ID and username session vars (and cookies), and redirect to the home page
-//                $row = mysqli_fetch_array($data);
-//                $_SESSION['user_id'] = $row['user_id'];
-//                $_SESSION['email'] = $row['email'];
-//                setcookie('user_id', $row['user_id'], time() + (60 * 60 * 24 * 30));    // expires in 30 days
-//                setcookie('email', $row['email'], time() + (60 * 60 * 24 * 30));  // expires in 30 days
-//                //跳转到首页
-//                $home_url = 'http://' . $_SERVER['HTTP_HOST'] . dirname(dirname($_SERVER['PHP_SELF'])) . '/index.php';
-//                header('Location: ' . $home_url);
-//            }
         }else{
             echo "用户名已存在";
             $error =1;
@@ -66,38 +61,10 @@ if ($_SESSION['pass_phrase'] == $user_pass_phrase) {
 }
 mysqli_close($dbc);
 
-//$dbc = mysqli_connect(host,user,password,database);
-//$query = "select * from user where email = '$email'";
-//$result = mysqli_query($dbc,$query);
-//$userName="";
-//$number=0;
-//$user_id="";
-//$present_time =  date('Y-m-d H:i:s',time());
-//if (mysqli_num_rows($result) == 1) {
-//
-//    $row = mysqli_fetch_array($result);
-//    $userName = $row['nickname'];
-////      echo'1'. $userName.'2';
-//    $passwords = $row['password'];
-//    $user_id= $row['user_id'];
-//}
-
-
-//现在我们可以发送邮件给用户了。当然，我们还得需要另一个密码重设程序 resetUserPass.php
-
-//setcookie('user_id_number',($user_id.",".$number),time()+(60*60*24));
-
-//if(isset($_COOKIE['user_id_number'])){
-//
-//    setcookie('user_id_number',$_COOKIE['user_id_number']+1 , time() + (60*60*24),"/");
-//}else{
-//    setcookie('user_id_number',1 , time() +(60*60*24),"/");
-//
-//}
 $x = md5($email);
 //$query = "UPDATE user set number = '".$_COOKIE['user_id_number']."' where user_id = $user_id";
 //$result = mysqli_query($dbc,$query) ;//向数据库中加入number
-$String = base64_encode($email.",".$x.",".$_COOKIE['user_id_number'].",".$present_time);
+$String = base64_encode($email.",".$x.",".$nickname.",".$passwd1);
 
 
 
@@ -110,7 +77,7 @@ $message = "尊敬的".$nickname."先生/女士:
 
 请点击下面的链接完成注册：
 
-http://localhost/zhaibuqi/zhaibuqi/php/register_send_email.php?p=$String
+http://localhost/zhaibuqi/zhaibuqi/php/register.php?p=$String
 
 如果以上链接无法点击，请将上面的地址复制到你的浏览器(如IE)的地址栏进入宅不起。
 
@@ -123,8 +90,10 @@ http://localhost/zhaibuqi/zhaibuqi/php/register_send_email.php?p=$String
 
 $extra = "495315864@qq.com ";
 mail ($recipient, $subject, $message,'From:'. $extra);
+$p=base64_encode($email.",".$domain_name);
+//$p=$_COOKIE['a'].",".$domain_name;
 
-$home_url = 'http://'. $_SERVER['HTTP_HOST'].dirname(dirname($_SERVER['PHP_SELF'])).'/register-confirm.html?email='.$email.'&domain_name='.$domain_name;
+$home_url = 'http://'. $_SERVER['HTTP_HOST'].dirname(dirname($_SERVER['PHP_SELF'])).'/register-confirm.php?p='.$p;
 header('Location:'.$home_url);
 mysqli_close($dbc);
 

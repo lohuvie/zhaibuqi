@@ -24,6 +24,7 @@ echo "'sex'.'$sex'.'nickname'.'$nickname'.'email'.'$email'.'</br>'";
 
 // 切图。。。
 //获取图片百分比
+if(!empty($_POST['size'])){
 $coordinate_line = $_POST['pos'];
 $coordinate_line1 = explode(",",$coordinate_line);
 $coordinate = $_POST['size'];
@@ -63,7 +64,7 @@ imagecopyresampled($dst_pic, $src_pic, 0, 0,$x,$y,$w,$z,$w,$z);
 imagejpeg($dst_pic, $sliceBanner);
 imagedestroy($src_pic);
 imagedestroy($dst_pic);
-
+}
 //    //返回新图片的位置
 //    echo  $sliceBanner;
 //}
@@ -80,6 +81,7 @@ function getImageHander ($url) {
 
     return $im;
 }
+//}
 
     if(!empty($nickname)&&!empty($email)&&isset($sex)){
         echo "dasdasdasdasdasdasd";
@@ -88,6 +90,7 @@ function getImageHander ($url) {
                     $query = "select * from portrait where user_id = '$user_id'";
                     $data = mysqli_query($dbc,$query)
                         or die('fuck');
+        if(isset($coordinate)){
                    //如果还没有头像
                     if(mysqli_num_rows($data) == 0){
                         $query = "insert into portrait(user_id,icon) values($user_id,'$cut_name')";
@@ -99,6 +102,7 @@ function getImageHander ($url) {
                         $data = mysqli_query($dbc,$query);
 
                     }
+        }
                      echo $query;
 
 
