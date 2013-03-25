@@ -84,9 +84,9 @@ if(!empty($_GET['id'])){
 
         //用户粉丝列表
         $fan_ids = Array();
-        $fan_id_count = 0;
-        $query = "select af.fan_id id_1,af.attention_id id_2,u1.nickname name_1,p1.icon icon_1,u2.nickname name_2,p2.icon icon_2
-                    from portrait p1
+            $fan_id_count = 0;
+            $query = "select af.fan_id id_1,af.attention_id id_2,u1.nickname name_1,p1.icon icon_1,u2.nickname name_2,p2.icon icon_2
+                        from portrait p1
                     right join user u1 on u1.user_id = p1.user_id
                     right join attention_fan af on af.fan_id = u1.user_id
                     left join user u2 on af.attention_id = u2.user_id

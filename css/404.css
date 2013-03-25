@@ -1,0 +1,43 @@
+body  {
+    font-size:13px;
+    margin: 0 auto;
+    font-family: "Microsoft Yahei","Helvetica Neue","Luxi Sans","DejaVu Sans",Tahoma,"Hiragino Sans GB";
+}
+#container {
+    margin-top: 38px;
+    width: 980px;
+    margin-bottom: 40px;
+}
+#container-clear-fix{
+    width: 620px;
+    height: 300px;
+    margin: 0 auto;
+}
+
+/* left-aside */
+#container-clear-fix img{
+    margin-left: 0px;
+    margin-top: 40px;
+}
+
+/* textbox */
+.textbox {
+    float: right;
+    width: 310px;
+    margin-top: 60px;
+    background: #C3E99E;
+    color: #FFF;
+    padding: 30px 30px 30px 40px;
+}
+.textbox h1{
+    font-size: 30px;
+    padding-bottom: 30px;
+    border-bottom:1px dashed #FFF;
+}
+.textbox a{
+    text-decoration: none;
+    color: #FFF;
+}
+.textbox a:hover{
+    border-bottom: 1px dotted #FFF;
+}

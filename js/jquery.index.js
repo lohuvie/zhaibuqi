@@ -22,6 +22,7 @@
         ZHAIBUQI.index.currentRequest = request;
         if(empty){
             $waterfall.empty();
+            $waterfall.masonry('reload');
         }
         $.ajax({
             url:"json/waterfall.php?type=" + ZHAIBUQI.index.type + '&page=' + ZHAIBUQI.index.pageCount,
