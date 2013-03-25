@@ -1,6 +1,19 @@
 <?php
 $email = $_POST['email'];
 require_once('util.php');
+if((isset($_COOKIE['c'])&&($_COOKIE['c']!=$email)&&(!empty($email)))||!isset($_COOKIE['c'])){//换号注册和第一次注册
+
+    setcookie('c',$email,time()+(60*10));//10分钟
+
+}
+
+if(!empty($email)){
+    $email = $email;
+}else{
+    $email = $_COOKIE['c'];
+
+
+}
 
 $dbc = mysqli_connect(host,user,password,database);
 $query = "select * from user where email = '$email'";
