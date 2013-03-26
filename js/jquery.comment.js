@@ -46,7 +46,7 @@ $(function(){
         var action = $commentForm.attr('action'),
             data = {},
             content = $commentContent.val().replace(/^\s*/,'');
-        $tips.hide();
+        //判断是否有回复人
         if(content.match(/[^\s]/)){
             var reg = /^回复[^\s]+:/,
                 replyee = content.match(reg),
@@ -60,17 +60,21 @@ $(function(){
                 data.comment = content;
             }
         }
-
+        //判断回复内容是否为空
         if(data.comment){
+            var timer = textLoading($tips,'正在提交',600);
+            timer.start();
             $.ajax( {
-                    url:action,
+                    url:action ,
                     type:'POST',
                     data:data,
                     success:function(data){
+                        timer.stop();
                         $commentContent.val('');
-                        addOneComment(data.comment[0]).appendTo($postBox);
+                        addOneComment(data.comment[0]).hide().appendTo($postBox).fadeIn(300);
                     },
                     error: function(){
+                        timer.stop();
                         $tips.text('评论失败，请重新提交').css('color','red').fadeIn().fadeOut().fadeIn();
                     }
                 }
@@ -84,23 +88,8 @@ $(function(){
 
     /*展开评论*/
     $unfold.on('click',function(){
-        var timer = setInterval(function(){
-            var unfoldText = $unfold.text();
-            switch (unfoldText.length){
-                case 5:
-                    $unfold.text('正在加载..');
-                    break;
-                case 6:
-                    $unfold.text('正在加载...');
-                    break;
-                case 7:
-                    $unfold.text('正在加载.');
-                    break;
-                default:
-                    $unfold.text('正在加载.');
-                    break;
-            }
-        },800);
+        var timer = textLoading($unfold, '正在加载', 600);
+        timer.start();
         /*加载评论*/
         $.ajax({
             url:'json/comment.json',
@@ -109,7 +98,7 @@ $(function(){
             success: function(data){
                 var comment = data.comment,
                     $firstPost = $('.user-post:first');
-                clearInterval(timer);
+                timer.stop();
                 $unfold.hide();
                 if(comment.length !== 0){
                     $.each(comment,function(){
@@ -120,7 +109,7 @@ $(function(){
                 }
             },
             error: function(){
-                clearInterval(timer);
+                timer.stop();
                 $unfold.text('加载失败，请再次点击重试');
             }
         });
@@ -154,5 +143,36 @@ $(function(){
         $replyDetail.append($commentHeader,$content);
         $userPost.append($photo,_$arrowBox,$replyDetail);
         return $userPost;
+    }
+    /*使文字出现...的加载动画*/
+    function textLoading($text,textPre,interval){
+        var timer;
+        $text.text(textPre + '...');
+        return {
+            start: function(){
+                timer = setInterval(function(){
+                    var pre= textPre + '.',
+                        dotCount = $text.text().replace(/^[^\.]+\./,'').length;
+                    switch (dotCount){
+                        case 0:
+                            $text.text(pre + '.');
+                            break;
+                        case 1:
+                            $text.text(pre + '..');
+                            break;
+                        case 2:
+                            $text.text(pre);
+                            break;
+                        default:
+                            $text.text(pre + '..');
+                            break;
+                    }
+                },interval || 800);
+
+            },
+            stop: function(){
+                clearInterval(timer);
+            }
+        };
     }
 });
