@@ -14,7 +14,6 @@ require_once('start-session.php');
 $photo_type = $_FILES['portrait']['type'];
 $photo_size = $_FILES['portrait']['size'];
 echo $photo_type;
-
 $photo= time().".".substr($photo_type,6);       //上传海报名字 time()+后缀名
 $_SESSION['portrait_name']=$photo;
 

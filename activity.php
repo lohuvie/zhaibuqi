@@ -8,6 +8,7 @@ require_once "php/start-session.php";
     <meta name="description" content="宅不起 大学生 活动 推送" />
     <title>宅不起 | 活动介绍</title>
     <link href="css/activity.css" type="text/css" rel="stylesheet" />
+    <link href="css/comment.css" type="text/css" rel="stylesheet" />
     <script src="js/jquery-1.8.3.min.js" type="text/javascript"></script>
     <script src="js/even-act.js" type="text/javascript" ></script>
     <!--[if IE]>
@@ -203,31 +204,7 @@ if($user_id == $creater_id || $approved != 0){
             </div>
             <?php if($approved != 0){?>
             <h2>用户评论</h2>
-            <div id="reply-form">
-                <textarea cols="1" rows="1" name="reply-input" ></textarea>
-                <button class="reply-btn">评论</button>
-            </div>
-            <div id="reply">
-                <ul>
-                    <li class="user-post">
-                        <div class="user-subject">
-                            <a href="#">
-                                <img class="user-photo" alt="用户头像" src="#"/>
-                            </a>
-                            <div class="reply-detail">
-                                <h3>
-                                    <a href="#" class="user-name">姓名1</a>
-                                </h3>
-                                <p class="content">评论内容.</p>
-                            </div>
-                            <div class="reply-time">
-                                <a>回复</a>
-                                10月4日 22:47
-                            </div>
-                        </div>
-                    </li>
-                </ul>
-            </div>
+            <?php require_once("comment.html"); ?>
             <?php }?>
         </div>
     </div>
@@ -243,5 +220,6 @@ if($user_id == $creater_id || $approved != 0){
 ?>
 </div>
 <?php require_once("footer.php"); ?>
+<script src="js/jquery.comment.js"></script>
 </body>
 </html>

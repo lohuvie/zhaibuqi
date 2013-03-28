@@ -1,0 +1,144 @@
+#post-box{
+    margin: 0;
+    list-style-type: none;
+}
+/*回复内容显示*/
+.user-post{
+    margin: 10px 0 0;
+    position: relative;
+    width: 630px;
+}
+.user-photo{
+    float: left;
+    width: 45px;
+    height: 45px;
+}
+.reply-detail {
+    min-height: 45px;
+    margin-left: 60px;
+    outline: 3px solid #ddd;
+    overflow: auto;
+    position: relative;
+}
+.comment-header{
+    background: #ddd;
+    margin: 0;
+    padding: 3px 10px 7px;
+}
+.user-name{
+    color: #5db2ff;
+    font-size: 14px;
+    text-decoration: none;
+}
+.reply-time{
+    color: #aaa;
+    font-size: 12px;
+    font-weight: normal;
+    float: right;
+    margin: 5px 0;
+}
+.content{
+    font-size: 14px;
+    margin: 5px 0 3px;
+    padding: 3px 10px 5px;
+}
+.replyee-name{
+    color: #5db2ff;
+    margin: 0 5px;
+    text-decoration: none;
+}
+.reply-btn{
+    color: #777;
+    cursor: pointer;
+    display: none;
+    float: right;
+    font-size: 12px;
+    font-weight: normal;
+    margin: 5px 10px 8px;
+}
+.reply-btn:hover{
+    text-decoration: underline;
+}
+
+/*展开菜单*/
+.unfold{
+    border: solid #ccc;
+    border-width: 1px 0;
+    color: #84c43c;
+    cursor: pointer;
+    font-size: 13px;
+    margin: 10px 58px;
+    padding: 5px 10px;
+    text-align: center;
+    width: 555px;
+}
+.unfold:hover{
+    text-decoration: underline;
+}
+
+/*回复框*/
+#comment-form {
+    background: none repeat scroll 0 0 #F4F4F4;
+    margin: 0 0 10px 57px;
+    padding: 10px;
+    position: relative;
+    overflow: auto;
+    top: 8px;
+    width: 556px;
+}
+.user-photo-small{
+    float: left;
+    height: 34px;
+    width: 34px;
+}
+.comment-content {
+    border: 1px solid #CCC;
+    color: #444;
+    font-size: 14px;
+    height: 34px;
+    margin: 0 0 0 10px ;
+    outline: none;
+    overflow: hidden;
+    padding: 5px;
+    resize: none;
+    width: 500px;
+}
+.send-btn {
+    background: #777;
+    border: 1px solid #777;
+    color: #EEEEEE;
+    cursor: pointer;
+    float: right;
+    font-size: 14px;
+    font-family: inherit;
+    height: 25px;
+    margin: 5px 0 0;
+    width: 80px;
+}
+.send-btn:hover{
+    background: #222;
+    border: 1px solid #222;
+    color: #fff
+}
+.tips{
+    float: left;
+    font-size: 12px;
+    margin: 11px 0 0 45px;
+}
+/*评论内容箭头*/
+.arrow-box{
+    height: 20px;
+    left: 40px;
+    margin-right: 1px;
+    position: absolute;
+    width: 20px;
+}
+.arrow{
+    border: 10px solid;
+    border-color:transparent #ddd transparent transparent;
+    overflow: hidden;
+    position: absolute;
+    width: 0;
+    height: 0;
+}
+

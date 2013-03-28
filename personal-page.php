@@ -3,6 +3,7 @@
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
     <title>Personal Page</title>
     <link type="text/css" rel="stylesheet" href="css/personal-page.css"/>
+    <link type="text/css" rel="stylesheet" href="css/comment.css"/>
 </head>
 <body>
 <?php require_once("top-nav.php"); ?>
@@ -246,32 +247,7 @@ if(!empty($_GET['id'])){
     <!-- leav-message -->
     <div class="leave-message" id="leave-message">
         <h2>留言</h2>
-        <div id="reply-form">
-            <textarea cols="1" rows="1" name="reply-input" ></textarea>
-            <button class="reply-btn">留言</button>
-        </div>
-        <div id="reply">
-            <ul>
-                <li class="user-post">
-                    <div class="user-subject">
-                        <a href="#">
-                            <img class="user-photo" alt="用户" src="#"/>
-                        </a>
-                        <div class="reply-detail">
-                            <h3>
-                                <a href="#" class="user-name">姓名1</a>
-                            </h3>
-                            <p class="content">评论内容.</p>
-                        </div>
-                        <div class="reply-time">
-                            <a>回复</a>
-                            10月4日 22:47
-                        </div>
-                    </div>
-                </li>
-            </ul>
-        </div>
-    </div>
+        <?php require_once("comment.html"); ?>
     <!-- end leave-message -->
 </div>
 <!-- personal-content -->
@@ -291,5 +267,6 @@ if(!empty($_GET['id'])){
         <script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
         <script type="text/javascript" src="js/jquery.personal-page.js"></script>
         <script type="text/javascript" src="js/jquery.following.js"></script>
+        <script type="text/javascript" src="js/jquery.comment.js"></script>
 </body>
 </html>
