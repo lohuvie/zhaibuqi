@@ -1,4 +1,17 @@
-<!DOCTYPE html>
+<?php
+$error_message = "";
+$error  = $_GET['error'];
+switch ($error){
+
+    case 1: $error_message ="对不起，您输入的用户不存在，请核实后重新输入";
+        break;
+//    case 2: $error_message ="对不起，您必须输入有效邮箱和密码来登录";
+//    break;
+//    case 3: $error_message ="验证码输入错误，请重新输入";
+//    break;
+
+}
+?><!DOCTYPE html>
 <html>
 <head>
     <title>宅不起 | 找回密码</title>
@@ -43,6 +56,7 @@
                         <input id="user-email" name="email" type="text" size="20"
                         class="validate[required,custom[email]] text-input" />
                     </div>
+                    <div id="error"><?php echo $error_message;?></div>
                     <div class="tool-bar">
                         <input type="submit" class="sent-btn" value="下一步" />
                         <a id="back" href="login.php" >返回登陆</a>
