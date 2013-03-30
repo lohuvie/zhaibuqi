@@ -1,16 +1,16 @@
 <?php
-$error_message = "";
-$error  = $_GET['error'];
-switch ($error){
-
-    case 1: $error_message ="对不起，您输入的验证码错误，请重新输入";
-    break;
-//    case 2: $error_message ="对不起，您必须输入有效邮箱和密码来登录";
+//$error_message = "";
+//$error  = $_GET['error'];
+//switch ($error){
+//
+//    case 1: $error_message ="对不起，您输入的验证码错误，请重新输入";
 //    break;
-//    case 3: $error_message ="验证码输入错误，请重新输入";
-//    break;
-
-}
+////    case 2: $error_message ="对不起，您必须输入有效邮箱和密码来登录";
+////    break;
+////    case 3: $error_message ="验证码输入错误，请重新输入";
+////    break;
+//
+//}
 /**
  * 用base64_decode解开$_GET['p']的值
  */
@@ -26,6 +26,7 @@ $error2= "";
 $error3='';
 $present_time =  date('Y-m-d H:i:s',time());
 $output="";
+$user_exist=false;
 
 $array = explode(',',base64_decode($_GET['p']));
 echo $array['0'].'333333333';
@@ -45,6 +46,7 @@ $query = "select * from change_password where user_id= $user_id and number = '".
 $result = mysqli_query($dbc,$query) ;
 $row = mysqli_fetch_array($result);
 $use_time = $row['use_time'];
+$user_exist=ture;
 
 /**
  * 这时，我们会得到一个数组，$array，里面分别存放了用户名和我们需要一段字符串
@@ -129,14 +131,14 @@ if( $array['1'] === $checkCode){?>
                         <input id="confirm-password" name="confirm-password" type="password" size="20"
                         class="validate[required,equals[new-password]] text-input" />
                     </div>
-                    <div>
-                        <label for="validate">验证码</label>
-
-                        <input name="validate" id="validate" type="text" class="validate[required] text-input"/>
-                    </div>
-                    <div>
-                        <img src="php/captcha.php" alt="验证码" id="captcha" onclick="document.getElementById('captcha').setAttribute('src','php/captcha.php')"/>
-                    </div>
+<!--                    <div>-->
+<!--                        <label for="validate">验证码</label>-->
+<!---->
+<!--                        <input name="validate" id="validate" type="text" class="validate[required] text-input"/>-->
+<!--                    </div>-->
+<!--                    <div>-->
+<!--                        <img src="php/captcha.php" alt="验证码" id="captcha" onclick="document.getElementById('captcha').setAttribute('src','php/captcha.php')"/>-->
+<!--                    </div>-->
                     <div class="tool-bar">
                         <input type="submit" class="sent-btn" value="更改密码" />
                         <a id="back" href="login.php" >返回登陆</a>
@@ -150,7 +152,11 @@ if( $array['1'] === $checkCode){?>
 </body>
 </html>
 <?php }
+//}if($user_exist=false){
+//    echo"用户不存在";
+//}
 ?>
+
 <!--create table change_password-->
 <!--(-->
 <!--user_id            int,-->
