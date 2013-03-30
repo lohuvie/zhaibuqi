@@ -16,14 +16,14 @@ var ZHAIBUQI = {
         }
     },
     $cache : $("<div></div>"),
-    $loadingEnd : $("<p>相关好友已加载完毕</p>").css({
+    $loadingTips : $("<p></p>").attr('id','loadingtips').css({
+        "clear":"both",
         "text-align" :"center",
         "background":"#CCC",
         "padding":"5px 10px"
     }),
     $clearLeft : $("<div></div>").css("clear","left"),//清空每个user-display的浮动
     $overflow : $(".clear-left"),//清空contacts-body的浮动
-    $loading : $("#loading"),
     $edit : $("<input />").attr({
         "type":"text",
         "id":"edit"
@@ -34,6 +34,9 @@ var ZHAIBUQI = {
     click : false,
     clickTimer : null,
     searching : "",
+    page: 1,
+    url: 'json/attention_list.php' + location.search,
+    loading : false,
     tipsShow : function(){
         "use strict";
         ZHAIBUQI.$tips.stop(false,true).fadeIn(500);
@@ -44,11 +47,11 @@ var ZHAIBUQI = {
     },
     loadingShow : function(){
         "use strict";
-        ZHAIBUQI.$loading.show();
+        ZHAIBUQI.$loadingTips.text('正在加载...').show();
     },
     loadingHide : function(){
         "use strict";
-        ZHAIBUQI.$loading.hide().appendTo(ZHAIBUQI.$contacsBody);
+        ZHAIBUQI.$loadingTips.hide();
     },
     moveAjax : function(){
         "use strict";
@@ -64,7 +67,7 @@ var ZHAIBUQI = {
             });
             $.ajax({type : "POST",
                 dataType : "JSON",
-                url : "json/event.php",
+                url : "json/event.php" ,
                 data : send,
                 success : function(data){
                     $chosen.appendTo(ZHAIBUQI.$dustbin);
@@ -176,12 +179,14 @@ var ZHAIBUQI = {
     loadingAjax : function(){
         "use strict";
         ZHAIBUQI.end ="end";
+        ZHAIBUQI.loading = true;
         $.ajax({
-            type:"POST",
+            type:"GET",
             dataType:"JSON",
-            url:"json/person.json",
+            url: ZHAIBUQI.url + '&page=' + ZHAIBUQI.page ,
             success:ZHAIBUQI.appendData,
             error:function(){
+                ZHAIBUQI.loading = false;
                 ZHAIBUQI.end ="";
                 ZHAIBUQI.tipsHtml("加载失败，请重试");
                 ZHAIBUQI.tipsShow();
@@ -190,25 +195,30 @@ var ZHAIBUQI = {
     },
     appendData : function(data){
         "use strict";
+        ZHAIBUQI.page++;
+        console.log(ZHAIBUQI.url + '&page=' + ZHAIBUQI.page);
         $.each(data.person, function(){
-            var portrait = this.portrait;
-            var href = this.href;
-            var name = this.name;
-            var institude = this.institude;
-            var group = "组别:"+this.group;
-            var email = this.email;
-            var $portrait = $("<a></a>").addClass("pic").attr("href",href).append($("<img />").attr({
-                "src":portrait,
-                "alt":name
-            }));
-            var $userInfo = $("<div></div>").addClass("user-info");
+            var portrait = this.portrait,
+                href = this.href,
+                name = this.name,
+                institude = this.institude,
+                group = "组别:"+this.group,
+                email = this.email,
+                $img = $("<img />").attr({
+                    "src":portrait,
+                    "alt":name
+                }),
+            $portrait = $("<a></a>").addClass("pic").attr("href",href),
+            $userInfo = $("<div></div>").addClass("user-info"),
+            $group = $("<p></p>").addClass("extra").html(group),
+            //$userDisplay = $("<div></div>").addClass("user-display").val(email);
+            $userDisplay = $("<div></div>").addClass("user-display").val(email);
             $userInfo.append($("<a></a>").addClass("name").attr("href",href).html(name+"<br /><br />"));
             $userInfo.append($("<p></p>").html(institude));
-            var $group = $("<p></p>").addClass("extra").html(group);
-            var $userDisplay = $("<div></div>").addClass("user-display").val(email);
-            $userDisplay.append($portrait).append($userInfo).append(ZHAIBUQI.$clearLeft.clone()).append($group).appendTo(ZHAIBUQI.$contacsBody);
+            $userDisplay.append($portrait.append($img),$userInfo,ZHAIBUQI.$clearLeft.clone(),$group).insertBefore(ZHAIBUQI.$loadingTips);
             $userDisplay.fadeIn(100);
         });
+        ZHAIBUQI.loading = false;
         ZHAIBUQI.$overflow.appendTo(ZHAIBUQI.$contacsBody);//清空contacts-body内所有元素的浮动
         ZHAIBUQI.loadingHide();
         ZHAIBUQI.end = data.end;
@@ -227,11 +237,14 @@ var ZHAIBUQI = {
             $toTop.fadeOut(100);
         }
         if($doc.height()-$target.height()-wScrollTop<bottom){
-            if(ZHAIBUQI.end!=="end"){
-                ZHAIBUQI.loadingAjax();
-            }
-            else{
-                ZHAIBUQI.$contacsBody.append(ZHAIBUQI.$loadingEnd);
+            if(!ZHAIBUQI.loading){
+                if(ZHAIBUQI.end!=="end"){
+                    ZHAIBUQI.$loadingTips.text('正在加载...').show();
+                    ZHAIBUQI.loadingAjax();
+                }
+                else{
+                    ZHAIBUQI.$loadingTips.text('所有好友已加载完毕').show();
+                }
             }
         }
     },
@@ -415,6 +428,7 @@ $(function(){
     $toTop.on("click",function(){
         $("body,html").animate({scrollTop:0},500);
     });
+    ZHAIBUQI.$loadingTips.appendTo(ZHAIBUQI.$contacsBody);
 
     /* 下拉菜单 */
     $(".group-selection").slideUp(1);

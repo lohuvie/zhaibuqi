@@ -3,7 +3,7 @@ require_once("php/start-session.php");
 require_once("php/util.php");
 
 $personal_id = $_GET['id'];
-$user_id = $_SESSION['user_id'];
+$user_id = 0;
 if(isset($_SESSION['user_id'])){
     $user_id = $_SESSION['user_id'];
 }else{
@@ -19,51 +19,81 @@ if($personal_id == $user_id){
 }
 
 $dbc = mysqli_connect(host,user,password,database);
+
 //查询用户
 $query = "select nickname from user where user_id = $personal_id";
 $result = mysqli_query($dbc,$query);
 if(!empty($result)){
     $data = mysqli_fetch_array($result,MYSQLI_BOTH);
     $name = $data['nickname'];
-
+    //查询关注的人数量
+    $attention_lists_count = 0;
+    $query = "select status
+                    from attention_fan af
+                    where af.fan_id = $personal_id or (af.attention_id = $personal_id and af.status = 2) ";
+    $result = mysqli_query($dbc,$query);
+    if(!empty($result)){
+        $attention_lists_count = mysqli_num_rows($result);
+    }
     //查询关注的人
-    $query = "select af.attention_id id_1,af.fan_id id_2,u1.nickname name_1,p1.icon icon_1,u2.nickname name_2,p2.icon icon_2
+    $query = "select af.attention_id id_1,u1.nickname name_1,p1.icon icon_1,u1.academy academy_1,
+                      af.fan_id id_2,u2.nickname name_2,p2.icon icon_2,u2.academy academy_2,g.name group_name,af.status status
                 from portrait p1
                 right join user u1 on u1.user_id = p1.user_id
                 right join attention_fan af on af.attention_id = u1.user_id
                 left join user u2 on af.fan_id = u2.user_id
                 left join portrait p2 on u2.user_id = p2.user_id
-                where af.fan_id = $personal_id or (af.attention_id = $personal_id and af.status = 2) limit 9";
+				left join attention_groups ag on ag.attention_fan_id = af.attention_fan_id
+				left join groups g on ag.groups_id = g.groups_id
+                where af.fan_id = $personal_id or (af.attention_id = $personal_id and af.status = 2) limit 12";
     $result = mysqli_query($dbc,$query);
-    $attention_ids = Array();
-    $attention_id_count = 0;
+    $attention_lists = Array();
+    $attention_lists_index = 0;
     if(!empty($result)){
         while($data = mysqli_fetch_array($result,MYSQLI_BOTH)){
             //用户关注列表
             if($data['id_1'] == $personal_id &&  $data['status'] == ATTENTION_EACH_OTHER)
-                $attention_ids[$attention_ids_count] =array ('id'=>$data['id_2'],'name'=>$data['name_2'],'portrait'=>$data['icon_2']);
+                $attention_lists[$attention_lists_index] =array ('id'=>$data['id_2'],'name'=>$data['name_2'],'portrait'=>$data['icon_2'],'academy'=>$data['academy_2'],'group'=>$data['group_name']);
             else
-                $attention_ids[$attention_ids_count] =array ('id'=>$data['id_1'],'name'=>$data['name_1'],'portrait'=>$data['icon_1']);
-            $attention_id_count++;
+                $attention_lists[$attention_lists_index] =array ('id'=>$data['id_1'],'name'=>$data['name_1'],'portrait'=>$data['icon_1'],'academy'=>$data['academy_1'],'group'=>$data['group_name']);
+            $attention_lists_index++;
         }
     }
-    //查询被关注的人的人数
-    $query = "select af.fan_id id_1,af.attention_id id_2,u1.nickname name_1,p1.icon icon_1,u2.nickname name_2,p2.icon icon_2
-                from portrait p1
-                right join user u1 on u1.user_id = p1.user_id
-                right join attention_fan af on af.fan_id = u1.user_id
-                left join user u2 on af.attention_id = u2.user_id
-                left join portrait p2 on u2.user_id = p2.user_id
-                where af.attention_id = $personal_id or (af.fan_id = $personal_id and af.status = 2) limit 5";
-    $result = mysqli_query($dbc,$query);
+    //查询被关注的人的数量
     $fan_id_count = 0;
+    $query = "select af.status
+                    from portrait p1
+                    right join user u1 on u1.user_id = p1.user_id
+                    right join attention_fan af on af.fan_id = u1.user_id
+                    left join user u2 on af.attention_id = u2.user_id
+                    left join portrait p2 on u2.user_id = p2.user_id
+                    where af.attention_id = $personal_id or (af.fan_id = $personal_id and af.status = 2)";
+    $result = mysqli_query($dbc,$query);
+    mysqli_num_rows($result);
     if(!empty($result)){
         $fan_id_count = mysqli_num_rows($result);
     }
 
+    //查询分组
+    $groups = Array();
+    $groups_count = 0;
+    if($is_user){
+        //显示分组
+        $query = "select g.name from user u
+                    left join groups g on u.user_id = g.founder_id
+                    where u.user_id = $personal_id";
+        $result = mysqli_query($dbc,$query);
+        if(!empty($result)){
+            while($data = mysqli_fetch_array($result,MYSQLI_BOTH)){
+                $groups[$groups_count] = $data['name'];
+            }
+        }
+    }
+
 }else{
     //用户不存在 跳转至404页面
-
+    $url = 'http://' . $_SERVER['HTTP_HOST']. dirname($_SERVER['PHP_SELF']).'/404.php';
+    header('Location: ' . $url);
 }
 mysqli_close($dbc);
 
@@ -84,7 +114,7 @@ mysqli_close($dbc);
     <div id="container">
         <div id="dustbin"></div>
         <div class="fixed">
-            <h1><?php if($is_user){echo '我';}else{echo $name;}?>关注的人(<span><?php echo $attention_id_count;?>个</span>)</h1>
+            <h1><?php if($is_user){echo '我';}else{echo $name;}?>关注的人(<span><?php echo $attention_lists_count;?>个</span>)</h1>
             <p id="tips"></p>
             <div id="operation-box">
                 <form action="" method="get">
@@ -98,12 +128,17 @@ mysqli_close($dbc);
                     <p>选择分组<span id="group"></span></p>
                     <div class="group-selection">
                         <ul>
-                            <li class="passive">分组1</li>
-                            <li>分组2</li>
-                            <li>分组1</li>
-                            <li>分组2</li>
-                            <li>分组1</li>
-                            <li>分组2</li>
+                            <li class="passive">全部</li>
+                            <?php
+                            //循环显示关注的人
+                            foreach($groups as &$g){
+                            ?>
+                                <li><?php echo $g;?></li>
+                            <?php
+                            }
+                            unset($g);
+                            ?>
+                            <li>未分组</li>
                         </ul>
                         <em id="new-group">新建分组..</em>
                     </div>
@@ -146,206 +181,28 @@ mysqli_close($dbc);
             </div>
         </div>
         <div id="contacts-body">
+        <?php
+        //循环显示关注的人
+        foreach($attention_lists as &$al){
+            ?>
             <div class="user-display" value="abc.com">
-                <a class="pic" href="#"><img src="images/search-head.jpg" alt="" /></a>
+                <a class="pic" href="personal-page.php?id=<?php echo $al['id'];?>"><img src="upload-portrait/<?php echo $al['portrait'];?>" alt="<?php echo $al['name'];?>" /></a>
                 <div class="user-info">
-                    <a class="name" href="#">李文超</a>
+                    <a class="name" href="personal-page.php?id=<?php echo $al['id'];?>"><?php echo $al['name'];?></a>
                     <br />
                     <br />
-                    <p>华西基础医学与法医学院</p>
+                    <p><?php echo isset($al['academy'])?$al['academy']:'';?></p>
                 </div>
                 <div style="clear: left;"></div>
-                <p class="extra">组别:</p>
+                <?php if($is_user){?>
+                <p class="extra">组别:<?php echo isset($al['group'])?$al['group']:'未分组';?></p>
+                <?php }?>
             </div>
-            <div class="user-display" value="abc.com">
-                <a class="pic" href="#"><img src="images/search-head.jpg" alt="" /></a>
-                <div class="user-info">
-                    <a class="name" href="#">李文超</a>
-                    <br />
-                    <br />
-                    <p>华西基础医学与法医学院</p>
-                </div>
-                <div style="clear: left;"></div>
-                <p class="extra">组别:</p>
-            </div>
-            <div class="user-display" value="abc.com">
-                <a class="pic" href="#"><img src="images/search-head.jpg" alt="" /></a>
-                <div class="user-info">
-                    <a class="name" href="#">李文超</a>
-                    <br />
-                    <br />
-                    <p>华西基础医学与法医学院</p>
-                </div>
-                <div style="clear: left;"></div>
-                <p class="extra">组别:</p>
-            </div>
-            <div class="user-display" value="abc.com">
-                <a class="pic" href="#"><img src="images/search-head.jpg" alt="" /></a>
-                <div class="user-info">
-                    <a class="name" href="#">李文超</a>
-                    <br />
-                    <br />
-                    <p>华西基础医学与法医学院</p>
-                </div>
-                <div style="clear: left;"></div>
-                <p class="extra">组别:</p>
-            </div>
-            <div class="user-display" value="abc.com">
-                <a class="pic" href="#"><img src="images/search-head.jpg" alt="" /></a>
-                <div class="user-info">
-                    <a class="name" href="#">李文超</a>
-                    <br />
-                    <br />
-                    <p>华西基础医学与法医学院</p>
-                </div>
-                <div style="clear: left;"></div>
-                <p class="extra">组别:</p>
-            </div>
-            <div class="user-display" value="abc.com">
-                <a class="pic" href="#"><img src="images/search-head.jpg" alt="" /></a>
-                <div class="user-info">
-                    <a class="name" href="#">李文超</a>
-                    <br />
-                    <br />
-                    <p>华西基础医学与法医学院</p>
-                </div>
-                <div style="clear: left;"></div>
-                <p class="extra">组别:</p>
-            </div>
-            <div class="user-display" value="abc.com">
-                <a class="pic" href="#"><img src="images/search-head.jpg" alt="" /></a>
-                <div class="user-info">
-                    <a class="name" href="#">李文超</a>
-                    <br />
-                    <br />
-                    <p>华西基础医学与法医学院</p>
-                </div>
-                <div style="clear: left;"></div>
-                <p class="extra">组别:</p>
-            </div>
-            <div class="user-display" value="abc.com">
-                <a class="pic" href="#"><img src="images/search-head.jpg" alt="" /></a>
-                <div class="user-info">
-                    <a class="name" href="#">李文超</a>
-                    <br />
-                    <br />
-                    <p>华西基础医学与法医学院</p>
-                </div>
-                <div style="clear: left;"></div>
-                <p class="extra">组别:</p>
-            </div>
-            <div class="user-display" value="abc.com">
-                <a class="pic" href="#"><img src="images/search-head.jpg" alt="" /></a>
-                <div class="user-info">
-                    <a class="name" href="#">李文超</a>
-                    <br />
-                    <br />
-                    <p>华西基础医学与法医学院</p>
-                </div>
-                <div style="clear: left;"></div>
-                <p class="extra">组别:</p>
-            </div>
-            <div class="user-display" value="abc.com">
-                <a class="pic" href="#"><img src="images/search-head.jpg" alt="" /></a>
-                <div class="user-info">
-                    <a class="name" href="#">李文超</a>
-                    <br />
-                    <br />
-                    <p>华西基础医学与法医学院</p>
-                </div>
-                <div style="clear: left;"></div>
-                <p class="extra">组别:</p>
-            </div>
-            <div class="user-display" value="abc.com">
-                <a class="pic" href="#"><img src="images/search-head.jpg" alt="" /></a>
-                <div class="user-info">
-                    <a class="name" href="#">李文超</a>
-                    <br />
-                    <br />
-                    <p>华西基础医学与法医学院</p>
-                </div>
-                <div style="clear: left;"></div>
-                <p class="extra">组别:</p>
-            </div>
-            <div class="user-display" value="abc.com">
-                <a class="pic" href="#"><img src="images/search-head.jpg" alt="" /></a>
-                <div class="user-info">
-                    <a class="name" href="#">李文超</a>
-                    <br />
-                    <br />
-                    <p>华西基础医学与法医学院</p>
-                </div>
-                <div style="clear: left;"></div>
-                <p class="extra">组别:</p>
-            </div>
-            <div class="user-display" value="abc.com">
-                <a class="pic" href="#"><img src="images/search-head.jpg" alt="" /></a>
-                <div class="user-info">
-                    <a class="name" href="#">李文超</a>
-                    <br />
-                    <br />
-                    <p>华西基础医学与法医学院</p>
-                </div>
-                <div style="clear: left;"></div>
-                <p class="extra">组别:</p>
-            </div>
-            <div class="user-display" value="abc.com">
-                <a class="pic" href="#"><img src="images/search-head.jpg" alt="" /></a>
-                <div class="user-info">
-                    <a class="name" href="#">李文超</a>
-                    <br />
-                    <br />
-                    <p>华西基础医学与法医学院</p>
-                </div>
-                <div style="clear: left;"></div>
-                <p class="extra">组别:</p>
-            </div>
-            <div class="user-display" value="abc.com">
-                <a class="pic" href="#"><img src="images/search-head.jpg" alt="" /></a>
-                <div class="user-info">
-                    <a class="name" href="#">李文超</a>
-                    <br />
-                    <br />
-                    <p>华西基础医学与法医学院</p>
-                </div>
-                <div style="clear: left;"></div>
-                <p class="extra">组别:</p>
-            </div>
-            <div class="user-display">
-                <a class="pic" href="#"><img src="images/search-head.jpg" alt="" /></a>
-                <div class="user-info">
-                    <a class="name" href="#">李文超</a>
-                    <br />
-                    <br />
-                    <p>华西基础医学与法医学院</p>
-                </div>
-                <div style="clear: left;"></div>
-                <p class="extra">组别:</p>
-            </div>
-            <div class="user-display">
-                <a class="pic" href="#"><img src="images/search-head.jpg" alt="" /></a>
-                <div class="user-info">
-                    <a class="name" href="#">李文超</a>
-                    <br />
-                    <br />
-                    <p>华西基础医学与法医学院</p>
-                </div>
-                <div style="clear: left;"></div>
-                <p class="extra">组别:</p>
-            </div>
-            <div class="user-display">
-                <a class="pic" href="#"><img src="images/search-head.jpg" alt="" /></a>
-                <div class="user-info">
-                    <a class="name" href="#">李文超</a>
-                    <br />
-                    <br />
-                    <p>华西基础医学与法医学院</p>
-                </div>
-                <div style="clear: left;"></div>
-                <p class="extra">组别:</p>
-            </div>
+        <?php
+        }
+        unset($al);
+        ?>
             <div class="clear-left"></div>
-            <b id="loading">正在加载..</b>
         </div>
         <b id="to-top"></b>
     </div>
