@@ -76,9 +76,9 @@ if((strtotime($present_time)-strtotime($array['3']))>(60*60*24)){
 if ($array['2']!=$number){
       $error1='重设密码的链接已失效，请重新申请';
 }
-if(isset($error1)||isset($error2)||isset($error3)){
-    $output="#";
-}else $output =" php/get_password.php";
+if(!empty($error1)||!empty($error2)||!empty($error3)){
+    $output="#1";
+}else $output ="php/get_password.php";
 if( $array['1'] === $checkCode){?>
 <!DOCTYPE html>
 <html>
@@ -120,7 +120,7 @@ if( $array['1'] === $checkCode){?>
             <div id="error1"><?php echo"$error1<br/>$error2<br/>$error3";?></div>
             <div class="password-box">
                 <h2>更改密码</h2>
-                <form id="sent-mail" action="<?php echo $output?>" method="post">
+                <form id="sent-mail" action="<?php echo $output ?>" method="post">
                     <div class="input-box">
                         <p>新的密码</p>
                         <input id="new-password" name="new-password" type="password" size="20"
@@ -141,7 +141,7 @@ if( $array['1'] === $checkCode){?>
                         <input type="submit" class="sent-btn" value="更改密码" />
                         <a id="back" href="login.php" >返回登陆</a>
                     </div>
-                    <div id="error"><?php echo"$error_message";?></div>
+                    <div id="error"><?php echo $error_message;?></div>
                 </form>
             </div>
         </div>

@@ -68,8 +68,9 @@ $result = mysqli_query($dbc,$query);
         echo "sb";
     }else{
             $error=1;
-            $home_url='http://'.$_SERVER['HTTP_HOST'].dirname(dirname($_SERVER['PHP_SELF'])).'/reset-password.php?error=.$error';
+            $home_url='http://'.$_SERVER['HTTP_HOST'].dirname(dirname($_SERVER['PHP_SELF'])).'/reset-password.php?error='.$error;
             header('Location:'.$home_url);
+        exit;
         }
 
 //}

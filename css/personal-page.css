@@ -47,13 +47,15 @@ body{
     list-style-type: none;
     margin-right: 15px;
 }
-.single-activity img {
+.single-activity .pic-link{
+    display: block;
     height: 180px;
-    width: 140px;
+    overflow: hidden;
 }
 .single-activity h5{
     font-size:inherit;
     font-weight: lighter;
+    margin-top: 5px;
 }
 /* leave-message */
 #leave-message{
