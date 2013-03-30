@@ -26,7 +26,7 @@ if($user_id != USER_NO_LOGIN){
     try{
         if($attention_status == ATTENTION_NO){
             //用户间之前无关系 添加关注关系
-            $query = "insert into attention_fan values($personal_id,$user_id,".ATTENTION_ONLY.")";
+            $query = "insert into attention_fan(attention_id,fan_id,status) values($personal_id,$user_id,".ATTENTION_ONLY.")";
             $result = mysqli_query($dbc,$query);
             $attention_status = ATTENTION_ONLY;
 
