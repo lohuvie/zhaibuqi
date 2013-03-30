@@ -106,63 +106,6 @@ span.tags-left{
 	font-size: 13px; 
 	padding: 5px 0;
 }
-#reply-form {
-	background: none repeat scroll 0 0 #F4F4F4;
-}
-#reply-form textarea {
-	max-width: 600px;
-	width: 600px;
-	height: 55px;
-	resize: none;
-	outline: none;
-	padding: 5px;
-	border: 1px solid #CCCCCC;
-	color: #999999;
-	margin: 10px;
-	overflow: hidden;
-}
-.reply-btn {
-	font-size: 14px;
-	font-family: inherit;
-	color: #EEEEEE;
-	margin-left: 542px;
-	margin-bottom: 10px;
-	width: 80px;
-	height: 25px;
-	cursor: pointer;
-	background: #777777;
-	border: 1px solid #777777;
-}
-.reply-btn:hover{
-	background: #222222;
-	border: 1px solid #222222;
-	color: #FFFFFF
-}
-.user-post{
-	margin: 10px 0px;
-	list-style-type: none;
-}
-.user-subject{
-	border:1px solid #CCCCCC;
-	padding: 15px 15px 5px 15px;
-}
-.user-photo{
-	float: left;
-	width: 45px;
-	height: 45px;
-}
-.reply-detail {
-	min-height: 45px;
-	margin-left: 60px;
-}
-.reply-detail a {
-	font-size: 13px;
-	color: #000000;
-}
-.reply-time {
-	text-align: right;
-	color: #CCCCCC;
-}
 #sidebar {
 	float: right;
 	width: 250px;
