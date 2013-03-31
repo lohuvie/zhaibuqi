@@ -46,17 +46,14 @@ switch($domain_name){
 <?php require_once("top-nav.php"); ?>
 <div id="container">
     <div id="container-clear-fix">
-        <div class="mail-tips">
+        <div class="tips">
             <h2>邮件发送成功</h2>
-            <p>请到邮箱查阅来自宅不起的邮件, 从邮件重设你的密码。</p>
-            <a href="<?php echo $mail ?>" name="email_domain_name" >登录<?php echo $domain_name ?>邮箱查收确认信</a>  <br/><br/>
-            <p>没有收到邮件怎么办？······
-
-                检查一下<?php echo $email; ?>地址是否正确，错了就<a href="get-password.php" >重新找回</a>一次吧。
-                看看是否在邮箱的垃圾箱里
-                稍等几分钟，若仍旧没收到邮件，让宅不起<a href="php/send_email.php">重发一封</a>
+            <p>请到邮箱查阅来自宅不起的邮件, 并重设您的密码。</p>
+            <a href="<?php echo $mail ?>" name="email_domain_name" >登录<?php echo $domain_name ?>邮箱查收确认信</a><br /><br />
+            <p>没有收到邮件怎么办？......检查一下<?php echo $email; ?>地址是否正确，错了就<a href="get-password.php" >重新找回</a>一次吧。<br />
+                稍等几分钟看看是否在邮箱的垃圾箱里，若仍旧没收到邮件，让宅不起<a href="php/send_email.php">重发一封</a>
             </p>
-            <br /><br />
+            <br />
             <a id="back" href="index.php" >返回首页</a>
         </div>
     </div>

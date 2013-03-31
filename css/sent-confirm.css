@@ -13,7 +13,7 @@ body  {
     width: 800px;
     margin: 0 auto;
 }
-/* password-box */
+/* messgae-box */
 .tips {
      width: 294px;
      margin-top: 60px;
@@ -30,10 +30,17 @@ body  {
     margin-bottom: 20px;
 }
 .tips p{
-    margin-left: 30px;
     padding-bottom: 5px;
 }
+.tips a{
+    color: #5db2ff;
+    margin: 0 5px;
+}
 
+.tips a:hover{
+    color:#5db2ff;
+    border-bottom: 1px dotted #5db2ff;
+}
 a#back {
     color: #888888;
     text-decoration: none;
@@ -41,4 +48,9 @@ a#back {
 a#back:hover {
     color:#BBBBBB;
     border-bottom: 1px dotted #84C43C;
+}
+
+/* countdownn */
+#cdbox{
+    margin: 0 5px;
 }

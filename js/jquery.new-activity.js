@@ -61,6 +61,7 @@ $(document).ready(function() {
 
 	var startTimeBox = $('#time-begin');	//开始时间文本框
 	var endTimeBox = $('#time-end');		//结束时间文本框
+	var timeErrorBox = $(".time_error");//.time_error提示框
 
 	$('#time-begin').timepicker({
 		onClose:function(){
@@ -71,34 +72,34 @@ $(document).ready(function() {
 
 				if (endTimeBox.val() != "结束时间") {
 					if(e_time[0] < s_time[0]){				//小时对比
-						if(!$(".time_error").is(":visible")){
-							$("#time-end").after(time_error);
-							$(".time_error").fadeIn().fadeOut().fadeIn().fadeOut().fadeIn();	//闪烁效果
+						if(!timeErrorBox.is(":visible")){
+							endTimeBox.after(time_error);
+							timeErrorBox.fadeIn().fadeOut().fadeIn().fadeOut().fadeIn();	//闪烁效果
 						}else{
-							$(".time_error").fadeOut().fadeIn().fadeOut().fadeIn().fadeOut().fadeIn();	//闪烁效果
+							timeErrorBox.fadeOut().fadeIn().fadeOut().fadeIn().fadeOut().fadeIn();	//闪烁效果
 						}
 					}else if(e_time[0] == s_time[0]){
 						if(e_time[1] <= s_time[1]){			//分钟对比
-							if(!$(".time_error").is(":visible")){
-								$("#time-end").after(time_error);
-								$(".time_error").fadeIn().fadeOut().fadeIn().fadeOut().fadeIn();	//闪烁效果
+							if(!timeErrorBox.is(":visible")){
+								endTimeBox.after(time_error);
+								timeErrorBox.fadeIn().fadeOut().fadeIn().fadeOut().fadeIn();	//闪烁效果
 							}else{
-								$(".time_error").fadeOut().fadeIn().fadeOut().fadeIn().fadeOut().fadeIn();	//闪烁效果
+								timeErrorBox.fadeOut().fadeIn().fadeOut().fadeIn().fadeOut().fadeIn();	//闪烁效果
 							}
 						}
 					}else{
-						if($(".time_error")){		//去除显示
-							$(".time_error").remove();
+						if(timeErrorBox){		//去除显示
+							timeErrorBox.remove();
 						}
 					}
 				}
 			}
 			//存在错误防止提交
 			$("#frmNew").submit(function(e) {
-				if($(".time_error").is(":visible")){
+				if(timeErrorBox.is(":visible")){
 					//e.preventDefault();
 					$('body,html').animate({scrollTop:0},500);
-					$(".time_error").fadeIn().fadeOut().fadeIn().fadeOut().fadeIn();	//闪烁效果
+					timeErrorBox.fadeIn().fadeOut().fadeIn().fadeOut().fadeIn();	//闪烁效果
 					return false;
 				}else{
 					return true;
@@ -106,8 +107,8 @@ $(document).ready(function() {
 			});
 		},	
 		onSelect: function (){
-			if($(".time_error")){		//去除显示
-				$(".time_error").remove();
+			if(timeErrorBox){		//去除显示
+				timeErrorBox.remove();
 			}
 		},
 		hourGrid: 4,
@@ -126,34 +127,34 @@ $(document).ready(function() {
 				
 				if (startTimeBox.val() != "开始时间") {
 					if(e_time[0] < s_time[0]){				//小时对比
-						if(!$(".time_error").is(":visible")){
-							$("#time-end").after(time_error);
-							$(".time_error").fadeIn().fadeOut().fadeIn().fadeOut().fadeIn();	//闪烁效果
+						if(!timeErrorBox.is(":visible")){
+							endTimeBox.after(time_error);
+							timeErrorBox.fadeIn().fadeOut().fadeIn().fadeOut().fadeIn();	//闪烁效果
 						}else{
-							$(".time_error").fadeOut().fadeIn().fadeOut().fadeIn().fadeOut().fadeIn();	//闪烁效果
+							timeErrorBox.fadeOut().fadeIn().fadeOut().fadeIn().fadeOut().fadeIn();	//闪烁效果
 						}
 					}else if(e_time[0] == s_time[0]){
 						if(e_time[1] <= s_time[1]){			//分钟对比
-							if(!$(".time_error").is(":visible")){
-								$("#time-end").after(time_error);
-								$(".time_error").fadeIn().fadeOut().fadeIn().fadeOut().fadeIn();	//闪烁效果
+							if(!timeErrorBox.is(":visible")){
+								endTimeBox.after(time_error);
+								timeErrorBox.fadeIn().fadeOut().fadeIn().fadeOut().fadeIn();	//闪烁效果
 							}else{
-								$(".time_error").fadeOut().fadeIn().fadeOut().fadeIn().fadeOut().fadeIn();	//闪烁效果
+								timeErrorBox.fadeOut().fadeIn().fadeOut().fadeIn().fadeOut().fadeIn();	//闪烁效果
 							}
 						}
 					}else{
-						if($(".time_error")){		//去除显示
-							$(".time_error").remove();
+						if(timeErrorBox){		//去除显示
+							timeErrorBox.remove();
 						}
 					}
 				}
 			}
 			//存在错误防止提交
 			$("#frmNew").submit(function(e) {
-				if($(".time_error").is(":visible")){
+				if(timeErrorBox.is(":visible")){
 					//e.preventDefault();
 					$('body,html').animate({scrollTop:0},500);
-					$(".time_error").fadeIn().fadeOut().fadeIn().fadeOut().fadeIn();	//闪烁效果
+					timeErrorBox.fadeIn().fadeOut().fadeIn().fadeOut().fadeIn();	//闪烁效果
 					return false;
 				}else{
 					return true;
@@ -161,8 +162,8 @@ $(document).ready(function() {
 			});
 		},
 		onSelect: function (){
-			if($(".time_error")){		//去除显示
-				$(".time_error").remove();
+			if(timeErrorBox){		//去除显示
+				timeErrorBox.remove();
 			}
 		},
 		hourGrid: 4,
