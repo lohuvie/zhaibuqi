@@ -108,6 +108,7 @@ h1{
     width: 150px;
     overflow-x: hidden;
     border: 2px solid #DDDDDD;
+    display: none;
 }
 .group-selection li{
     list-style: none;
@@ -116,12 +117,12 @@ h1{
     float: none;
     cursor: default;
 }
-#new-group{
+#manage-group{
     display: block;
     font-size: 15px;
     padding: 5px 10px;
 }
-.group-selection li:hover,#new-group:hover{
+.group-selection li:hover,#manage-group:hover{
     background: #DDDDDD;
 }
 .group-selection .passive{
@@ -184,8 +185,8 @@ h1{
     border: 4px solid white;
 }
 .user-display img{
+    height: 85px;
     width: 85px;
-    height:85px;
 }
 .user-display .user-info{
     float: left;
@@ -196,6 +197,8 @@ h1{
     font-size: 16px;
     font-weight: normal;
     color: #000000;
+    display: block;
+    padding: 0 0 10px;
 }
 .user-display.active .name{
     color: white;
@@ -211,8 +214,13 @@ h1{
 }
 
 /* for js */
-.clear-left{
-    clear: left;
+.clear{
+    background: #CCC;
+    clear: both;
+    cursor: pointer;
+    margin-right: 18px;
+    padding: 5px 10px;
+    text-align: center;
 }
 
 #dustbin{

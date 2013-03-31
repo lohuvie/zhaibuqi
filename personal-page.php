@@ -9,6 +9,34 @@
 <?php require_once("top-nav.php"); ?>
 <div id="container">
 <?php
+//字符串截取
+function utf_sub_str($str,$len)
+{
+    if($len>strlen($str))
+        return $str;
+
+    for($i=0;$i<$len;$i++)
+    {
+        $temp_str=substr($str,0,1);
+        if(ord($temp_str) > 127)
+        {
+            $i++;
+            if($i<$len)
+            {
+                $new_str[]=substr($str,0,3);
+                $str=substr($str,3);
+            }
+        }
+        else
+        {
+            $new_str[]=substr($str,0,1);
+            $str=substr($str,1);
+        }
+    }
+    return implode('',$new_str);
+}
+
+
 require_once "php/start-session.php";
 require_once("php/util.php");
 
@@ -34,31 +62,32 @@ if(!empty($_GET['id'])){
         $portrait = $result['icon'];//头像
         $portrait_path = PORTRAIT.$portrait;
         $intro = $result['intro'];
-
-        //判断用户关系
-        $attention_status = 0;
-        $query = "select * from attention_fan
-                    where (attention_id = $personal_id and fan_id = $user_id)
-                    or (attention_id = $user_id and fan_id = $personal_id)";
-        $result = mysqli_query($dbc,$query);
-        $data = mysqli_fetch_array($result,MYSQLI_BOTH);
-        if(empty($data)){
-            //用户之间无关系
-            $attention_status = ATTENTION_NO;
-        }else{
-            //用户之间有关系
-            $attention_id = $data['attention_id'];
-            $fan_id = $data['fan_id'];
-            $status = $data['status'];
-            if($status == ATTENTION_EACH_OTHER){
-                //用户间互相关注
-                $attention_status = ATTENTION_EACH_OTHER;
-            }else if(($attention_id == $personal_id && $fan_id == $user_id && $status = ATTENTION_ONLY)||($attention_id == $user_id && $fan_id == $personal_id && $status == ATTENTION_BY)){
-                $attention_status = ATTENTION_ONLY;
-            }else if(($attention_id == $user_id && $fan_id == $personal_id && $status = ATTENTION_ONLY)||($attention_id == $personal_id && $fan_id == $user_id && $status == ATTENTION_BY)){
-                $attention_status = ATTENTION_BY;
+        if($personal_id != $user_id){
+            //判断用户关系
+            $attention_status = 0;
+            $query = "select * from attention_fan
+                        where (attention_id = $personal_id and fan_id = $user_id)
+                        or (attention_id = $user_id and fan_id = $personal_id)";
+            $result = mysqli_query($dbc,$query);
+            $data = mysqli_fetch_array($result,MYSQLI_BOTH);
+            if(empty($data)){
+                //用户之间无关系
+                $attention_status = ATTENTION_NO;
             }else{
-                $attention_status = DATABASE_ERROR;
+                //用户之间有关系
+                $attention_id = $data['attention_id'];
+                $fan_id = $data['fan_id'];
+                $status = $data['status'];
+                if($status == ATTENTION_EACH_OTHER){
+                    //用户间互相关注
+                    $attention_status = ATTENTION_EACH_OTHER;
+                }else if(($attention_id == $personal_id && $fan_id == $user_id && $status = ATTENTION_ONLY)||($attention_id == $user_id && $fan_id == $personal_id && $status == ATTENTION_BY)){
+                    $attention_status = ATTENTION_ONLY;
+                }else if(($attention_id == $user_id && $fan_id == $personal_id && $status = ATTENTION_ONLY)||($attention_id == $personal_id && $fan_id == $user_id && $status == ATTENTION_BY)){
+                    $attention_status = ATTENTION_BY;
+                }else{
+                    $attention_status = DATABASE_ERROR;
+                }
             }
         }
         //显示关注的人图片及姓名
@@ -68,10 +97,10 @@ if(!empty($_GET['id'])){
                     right join attention_fan af on af.attention_id = u1.user_id
                     left join user u2 on af.fan_id = u2.user_id
                     left join portrait p2 on u2.user_id = p2.user_id
-                    where af.fan_id = $personal_id or (af.attention_id = $personal_id and af.status = 2) limit 5";
+                    where af.fan_id = $personal_id or (af.attention_id = $personal_id and af.status = 2) limit 4";
         $result = mysqli_query($dbc,$query);
         $attention_ids = Array();
-        $attention_id_count = 0;
+        $attention_ids_count = 0;
         if(!empty($result)){
             while($data = mysqli_fetch_array($result,MYSQLI_BOTH)){
                 //用户关注列表
@@ -79,28 +108,38 @@ if(!empty($_GET['id'])){
                     $attention_ids[$attention_ids_count] =array ('id'=>$data['id_2'],'name'=>$data['name_2'],'portrait'=>$data['icon_2']);
                 else
                     $attention_ids[$attention_ids_count] =array ('id'=>$data['id_1'],'name'=>$data['name_1'],'portrait'=>$data['icon_1']);
-                $attention_id_count++;
+                //用户姓名截取
+                $attention_temp = utf_sub_str($attention_ids[$attention_ids_count]['name'],8);
+                if($attention_temp != $attention_ids[$attention_ids_count]['name']){
+                    $attention_ids[$attention_ids_count]['name'] = $attention_temp.'...';
+                }
+                $attention_ids_count++;
             }
         }
 
         //用户粉丝列表
         $fan_ids = Array();
-        $fan_id_count = 0;
+        $fan_ids_count = 0;
         $query = "select af.fan_id id_1,af.attention_id id_2,u1.nickname name_1,p1.icon icon_1,u2.nickname name_2,p2.icon icon_2,af.status status
                     from portrait p1
                     right join user u1 on u1.user_id = p1.user_id
                     right join attention_fan af on af.fan_id = u1.user_id
                     left join user u2 on af.attention_id = u2.user_id
                     left join portrait p2 on u2.user_id = p2.user_id
-                    where af.attention_id = $personal_id or (af.fan_id = $personal_id and af.status = 2) limit 5";
+                    where af.attention_id = $personal_id or (af.fan_id = $personal_id and af.status = 2) limit 4";
         $result = mysqli_query($dbc,$query);
         if(!empty($result)){
             while($data = mysqli_fetch_array($result,MYSQLI_BOTH)){
                 if($data['id_1'] == $personal_id &&  $data['status'] == ATTENTION_EACH_OTHER)
-                    $fan_ids[$attention_ids_count] =array ('id'=>$data['id_2'],'name'=>$data['name_2'],'portrait'=>$data['icon_2']);
+                    $fan_ids[$fan_ids_count] =array ('id'=>$data['id_2'],'name'=>$data['name_2'],'portrait'=>$data['icon_2']);
                 else
-                    $fan_ids[$attention_ids_count] =array ('id'=>$data['id_1'],'name'=>$data['name_1'],'portrait'=>$data['icon_1']);
-                $fan_id_count++;
+                    $fan_ids[$fan_ids_count] =array ('id'=>$data['id_1'],'name'=>$data['name_1'],'portrait'=>$data['icon_1']);
+                //用户姓名截取
+                $fan_temp = utf_sub_str($fan_ids[$fan_ids_count]['name'],8);
+                if($fan_temp !=$fan_ids[$fan_ids_count]['name']){
+                    $fan_ids[$fan_ids_count]['name'] = $fan_temp.'...';
+                }
+                $fan_ids_count++;
             }
         }
 
