@@ -101,26 +101,26 @@ $mail->FromName = "浪客剑心";
 $mail->AddAddress("$address", $userName);//收件人地址，可以替换成任何想要接收邮件的email信箱,格式是AddAddress("收件人email","收件人姓名")
 
 
-
+$mail->IsHTML(true); // set email format to HTML //是否使用HTML格式
 
 $mail->Subject = "请激活你的帐号，完成注册";//主题
 
-$mail->Body = "尊敬的".$nickname."先生/女士:
+$mail->Body = "<html><body>尊敬的".$nickname."先生/女士:<br/>
 
-欢迎加入宅不起!
+欢迎加入<a href='http://www.zhaibuqi.com/'>宅不起</a><br/>
 
-请点击下面的链接完成注册：
+请点击下面的链接完成注册：</br>
 
-http://localhost/zhaibuqi/zhaibuqi/php/register.php?p=$String
+<a href='http://localhost/zhaibuqi/zhaibuqi/php/register.php?p=$String'>http://localhost/zhaibuqi/zhaibuqi/php/register.php?p=$String</a><br/>
 
-如果以上链接无法点击，请将上面的地址复制到你的浏览器(如IE)的地址栏进入宅不起。
+如果以上链接无法点击，请将上面的地址复制到你的浏览器(如IE)的地址栏进入宅不起。<br/>
 
-感谢对宅不起的支持，再次希望您在宅不起的体验有益和愉快！
+感谢对宅不起的支持，再次希望您在宅不起的体验有益和愉快！</br>
 
-宅不起 http://www.zhaibuqi.com/
---宅不起
+宅不起<a href='http://www.zhaibuqi.com/'>http://www.zhaibuqi.com/</a><br/>
 
-(这是一封自动产生的email，请勿回复.)";
+
+(这是一封自动产生的email，请勿回复.)</body></html>";
 
 $mail->AltBody = "This is the body in plain text for non-HTML mail clients"; //附加信息，可以省略
 
