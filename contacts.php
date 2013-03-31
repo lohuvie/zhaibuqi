@@ -23,7 +23,7 @@ $dbc = mysqli_connect(host,user,password,database);
 //查询用户
 $query = "select nickname from user where user_id = $personal_id";
 $result = mysqli_query($dbc,$query);
-if(!empty($result)){
+if(mysqli_num_rows($result) != 0){
     $data = mysqli_fetch_array($result,MYSQLI_BOTH);
     $name = $data['nickname'];
     //查询关注的人数量
@@ -32,12 +32,13 @@ if(!empty($result)){
                     from attention_fan af
                     where af.fan_id = $personal_id or (af.attention_id = $personal_id and af.status = 2) ";
     $result = mysqli_query($dbc,$query);
-    if(!empty($result)){
+    if(mysqli_num_rows($result) != 0){
         $attention_lists_count = mysqli_num_rows($result);
     }
     //查询关注的人
-    $query = "select af.attention_id id_1,u1.nickname name_1,p1.icon icon_1,u1.academy academy_1,
-                      af.fan_id id_2,u2.nickname name_2,p2.icon icon_2,u2.academy academy_2,g.name group_name,af.status status
+    $query = "select af.attention_fan_id af_id,af.attention_id id_1,u1.nickname name_1,p1.icon icon_1,u1.academy academy_1,
+                      af.fan_id id_2,u2.nickname name_2,p2.icon icon_2,u2.academy academy_2,
+                      ag.attention_groups_id ag_id,g.name group_name,af.status status
                 from portrait p1
                 right join user u1 on u1.user_id = p1.user_id
                 right join attention_fan af on af.attention_id = u1.user_id
@@ -45,17 +46,17 @@ if(!empty($result)){
                 left join portrait p2 on u2.user_id = p2.user_id
 				left join attention_groups ag on ag.attention_fan_id = af.attention_fan_id
 				left join groups g on ag.groups_id = g.groups_id
-                where af.fan_id = $personal_id or (af.attention_id = $personal_id and af.status = 2) limit 12";
+                where af.fan_id = $personal_id or (af.attention_id = $personal_id and af.status = 2) order by af.attention_fan_id desc limit 12";
     $result = mysqli_query($dbc,$query);
     $attention_lists = Array();
     $attention_lists_index = 0;
-    if(!empty($result)){
+    if(mysqli_num_rows($result) != 0){
         while($data = mysqli_fetch_array($result,MYSQLI_BOTH)){
             //用户关注列表
             if($data['id_1'] == $personal_id &&  $data['status'] == ATTENTION_EACH_OTHER)
-                $attention_lists[$attention_lists_index] =array ('id'=>$data['id_2'],'name'=>$data['name_2'],'portrait'=>$data['icon_2'],'academy'=>$data['academy_2'],'group'=>$data['group_name']);
+                $attention_lists[$attention_lists_index] =array ('af_id'=>$data['af_id'],'id'=>$data['id_2'],'name'=>$data['name_2'],'portrait'=>$data['icon_2'],'academy'=>$data['academy_2'],'ag_id'=>$data['ag_id'],'group'=>$data['group_name']);
             else
-                $attention_lists[$attention_lists_index] =array ('id'=>$data['id_1'],'name'=>$data['name_1'],'portrait'=>$data['icon_1'],'academy'=>$data['academy_1'],'group'=>$data['group_name']);
+                $attention_lists[$attention_lists_index] =array ('af_id'=>$data['af_id'],'id'=>$data['id_1'],'name'=>$data['name_1'],'portrait'=>$data['icon_1'],'academy'=>$data['academy_1'],'ag_id'=>$data['ag_id'],'group'=>$data['group_name']);
             $attention_lists_index++;
         }
     }
@@ -70,7 +71,7 @@ if(!empty($result)){
                     where af.attention_id = $personal_id or (af.fan_id = $personal_id and af.status = 2)";
     $result = mysqli_query($dbc,$query);
     mysqli_num_rows($result);
-    if(!empty($result)){
+    if(mysqli_num_rows($result) != 0){
         $fan_id_count = mysqli_num_rows($result);
     }
 
@@ -79,13 +80,14 @@ if(!empty($result)){
     $groups_count = 0;
     if($is_user){
         //显示分组
-        $query = "select g.name from user u
+        $query = "select g.groups_id g_id,g.name g_name from user u
                     left join groups g on u.user_id = g.founder_id
                     where u.user_id = $personal_id";
         $result = mysqli_query($dbc,$query);
-        if(!empty($result)){
+        if(mysqli_num_rows($result) != 0){
             while($data = mysqli_fetch_array($result,MYSQLI_BOTH)){
-                $groups[$groups_count] = $data['name'];
+                $groups[$groups_count] = array ('id'=>$data['g_id'],'name'=>$data['g_name']);
+                $groups_count++;
             }
         }
     }
@@ -128,31 +130,32 @@ mysqli_close($dbc);
                     <p>选择分组<span id="group"></span></p>
                     <div class="group-selection">
                         <ul>
-                            <li class="passive">全部</li>
+                            <li class="passive" id="-1">全部</li>
                             <?php
-                            //循环显示关注的人
+                            //循环显示组
                             foreach($groups as &$g){
-                            ?>
-                                <li><?php echo $g;?></li>
-                            <?php
+                                echo '<li id="'.$g['id'].'">'.$g['name'].'</li>';
                             }
                             unset($g);
                             ?>
-                            <li>未分组</li>
+                            <li id="0">未分组</li>
                         </ul>
-                        <em id="new-group">新建分组..</em>
+                        <em id="manage-group">管理分组..</em>
                     </div>
                 </div>
                 <div class="operation move">
                     <p>移动至<span id="move"></span></p>
                     <div class="group-selection">
                         <ul>
-                            <li class="passive">分组1</li>
-                            <li>分组2</li>
-                            <li>分组1</li>
-                            <li>分组2</li>
-                            <li>分组1</li>
-                            <li>分组2</li>
+                            <li class="passive" id="-1">全部</li>
+                            <?php
+                            //循环显示 移动至组
+                            foreach($groups as &$g){
+                                echo '<li value="'.$g['id'].'">'.$g['name'].'</li>';
+                            }
+                            unset($g);
+                            ?>
+                            <li id="0">未分组</li>
                         </ul>
                     </div>
                 </div>
@@ -185,24 +188,28 @@ mysqli_close($dbc);
         //循环显示关注的人
         foreach($attention_lists as &$al){
             ?>
-            <div class="user-display" value="abc.com">
+            <div class="user-display" value="<?php echo $al['af_id'];?>">
                 <a class="pic" href="personal-page.php?id=<?php echo $al['id'];?>"><img src="upload-portrait/<?php echo $al['portrait'];?>" alt="<?php echo $al['name'];?>" /></a>
                 <div class="user-info">
-                    <a class="name" href="personal-page.php?id=<?php echo $al['id'];?>"><?php echo $al['name'];?></a>
-                    <br />
-                    <br />
+                    <p><a class="name" href="personal-page.php?id=<?php echo $al['id'];?>"><?php echo $al['name'];?></a></p>
                     <p><?php echo isset($al['academy'])?$al['academy']:'';?></p>
                 </div>
                 <div style="clear: left;"></div>
-                <?php if($is_user){?>
-                <p class="extra">组别:<?php echo isset($al['group'])?$al['group']:'未分组';?></p>
-                <?php }?>
+                <?php if($is_user){
+                    //显示组别 和 attention_group号
+                    if(isset($al['group'])){
+                        echo '<p class="extra" group="'.$al['ag_id'].'">组别:'.$al['group'].'</p>';
+                    }else{
+                        echo '<p class="extra" group="0">组别：未分组</p>';
+                    }
+                }
+                ?>
             </div>
         <?php
         }
         unset($al);
         ?>
-            <div class="clear-left"></div>
+            <div class="clear">点击加载更多</div>
         </div>
         <b id="to-top"></b>
     </div>

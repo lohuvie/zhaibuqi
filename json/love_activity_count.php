@@ -5,11 +5,10 @@ require_once("../php/util.php");
 header('Content-type: text/json');
 header('Content-type: application/json');
 $activity_id = $_GET['activity'];
-$user_id = $_SESSION['user_id'];
+
+$user_id = USER_NO_LOGIN;
 if(isset($_SESSION['user_id'])){
     $user_id = $_SESSION['user_id'];
-}else{
-    $user_id = USER_NO_LOGIN;
 }
 
 $dbc = mysqli_connect(host,user,password,database);
