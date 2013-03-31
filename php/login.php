@@ -51,14 +51,34 @@ if ($_SESSION['pass_phrase'] == $user_pass_phrase) {
             $row = mysqli_fetch_array($data,MYSQLI_BOTH);
             $_SESSION['user_id'] = $row['user_id'];
             $_SESSION['email'] = $row['email'];
-            if($_POST['signin-cb']=="yes"){
-                setcookie('user_id', $row['user_id'], time() + (60 * 60 * 24 * 30*12*50));    // expires in 50 years
-                setcookie('email', $row['email'], time() + (60 * 60 * 24 * 30*12*50));  // expires in 50 years
+            if($_POST['signin-cb']=="yes"){//记住我
+                setcookie('user_id', $row['user_id'], time() + (60 * 60 * 24 * 30*12*10));    // expires in 10 years
+                setcookie('email', $row['email'], time() + (60 * 60 * 24 * 30*12*10));  // expires in 10 years
 
             }else{
                 setcookie('user_id', $row['user_id'], time() + (60 * 60 * 24 * 30));    // expires in 30 days
                 setcookie('email', $row['email'], time() + (60 * 60 * 24 * 30));  // expires in 30 days
             }
+            $query = "SELECT user_id, email FROM user WHERE email = '$email' AND password = SHA('$passwd')";
+            $data = mysqli_query($dbc, $query)
+                or die('Error query');
+
+            $query = "select login_time from user where user_id = ".$_SESSION['user_id']."";
+            $data = mysqli_query($dbc,$query)
+                or die('fuck');
+
+//            $present_time = date('Y-m-d H:i:s',time());//当前时间
+//              if(mysqli_num_rows($data) == 0){//如果还没有登陆过
+                    $query = "update user set login_time = '$present_time' where user_id =".$_SESSION['user_id']."";
+                    $data = mysqli_query($dbc,$query)or die('fuck123');;
+//              }else{
+//                    $result = mysqli_fetch_array($data);
+//                    $portrait_old = $result['icon'];
+//                    $query = "insert into user
+//                     portrait set icon = '$cut_name' where user_id = $user_id";
+//                    $data = mysqli_query($dbc,$query);
+//
+//                    }
 
             //跳转到首页
             $home_url = 'http://' . $_SERVER['HTTP_HOST'] . dirname(dirname($_SERVER['PHP_SELF'])) . '/index.php';
