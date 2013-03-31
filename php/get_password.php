@@ -17,11 +17,6 @@ $query = "select  * from user where email='$email'";
 $result=mysqli_query($dbc,$query);
 $row = mysqli_fetch_array($result);
 $user_id = $row['user_id'];
-
-$query = "insert into change_password(user_id,number,use_time) values($user_id,'".$_COOKIE['user_id_number']."',1)";
-$result = mysqli_query($dbc,$query);
-
-
 //
 //$array = explode('.',base64_decode($_GET['p']));
 //$query = "select * from user where email =  '$email'";
@@ -61,16 +56,19 @@ $result = mysqli_query($dbc,$query);
 //    Echo "<input name=username value='".$array['0']."' onlyread>";
 //    Echo "<input name=userpasswd type=password>";
 //    Echo "<input name=reinput type=password>";
-
-    if ($_SESSION['pass_phrase'] == $user_pass_phrase) {
+//
+//    if ($_SESSION['pass_phrase'] == $user_pass_phrase) {
         $query ="UPDATE user SET password = SHA('$new_password') WHERE email= '$email'";
         $result = mysqli_query($dbc,$query) ;
-        echo "sb";
-    }else{
-            $error=1;
-            $home_url='http://'.$_SERVER['HTTP_HOST'].dirname(dirname($_SERVER['PHP_SELF'])).'/reset-password.php?error=.$error';
-            header('Location:'.$home_url);
-        }
+//        echo "sb";
+//    }else{
+//            $error=1;
+//            $home_url='http://'.$_SERVER['HTTP_HOST'].dirname(dirname($_SERVER['PHP_SELF'])).'/reset-password.php?error='.$error;
+//            header('Location:'.$home_url);
+//        exit;
+//        }
+$query = "insert into change_password(user_id,number,use_time) values($user_id,'".$_COOKIE['user_id_number']."',1)";
+$result = mysqli_query($dbc,$query);//链接使用过一次就失效
 
 //}
   $home_url = 'http://' . $_SERVER['HTTP_HOST'] . dirname(dirname($_SERVER['PHP_SELF'])) . '/login.php';
