@@ -1,0 +1,101 @@
+body{
+    font-family: "Microsoft Yahei","Helvetica Neue","Luxi Sans","DejaVu Sans",Tahoma,"Hiragino Sans GB";
+    font-size:14px;
+    color: #555;
+}
+#container{
+    margin-top: 40px;
+    padding:10px;
+    width:980px;
+}
+.fields{
+    margin-bottom: 50px;
+}
+.fields h1{
+    font-size: 20px;
+    color: #555555;
+    padding: 15px 10px;
+}
+.fields .relate-inform{
+    font-size:13px;
+    color:#999;
+    margin-bottom: 10px;
+}
+.fields hr{
+    border-top: 1px solid #FFFFFF;
+    border-bottom: 1px solid #EEEEEE;
+    margin-bottom: 10px;
+}
+.fields table{
+    margin: 0 0px;
+    padding-top: 10px;
+}
+.fields td{
+    min-width: 110px;
+    padding: 15px 10px 15px 5px;
+    vertical-align: top;
+}
+.fields td:first-child
+{
+    text-align: right;
+
+} 
+.apply-host input[type=text]{
+    border: 1px solid #BBBBBB;
+    padding: 2px;
+    width: 200px;
+    height: 22px;
+}
+#host-admin label{
+    margin-right: 25px;
+}
+.apply-host input{
+    color: #555555;
+}
+.apply-host input:focus{
+    border: 1px solid #84C43C;
+}
+.apply-host input:hover{
+    border: 1px solid #84C43C;
+}
+textarea{
+    resize: none;
+    overflow-y: visible;
+    font-family: inherit;
+    width: 360px;
+    height: 140px;
+}
+.submit-btn{
+    padding: 5px 20px;
+    background: #222222 ;
+    color: #FFFFFF;
+    border: 1px solid #222222;
+    font-size: 14px;
+    font-family: inherit;
+    cursor: pointer;
+}
+.submit-btn:hover{
+    background: #84C43C;
+    border: 1px solid #84C43C;
+}
+
+/* aside */
+#aside{
+    float:right;
+    width: 250px;
+    height: 320px;
+    padding: 10px;
+    margin: 50px 30px 0 0;
+}
+
+#aside h2{
+    font-weight: normal;
+    font-size: 16px;
+    color: #84C43C;
+    margin-bottom: 10px;
+}
+
+#aside p{
+    font-size: 13px;
+    color:#777;
+}

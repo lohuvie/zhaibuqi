@@ -1,9 +1,12 @@
-#waiting{
+#cdbox{
     color: #84c43c;
     margin: 0 5px;
 }
-.tips-link{
-    border-bottom: 1px dotted;
+.tips-link {
     color: #5db2ff;
     margin: 0 5px;
 }
+.tips-link :hover{
+	border-bottom: 1px dotted;
+}
+    
