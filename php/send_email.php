@@ -98,6 +98,7 @@ require_once('class.phpmailer.php'); //下载的文件必须放在该文件所�
 
 $mail = new PHPMailer(); //建立邮件发送类
 $address =$email;
+      $mail->CharSet = "utf-8";
 
 $mail->IsSMTP(); // 使用SMTP方式发送
 
@@ -123,31 +124,33 @@ $mail->AddAddress("$address", $userName);//收件人地址，可以替换成任�
 
 //$mail->AddAttachment("/var/tmp/file.tar.gz"); // 添加附件
 
-//$mail->IsHTML(true); // set email format to HTML //是否使用HTML格式
+$mail->IsHTML(true); // set email format to HTML //是否使用HTML格式
 
 
 
 $mail->Subject = "重设".$userName."在宅不起的密码";//主题
 
-$mail->Body = "尊敬的".$userName."先生/女士:
+$mail->Body = "<html><body>尊敬的".$userName."先生/女士:<br/>
 
-您使用了本站提供的密码找回功能，如果你确认此密码找回功能是你启用的，请点击下面的链接
+您使用了本站提供的密码找回功能，如果你确认此密码找回功能是你启用的，请点击下面的链接<br/>
 
-(pleae click on the following link to reset your password:)
+(pleae click on the following link to reset your password:)<br/>
 
-http://localhost/zhaibuqi/zhaibuqi/reset-password.php?p=$String
+<a href='http://localhost/zhaibuqi/zhaibuqi/reset-password.php?p=$String' >http://localhost/zhaibuqi/zhaibuqi/reset-password.php?p=$String</a><br/>
 
-如果您的email程序不支持链接点击，请将上面的地址拷贝至您的浏览器(例如IE)的地址栏进入宅不起
+如果您的email程序不支持链接点击，请将上面的地址拷贝至您的浏览器(例如IE)的地址栏进入宅不起<br/>
 
-请在24小时内点击此改密链接，同时此链接只能使用一次，如失效请重新索取！
+请在24小时内点击此改密链接，同时此链接只能使用一次，如失效请重新索取！<br/>
 
-感谢对宅不起的支持，再次希望您在宅不起的体验有益和愉快！
+感谢对宅不起的支持，再次希望您在宅不起的体验有益和愉快！<br/>
 
-宅不起 http://www.zhaibuqi.com/
 
-(这是一封自动产生的email，请勿回复.)"; //邮件内容
+宅不起 <a href='http://www.zhaibuqi.com/' >http://www.zhaibuqi.com/</a><br/>
+
+(这是一封自动产生的email，请勿回复.)</body></html>"; //邮件内容
 
 $mail->AltBody = "This is the body in plain text for non-HTML mail clients"; //附加信息，可以省略
+
 
 
 

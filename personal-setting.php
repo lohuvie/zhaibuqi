@@ -110,17 +110,17 @@ require_once "php/start-session.php";
                 <h3>邮件设置</h3>
                 <hr/>
                 <p>通知我，若发生如下状况...</p>
-                <form action="" class="mail-form" method="post">
+                <form action="php/email_settings.php" class="mail-form" method="post">
                     <table>
                         <tbody>
                         <tr>
                             <td><label for="not-use-time">我没有登录</label></td>
                             <td id="not-use-time">
-                                <input type="radio" id="three-days" name="not-use-time" value="three-days"/>
+                                <input type="radio" id="three-days" name="not-use-time" value="3"/>
                                 <label for="three-days">3天</label>
-                                <input type="radio" id="seven-days" name="not-use-time" value="seven-days" checked="checked"/>
+                                <input type="radio" id="seven-days" name="not-use-time" value="7" checked="checked"/>
                                 <label for="seven-days">7天</label>
-                                <input type="radio" id="never" name="not-use-time" value="never"/>
+                                <input type="radio" id="never" name="not-use-time" value="0"/>
                                 <label for="never">从不</label>
                             </td>
                         </tr>
@@ -136,7 +136,7 @@ require_once "php/start-session.php";
                         <tr>
                             <td></td>
                             <td>
-                                <a class="submit-btn" name="mail-submit">保存邮件设置</a>
+                                <button type="submit" class="submit-btn" name="mail-submit">保存邮件设置</button>
                             </td>
                         </tr>
                         </tbody>
