@@ -13,9 +13,11 @@ $(document).ready(function() {
     //指定管理员 
     $("#not-self").click(function() {   //点击非本人
         $("#extra").show(700);
+        $("#assign-admin").removeAttr("disabled");
     });
 
     $("#self").click(function() {   //默认点击本人    
-        $("#extra").hide(500); 
+        $("#extra").hide(500);
+        $("#assign-admin").attr("disabled","ture"); 
     });
 });
