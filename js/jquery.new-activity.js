@@ -108,8 +108,7 @@ $(document).ready(function() {
 			$("#frmNew").submit(function(e) {
 				if(timeErrorBox.is(":visible")){
 					//e.preventDefault();
-					$('body,html').animate({scrollTop:0},500);
-					timeErrorBox.fadeOut().fadeIn().fadeOut().fadeIn().fadeOut().fadeIn();					
+					$('body,html').animate({scrollTop:0},500);				
 					return false;	//禁止跳转
 				}else{
 					return true;
@@ -165,7 +164,6 @@ $(document).ready(function() {
 				if(timeErrorBox.is(":visible")){
 					//e.preventDefault();
 					$('body,html').animate({scrollTop:0},500);
-					timeErrorBox.fadeOut().fadeIn().fadeOut().fadeIn().fadeOut().fadeIn();
 					return false;	//禁止跳转
 				}else{
 					return true;
