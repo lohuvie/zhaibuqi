@@ -1,0 +1,13 @@
+{
+    "person":[
+        {
+            "href":"#",
+            "portrait":"images/404.jpg",
+            "title":"title",
+            "name":"name",
+            "institude":"institude",
+            "email":"aa@aa.com",
+            "group":"group1"
+        }
+    ]
+}

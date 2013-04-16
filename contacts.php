@@ -114,10 +114,8 @@ mysqli_close($dbc);
 <body>
     <?php require_once("top-nav.php"); ?>
     <div id="container">
-        <div id="dustbin"></div>
         <div class="fixed">
             <h1><?php if($is_user){echo '我';}else{echo $name;}?>关注的人(<span><?php echo $attention_lists_count;?>个</span>)</h1>
-            <p id="tips"></p>
             <div id="operation-box">
                 <form action="" method="get">
                     <div>
@@ -130,24 +128,23 @@ mysqli_close($dbc);
                     <p>选择分组<span id="group"></span></p>
                     <div class="group-selection">
                         <ul>
-                            <li class="passive" id="-1">全部</li>
+                            <li class="passive" value="-1">全部</li>
                             <?php
                             //循环显示组
                             foreach($groups as &$g){
-                                echo '<li id="'.$g['id'].'">'.$g['name'].'</li>';
+                                echo '<li value="'.$g['id'].'">'.$g['name'].'</li>';
                             }
                             unset($g);
                             ?>
-                            <li id="0">未分组</li>
+                            <li value="0">未分组</li>
                         </ul>
-                        <em id="manage-group">管理分组..</em>
+                        <em id="create-group">新建分组..</em>
                     </div>
                 </div>
                 <div class="operation move">
                     <p>移动至<span id="move"></span></p>
                     <div class="group-selection">
                         <ul>
-                            <li class="passive" id="-1">全部</li>
                             <?php
                             //循环显示 移动至组
                             foreach($groups as &$g){
@@ -155,7 +152,7 @@ mysqli_close($dbc);
                             }
                             unset($g);
                             ?>
-                            <li id="0">未分组</li>
+                            <li value="0">未分组</li>
                         </ul>
                     </div>
                 </div>
@@ -164,6 +161,11 @@ mysqli_close($dbc);
                 </div>
                 <?php }?>
             </div>
+
+            <div class="group-header">
+                <h2 class="group-name">全部(<span><?php echo $attention_lists_count;?></span>个)</h2>
+                    <span class="delete-group">删除分组</span><span class="rename">编辑分组名</span></div>
+
             <div id="sidebar">
                 <a href="r-contacts.html">关注<?php if($is_user){echo '我';}else{echo $name;}?>的人(<span><?php echo $fan_id_count;?></span>)</a>
                 <div class="tips">
@@ -173,12 +175,6 @@ mysqli_close($dbc);
                     </p>
                     <p>
                         2.单击名字或头像可查看用户主页
-                    </p>
-                    <p>
-                       3.在“选择分组”下拉菜单中双击分组可对分组进行重命名
-                    </p>
-                    <p>
-                       4.撤销只能撤销最近一次与好友管理相关的操作
                     </p>
                 </div>
             </div>
@@ -198,9 +194,9 @@ mysqli_close($dbc);
                 <?php if($is_user){
                     //显示组别 和 attention_group号
                     if(isset($al['group'])){
-                        echo '<p class="extra" group="'.$al['ag_id'].'">组别:'.$al['group'].'</p>';
+                        echo '<p class="extra" value="'.$al['ag_id'].'">组别:'.$al['group'].'</p>';
                     }else{
-                        echo '<p class="extra" group="0">组别：未分组</p>';
+                        echo '<p class="extra" value="0">组别：未分组</p>';
                     }
                 }
                 ?>
@@ -214,8 +210,9 @@ mysqli_close($dbc);
         <b id="to-top"></b>
     </div>
     <?php require_once("footer.php"); ?>
-    <script src="js/jquery-1.7.1.min.js"></script>
-    <script src="js/apprise-v2.min/apprise-v2.min.js"></script>
-    <script src="js/jquery.contacts.js"></script>
+    <script src="js/seajs/sea.js"
+        data-main = "contacts/contacts.main.js"
+        data-config = "contacts/contacts.config.js"
+    ></script>
 </body>
 </html>

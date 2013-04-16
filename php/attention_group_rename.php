@@ -6,11 +6,11 @@ require_once("util.php");
 header('Content-type: text/json');
 header('Content-type: application/json');
 define('SUCCESS',0);
-define('HAS_EXIST',1);
+define('GROUP_NO_EXIST',1);
 
 
-$group_id = $_POST['id'];
-$group_name = $_POST['name'];
+$group_id = $_POST['groupId'];
+$group_name = $_POST['groupName'];
 $user_id = USER_NO_LOGIN;
 if(isset($_SESSION['user_id'])){
     $user_id = $_SESSION['user_id'];
@@ -19,14 +19,12 @@ if(isset($_SESSION['user_id'])){
 $dbc = mysqli_connect(host,user,password,database);
 
 //查询是否存在此组名
-$query = "select * from user u
-            join groups g on u.user_id=g.founder_id
-            where name = $group_name";
+$query = "select * from  groups g  where g.groups_id = $group_id";
 $result = mysqli_query($dbc,$query);
-if(mysqli_num_rows($result) == 0){
+if(mysqli_num_rows($result) != 0){
     //此组名不存在 可以重命名
     try{
-        $query = "update groups set name='$name' where groups_id = '$group_id'";
+        $query = "update groups set name='$group_name' where groups_id = $group_id";
         $result = mysqli_query($dbc,$query);
         $arr = array('msg'=>SUCCESS);
     }catch(Exception $e) {
@@ -35,7 +33,8 @@ if(mysqli_num_rows($result) == 0){
     }
 }else{
     //此组名存在 不允许新建
-    $arr = array('msg'=>HAS_EXIST);
+    $arr = array('msg'=>GROUP_NO_EXIST);
 }
 
 echo json_encode($arr);
+mysqli_close($dbc);

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source source="LOCAL" name="Data Source" product="" version="" jdbc-version="" driver-name="" driver-version="" uuid="c6e54238-45cb-4baa-824d-f7716937968e">
+    <synchronize>true</synchronize>
+    <jdbc-url>jdbc://</jdbc-url>
+    <default-dialect>MySQL</default-dialect>
+    <libraries/>
+  </data-source>
+</component>
