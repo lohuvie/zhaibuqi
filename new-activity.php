@@ -67,6 +67,7 @@
                            <input type="text" name="time-begin" id="time-begin" class="input validate[required] datepicker" value="开始时间"/>
                            <span>&nbsp;至&nbsp;</span>
                            <input type="text" name="time-end" id="time-end" class="input validate[required] datepicker" value="结束时间"/>
+                           <div class='time_error' style="display:none">选择的时间范围有误</div>
                        </td>
                    </tr>
                    <tr class="place">

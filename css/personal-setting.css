@@ -25,13 +25,14 @@ body{
     padding-top: 10px;
 }
 .fields td{
-    padding: 10px;
+    height: 32px;
+    padding: 5px;
     vertical-align: top;
 }
 .personal-setting input[type=password]{
     border: 1px solid #BBBBBB;
     padding: 2px;
-    width: 220px;
+    width: 210px;
     height: 22px;
 }
 .personal-setting input{
@@ -51,13 +52,13 @@ body{
 .submit-btn:hover{
     background: #222222;
 }
-#change-password {
+button[type=submit],#mail-submit {
     border: 1px solid #BBBBBB;
     font-size: 14px;
     font-family: inherit;
     cursor: pointer;
 } 
-#change-password:hover{
+button[type=submit]:hover,#mail-submit:hover{
     border: 1px solid #222222;
 } 
 
@@ -90,4 +91,30 @@ body{
 #mail-fiels p{
     margin-top: 20px;
     color: #555555;
+}
+.emailSuccess{
+    display: block;
+    background:#33be40;
+    color:#fff;
+    width:150px;
+    margin-left: 40px;
+    padding:4px 10px 4px 10px;
+    border:2px solid #ddd;
+    border-radius:6px;box-shadow:0 0 6px #000;
+    font:12px/1.7 "\5b8b\4f53",Tahoma;
+    cursor:pointer;
+    z-index:5001;
+}
+.emailError{
+    display: block;
+    background:#393939;
+    color:#fff;
+    width:150px;
+    margin-left: 40px;
+    padding:4px 10px 4px 10px;
+    border:2px solid #ddd;
+    border-radius:6px;box-shadow:0 0 6px #000;
+    font:12px/1.7 "\5b8b\4f53",Tahoma;
+    cursor:pointer;
+    z-index:5001;
 }

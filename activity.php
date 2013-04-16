@@ -211,11 +211,7 @@ if($user_id == $creater_id || $approved != 0){
 <?php
 }else{
     //审核未通过 非用户本人无法查看
-    ?>
-<div>
-    <p>对不起，您访问的页面不存在</p>
-</div>
-    <?php
+    require_once("404.php");
 }
 ?>
 </div>
