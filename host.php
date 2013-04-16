@@ -76,7 +76,7 @@
                         <tr id="extra" style="display:none">
                             <td><label for="assign-admin">指定管理员账号</label></td>
                             <td>
-                                <input id="assign-admin" name="assign-admin" type="text" tabindex="6" class="validate[required]"/>
+                                <input id="assign-admin" name="assign-admin" type="text" tabindex="6" class="validate[required]" disabled="true"/>
                             </td>
                         </tr>
                         <tr>

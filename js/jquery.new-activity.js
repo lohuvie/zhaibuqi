@@ -1,3 +1,12 @@
+function isCorrectTime(obj){   
+    reg= /^(\d{2}):(\d{2})$/;
+    if(!reg.test(obj) ){   
+        $(".time_error").fadeIn().fadeOut().fadeIn().fadeOut().fadeIn();
+    }else{   
+        $(".time_error").hide();
+    }
+} 
+
 $(document).ready(function() {
 
     //验证新建活动表单，载入ValidationEngine
@@ -68,29 +77,30 @@ $(document).ready(function() {
 			if(startTimeBox.val() != '' && endTimeBox.val() != ''){
 				var s_time = startTimeBox.val().split(':');
 				var e_time = endTimeBox.val().split(':');
-				var time_error = "<div class='time_error'>选择的时间范围有误</div>";
 
 				if (endTimeBox.val() != "结束时间") {
-					if(e_time[0] < s_time[0]){				//小时对比
-						if(!timeErrorBox.is(":visible")){
-							endTimeBox.after(time_error);
+					if(e_time[0] < s_time[0]){					//小时对比
+						if(!timeErrorBox.is(":visible")){		//不存在错误的提示
 							timeErrorBox.fadeIn().fadeOut().fadeIn().fadeOut().fadeIn();	//闪烁效果
-						}else{
+						}else{									//存在错误的提示
 							timeErrorBox.fadeOut().fadeIn().fadeOut().fadeIn().fadeOut().fadeIn();	//闪烁效果
 						}
 					}else if(e_time[0] == s_time[0]){
-						if(e_time[1] <= s_time[1]){			//分钟对比
-							if(!timeErrorBox.is(":visible")){
-								endTimeBox.after(time_error);
+						if(e_time[1] <= s_time[1]){				//分钟对比
+							if(!timeErrorBox.is(":visible")){	//不存在错误的提示
 								timeErrorBox.fadeIn().fadeOut().fadeIn().fadeOut().fadeIn();	//闪烁效果
-							}else{
+							}else{								//存在错误的提示
 								timeErrorBox.fadeOut().fadeIn().fadeOut().fadeIn().fadeOut().fadeIn();	//闪烁效果
 							}
+						}else{		//小时相等，分钟结果正确
+							timeErrorBox.hide();	//去除显示
 						}
-					}else{
-						if(timeErrorBox){		//去除显示
-							timeErrorBox.remove();
-						}
+					}else if(e_time[0] > s_time[0]){	//小时结果正确
+						timeErrorBox.hide();		//去除显示
+					}
+				}else{//endTimeBox为结束时间情况下
+					if(startTimeBox.val() != "开始时间"){
+						isCorrectTime(startTimeBox.val());
 					}
 				}
 			}
@@ -99,8 +109,8 @@ $(document).ready(function() {
 				if(timeErrorBox.is(":visible")){
 					//e.preventDefault();
 					$('body,html').animate({scrollTop:0},500);
-					timeErrorBox.fadeIn().fadeOut().fadeIn().fadeOut().fadeIn();	//闪烁效果
-					return false;
+					timeErrorBox.fadeOut().fadeIn().fadeOut().fadeIn().fadeOut().fadeIn();					
+					return false;	//禁止跳转
 				}else{
 					return true;
 				}
@@ -108,7 +118,7 @@ $(document).ready(function() {
 		},	
 		onSelect: function (){
 			if(timeErrorBox){		//去除显示
-				timeErrorBox.remove();
+				timeErrorBox.hide();
 			}
 		},
 		hourGrid: 4,
@@ -123,29 +133,30 @@ $(document).ready(function() {
 			if(startTimeBox.val() != '' && endTimeBox.val() != ''){
 				var s_time = startTimeBox.val().split(':');
 				var e_time = endTimeBox.val().split(':');
-				var time_error = "<div class='time_error'>选择的时间范围有误</div>";
 				
 				if (startTimeBox.val() != "开始时间") {
-					if(e_time[0] < s_time[0]){				//小时对比
-						if(!timeErrorBox.is(":visible")){
-							endTimeBox.after(time_error);
+					if(e_time[0] < s_time[0]){					//小时对比
+						if(!timeErrorBox.is(":visible")){		//不存在错误的提示
 							timeErrorBox.fadeIn().fadeOut().fadeIn().fadeOut().fadeIn();	//闪烁效果
-						}else{
+						}else{									//存在错误的提示
 							timeErrorBox.fadeOut().fadeIn().fadeOut().fadeIn().fadeOut().fadeIn();	//闪烁效果
 						}
 					}else if(e_time[0] == s_time[0]){
-						if(e_time[1] <= s_time[1]){			//分钟对比
-							if(!timeErrorBox.is(":visible")){
-								endTimeBox.after(time_error);
+						if(e_time[1] <= s_time[1]){				//分钟对比
+							if(!timeErrorBox.is(":visible")){	//不存在错误的提示
 								timeErrorBox.fadeIn().fadeOut().fadeIn().fadeOut().fadeIn();	//闪烁效果
-							}else{
+							}else{								//存在错误的提示
 								timeErrorBox.fadeOut().fadeIn().fadeOut().fadeIn().fadeOut().fadeIn();	//闪烁效果
 							}
+						}else{		//小时相等，分钟结果正确
+							timeErrorBox.hide();	//去除显示
 						}
-					}else{
-						if(timeErrorBox){		//去除显示
-							timeErrorBox.remove();
-						}
+					}else if(e_time[0] > s_time[0]){	//小时结果正确
+						timeErrorBox.hide();		//去除显示
+					}
+				}else{//StartTimeBox为开始时间情况下
+					if(endTimeBox.val() != "结束时间"){
+						isCorrectTime(endTimeBox.val());
 					}
 				}
 			}
@@ -154,8 +165,8 @@ $(document).ready(function() {
 				if(timeErrorBox.is(":visible")){
 					//e.preventDefault();
 					$('body,html').animate({scrollTop:0},500);
-					timeErrorBox.fadeIn().fadeOut().fadeIn().fadeOut().fadeIn();	//闪烁效果
-					return false;
+					timeErrorBox.fadeOut().fadeIn().fadeOut().fadeIn().fadeOut().fadeIn();
+					return false;	//禁止跳转
 				}else{
 					return true;
 				}
@@ -163,7 +174,7 @@ $(document).ready(function() {
 		},
 		onSelect: function (){
 			if(timeErrorBox){		//去除显示
-				timeErrorBox.remove();
+				timeErrorBox.hide();
 			}
 		},
 		hourGrid: 4,
@@ -171,6 +182,7 @@ $(document).ready(function() {
 		stepHour: 1,
 		stepMinute: 10,				
 	});
+	
 
 	//载入 Tagsit
     var sampleTags = ['望江', '江安', '成都', '篮球赛', '足球赛', '电影','2013','讲座','比赛','竞赛','部门','NBA','宅不起','Zhaibuqi','体育部','文艺部'];
