@@ -2,7 +2,38 @@
     <link href="css/top-nav.css" type="text/css" rel="stylesheet" />
 </head>
 <?php
-require_once('php/start-session.php')
+require_once('php/start-session.php');
+//get present url
+function curPageURL()
+{
+    $pageURL = 'http';
+
+    if ($_SERVER["HTTPS"] == "on")
+    {
+        $pageURL .= "s";
+    }
+    $pageURL .= "://";
+
+    $this_page = $_SERVER["REQUEST_URI"];
+
+    // 只取 ? 前面的内容
+    if (strpos($this_page, "?") !== false)
+        $this_page = reset(explode("?", $this_page));
+
+    if ($_SERVER["SERVER_PORT"] != "80")
+    {
+        $pageURL .= $_SERVER["SERVER_NAME"] . ":" . $_SERVER["SERVER_PORT"] . $this_page;
+    }
+    else
+    {
+        $pageURL .= $_SERVER["SERVER_NAME"] . $this_page;
+    }
+    return $pageURL;
+}
+
+$URL = curPageURL();
+echo $URL."SSSS";
+setcookie('URL',$URL, time() + (60));    // expires in 1 MINUTE
 ?>
 <div class="top-nav">
     <div id="nav-wrapper">
