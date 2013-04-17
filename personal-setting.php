@@ -110,19 +110,21 @@ require_once "php/start-session.php";
                 <h3>邮件设置</h3>
                 <hr/>
                 <p>通知我，若发生如下状况...</p>
-                <form action="php/email_settings.php" class="mail-form" method="post">
+                <form class="mail-form">
                     <table>
                         <tbody>
                         <tr>
-                            <td><label for="not-use-time">我没有登录</label></td>
-                            <td id="not-use-time">
-                                <input type="radio" id="three-days" name="not-use-time" value="3"/>
+                            <td><label for="not_use_time">我没有登录</label></td>
+                            <td id="not_use_time">
+                                <input type="radio" id="three-days" name="not_use_time" value="3"/>
                                 <label for="three-days">3天</label>
-                                <input type="radio" id="seven-days" name="not-use-time" value="7" checked="checked"/>
+                                <input type="radio" id="seven-days" name="not_use_time" value="7" checked="checked"/>
                                 <label for="seven-days">7天</label>
-                                <input type="radio" id="never" name="not-use-time" value="0"/>
+                                <input type="radio" id="never" name="not_use_time" value="0"/>
                                 <label for="never">从不</label>
                             </td>
+                            <td style="display:none"><div class="emailSuccess" >设置保存成功!</div></td>
+                            <td style="display:none"><div class="emailError" >设置保存失败!</div></td>
                         </tr>
                         <tr>
                             <td><label for="message">有新消息时</label></td>
@@ -136,7 +138,7 @@ require_once "php/start-session.php";
                         <tr>
                             <td></td>
                             <td>
-                                <button type="submit" class="submit-btn" name="mail-submit">保存邮件设置</button>
+                                <a class="submit-btn" id="mail-submit" >保存邮件设置</a>
                             </td>
                         </tr>
                         </tbody>

@@ -4,7 +4,7 @@
     <list default="true" id="92563efb-133a-4a85-a27f-23f4c0b8f224" name="Default" comment="" />
     <ignored path="zhaibuqi.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="92563efb-133a-4a85-a27f-23f4c0b8f224" time="1364622381962" ignored="false" />
+    <file path="/Dummy.txt" changelist="92563efb-133a-4a85-a27f-23f4c0b8f224" time="1366114809442" ignored="false" />
     <file path="/attention_user.php" changelist="92563efb-133a-4a85-a27f-23f4c0b8f224" time="1363789627611" ignored="false" />
     <file path="/a.dummy" changelist="92563efb-133a-4a85-a27f-23f4c0b8f224" time="1364627277485" ignored="false" />
     <file path="/love_activity.php" changelist="92563efb-133a-4a85-a27f-23f4c0b8f224" time="1363675875626" ignored="false" />
@@ -14,10 +14,18 @@
     <file path="/follow_status.php" changelist="92563efb-133a-4a85-a27f-23f4c0b8f224" time="1363762589604" ignored="false" />
     <file path="/attention_status_init.php" changelist="92563efb-133a-4a85-a27f-23f4c0b8f224" time="1363784947896" ignored="false" />
     <file path="/jquery.following.js" changelist="92563efb-133a-4a85-a27f-23f4c0b8f224" time="1364025151365" ignored="false" />
-    <file path="/contacts.php" changelist="92563efb-133a-4a85-a27f-23f4c0b8f224" time="1364637583375" ignored="false" />
+    <file path="/contacts.php" changelist="92563efb-133a-4a85-a27f-23f4c0b8f224" time="1366115184134" ignored="false" />
     <file path="/contacts.css" changelist="92563efb-133a-4a85-a27f-23f4c0b8f224" time="1364636277133" ignored="false" />
-    <file path="/attention_list.php" changelist="92563efb-133a-4a85-a27f-23f4c0b8f224" time="1364635958715" ignored="false" />
-    <file path="/fragment.php" changelist="92563efb-133a-4a85-a27f-23f4c0b8f224" time="1364635215722" ignored="false" />
+    <file path="/attention_list.php" changelist="92563efb-133a-4a85-a27f-23f4c0b8f224" time="1366116361572" ignored="false" />
+    <file path="/fragment.php" changelist="92563efb-133a-4a85-a27f-23f4c0b8f224" time="1365924322148" ignored="false" />
+    <file path="/attention_group_new.php" changelist="92563efb-133a-4a85-a27f-23f4c0b8f224" time="1365924790135" ignored="false" />
+    <file path="/a.php" changelist="92563efb-133a-4a85-a27f-23f4c0b8f224" time="1364820020814" ignored="false" />
+    <file path="/attention_person_move" changelist="92563efb-133a-4a85-a27f-23f4c0b8f224" time="1365926033787" ignored="false" />
+    <file path="/attention_person_move.php" changelist="92563efb-133a-4a85-a27f-23f4c0b8f224" time="1366115899333" ignored="false" />
+    <file path="/attention_person_delete.php" changelist="92563efb-133a-4a85-a27f-23f4c0b8f224" time="1365928676468" ignored="false" />
+    <file path="/attention_group_delete.php" changelist="92563efb-133a-4a85-a27f-23f4c0b8f224" time="1366115719708" ignored="false" />
+    <file path="/attention_group_rename.php" changelist="92563efb-133a-4a85-a27f-23f4c0b8f224" time="1366119643933" ignored="false" />
+    <file path="/contacts.group.js" changelist="92563efb-133a-4a85-a27f-23f4c0b8f224" time="1366120650424" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,104 +39,33 @@
   <component name="DaemonCodeAnalyzer">
     <disable_hints />
   </component>
+  <component name="DatabaseView">
+    <flatten value="false" />
+    <groupTables value="false" />
+    <sortChildren value="false" />
+  </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
     <favorites_list name="zhaibuqi" />
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="contacts.php" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/contacts.php">
+      <file leaf-file-name="attention_group_rename.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/php/attention_group_rename.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="77" column="22" selection-start="3199" selection-end="3199" vertical-scroll-proportion="0.42803738">
+            <state line="22" column="0" selection-start="499" selection-end="499" vertical-scroll-proportion="0.62333333">
               <folding>
-                <element signature="n#style#0;n#div#1;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <marker date="1364640174469" expanded="true" signature="3846:3904" placeholder="..." />
-                <marker date="1364640174469" expanded="true" signature="3853:3904" placeholder="..." />
-                <marker date="1364640174469" expanded="true" signature="4266:4290" placeholder="..." />
-                <marker date="1364640174469" expanded="true" signature="4659:4696" placeholder="..." />
-                <marker date="1364640174469" expanded="true" signature="5109:5148" placeholder="..." />
-                <marker date="1364640174469" expanded="true" signature="5868:5907" placeholder="..." />
+                <marker date="1366119856476" expanded="true" signature="442:496" placeholder="select * fro..groups..." />
+                <marker date="1366119856476" expanded="true" signature="617:681" placeholder="update group..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="personal-page.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/personal-page.php">
+      <file leaf-file-name="contacts.group.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/contacts/contacts.group.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="72" column="33" selection-start="3082" selection-end="3082" vertical-scroll-proportion="-5.8846154">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="attention_list.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/json/attention_list.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="18" column="12" selection-start="374" selection-end="374" vertical-scroll-proportion="-6.5">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="contacts.css" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/css/contacts.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="187" column="16" selection-start="3497" selection-end="3497" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="jquery.contacts.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/jquery.contacts.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="196" column="21" selection-start="6583" selection-end="6583" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-                <marker date="1364640134273" expanded="true" signature="855:879" placeholder="{&quot;id&quot;: &quot;edit&quot;...}" />
-                <marker date="1364640134273" expanded="true" signature="6622:7800" placeholder="{...}" />
-                <marker date="1364640134273" expanded="true" signature="7027:7090" placeholder="{...}" />
-                <marker date="1364640134273" expanded="true" signature="7394:7792" placeholder="{...}" />
-                <marker date="1364640134273" expanded="true" signature="8583:8622" placeholder="{...}" />
-                <marker date="1364640134273" expanded="true" signature="15586:15618" placeholder="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="waterfall.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/json/waterfall.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="50" column="18" selection-start="1417" selection-end="1417" vertical-scroll-proportion="-9.153846">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="404.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/404.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="18" selection-start="492" selection-end="492" vertical-scroll-proportion="-9.153846">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="login.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/php/login.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="84" column="49" selection-start="3403" selection-end="3444" vertical-scroll-proportion="-11.769231">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="love_activity_count.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/json/love_activity_count.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="35" column="102" selection-start="1182" selection-end="1182" vertical-scroll-proportion="-16.346153">
+            <state line="89" column="46" selection-start="3350" selection-end="3350" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -152,22 +89,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/css/new-activity.css" />
-        <option value="$PROJECT_DIR$/new-activity.php" />
-        <option value="$PROJECT_DIR$/js/jquery.new-activity-pic.js" />
-        <option value="$PROJECT_DIR$/php/util.php" />
-        <option value="$PROJECT_DIR$/php/love_activity.php" />
-        <option value="$PROJECT_DIR$/php/join_activity.php" />
-        <option value="$PROJECT_DIR$/json/love_activity_count.php" />
-        <option value="$PROJECT_DIR$/json/follow_status.php" />
-        <option value="$PROJECT_DIR$/json/attention_status_init.php" />
-        <option value="$PROJECT_DIR$/js/jquery.following.js" />
         <option value="$PROJECT_DIR$/php/attention_user.php" />
         <option value="$PROJECT_DIR$/personal-page.php" />
         <option value="$PROJECT_DIR$/js/jquery.contacts.js" />
         <option value="$PROJECT_DIR$/css/contacts.css" />
-        <option value="$PROJECT_DIR$/json/attention_list.php" />
+        <option value="H:/contacts/contacts.php" />
+        <option value="$PROJECT_DIR$/php/attention_person_move" />
+        <option value="$PROJECT_DIR$/js/contacts/contacts.person.js" />
+        <option value="$PROJECT_DIR$/php/attention_group_new.php" />
+        <option value="$PROJECT_DIR$/php/attention_person_delete.php" />
+        <option value="$PROJECT_DIR$/activity.php" />
         <option value="$PROJECT_DIR$/contacts.php" />
+        <option value="$PROJECT_DIR$/php/attention_group_delete.php" />
+        <option value="$PROJECT_DIR$/php/attention_person_move.php" />
+        <option value="$PROJECT_DIR$/json/attention_list.php" />
+        <option value="$PROJECT_DIR$/php/attention_group_rename.php" />
+        <option value="$PROJECT_DIR$/js/contacts/contacts.group.js" />
       </list>
     </option>
   </component>
@@ -181,7 +118,7 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="1319" />
+    <option name="width" value="1320" />
     <option name="height" value="784" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
@@ -256,6 +193,20 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="zhaibuqi" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="zhaibuqi" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="Scope">
@@ -273,10 +224,10 @@
   <component name="PropertiesComponent">
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowFactoryState" value="true" />
-    <property name="options.lastSelected" value="Configurable.PHP.Debug" />
+    <property name="options.lastSelected" value="appearance" />
     <property name="FullScreen" value="false" />
-    <property name="options.searchVisible" value="true" />
     <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="RunManager">
     <configuration default="true" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
@@ -286,14 +237,14 @@
     <configuration default="true" type="PhpLocalRunConfigurationType" factoryName="PHP Console">
       <method />
     </configuration>
+    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
+      <method />
+    </configuration>
     <configuration default="true" type="JavascriptDebugSession" factoryName="Local" singleton="true">
       <JSDebuggerConfigurationSettings>
         <option name="engineId" value="embedded" />
         <option name="fileUrl" />
       </JSDebuggerConfigurationSettings>
-      <method />
-    </configuration>
-    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
       <method />
     </configuration>
     <list size="0" />
@@ -325,17 +276,17 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1319" height="784" extended-state="6" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1320" height="784" extended-state="6" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32903227" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3292402" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25479662" sideWeight="0.5601852" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4398148" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25460124" sideWeight="0.5613497" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4386503" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25460124" sideWeight="0.10122699" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32903227" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -343,7 +294,7 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32903227" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32822084" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -408,136 +359,136 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="43" />
+      <option name="time" value="54" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/js/jquery.following.js">
+    <entry file="file://$PROJECT_DIR$/js/contacts/contacts.init.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="43" selection-start="1054" selection-end="1054" vertical-scroll-proportion="0.93075687">
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/jquery.personal-page.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="18" selection-start="423" selection-end="423" vertical-scroll-proportion="0.0273752">
+        <state line="13" column="51" selection-start="344" selection-end="357" vertical-scroll-proportion="39.08">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/r-contacts.php">
+    <entry file="file://$PROJECT_DIR$/js/contacts/contacts.person.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="13" column="33" selection-start="423" selection-end="431" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/php/upload_picture.php">
+    <entry file="file://$PROJECT_DIR$/php/approve-activity.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="4.423077">
-          <folding />
-        </state>
+        <state line="69" column="71" selection-start="2853" selection-end="2853" vertical-scroll-proportion="-15.692307" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/php/register.php">
+    <entry file="file://$PROJECT_DIR$/php/ajaxValidateFieldUser.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="61" column="12" selection-start="3028" selection-end="3196" vertical-scroll-proportion="-11.923077">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/php/admin.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/php/attention_user.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="43" column="34" selection-start="1539" selection-end="1539" vertical-scroll-proportion="-10.615385">
+        <state line="8" column="0" selection-start="163" selection-end="2384" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/json/event.php">
+    <entry file="file://$PROJECT_DIR$/activity.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.85714287">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/php/login.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="84" column="49" selection-start="3403" selection-end="3444" vertical-scroll-proportion="-11.769231">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/404.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="18" selection-start="492" selection-end="492" vertical-scroll-proportion="-9.153846">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/json/love_activity_count.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="102" selection-start="1182" selection-end="1182" vertical-scroll-proportion="-16.346153">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/contacts.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="187" column="16" selection-start="3497" selection-end="3497" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/jquery.contacts.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="196" column="21" selection-start="6583" selection-end="6583" vertical-scroll-proportion="0.0">
+        <state line="141" column="41" selection-start="4061" selection-end="4061" vertical-scroll-proportion="8.153846">
           <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <marker date="1364640134273" expanded="true" signature="855:879" placeholder="{&quot;id&quot;: &quot;edit&quot;...}" />
-            <marker date="1364640134273" expanded="true" signature="6622:7800" placeholder="{...}" />
-            <marker date="1364640134273" expanded="true" signature="7027:7090" placeholder="{...}" />
-            <marker date="1364640134273" expanded="true" signature="7394:7792" placeholder="{...}" />
-            <marker date="1364640134273" expanded="true" signature="8583:8622" placeholder="{...}" />
-            <marker date="1364640134273" expanded="true" signature="15586:15618" placeholder="{...}" />
+            <marker date="1365930470270" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1365930470270" expanded="true" signature="-1:-1" placeholder="select * fro..user..." />
+            <marker date="1365930470270" expanded="true" signature="-1:-1" placeholder="select * fro..activity_love..." />
+            <marker date="1365930470270" expanded="true" signature="-1:-1" placeholder="select * fro..activity_join..." />
+            <marker date="1365930470270" expanded="true" signature="-1:-1" placeholder="select t.nam..activity..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/json/waterfall.php">
+    <entry file="file://$PROJECT_DIR$/php/attention_group_new.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="50" column="18" selection-start="1417" selection-end="1417" vertical-scroll-proportion="-9.153846">
+        <state line="42" column="6" selection-start="1183" selection-end="1183" vertical-scroll-proportion="-15.423077">
+          <folding>
+            <marker date="1366119526452" expanded="true" signature="-1:-1" placeholder="select * fro..user..." />
+            <marker date="1366119526452" expanded="true" signature="-1:-1" placeholder="insert into ..." />
+            <marker date="1366119526452" expanded="true" signature="-1:-1" placeholder="select group..groups..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/contacts.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="198" column="69" selection-start="8513" selection-end="8513" vertical-scroll-proportion="-4.8627453">
+          <folding>
+            <marker date="1366119519306" expanded="true" signature="-1:-1" placeholder="select nickn..user..." />
+            <marker date="1366119519306" expanded="true" signature="-1:-1" placeholder="select statu..attention_fan..." />
+            <marker date="1366119519306" expanded="true" signature="-1:-1" placeholder="select af.at..portrait..." />
+            <marker date="1366119519306" expanded="true" signature="-1:-1" placeholder="select af.st..portrait..." />
+            <marker date="1366119519306" expanded="true" signature="-1:-1" placeholder="select g.gro..user..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/contacts/contacts.loading.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="44" column="24" selection-start="1368" selection-end="1371" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/personal-page.php">
+    <entry file="file://$PROJECT_DIR$/php/attention_person_delete.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="72" column="33" selection-start="3082" selection-end="3082" vertical-scroll-proportion="-5.8846154">
+        <state line="54" column="52" selection-start="1773" selection-end="1773" vertical-scroll-proportion="-23.423077">
+          <folding>
+            <marker date="1365928722619" expanded="true" signature="-1:-1" placeholder="delete from ..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/php/attention_group_delete.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="0" selection-start="303" selection-end="303" vertical-scroll-proportion="0.8121019">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/json/attention_list.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="12" selection-start="374" selection-end="374" vertical-scroll-proportion="-6.5">
+        <state line="97" column="5" selection-start="4185" selection-end="4185" vertical-scroll-proportion="-6.8846154">
+          <folding>
+            <marker date="1366119512956" expanded="true" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/php/attention_person_move.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="49" column="5" selection-start="1276" selection-end="1276" vertical-scroll-proportion="-18.5">
+          <folding>
+            <marker date="1366116194974" expanded="true" signature="-1:-1" placeholder="select * fro..groups..." />
+            <marker date="1366116194974" expanded="true" signature="-1:-1" placeholder="update atten..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/contacts/contacts.group.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="89" column="46" selection-start="3350" selection-end="3350" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/contacts.php">
+    <entry file="file://$PROJECT_DIR$/php/attention_group_rename.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="77" column="22" selection-start="3199" selection-end="3199" vertical-scroll-proportion="0.42803738">
+        <state line="22" column="0" selection-start="499" selection-end="499" vertical-scroll-proportion="0.62333333">
           <folding>
-            <element signature="n#style#0;n#div#1;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <marker date="1364640174469" expanded="true" signature="3846:3904" placeholder="..." />
-            <marker date="1364640174469" expanded="true" signature="3853:3904" placeholder="..." />
-            <marker date="1364640174469" expanded="true" signature="4266:4290" placeholder="..." />
-            <marker date="1364640174469" expanded="true" signature="4659:4696" placeholder="..." />
-            <marker date="1364640174469" expanded="true" signature="5109:5148" placeholder="..." />
-            <marker date="1364640174469" expanded="true" signature="5868:5907" placeholder="..." />
+            <marker date="1366119856476" expanded="true" signature="442:496" placeholder="select * fro..groups..." />
+            <marker date="1366119856476" expanded="true" signature="617:681" placeholder="update group..." />
           </folding>
         </state>
       </provider>
