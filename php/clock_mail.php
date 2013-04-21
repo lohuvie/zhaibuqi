@@ -51,25 +51,29 @@
 
                 $mail->Subject = "来自宅不起的提醒";//主题
 
-                $mail->Body = "<html><body>尊敬的".$userName."先生/女士 你好:<br/>
-
-好久不见，宅不起上有一些很多人都感兴趣的内容。也许你会喜欢，所以试着推荐给你，欢迎回到<a href='http://www.zhaibuqi.com/'>宅不起</a><br/>
-
-        您使用了本站提供的定时功能，您已经有一周未登录宅不起小站,本小站有.....精彩内容<br/>
-
-        感谢对宅不起的支持，再次希望您在宅不起的体验有益和愉快！<br/>
-
-        宅不起 <a href='http://www.zhaibuqi.com/'>'http://www.zhaibuqi.com/</a><br/>
-
-        如果您的email程序不支持链接点击，请将上面的地址拷贝至您的浏览器(例如IE)的地址栏进入宅不起<br/>
-
-        (这是一封自动产生的email，请勿回复.)</br>
-        祝你生活愉快，</br>
-
---你的宅不起</br>
-
-
-收到这封邮件是因为你有段时间没来了，它并不会频繁的骚扰你。如果仍觉得被打扰，请点击 <a href='http://localhost/zhaibuqi/zhaibuqi/php/unsubscribe.php?p=.$String'>退订</a></body></html>"; //邮件内容
+                $mail->Body = '<html>
+                    <head><meta charset="UTF-8"><title>宅不起 | 推荐提醒</title></head>
+                    <body>
+                        <table style="background:#ffffff;padding:0;border:0;width:100%;text-align:left;border-collapse:collapse;border-spacing:0;">
+                            <tbody style="background:#ffffff;text-align:left;font-size:14px;color:#000000;font-family:Tahoma;line-height:19px;vertical-align:middle;width:99%;">
+                                <tr><td>尊敬的&nbsp;<span style="font-weight:bold;">'.$userName.'</span>&nbsp;先生/女士，您好:</td></tr>
+                                <tr><td><br /></td></tr>
+                                <tr><td>好久不见，&nbsp;<a style="color:#84C43C;text-decoration:none;" href="http://www.zhaibuqi.com"><span>宅不起(www.zhaibuqi.com)</span></a>&nbsp;上有一些很多人都感兴趣的内容。也许您会喜欢，所以试着推荐给您，欢迎回来！</td></tr>
+                                <tr><td><br /></td></tr>
+                                <tr><td>您使用了本站提供的定时功能，您已经有一周未登录宅不起小站,本小站有.....精彩内容</td></tr>
+                                <tr><td><br /></td></tr>
+                                <tr><td>收到这封邮件是因为您有段时间没来了，它并不会频繁的骚扰您。如果仍觉得被打扰，请点击&nbsp;<a style="color:#888888;text-decoration:none;" href="http://localhost/zhaibuqi/zhaibuqi/php/unsubscribe.php?p=.$String">退订</a>&nbsp;。</td></tr>
+                                <tr><td><br /></td></tr>
+                                <tr><td>感谢对宅不起的支持，再次希望您在宅不起的体验有益和愉快！</td></tr>
+                                <tr><td style="font-size:12px;">(这是一封自动产生的email，请勿回复)</td></tr>
+                                <tr><td><br /></td></tr>
+                                <tr><td><br /></td></tr>
+                            </tbody>
+                        </table>
+                        <hr />
+                        <div style="background:#ffffff;text-align:left;font-size:14px;color:#000000;font-family:Tahoma;line-height:19px;vertical-align:middle;width:99%;"><a style="color:grey;text-decoration:none;" href="http://www.zhaibuqi.com/" >宅不起 http://www.zhaibuqi.com/</a></div>
+                    </body>
+                </html>'; //邮件内容
 
 
                 $mail->AltBody = "This is the body in plain text for non-HTML mail clients"; //附加信息，可以省略

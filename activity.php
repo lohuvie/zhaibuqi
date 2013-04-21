@@ -44,6 +44,7 @@ $result = mysqli_fetch_array($data,MYSQLI_BOTH);
 
 $creater_id = $result['user_id'];
 $approved = $result['approved'];
+$ad_approved = $result['ad_approved'];
 if($user_id == $creater_id || $approved != 0){
     $activity_name = $result['name'];
     $site = $result['site'];
@@ -110,10 +111,15 @@ if($user_id == $creater_id || $approved != 0){
     $data = mysqli_query($dbc,$query);
     $join_activity_count = mysqli_num_rows($data);
     //根据是否通过 显示活动
-    if($approved == 0){
+    if($approved == 0&&$ad_approved=0){
+        //未审核 标签、用户评论、我也喜欢、我要参与按钮 不显示
+        $activity_name = $activity_name."(活动审核中...)";
+        $approved_message = "<div class='examining'>活动已提交，等待审核中。活动审核通过后将会有邮件通知您。</div>";
+    }
+    if($approved ==0&&$ad_approved=1){
         //未通过 标签、用户评论、我也喜欢、我要参与按钮 不显示
-        $activity_name = $activity_name."(活动审核中..)";
-        $approved_message = "活动已创建，等待审核中... 审核通过后会有邮件通知";
+        $activity_name = $activity_name."(活动未通过...)";
+        $approved_message = "<div class='examining'>经过审核,活动未通过。请重新修改后提交,感谢您的支持。</div>";
     }
     ?>
     <div id="sidebar" >
@@ -152,7 +158,7 @@ if($user_id == $creater_id || $approved != 0){
                         <span class="pl">类型:  </span><?php echo $type?>
                     </div>
                     <div id="event-host">
-                        <span class="pl">发布者:</span><?php echo $publisher?>
+                        <span class="pl">发布者:</span><a href="personal-page.php?id=<?php echo $creater_id?>"><?php echo $publisher?></a>
                     </div>
                     <div class="interest-attend pl">
                         <span class="num" id="love-num"></span>
@@ -172,10 +178,10 @@ if($user_id == $creater_id || $approved != 0){
                 </div>
                 <?php }?>
                 <!--
-                        <div class="events-spread">
-                            分享
-                        </div>
-                        -->
+                    <div class="events-spread">
+                        分享
+                    </div>
+                -->
             </div>
         </div>
         <?php if($approved != 0){?>

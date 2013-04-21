@@ -105,22 +105,31 @@ $mail->IsHTML(true); // set email format to HTML //是否使用HTML格式
 
 $mail->Subject = "请激活你的帐号，完成注册";//主题
 
-$mail->Body = "<html><body>尊敬的".$nickname."先生/女士:<br/>
-
-欢迎加入<a href='http://www.zhaibuqi.com/'>宅不起</a><br/>
-
-请点击下面的链接完成注册：</br>
-
-<a href='http://localhost/zhaibuqi/zhaibuqi/php/register.php?p=$String'>http://localhost/zhaibuqi/zhaibuqi/php/register.php?p=$String</a><br/>
-
-如果以上链接无法点击，请将上面的地址复制到你的浏览器(如IE)的地址栏进入宅不起。<br/>
-
-感谢对宅不起的支持，再次希望您在宅不起的体验有益和愉快！</br>
-
-宅不起<a href='http://www.zhaibuqi.com/'>http://www.zhaibuqi.com/</a><br/>
-
-
-(这是一封自动产生的email，请勿回复.)</body></html>";
+$mail->Body = '<html>
+    <head><meta charset="UTF-8"><title>宅不起 | 完成注册</title></head>
+    <body>
+        <table style="background:#ffffff;padding:0;border:0;width:100%;text-align:left;border-collapse:collapse;border-spacing:0;">
+            <tbody style="background:#ffffff;text-align:left;font-size:14px;color:#000000;font-family:Tahoma;line-height:19px;vertical-align:middle;width:99%;">
+                <tr><td>尊敬的&nbsp;<span style="font-weight:bold;">'.$userName.'</span>&nbsp;先生/女士:</td></tr>
+                <tr><td><br /></td></tr>
+                <tr><td>欢迎加入<a style="color:#84C43C;text-decoration:none;" href="http://www.zhaibuqi.com/">宅不起</a>！</td></tr>
+                <tr><td><br /></td></tr>
+                <tr><td>请点击下面的链接完成注册：</td></tr>
+                <tr><td><br /></td></tr>
+                <tr><td style="font-weight:bold;"><a style="color:#84C43C;" href="http://localhost/zhaibuqi/zhaibuqi/php/register.php?p=$String">http://localhost/zhaibuqi/zhaibuqi/php/register.php?p=$String</a></td></tr>
+                <tr><td><br /></td></tr>
+                <tr><td>如果以上链接无法点击，请将上面的地址复制到您的浏览器(如IE)的地址栏进入宅不起网站。</td></tr>
+                <tr><td><br /></td></tr>
+                <tr><td>感谢对宅不起的支持，再次希望您在宅不起的体验有益和愉快！</td></tr>
+                <tr><td style="font-size:12px;">(这是一封自动产生的email，请勿回复)</td></tr>
+                <tr><td><br /></td></tr>
+                <tr><td><br /></td></tr>
+            </tbody>
+        </table>
+        <hr />
+        <div style="background:#ffffff;text-align:left;font-size:14px;color:#000000;font-family:Tahoma;line-height:19px;vertical-align:middle;width:99%;"><a style="color:grey;text-decoration:none;" href="http://www.zhaibuqi.com/" >宅不起 http://www.zhaibuqi.com/</a></div>
+    </body>
+</html>';
 
 $mail->AltBody = "This is the body in plain text for non-HTML mail clients"; //附加信息，可以省略
 

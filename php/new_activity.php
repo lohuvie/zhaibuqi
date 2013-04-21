@@ -106,7 +106,7 @@ imagedestroy($dst_pic);
 
                     $register_time = date("y-m-d h:i:s",time());
                     //将活动信息载入activity表
-                    $query="insert into activity values(null,$user_id,'$title','$category','$place','$introduction',$cost_class,'$register_time',0,$authority_class)";
+                    $query="insert into activity values(null,$user_id,'$title','$category','$place','$introduction',$cost_class,'$register_time',0,$authority_class,null)";
                     echo $query;
         $result = mysqli_query($dbc,$query)
                         or die("error querying database");
