@@ -54,9 +54,9 @@ if(mysqli_num_rows($result) != 0){
         while($data = mysqli_fetch_array($result,MYSQLI_BOTH)){
             //用户关注列表
             if($data['id_1'] == $personal_id &&  $data['status'] == ATTENTION_EACH_OTHER)
-                $attention_lists[$attention_lists_index] =array ('af_id'=>$data['af_id'],'id'=>$data['id_2'],'name'=>$data['name_2'],'portrait'=>$data['icon_2'],'academy'=>$data['academy_2'],'ag_id'=>$data['ag_id'],'group'=>$data['group_name']);
+                $attention_lists[$attention_lists_index] =array ('af_id'=>$data['af_id'],'id'=>$data['id_2'],'name'=>$data['name_2'],'portrait'=>$data['icon_2'],'academy'=>$data['academy_2'],'ag_id'=>$data['ag_id'],'group'=>$data['group_name'],'status'=>$data['status']);
             else
-                $attention_lists[$attention_lists_index] =array ('af_id'=>$data['af_id'],'id'=>$data['id_1'],'name'=>$data['name_1'],'portrait'=>$data['icon_1'],'academy'=>$data['academy_1'],'ag_id'=>$data['ag_id'],'group'=>$data['group_name']);
+                $attention_lists[$attention_lists_index] =array ('af_id'=>$data['af_id'],'id'=>$data['id_1'],'name'=>$data['name_1'],'portrait'=>$data['icon_1'],'academy'=>$data['academy_1'],'ag_id'=>$data['ag_id'],'group'=>$data['group_name'],'status'=>$data['status']);
             $attention_lists_index++;
         }
     }
@@ -115,7 +115,12 @@ mysqli_close($dbc);
     <?php require_once("top-nav.php"); ?>
     <div id="container">
         <div class="fixed">
-            <h1><?php if($is_user){echo '我';}else{echo $name;}?>关注的人(<span><?php echo $attention_lists_count;?>个</span>)</h1>
+            <h1><?php if($is_user){echo '我';}else{echo $name;}?>关注的人</h1>
+
+            <div class="group-header">
+                <h2 class="group-name">全部(<span><?php echo $attention_lists_count;?></span>个)</h2>
+                    <span class="delete-group">删除分组</span><span class="rename">编辑分组名</span></div>
+
             <div id="operation-box">
                 <form action="" method="get">
                     <div>
@@ -157,14 +162,10 @@ mysqli_close($dbc);
                     </div>
                 </div>
                 <div class="operation remove">
-                    <p>删除<span id="remove"></span></p>
+                    <p>取消关注<span id="remove"></span></p>
                 </div>
                 <?php }?>
             </div>
-
-            <div class="group-header">
-                <h2 class="group-name">全部(<span><?php echo $attention_lists_count;?></span>个)</h2>
-                    <span class="delete-group">删除分组</span><span class="rename">编辑分组名</span></div>
 
             <div id="sidebar">
                 <a href="r-contacts.html">关注<?php if($is_user){echo '我';}else{echo $name;}?>的人(<span><?php echo $fan_id_count;?></span>)</a>
@@ -187,7 +188,8 @@ mysqli_close($dbc);
             <div class="user-display" value="<?php echo $al['af_id'];?>">
                 <a class="pic" href="personal-page.php?id=<?php echo $al['id'];?>"><img src="upload-portrait/<?php echo $al['portrait'];?>" alt="<?php echo $al['name'];?>" /></a>
                 <div class="user-info">
-                    <p><a class="name" href="personal-page.php?id=<?php echo $al['id'];?>"><?php echo $al['name'];?></a></p>
+                    <p><a class="name" value="<?php echo $al['id'];?>" href="personal-page.php?id=<?php echo $al['id'];?>"><?php echo $al['name'];?></a></p>
+                    <p class='status' value=<?php echo $al['status'];?>><?php echo $al['status']==ATTENTION_EACH_OTHER?'互相关注':'已关注'; ?></p>
                     <p><?php echo isset($al['academy'])?$al['academy']:'';?></p>
                 </div>
                 <div style="clear: left;"></div>

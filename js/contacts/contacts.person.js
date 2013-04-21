@@ -11,8 +11,11 @@ define(function(require, exports, module){
         moveUrl = 'php/attention_person_move.php',
         deleteUrl = 'php/attention_person_delete.php';
     function move(){
-        var cache = init.getCache(),
-            targetGroup = $(this);
+        var cache = init.getMovePerson(),
+            $groupNum = $('.group-name span'),
+            targetGroup = $(this),
+            targetValue = targetGroup.attr('value'),
+            targetName = targetGroup.text();
         if(!targetGroup.hasClass('passive') && cache.length !== 0){
             showAlert(3, {
                 confirm : function(){
@@ -22,10 +25,18 @@ define(function(require, exports, module){
                         dataType:'JSON',
                         data: {
                             person: JSON.stringify(cache),
-                            groupId: targetGroup.attr('value')
+                            groupId: targetValue
                         },
                         success: function(){
-                            $('.active').remove();
+                            if(init.getGroup() !== -1){
+                                $groupNum.text(parseInt($groupNum.text(),10) - cache.length);
+                                $('.active').remove();
+                            } else{
+                                $('.active').each(function(){
+                                    $(this).find('.extra').text('组别:' + targetName).attr('value', targetValue);
+                                });
+                                $('.active').removeClass('active');
+                            }
                             init.reset();
                         },
                         error: function(data){
@@ -41,7 +52,8 @@ define(function(require, exports, module){
     }
 
     function deletePerson() {
-        var cache = init.getCache();
+        var cache = init.getDeletePerson(),
+            $groupNum = $('.group-name span');
         if(cache.length !== 0){
             showAlert(2, {
                 confirm : function(){
@@ -54,6 +66,7 @@ define(function(require, exports, module){
                         },
                         success: function(){
                             $('.active').remove();
+                            $groupNum.text(parseInt($groupNum.text(),10) - cache.length);
                             init.reset();
                         },
                         error: function(data){

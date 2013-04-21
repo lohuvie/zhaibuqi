@@ -54,9 +54,9 @@ if(mysqli_num_rows($result) != 0){
     while($data = mysqli_fetch_array($result,MYSQLI_BOTH)){
         //用户关注列表
         if($data['id_1'] == $personal_id &&  $data['status'] == ATTENTION_EACH_OTHER)
-            $attention_lists[$attention_lists_index] =array ('af_id'=>$data['af_id'],'id'=>$data['id_2'],'name'=>$data['name_2'],'portrait'=>$data['icon_2'],'academy'=>$data['academy_2'],'ag_id'=>$data['ag_id'],'group'=>$data['group_name']);
+            $attention_lists[$attention_lists_index] =array ('af_id'=>$data['af_id'],'id'=>$data['id_2'],'name'=>$data['name_2'],'portrait'=>$data['icon_2'],'academy'=>$data['academy_2'],'ag_id'=>$data['ag_id'],'group'=>$data['group_name'],'status'=>$data['status']);
         else
-            $attention_lists[$attention_lists_index] =array ('af_id'=>$data['af_id'],'id'=>$data['id_1'],'name'=>$data['name_1'],'portrait'=>$data['icon_1'],'academy'=>$data['academy_1'],'ag_id'=>$data['ag_id'],'group'=>$data['group_name']);
+            $attention_lists[$attention_lists_index] =array ('af_id'=>$data['af_id'],'id'=>$data['id_1'],'name'=>$data['name_1'],'portrait'=>$data['icon_1'],'academy'=>$data['academy_1'],'ag_id'=>$data['ag_id'],'group'=>$data['group_name'],'status'=>$data['status']);
         $attention_lists_index++;
     }
 
@@ -67,11 +67,13 @@ if(mysqli_num_rows($result) != 0){
     echo "\"person\":[";
     foreach($attention_lists as &$al){
         $echoStr .= "{\"portrait\":\"".UPLOAD_PORTRAIT_FRONT_TO_BACK.$al['portrait']."\",";
+        $echoStr .= "\"id\":\"".$al['id']."\",";
         $echoStr .= "\"af_id\":\"".$al['af_id']."\",";
         $echoStr .= "\"ag_id\":\"".(isset($al['ag_id'])?$al['ag_id']:'0')."\",";
         $echoStr .= "\"href\":\"personal-page.php?id=".$al['id']."\",";
         $echoStr .= "\"name\":\"".$al['name']."\",";
         $echoStr .= "\"academy\":\"".$al['academy']."\",";
+        $echoStr .= "\"status\":\"".$al['status']."\",";
         $echoStr .= "\"group\":\"".(isset($al['group'])?$al['group']:'未分组')."\"},";
     }
     $echoStr = substr($echoStr,0,strlen($echoStr)-1);//删除最后一个逗号

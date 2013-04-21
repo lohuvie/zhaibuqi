@@ -8,16 +8,26 @@
 define(function(require, exports, module){
     var loading = require('loading'),
         $tips,
-        selectedPerson = [];
+        movePerson = [],
+        deletePerson = [],
+        currentGroup = -1;
 
     module.exports = {
-        getCache : function() {
-            return  selectedPerson;
+        getMovePerson : function() {
+            return  movePerson;
         },
-        reset: function() { selectedPerson = []; }
+        getDeletePerson : function() {
+            return deletePerson;
+        },
+        reset: function(groupId) {
+            movePerson = [];
+            deletePerson = [];
+            currentGroup = groupId || currentGroup;
+        },
+        getGroup: function(){
+            return currentGroup;
+        }
     };
-
-
 
     /*
      * @param event
@@ -51,18 +61,27 @@ define(function(require, exports, module){
             $contactsBody.on('click','.user-display',function(){
                 var $target = $(this),
                     personValue = $target.attr('value'),
-                    groupValue = $target.find('.extra').attr('value');
-                $target.toggleClass('active');
-                if($target.hasClass('active')){
-                    selectedPerson.push({
+                    groupValue = $target.find('.extra').attr('value'),
+                    status = $target.find('.status').attr('value'),
+                    personal_id = $target.find('.name').attr('value'),
+                    index = movePerson.indexOf({
                         personValue: personValue,
                         groupValue: groupValue
                     });
-                } else{
-                    selectedPerson.splice(selectedPerson.indexOf({
+                $target.toggleClass('active');
+                if($target.hasClass('active')){
+                    movePerson.push({
                         personValue: personValue,
                         groupValue: groupValue
-                    }), 1);
+                    });
+                    deletePerson.push({
+                        personValue: personValue,
+                        personal_id : personal_id,
+                        status: status
+                    });
+                } else{
+                    movePerson.splice(index, 1);
+                    deletePerson.splice(index, 1);
                 }
             });
             $contactsBody.on('click','.user-display a',function(event){

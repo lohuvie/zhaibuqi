@@ -32,7 +32,7 @@ define(function(require, exports, module){
                 $('.rename, .delete-group').css('visibility','hidden');
             }
             //reset selectedCache
-            init.reset();
+            init.reset(groupId);
             //loading
             loading.loadingAjax(-1, 'select', groupId, $liTarget.text());
         }
@@ -98,7 +98,8 @@ define(function(require, exports, module){
                 }
                 origin = $groupName.html().split('('),
                 $target = $('.passive:first'),
-                groupId = $target.attr('value');
+                groupId = $target.attr('value'),
+                groupName = origin[0];
                 showAlert(1, {
                     confirm:function(){
                         var newName = $('.apprise-input input').val();
@@ -129,7 +130,8 @@ define(function(require, exports, module){
                         } else{
                             inputNameError('请输入正确的分组名');
                         }
-                    }
+                    },
+                    groupName: groupName
                 });
         },20);
         setTimeout(function(){
