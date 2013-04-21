@@ -26,7 +26,7 @@ function curPageURL()
 }
 
 $URL = curPageURL();
-//echo $URL."SSSS";
+
 setcookie('URL',$URL, time() + (60));    // expires in 1 MINUTE
 ?>
 <div class="top-nav">
