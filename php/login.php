@@ -80,9 +80,12 @@ if ($_SESSION['pass_phrase'] == $user_pass_phrase) {
 //
 //                    }
 
-            //跳转到首页
-            $home_url = 'http://' . $_SERVER['HTTP_HOST'] . dirname(dirname($_SERVER['PHP_SELF'])) . '/index.php';
-            header('Location: ' . $home_url);
+            //跳转到当前页面
+//            $goToUrl=urldecode($_REQUEST['ref']);//从url参数获取跳转前页面
+            $goToUrl = $_COOKIE['URL'];
+
+            header("Location:".$goToUrl);//利用header跳转到那个页面去
+            exit;//退出
         }
         else {
             // The username/password are incorrect so set an error message
@@ -139,9 +142,12 @@ if ($_SESSION['pass_phrase'] == $user_pass_phrase) {
                 setcookie('email', $row['email'], time() + (60 * 60 * 24 * 30));  // expires in 30 days
             }
 
-            //跳转到首页
-            $home_url = 'http://' . $_SERVER['HTTP_HOST'] . dirname(dirname($_SERVER['PHP_SELF'])) . '/index.php';
-            header('Location: ' . $home_url);
+            //跳转到当前页面
+//            $goToUrl=urldecode($_REQUEST['ref']);//从url参数获取跳转前页面
+            $goToUrl = $_COOKIE['URL'];
+
+            header("Location:".$goToUrl);//利用header跳转到那个页面去
+            exit;//退出
         }
         else {
             // The username/password are incorrect so set an error message
