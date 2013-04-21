@@ -27,7 +27,7 @@ $data = mysqli_query($dbc, $query);
 
 // Loop through the array of score data, formatting it as HTML
 echo '<table>';
-echo '<tr><th>email</th><th>Date</th><th>title</th><th>Action</th></tr>';
+
 while ($row = mysqli_fetch_array($data)) {
     // 显示信息
     $user_id = $row['user_id'];
@@ -39,12 +39,14 @@ while ($row = mysqli_fetch_array($data)) {
     $query2 = "SELECT  * FROM activity_photo where activity_id = $activity_id ";
     $data2 = mysqli_query($dbc, $query2);
     $row2 = mysqli_fetch_array($data2);
+    echo '<tr><th>email</th><th>Date</th><th>title</th><th>Action</th><th>check</th></tr>';
 
 
     echo '<tr class="scorerow"><td><strong>' . $row1['email']//有待改进
         . '</strong></td>';
     echo '<td>' . $row['activity_register_time'] . '</td>';
-    echo '<td>' . $row['name'] . '</td>';
+    echo '<td>' .$row['name']. '</td>';
+
     echo '<td><a href="remove-activity.php?id=' . $row['activity_id'] . '&amp;date=' . $row['activity_register_time'] .
         '&amp;email=' . $row1['email'] . '&amp;title=' . $row['name']. '&amp;photo=' . $row2['photo'] .'">Remove</a>';
 
@@ -53,7 +55,8 @@ while ($row = mysqli_fetch_array($data)) {
             '&amp;email=' . $row1['email'] . '&amp;title=' . $row['name'] .'&amp;place=' . $row['site'].'&amp;introduce='
             . $row['introduce'].'&amp;photo=' . $row2['photo'] .'">Approve</a>';
     }
-    echo '</td></tr>';
+    echo '</td>';
+    echo'<td>' . '  <a href="../activity.php?activity=' . $row['activity_id']  .'">check</a></tr>';
 }
 echo '</table>';
 

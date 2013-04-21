@@ -14,12 +14,21 @@ body  {
     margin-left: 0px;
 }
 .event-wrap {
-	min-height: 280px;
+	min-height: 220px;
 }
 #poster{
     float: left;
     margin: 10px;
     padding-right: 10px;
+    display: table;
+    min-height: 210px;
+}
+#poster a{
+	display:table-cell;
+	vertical-align: middle;
+}
+#event-info {
+	overflow: hidden;
 }
 .event-info {
 	font-size: 13px;
@@ -96,6 +105,14 @@ span.tags-left{
 .event-tags li{
 	float: left;
 	list-style-type: none;
+}
+.examining {
+	color: #FF0000;
+    padding: 4px 15px;
+    background-color: #FFF5CA;
+    border:1px solid #F8E4A0;
+    margin: 15px 0 ;
+    width: 370px;
 }
 .related-info h2{
 	font-size: 16px;

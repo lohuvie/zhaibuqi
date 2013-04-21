@@ -1,22 +1,33 @@
 <?php
+session_start();
+//echo dirname(dirname($_SERVER['PHP_SELF']));
+if(isset($_SESSION['user_id'])){
+//    $home_url ='http://'.$_SERVER['HTTP_HOST'].dirname(dirnamen($_SERVER['PHP_SELF'])).'/index.php';
+    $home_url = 'http://' . $_SERVER['HTTP_HOST'] . dirname(($_SERVER['PHP_SELF'])) . '/index.php';
+//    $home_url = 'http://' . $_SERVER['HTTP_HOST'] . dirname(dirname($_SERVER['PHP_SELF'])) . '/index.php';
+    header('Location: ' . $home_url);
+    exit;
+}
 $error_message = "";
-$error  = $_GET['error'];
-switch ($error){
-    case 0: $error_message ="";
-    break;
-    case 1: $error_message ="对不起，您输入的密码或用户名有错";
-    break;
-    case 2: $error_message ="对不起，您必须输入有效邮箱和密码来登录";
-    break;
-    case 3: $error_message ="验证码输入错误，请重新输入";
-    break;
 
+$error  = $_GET['error'];
+
+if(isset($error)){
+    switch ($error){
+        case 0: $error_message ="";
+            break;
+        case 1: $error_message ="对不起，您输入的密码或用户名有错";
+            break;
+        case 2: $error_message ="对不起，您必须输入有效邮箱和密码来登录";
+            break;
+        case 3: $error_message ="验证码输入错误，请重新输入";
+            break;
+
+    }
 }
 ?>
-<!DOCTYPE html
-        PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!DOCTYPE HTML>
+<html>
 <head>
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
     <title>宅不起 | 登陆</title>
