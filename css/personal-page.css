@@ -38,24 +38,33 @@ body{
     margin-right: 35px;
 }
 .display{
-    height: 160px;
     padding: 15px 0px;
 }
 .single-activity{
     position: relative;
+    display: table;
     float:left;
     list-style-type: none;
     margin-right: 15px;
 }
-.single-activity .pic-link{
-    display: block;
+.pic-link-box{
     height: 180px;
     overflow: hidden;
+}
+.pic-link{
+    display: table-cell;
+    height: 140px;
+    vertical-align: middle;
+    text-align: center;
+}
+.pic-link img{
+    width: 140px;
 }
 .single-activity h5{
     font-size:inherit;
     font-weight: lighter;
     margin-top: 5px;
+    text-align: center;
 }
 /* leave-message */
 #leave-message{
@@ -131,11 +140,14 @@ body{
     height: 79px;
     margin-bottom: 20px;
 }
-.attention-display dl{
+.attention-display dl {
     float: left;
+    margin-right: 11px;
+    overflow: hidden;
     padding: 10px 0px 10px 0px;
     text-align: center;
-    margin-right: 11px;
+    white-space: nowrap;
+    width: 59px;
 }
 .attention-head a{
     color: #6BA52B;
