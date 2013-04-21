@@ -64,32 +64,54 @@ define(function(require, exports, module){
             $groupName.append('(<span>' + data.groupNum + '</span>个)');
         }
         page++;
-        data.person && $.each(data.person, function(){
-            var portrait = this.portrait,
-                href = this.href,
-                name = this.name,
-                academy = this.academy,
-                group = "组别:"+this.group,
-                af_id = this.af_id,
-                ag_id = this.ag_id,
-                $img = $("<img />").attr({
-                    "src":portrait,
-                    "alt":name
-                }),
-                $name = $('<p></p>').append($('<a></a>').addClass('name').attr('href',href).text(name)),
-                $academy = $('<p></p>').text(academy),
-                $portrait = $("<a></a>").addClass("pic").attr("href",href),
-                $userInfo = $("<div></div>").addClass("user-info"),
-                $group = $("<p></p>").attr('value',ag_id).addClass("extra").text(group),
-                $userDisplay = $("<div></div>").attr('value',af_id).addClass("user-display");
-            $userInfo.append($name, $academy);
-            $userDisplay.append($portrait.append($img),
-                $userInfo,$clearLeft.clone(),$group).insertBefore($tips);
-            $userDisplay.fadeIn(100);
-        });
+        if(data.person){
+            $.each(data.person, function(){
+                var portrait = this.portrait,
+                    href = this.href,
+                    name = this.name,
+                    academy = this.academy,
+                    group = "组别:"+this.group,
+                    af_id = this.af_id,
+                    ag_id = this.ag_id,
+                    id = this.id,
+                    status = this.status,
+                    $img = $("<img />").attr({
+                        "src":portrait,
+                        "alt":name
+                    }),
+                    $name = $('<p></p>').append($('<a></a>').addClass('name').attr({
+                            href:href,
+                            value: id
+                        }).text(name)),
+                    $status = $('<p/>').addClass('status').attr('value',status).text(statusToStr(parseInt(status, 10))),
+                    $academy = $('<p></p>').text(academy),
+                    $portrait = $("<a></a>").addClass("pic").attr("href",href),
+                    $userInfo = $("<div></div>").addClass("user-info"),
+                    $group = $("<p></p>").attr('value',ag_id).addClass("extra").text(group),
+                    $userDisplay = $("<div></div>").attr('value',af_id).addClass("user-display");
+                $userInfo.append($name, $status, $academy);
+                $userDisplay.append($portrait.append($img),
+                    $userInfo,$clearLeft.clone(),$group).insertBefore($tips);
+                $userDisplay.fadeIn(100);
+            });
+        }
         end = (data.end === 'end');
         if(end){
             $tips.text('所有好友加载完毕').css('cursor','default').show();
+        }
+
+
+        function statusToStr(status){
+            var str = '';
+            switch (status){
+                case 1:
+                    str = '已关注';
+                    break;
+                case 2:
+                    str = '互相关注';
+                    break;
+            }
+            return str;
         }
     }
 

@@ -18,14 +18,17 @@
 	color:#84C43C;
 	border-bottom: 3px solid #84C43C;
 }
+#header-nav .currentType{
+    color:#84C43C;
+    border-bottom: 3px solid #84C43C;
+}
 .create-new{
 	float: right;
 	margin-top: 11px;
 }
 .create-btn{
     padding: 10px 55px 5px;
-	background-image:url(../images/create-btn.png);
-	background-repeat: no-repeat;
+    background: url(../images/create-btn.png) no-repeat;
 }
 .create-btn:hover{
     background-position: 0 -72px;

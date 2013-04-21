@@ -56,16 +56,16 @@ $(function(){
 
     //选择图片出错框
     $picNotChoose.css(errorCss).css({
-        top:picShowOffset.top+355,
-        left:picShowOffset.left-160
+        top:picShowOffset.top+360,
+        left:picShowOffset.left+90
     });
     $picNotValidate.css(errorCss).css({
-        top:picShowOffset.top+355,
-        left:picShowOffset.left+420
+        top:picShowOffset.top+360,
+        left:picShowOffset.left+407
     });
     $wrongFormat.css(errorCss).css({
-        top:picShowOffset.top+355,
-        left:picShowOffset.left+100
+        top:picShowOffset.top+360,
+        left:picShowOffset.left+90
     });
     $(document.body).append($picNotChoose,$picNotValidate,$wrongFormat);
 
@@ -103,13 +103,12 @@ $(function(){
     //图片剪切函数
     $form.submit(function(){
         var $jcropSelection = $('.jcrop-selection');
+        $wrongFormat.hide();
         if($jcropSelection.length === 0 ){
             $picNotChoose.show();
-            $('body,html').animate({scrollTop:$picNotChoose.offset().top},50);
             return false;
         } else if((!ZHAIBUQI.picValidate && $jcropSelection.width() !== 0)){
             $picNotValidate.show();
-            $('body,html').animate({scrollTop:$picNotValidate.offset().top},50);
             return false;
         }
     });
@@ -244,6 +243,7 @@ $(function(){
             //清空pos,size输入框
             $btn.off();
             $btn.click(function(){
+                $wrongFormat.hide();
                 if($btn.text() === '确定'){
                     jcrop_api.setOptions({
                         bgOpacity:0,
