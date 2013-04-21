@@ -99,11 +99,10 @@ var activityAppend = function(data,eventParentID){
         var alt = this.alt;
         var title = this.title;
         var href = this.href;
-        var $pic = $("<a></a>").attr('href',href).html("<img src='"+picSrc+"' alt='"+alt+"' />");
+        var $pic = $('<div/>').addClass('pic-link-box').append(
+            $("<a></a>").addClass('pic-link').attr('href',href).html("<img src='"+picSrc+"' alt='"+alt+"' />"));
         var $title = $("<h5></h5>").html("<a href='" + href + "'>"+title+"</a>");
-        $pic.appendTo($singleActivity);
-        $title.appendTo($singleActivity);
-        $singleActivity.addClass("single-activity").appendTo($ul);
+        $singleActivity.append($pic,$title).addClass("single-activity").appendTo($ul);
     });
     ajaxLoading($("#"+eventParentID+" .loading"), "");
     /*滑动*/
