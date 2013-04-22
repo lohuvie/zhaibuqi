@@ -98,6 +98,11 @@ if($user_id == $creater_id || $approved != 0){
     }
 
     //查询活动图片
+
+    $photo_type = $_FILES['poster']['type'];
+
+
+    $photo= time().".".substr($photo_type,6);       //上传海报名字 time()+后缀名
     $poster =  $result['photo'];
     $poster_path = UPLOAD_PATH_FRONT_TO_BACK.$poster;
 
@@ -138,8 +143,8 @@ if($user_id == $creater_id || $approved != 0){
     <div class="article">
         <div class="event-wrap">
             <div id="poster">
-                <a href="#">
-                    <img src="<?php echo $poster_path?>" alt="活动海报" width="215"/>
+                <a href="<?php echo $poster_path?>">
+                    <img src="<?php echo $poster_path?>" alt="点击查看原图"/>
                 </a>
             </div>
             <div id="event-info" activity="<?php echo $activity_id?>" user="<?php echo $user_id?>">
