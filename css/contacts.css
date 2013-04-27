@@ -36,7 +36,7 @@ h1{
     color: #5DB2FF;
 }
 #operation-box{
-    margin-left: 0;
+    margin: 10px 0 0 0;
     background: white;
     width: 680px;
     height: 40px;
@@ -111,13 +111,15 @@ h2{
     color: #555;
 }
 .rename,.delete-group {
-    background: #ccc;
     cursor: pointer;
     float: right;
     font-size: 12px;
     margin: -25px 0 0 10px;
     padding: 5px 10px;
     visibility: hidden;
+}
+.rename:hover, .delete-group:hover{
+    color: #84c43c;
 }
 /* group-selection */
 .group-selection{

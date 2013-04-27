@@ -43,7 +43,7 @@ define(function(require, exports, module){
                 text = '确定要删除 <b>' + opt.groupName +'</b> 分组吗？<br/>此分组下的人将会被移动到未分组中，并不会取消关注';
                 break;
             case RENAME_GROUP:
-                text = '请输入新的分组名: (最多8个字)';
+                text = '将 <strong>' + opt.groupName + '</strong> 重命名为: (最多8个字)';
                 break;
             case DELETE_PERSON:
                 text = '确定要取消对' +

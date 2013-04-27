@@ -1,3 +1,4 @@
+
 <head>
     <link href="css/top-nav.css" type="text/css" rel="stylesheet" />
 </head>
@@ -14,25 +15,19 @@ function curPageURL()
     }
     $pageURL .= "://";
 
-    $this_page = $_SERVER["REQUEST_URI"];
-
-    // 只取 ? 前面的内容
-    if (strpos($this_page, "?") !== false)
-        $this_page = reset(explode("?", $this_page));
-
     if ($_SERVER["SERVER_PORT"] != "80")
     {
-        $pageURL .= $_SERVER["SERVER_NAME"] . ":" . $_SERVER["SERVER_PORT"] . $this_page;
+        $pageURL .= $_SERVER["SERVER_NAME"] . ":" . $_SERVER["SERVER_PORT"] . $_SERVER["REQUEST_URI"];
     }
     else
     {
-        $pageURL .= $_SERVER["SERVER_NAME"] . $this_page;
+        $pageURL .= $_SERVER["SERVER_NAME"] . $_SERVER["REQUEST_URI"];
     }
     return $pageURL;
 }
 
 $URL = curPageURL();
-echo $URL."SSSS";
+
 setcookie('URL',$URL, time() + (60));    // expires in 1 MINUTE
 ?>
 <div class="top-nav">

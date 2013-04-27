@@ -149,6 +149,8 @@ $(function(){
         $(this).click(function(event){
             var clickType = switchType(i);
             if(clickType){
+                $('.currentType').removeClass('currentType');
+                $(this).addClass('currentType');
                 ZHAIBUQI.index.type = switchType(i);
                 ZHAIBUQI.index.pageCount = 0;
                 $addTips.text('正在加载...').clearQueue().fadeIn(300);
