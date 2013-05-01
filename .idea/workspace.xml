@@ -1,26 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="92563efb-133a-4a85-a27f-23f4c0b8f224" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/json/attention_list.php" afterPath="$PROJECT_DIR$/json/attention_list.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/php/attention_person_delete.php" afterPath="$PROJECT_DIR$/php/attention_person_delete.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/php/attention_person_move.php" afterPath="$PROJECT_DIR$/php/attention_person_move.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/contacts/contacts.alert.js" afterPath="$PROJECT_DIR$/js/contacts/contacts.alert.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/contacts.css" afterPath="$PROJECT_DIR$/css/contacts.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/contacts/contacts.group.js" afterPath="$PROJECT_DIR$/js/contacts/contacts.group.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/contacts/contacts.init.js" afterPath="$PROJECT_DIR$/js/contacts/contacts.init.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/contacts/contacts.loading.js" afterPath="$PROJECT_DIR$/js/contacts/contacts.loading.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/contacts/contacts.person.js" afterPath="$PROJECT_DIR$/js/contacts/contacts.person.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/contacts.php" afterPath="$PROJECT_DIR$/contacts.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/index.css" afterPath="$PROJECT_DIR$/css/index.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/jquery.index.js" afterPath="$PROJECT_DIR$/js/jquery.index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/jquery.new-activity-pic.js" afterPath="$PROJECT_DIR$/js/jquery.new-activity-pic.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/new-activity.php" afterPath="$PROJECT_DIR$/new-activity.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/top-nav.php" afterPath="$PROJECT_DIR$/top-nav.php" />
-    </list>
+    <list default="true" id="92563efb-133a-4a85-a27f-23f4c0b8f224" name="Default" comment="" />
     <ignored path="zhaibuqi.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="92563efb-133a-4a85-a27f-23f4c0b8f224" time="1366542780627" ignored="false" />
+    <file path="/Dummy.txt" changelist="92563efb-133a-4a85-a27f-23f4c0b8f224" time="1366553806245" ignored="false" />
     <file path="/attention_user.php" changelist="92563efb-133a-4a85-a27f-23f4c0b8f224" time="1363789627611" ignored="false" />
     <file path="/a.dummy" changelist="92563efb-133a-4a85-a27f-23f4c0b8f224" time="1364627277485" ignored="false" />
     <file path="/love_activity.php" changelist="92563efb-133a-4a85-a27f-23f4c0b8f224" time="1363675875626" ignored="false" />
@@ -79,7 +63,7 @@
       <file leaf-file-name="jquery.new-activity-pic.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/jquery.new-activity-pic.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="245" column="16" selection-start="7946" selection-end="7946" vertical-scroll-proportion="0.33386582">
+            <state line="245" column="16" selection-start="7946" selection-end="7946" vertical-scroll-proportion="0.02715655">
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
@@ -90,7 +74,7 @@
       <file leaf-file-name="contacts.group.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/contacts/contacts.group.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="89" column="46" selection-start="3148" selection-end="3148" vertical-scroll-proportion="0.0">
+            <state line="89" column="27" selection-start="3148" selection-end="3148" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -143,7 +127,7 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="1382" />
+    <option name="width" value="1320" />
     <option name="height" value="784" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
@@ -251,8 +235,8 @@
     <property name="WebServerToolWindowFactoryState" value="true" />
     <property name="options.lastSelected" value="appearance" />
     <property name="FullScreen" value="false" />
-    <property name="options.searchVisible" value="true" />
     <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="RunManager">
     <configuration default="true" type="JavascriptDebugSession" factoryName="Local" singleton="true">
@@ -291,14 +275,15 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1320" height="784" extended-state="6" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32903227" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3292402" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25833333" sideWeight="0.5613497" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2576687" sideWeight="0.5613497" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4386503" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25460124" sideWeight="0.10122699" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -307,7 +292,6 @@
       <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3292402" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32822084" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -410,16 +394,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/contacts.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="198" column="69" selection-start="8513" selection-end="8513" vertical-scroll-proportion="-4.8627453">
-          <folding />
-        </state>
+        <state line="198" column="69" selection-start="8513" selection-end="8513" vertical-scroll-proportion="-4.8627453" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/contacts/contacts.loading.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="44" column="24" selection-start="1368" selection-end="1371" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="44" column="24" selection-start="1368" selection-end="1371" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/php/attention_person_delete.php">
@@ -444,7 +424,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/contacts/contacts.group.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="89" column="46" selection-start="3148" selection-end="3148" vertical-scroll-proportion="0.0">
+        <state line="89" column="27" selection-start="3148" selection-end="3148" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -458,14 +438,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/jquery.new-activity.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="48" column="0" selection-start="1381" selection-end="1381" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="48" column="0" selection-start="1381" selection-end="1381" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/jquery.new-activity-pic.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="245" column="16" selection-start="7946" selection-end="7946" vertical-scroll-proportion="0.33386582">
+        <state line="245" column="16" selection-start="7946" selection-end="7946" vertical-scroll-proportion="0.02715655">
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
