@@ -150,7 +150,11 @@ if(!empty($_GET['id'])){
     <!-- introduction -->
     <div id="introduction" value="<?php echo $personal_id;?>">
         <img src="<?php echo $portrait_path?>" alt="用户"/>
-        <h3 class="namebox"><?php echo $name?></h3><br/>
+        <h3 class="namebox"><?php echo $name?></h3>
+        <div id="brief-intro">
+            <h4>简介</h4>
+            <p><?php echo $intro;?></p>
+        </div>
         <?php
         //判定显示 个人编辑资料 还是 是否关注此人
         if($personal_id == $user_id){
@@ -170,10 +174,6 @@ if(!empty($_GET['id'])){
             }
         }
         ?>
-        <div id="brief-intro">
-            <h4>简介</h4>
-            <p><?php echo $intro;?></p>
-        </div>
     </div>
     <!-- end introduction -->
 
@@ -181,7 +181,7 @@ if(!empty($_GET['id'])){
     <div id="attention">
         <div id="attention-person">
             <h4>
-                <span>···关注的人···</span>
+                <span>-关注的人-</span>
                 <span class="more"><a href="contacts.php?id=<?php echo $personal_id;?>">(更多)</a></span>
             </h4>
             <div class="attention-display">
@@ -204,7 +204,7 @@ if(!empty($_GET['id'])){
         </div>
         <div id="attention-host">
             <h4>
-                <span>···关注的主办方···</span>
+                <span>-关注的主办方-</span>
                 <span class="more"><a>(更多)</a></span>
             </h4>
             <div class="attention-display">
@@ -220,7 +220,7 @@ if(!empty($_GET['id'])){
         </div>
         <div id="attention-me">
             <h4>
-                <span>···粉丝···</span>
+                <span>-粉丝-</span>
                 <span class="more"><a href="r-contacts.php?id=<?php echo $personal_id;?>">(更多)</a></span>
             </h4>
             <div class="attention-display">
@@ -286,7 +286,7 @@ if(!empty($_GET['id'])){
     <!-- leav-message -->
     <div class="leave-message" id="leave-message">
         <h2>留言</h2>
-        <?php require_once("comment.html"); ?>
+        <?php require_once("comment.php"); ?>
     <!-- end leave-message -->
 </div>
 <!-- personal-content -->

@@ -81,43 +81,51 @@ body{
 #sidebar{
     padding: 4px;
     float: right;
-    background: #DDF7C3;
+    border-left: 2px solid #DDF7C3;
 }
 /* introduction */
 #introduction{
     margin-top: 10px;
     width: 280px;
+    height: 195px;
 }
 #introduction h3{
     display:inline-block;
-    float: right;
-    width: 95px;
+    width: 130px;
+    height: 45px;
+    line-height: 20px;
     font-size: 18px;
-    color: #222222
+    color: #222222;
+    word-wrap:break-word;
+    overflow:hidden;
 }
 #introduction img{
-    height: 165px;
-    width: 165px;
-    margin-bottom: 10px;
+    height: 140px;
+    width: 140px;
+    margin: 0 10px 20px 0;
+    float: left;
 }
 #introduction a{
     color: #FFFFFF;
     background: #555555;
     padding: 2px 5px;
+    float: left;
+    clear: left;
+    margin-top: 10px;
 }
 #introduction a:hover{
     background: #BBBBBB;
     color: #FFFFFF;
 }
 #introduction h4{
-    margin: 10px 0 5px 0;
+    margin: 5px 0;
     color:#222222;
 }
 #brief-intro p{
     color: #555555;
-    font-weight: lighter;
     font-size: 12px;
 }
+
 /* attention */
 #attention h4 {
     padding: 5px;
@@ -129,6 +137,7 @@ body{
     width: 280px;
 }
 .more a{
+    color: #FFFFFF;
     float: right;
     font-weight: lighter;
     font-size: 12px;
@@ -158,4 +167,10 @@ body{
 .attention-head img{
     height: 45px;
     width: 45px;
+}
+dd a{
+    color: #888888;
+}
+dd a:hover{
+    border-bottom: 1px dotted #109eff;
 }
