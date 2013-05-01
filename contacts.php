@@ -110,6 +110,7 @@ mysqli_close($dbc);
     <link href="css/footer.css" type="text/css" rel="stylesheet"/>
     <link href="css/contacts.css" type="text/css" rel="stylesheet"/>
     <link href="js/apprise-v2.min/apprise-v2.min.css" type="text/css" rel="stylesheet"/>
+    <base target="_blank" />
 </head>
 <body>
     <?php require_once("top-nav.php"); ?>
@@ -168,7 +169,7 @@ mysqli_close($dbc);
             </div>
 
             <div id="sidebar">
-                <a href="r-contacts.html">关注<?php if($is_user){echo '我';}else{echo $name;}?>的人(<span><?php echo $fan_id_count;?></span>)</a>
+                <a href="r-contacts.php">关注<?php if($is_user){echo '我';}else{echo $name;}?>的人(<span><?php echo $fan_id_count;?></span>)</a>
                 <div class="tips">
                     <h3>操作提示</h3>
                     <p>
