@@ -6,13 +6,14 @@
     <link href="css/top-nav.css" type="text/css" rel="stylesheet" />
     <link href="css/footer.css" type="text/css" rel="stylesheet"/>
     <link href="css/contacts.css" type="text/css" rel="stylesheet"/>
+    <link href="js/apprise-v2.min/apprise-v2.min.css" type="text/css" rel="stylesheet"/>
+    <base target="_blank" />
 </head>
 <body>
     <?php require_once("top-nav.php"); ?>
     <div id="container">
         <div class="fixed">
             <h1>关注我的人(<span>30</span>)</h1>
-            <p id="tips"></p>
             <div id="operation-box">
                 <form action="#" method="get">
                     <div>
@@ -35,7 +36,7 @@
                 </div>
             </div>
             <div id="sidebar">
-                <a href="contacts.html">我关注的人(<span>20</span>)</a>
+                <a href="contacts.php">我关注的人(<span>20</span>)</a>
                 <div class="tips">
                     <h3>操作提示</h3>
                     <p>
@@ -70,13 +71,14 @@
                 <div style="clear: left;"></div>
                 <p class="extra">被<span>20</span>人关注 关注<span>30</span>人</p>
             </div>
-            <div style="clear: left;"></div>
-            <b id="loading">正在加载..</b>
+            <div class="clear">点击加载更多</div>
         </div>
         <b id="to-top"></b>
     </div>
     <?php require_once("footer.php"); ?>
-    <script src="js/jquery-1.7.1.min.js"></script>
-    <script src="js/jquery.contacts.js"></script>
+    <script src="js/seajs/sea.js"
+        data-main = "contacts/contacts.main.js"
+        data-config = "contacts/contacts.config.js"
+    ></script>
 </body>
 </html>
