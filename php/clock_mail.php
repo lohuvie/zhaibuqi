@@ -62,7 +62,7 @@
                                 <tr><td><br /></td></tr>
                                 <tr><td>您使用了本站提供的定时功能，您已经有一周未登录宅不起小站,本小站有.....精彩内容</td></tr>
                                 <tr><td><br /></td></tr>
-                                <tr><td>收到这封邮件是因为您有段时间没来了，它并不会频繁的骚扰您。如果仍觉得被打扰，请点击&nbsp;<a style="color:#888888;text-decoration:none;" href="http://localhost/zhaibuqi/zhaibuqi/php/unsubscribe.php?p=.$String">退订</a>&nbsp;。</td></tr>
+                                <tr><td>收到这封邮件是因为您有段时间没来了，它并不会频繁的骚扰您。如果仍觉得被打扰，请点击&nbsp;<a style="color:#888888;text-decoration:none;" href="http://localhost/zhaibuqi/zhaibuqi/php/unsubscribe.php?p='.$String.'">退订</a>&nbsp;。</td></tr>
                                 <tr><td><br /></td></tr>
                                 <tr><td>感谢对宅不起的支持，再次希望您在宅不起的体验有益和愉快！</td></tr>
                                 <tr><td style="font-size:12px;">(这是一封自动产生的email，请勿回复)</td></tr>

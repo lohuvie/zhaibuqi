@@ -140,7 +140,7 @@ $mail->Body = '<html>
         <tr><td>您使用了本站提供的密码找回功能，如果你确认此密码找回功能是你启用的，请点击下面的链接<br />
         (pleae click on the following link to reset your password:)</td></tr>
         <tr><td><br /></td></tr>
-        <tr><td style="font-weight:bold;"><a style="color:#84C43C" href="http://localhost/zhaibuqi/zhaibuqi/reset-password.php?p=$String">http://localhost/zhaibuqi/zhaibuqi/reset-password.php?p=$String</a></td></tr>
+        <tr><td style="font-weight:bold;"><a style="color:#84C43C" href="http://localhost/zhaibuqi/zhaibuqi/reset-password.php?p='.$String.'">http://localhost/zhaibuqi/zhaibuqi/reset-password.php?p='.$String.'</a></td></tr>
         <tr><td><br /></td></tr>
         <tr><td>如果您的email程序不支持链接点击，请将上面的地址拷贝至您的浏览器(例如IE)的地址栏进入宅不起网站</td></tr>
         <tr><td>请在24小时内点击此改密链接，同时此链接只能使用一次，如失效请重新索取！</td></tr>
