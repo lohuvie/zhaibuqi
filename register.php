@@ -75,7 +75,7 @@ switch ($error){
               </div>
               <div>
                   <label for="nickname">昵称</label>
-                  <input name="nickname" id="nickname" type="text" class="validate[required,custom[nickname],minSize[2],maxSize[15]] text-input"/>
+                  <input name="nickname" id="nickname" type="text" class="validate[required,custom[nickname],minSize[2],maxSize[12]] text-input"/>
               </div>
               <div>
                   <label for="passwd">设置密码</label>
