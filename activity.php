@@ -215,7 +215,7 @@ if($user_id == $creater_id || $approved != 0){
             </div>
             <?php if($approved != 0){?>
             <h2>用户评论</h2>
-            <?php require_once("comment.html"); ?>
+            <?php require_once("comment.php"); ?>
             <?php }?>
         </div>
     </div>

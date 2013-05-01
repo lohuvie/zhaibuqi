@@ -19,11 +19,15 @@ $(function(){
     });
     /*按下回复按钮*/
     $postBox.on('click','.reply-btn',function(){
-        var $userPost = $(this).parent(),
+        var $target = $(this),
+            $userPost = $target.parent(),
             replyeeName = '回复' + $userPost.find('.user-name').text() + ':',
             curPos = replyeeName.length;
         $commentContent.val(replyeeName);
+        $commentContent.data('replyeeId', '');
+        $commentContent.data('replyeeId', $target.data('userId'));
         setSelectionRange($commentContent.get(0),curPos,curPos);
+
         //选择文字范围
         function setSelectionRange(input, selectionStart, selectionEnd){
             if(input.setSelectionRange){
@@ -45,14 +49,16 @@ $(function(){
     $commentForm.submit(function(event){
         var action = $commentForm.attr('action'),
             data = {},
-            content = $commentContent.val().replace(/^\s*/,'');
+            replyeeId = $commentContent.data('replyeeId'),
+            content = $commentContent.val().replace(/^\s*/,''),
+            reg, replyee, comment;
         //判断是否有回复人
         if(content.match(/[^\s]/)){
-            var reg = /^回复[^\s]+:/,
-                replyee = content.match(reg),
-                comment = content.replace(reg,'');
-            if(replyee){
-                data.replyee = replyee[0].substr(2,replyee[0].length-3);
+            reg = /^回复[^\s]+:/;
+            replyee = content.match(reg);
+            comment = content.replace(reg,'');
+            if(replyee && replyeeId){
+                data.replyeeId = replyeeId;
                 if(comment.match(/[^\s]/)){
                     data.comment = comment.replace(/^\s*/,'');
                 }
@@ -60,6 +66,7 @@ $(function(){
                 data.comment = content;
             }
         }
+        console.log(data);
         //判断回复内容是否为空
         if(data.comment){
             var timer = textLoading($tips,'正在提交',600);
@@ -124,7 +131,7 @@ $(function(){
             content = options.content,
             userPhoto = options.userPhoto,
             _$arrowBox = $arrowBox.clone(),
-            _$replyBtn = $replyBtn.clone(),
+            _$replyBtn = $replyBtn.clone().data('replyeeId', options.userId),
             $userPost = $('<li></li>').addClass('user-post'),
             $photo = $('<a></a>').attr('href',userLink).append($('<img/>').attr('src',userPhoto).addClass('user-photo')),
             $replyDetail = $('<div></div>').addClass('reply-detail'),
