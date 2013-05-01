@@ -9,7 +9,8 @@ define(function(require, exports, module){
     var init = require('init'),
         showAlert = require('alert'),
         moveUrl = 'php/attention_person_move.php',
-        deleteUrl = 'php/attention_person_delete.php';
+        deleteUrl = 'php/attention_person_delete.php',
+        addUrl = 'php/attention_person_new.php';
     function move(){
         var cache = init.getMovePerson(),
             $groupNum = $('.group-name span'),
