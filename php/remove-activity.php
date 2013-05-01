@@ -121,7 +121,7 @@ if (isset($_POST['submit'])) {
 <tr><td>我们相信，宅不起会在你们的带领下，会发展得更加红红火火！<br />
 (pleae click on the following link to check your activity:)</td></tr>
 <tr><td><br /></td></tr>
-<tr><td style="font-weight:bold;"><a style="color:#84C43C" href="http://localhost/zhaibuqi/zhaibuqi/activity.php?activity='.$id.'">http://localhost/zhaibuqi/zhaibuqiactivity.php?activity=$id</a></td></tr>
+<tr><td style="font-weight:bold;"><a style="color:#84C43C" href="http://localhost/zhaibuqi/zhaibuqi/activity.php?activity='.$id.'">http://localhost/zhaibuqi/zhaibuqiactivity.php?activity='.$id.'</a></td></tr>
 <tr><td><br /></td></tr>
 <tr><td>如果您的email程序不支持链接点击，请将上面的地址拷贝至您的浏览器(例如IE)的地址栏进入宅不起网站</td></tr>
 <tr><td><br /></td></tr>

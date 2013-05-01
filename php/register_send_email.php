@@ -26,6 +26,7 @@ if(!empty($email)){
     $nickname = $_COOKIE['b'];
 
 }
+
 $error =0;
 $domain_name="";
 $domain=explode("@",$email);
@@ -76,7 +77,7 @@ $x = md5($email);
 $String = base64_encode($email.",".$x.",".$nickname.",".$passwd1);
 
 
-
+$userName = $nickname;
 
 
 $mail = new PHPMailer(); //建立邮件发送类
@@ -116,7 +117,7 @@ $mail->Body = '<html>
                 <tr><td><br /></td></tr>
                 <tr><td>请点击下面的链接完成注册：</td></tr>
                 <tr><td><br /></td></tr>
-                <tr><td style="font-weight:bold;"><a style="color:#84C43C;" href="http://localhost/zhaibuqi/zhaibuqi/php/register.php?p=$String">http://localhost/zhaibuqi/zhaibuqi/php/register.php?p=$String</a></td></tr>
+                <tr><td style="font-weight:bold;"><a style="color:#84C43C;" href="http://localhost/zhaibuqi/zhaibuqi/php/register.php?p='.$String.'">http://localhost/zhaibuqi/zhaibuqi/php/register.php?p='.$String.'</a></td></tr>
                 <tr><td><br /></td></tr>
                 <tr><td>如果以上链接无法点击，请将上面的地址复制到您的浏览器(如IE)的地址栏进入宅不起网站。</td></tr>
                 <tr><td><br /></td></tr>
@@ -130,6 +131,7 @@ $mail->Body = '<html>
         <div style="background:#ffffff;text-align:left;font-size:14px;color:#000000;font-family:Tahoma;line-height:19px;vertical-align:middle;width:99%;"><a style="color:grey;text-decoration:none;" href="http://www.zhaibuqi.com/" >宅不起 http://www.zhaibuqi.com/</a></div>
     </body>
 </html>';
+echo"$mail->Body";
 
 $mail->AltBody = "This is the body in plain text for non-HTML mail clients"; //附加信息，可以省略
 
