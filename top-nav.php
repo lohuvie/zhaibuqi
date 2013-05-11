@@ -59,7 +59,7 @@ setcookie('URL',$URL, time() + (60));    // expires in 1 MINUTE
             ?>
             <div class="top-nav-info">
                 <a href="register.php">注册</a>
-                <a rel="nofollow" href="login.php">登录</a>
+                <a id="login" rel="nofollow" href="login.php">登录</a>
             </div>
             <?php
                 } else{

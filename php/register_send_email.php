@@ -146,7 +146,6 @@ if(!$mail->Send())
     echo "错误原因: " . $mail->ErrorInfo;
 
     exit;
-
 }
 
 

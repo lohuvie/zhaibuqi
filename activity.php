@@ -116,15 +116,15 @@ if($user_id == $creater_id || $approved != 0){
     $data = mysqli_query($dbc,$query);
     $join_activity_count = mysqli_num_rows($data);
     //根据是否通过 显示活动
-    if($approved == 0&&$ad_approved=0){
+    if($approved == 0&&$ad_approved==0){
         //未审核 标签、用户评论、我也喜欢、我要参与按钮 不显示
         $activity_name = $activity_name."(活动审核中...)";
         $approved_message = "<div class='examining'>活动已提交，等待审核中。活动审核通过后将会有邮件通知您。</div>";
     }
-    if($approved ==0&&$ad_approved=1){
+    if($approved ==0&&$ad_approved==1){
         //未通过 标签、用户评论、我也喜欢、我要参与按钮 不显示
         $activity_name = $activity_name."(活动未通过...)";
-        $approved_message = "<div class='examining'>经过审核,活动未通过。请重新修改后提交,感谢您的支持。</div>";
+        $approved_message = "<div class='examining'>经过审核,活动未通过。请重新修改后提交,感谢您的支持1。</div>";
     }
     ?>
     <div id="sidebar" >
