@@ -45,7 +45,7 @@
                         $pic = $("<a></a>").addClass("activity-pic").attr('href',href).append($img),
                         //添加透明活动类型
                         $ribbonWrapper = $("<div></div>").addClass("ribbon-wrapper").appendTo($pic),
-                        $ribbon = $("<div></div>").text("活动类型").addClass("ribbon").appendTo($ribbonWrapper),
+                        $ribbon = $("<div></div>").text(eventType).addClass("ribbon").appendTo($ribbonWrapper),
                         //html("<img src='"+picPath+"' alt='"+title+"' />").attr("href",href),
                         $time = $("<p></p>").html(time),
                         $place = $("<p></p>").html(place);
