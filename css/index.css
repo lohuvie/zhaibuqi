@@ -88,6 +88,48 @@
 	color: #555555;
 }
 
+/*Ribbon*/
+.single-activity .ribbon-wrapper{
+	width: 85px;
+	height: 88px;
+	overflow: hidden;
+	position: absolute;
+	top: -4px;
+	right: -4px;
+}
+.single-activity .ribbon{
+	font: bold 15px;
+	color: #333;
+	text-align: center;
+	-webkit-transform: rotate(45deg);
+	-moz-transform:    rotate(45deg);
+	-ms-transform:     rotate(45deg);
+	-o-transform:      rotate(45deg);
+
+	position: relative;
+	padding: 7px 0;
+	left: -5px;
+	top: 13px;
+	width: 120px;
+	background-color: #84C43C;
+	color: #FFF;
+}
+.single-activity .ribbon::before, 
+.single-activity .ribbon::after {
+	content: "";
+	border-top:   3px solid #6e8900;   
+	border-left:  3px solid transparent;
+	border-right: 3px solid transparent;
+	position:absolute;
+	bottom: -3px;
+}
+.single-activity .ribbon::before {
+	left: 0;
+}
+.single-activity .ribbon::after {
+	right: 0;
+}
+
 #to-top{
     background: url(../images/back-to-top.png);
     height:50px;
