@@ -1,5 +1,5 @@
 <?php
-//if(!isset($_SESSION['user_id'])){
+
 require_once("php/util.php");
 require_once("php/start-session.php");
 $error=0;
@@ -84,8 +84,6 @@ while( $row = mysqli_fetch_array($result)){
 
 
 ?>
-
-
         <li class="user-post">
             <a href="personal-page.php?id=<?php echo $user_id; ?>">
                 <img class="user-photo" alt="用户" src="<?php echo $portrait_path;?>"/>
@@ -119,35 +117,22 @@ while( $row = mysqli_fetch_array($result)){
         <?php if($num>2&&$count==1){ ?>
             <li class="unfold">加载更多...</li>
         <?php
-
+            }
         }
-
-    ?>
-
-
-
-<?php
-
-}
     }
-
+    $query = "select icon from portrait where user_id = ".$_SESSION['user_id']."";
+    $result = mysqli_query($dbc,$query);
+    $row = mysqli_fetch_array($result);
+    $user_icon = $row['icon'];//用户的从属用户名
 ?>
 </ul>
-<?php //if($error!=1){ ?>
 <form id="comment-form" action="php/<?php echo $url;?>" name="comment">
-    <img class="user-photo-small" src="" />
+    <img class="user-photo-small" src="<?php echo UPLOAD_PORTRAIT_FRONT_TO_BACK.$user_icon;?>" />
     <textarea cols="1" rows="1" class="comment-content" name="reply-input" ></textarea>
     <span class="tips"></span>
     <button class="send-btn">评论</button>
 
 </form>
-<?php //}else{
-//    $comment1 = array ('msg'=>0);
-//
-//}
-//
-//echo json_encode($comment1);
- ?>
 
 
 
