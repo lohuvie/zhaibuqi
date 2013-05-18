@@ -285,9 +285,7 @@ if(!empty($_GET['id'])){
     <!-- end activity -->
     <!-- leav-message -->
     <div class="leave-message" id="leave-message">
-        <h2>留言</h2>
-        <?php require_once("comment.php"); ?>
-    <!-- end leave-message -->
+        <h2>留言</h2><?php require_once("comment.php"); ?><!-- end leave-message -->
 </div>
 <!-- personal-content -->
 

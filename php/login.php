@@ -146,9 +146,20 @@ if ($_SESSION['pass_phrase'] == $user_pass_phrase) {
             //跳转到当前页面
 //            $goToUrl=urldecode($_REQUEST['ref']);//从url参数获取跳转前页面
             $goToUrl = $_COOKIE['URL'];
+            $goToUrl1 = $_COOKIE['URL1'];
+            $home_url = 'http://' . $_SERVER['HTTP_HOST'] . dirname(dirname($_SERVER['PHP_SELF'])) . '/reset-password.php';
 
-            header("Location:".$goToUrl);//利用header跳转到那个页面去
-            exit;//退出
+            if($goToUrl1==$home_url){
+                //跳转到回登陆页面
+                $home_url = 'http://' . $_SERVER['HTTP_HOST'] . dirname(dirname($_SERVER['PHP_SELF'])) . '/index.php';
+                header('Location: ' . $home_url);
+
+            }else{
+                header("Location:".$goToUrl);//利用header跳转到那个页面去
+                exit;//退出
+            }
+
+
         }
         else {
             // The username/password are incorrect so set an error message
