@@ -68,9 +68,9 @@ if ($_SESSION['pass_phrase'] == $user_pass_phrase) {
             $data = mysqli_query($dbc,$query)
                 or die('fuck');
 
-//            $present_time = date('Y-m-d H:i:s',time());//当前时间
+            $present_time = date('Y-m-d H:i:s',time());//当前时间
 //              if(mysqli_num_rows($data) == 0){//如果还没有登陆过
-                    $query = "update user set login_time = '$present_time' where user_id =".$_SESSION['user_id']."";
+                    $query = "update user set login_time = /'$present_time/' where user_id =".$_SESSION['user_id']."";
                     $data = mysqli_query($dbc,$query)or die('fuck123');;
 //              }else{
 //                    $result = mysqli_fetch_array($data);

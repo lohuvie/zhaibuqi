@@ -171,6 +171,7 @@ $(document).ready(function(){
         "color":"#84C43C",
         "visibility":"hidden"
     });
+    var $emptyTips = $('<div/>').addClass('empty-tips');
     pic.appendTo($parent);
     /* 初始化按钮事件 */
     //btnEnable($nextBtn);
@@ -178,7 +179,8 @@ $(document).ready(function(){
     $nextBtn.on("click", nextPage );
     /* 加载初始4个活动 */
     $.each($ul,function(){
-            var eventParentID = $(this).parents(".event").attr("id");
+            var eventParent = $(this).parents(".event"),
+                eventParentID = eventParent.attr("id");
             var url = "json/event.php?page=0"  +
                 "&type=" +eventParentID + "&id=" + introId;
             ajaxLoading($("#"+eventParentID+" .loading"), "loading");
@@ -188,6 +190,22 @@ $(document).ready(function(){
                 url:url,
                 success:function(data){
                     activityAppend(data,eventParentID);
+                    if(eventParent.find('.single-activity').length === 0){
+                        switch (eventParentID){
+                            case 'join':
+                                $emptyTips.text('暂时还没有参加的活动喔');
+                                break;
+                            case 'like':
+                                $emptyTips.text('暂时还没有喜欢的活动喔');
+                                break;
+                            case 'host':
+                                $emptyTips.text('暂时还没有发布的活动喔');
+                                break;
+                            default:
+                                break;
+                        }
+                        $emptyTips.clone().appendTo(eventParent);
+                    }
                 }
             });
     }

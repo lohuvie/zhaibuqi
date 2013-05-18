@@ -66,6 +66,15 @@ body{
     margin-top: 5px;
     text-align: center;
 }
+.empty-tips{
+    background: url(../images/empty_status.png) no-repeat center 0;
+    color: #ccc;
+    display: table-cell;
+    height: 169px;
+    text-align: center;
+    vertical-align: bottom;
+    width: 620px;
+}
 /* leave-message */
 #leave-message{
     padding: 0 330px 10px 0;

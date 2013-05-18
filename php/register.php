@@ -29,6 +29,14 @@ $present_time = date('Y-m-d H:i:s',time());//当前时间
                 $query = "insert into user(user_id,email,password,nickname,register_date,login_time) values (null,'$email',SHA('$passwd1'),'$nickname',now(),'$present_time')";
                 $result = mysqli_query($dbc,$query)
                     or die('Error querying database2');
+               $query = "select * from user where email = '$email'";
+               $result = mysqli_query($dbc,$query) ;
+               $row= mysqli_fetch_array($result);
+               $user_id = $row['user_id'];
+               $default_portrait = 'user_image.jpg';
+                $query = "insert into portrait(portrait_id,user_id,icon) values (null,$user_id,'$default_portrait')";
+                $result = mysqli_query($dbc,$query)
+                    or die('Error querying database3');
 
             }
                 //自动登录
