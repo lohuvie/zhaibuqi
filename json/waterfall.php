@@ -36,6 +36,8 @@ while($result = mysqli_fetch_array($data,MYSQLI_ASSOC)){
     $date = $result['date'];
     $time_begin = $result['time_begin'];
     $time_end = $result['time_end'];
+    //查询活动类型
+    $type = $result['type'];
 
     //计算星期几 月 日
     $month = date("m",strtotime($date));
@@ -57,6 +59,7 @@ while($result = mysqli_fetch_array($data,MYSQLI_ASSOC)){
             break;
     }
     $time = $month.'月'.$day.'日 '.$week.' '.date("H:i",strtotime($time_begin))." - ".date("H:i",strtotime($time_end));
+    $echoStr .= "\"type\":\"".$type."\",";
     $echoStr .= "\"time\":\"".$time."\",";
     $echoStr .= "\"place\":\"".$result['site']."\"},";
     $i++;

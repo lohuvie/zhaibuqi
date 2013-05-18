@@ -12,7 +12,7 @@
         var cdbox = document.getElementById("cdbox");
         if(cdtime === 0){
             //跳转到指定页面代码
-            window.location.href = "index.php";
+            window.location.href = "/index.php";
             clearInterval(intervalid);
         }
         cdbox.innerText = cdtime+'秒...';

@@ -35,6 +35,7 @@
                         title = this.title,
                         time = "时间:"+this.time,
                         place = "地点:"+this.place,
+                        eventType = this.type,
                         $singleActivity = $("<div></div>").addClass("single-activity"),
                         $title = $("<a></a>").addClass("activity-title").attr("href",href).html(title),
                         $img = $('<img/>').attr({
@@ -42,7 +43,10 @@
                             alt:title
                         }),
                         $pic = $("<a></a>").addClass("activity-pic").attr('href',href).append($img),
-                    //html("<img src='"+picPath+"' alt='"+title+"' />").attr("href",href),
+                        //添加透明活动类型
+                        $ribbonWrapper = $("<div></div>").addClass("ribbon-wrapper").appendTo($pic),
+                        $ribbon = $("<div></div>").text(eventType).addClass("ribbon").appendTo($ribbonWrapper),
+                        //html("<img src='"+picPath+"' alt='"+title+"' />").attr("href",href),
                         $time = $("<p></p>").html(time),
                         $place = $("<p></p>").html(place);
                     console.log($singleActivity,$title,$pic,$time,$place);
