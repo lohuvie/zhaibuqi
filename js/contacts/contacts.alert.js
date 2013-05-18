@@ -14,6 +14,7 @@ define(function(require, exports, module){
         MOVE_PERSON = 3,
         CREATE_GROUP = 4,
         ERROR = 5,
+        ADD_PERSON = 6,
         text = '',
         options = {
             animation: 300,
@@ -57,6 +58,10 @@ define(function(require, exports, module){
                 break;
             case CREATE_GROUP:
                 text = '请输入分组名:(最多8个字)';
+                break;
+            case ADD_PERSON:
+                text = '确定要关注' +
+                    (typeof opt.personName === 'string' ? '"' + opt.personName + '"' : '这些人');
                 break;
             case ERROR:
                 Apprise(opt.error,{

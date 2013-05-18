@@ -82,9 +82,38 @@ define(function(require, exports, module){
         }
     }
 
+    function addPerson(){
+        var cache = init.getDeletePerson();
+        if(cache.length !== 0){
+            showAlert(6, {
+                confirm : function(){
+                    $.ajax({
+                        url: addUrl,
+                        type: 'POST',
+                        dataType:'JSON',
+                        data: {
+                            person: JSON.stringify(cache)
+                        },
+                        success: function(){
+                            $('.active').remove();
+                            init.reset();
+                        },
+                        error: function(data){
+                            showAlert(5,data.error);
+                        }
+                    });
+                    Apprise('close');
+                },
+                personName: cache.length === 1 ? $('.active .name').text() : null
+            });
+
+        }
+    }
+
     $(function(){
         $('.move ul').on('click', 'li', move);
         $('.remove').on('click', deletePerson);
+        $('.add').on('click', 'li', addPerson);
     });
 
 
