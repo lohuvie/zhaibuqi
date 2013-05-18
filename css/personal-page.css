@@ -14,7 +14,7 @@ body{
     margin-left: 0px;
 }
 .event{
-    height: 236px;
+    height: 240px;
     width: 620px;
     position: relative;;
     margin: 50px 0px;
@@ -48,23 +48,35 @@ body{
     margin-right: 15px;
 }
 .pic-link-box{
+    width: 140px;
     height: 180px;
     overflow: hidden;
+    position: relative;
 }
 .pic-link{
-    display: table-cell;
-    height: 140px;
-    vertical-align: middle;
+    display: block;
+    left: 50%;
+    margin-left: -500px;
     text-align: center;
+    position: absolute;
+    width: 1000px;
 }
 .pic-link img{
-    width: 140px;
+    position: relative;
+    height: 180px;
+    top: -50%;
 }
 .single-activity h5{
     font-size:inherit;
     font-weight: lighter;
     margin-top: 5px;
     text-align: center;
+}
+h5 a{
+    color: #888;
+}
+h5 a:hover{
+    border-bottom: 1px dotted #109eff;
 }
 .empty-tips{
     background: url(../images/empty_status.png) no-repeat center 0;
