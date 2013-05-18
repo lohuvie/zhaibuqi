@@ -37,7 +37,24 @@ while($result = mysqli_fetch_array($data,MYSQLI_ASSOC)){
     $time_begin = $result['time_begin'];
     $time_end = $result['time_end'];
     //查询活动类型
-    $type = $result['type'];
+    $activity_type = $result['type'];
+    switch($activity_type){
+        case 'club':
+            $activity_type = "社团活动";
+            break;
+        case 'match':
+            $activity_type = "比赛";
+            break;
+        case 'play':
+            $activity_type = "出去耍";
+            break;
+        case 'lecture':
+            $activity_type = "讲座";
+            break;
+        default:
+            $activity_type = "活动";
+            break;
+    }
 
     //计算星期几 月 日
     $month = date("m",strtotime($date));
@@ -59,7 +76,7 @@ while($result = mysqli_fetch_array($data,MYSQLI_ASSOC)){
             break;
     }
     $time = $month.'月'.$day.'日 '.$week.' '.date("H:i",strtotime($time_begin))." - ".date("H:i",strtotime($time_end));
-    $echoStr .= "\"type\":\"".$type."\",";
+    $echoStr .= "\"type\":\"".$activity_type."\",";
     $echoStr .= "\"time\":\"".$time."\",";
     $echoStr .= "\"place\":\"".$result['site']."\"},";
     $i++;

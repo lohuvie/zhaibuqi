@@ -49,10 +49,10 @@
                        <td><label for="category">类型</label></td>
                        <td>
                            <select id="category" name="category" tabindex="2">
-                               <option value="社团活动">社团活动</option>
-                               <option value="出去耍">出去耍</option>
-                               <option value="比赛">比赛</option>
-                               <option value="讲座">讲座</option>
+                               <option value="club">社团活动</option>
+                               <option value="play">出去耍</option>
+                               <option value="match">比赛</option>
+                               <option value="lecture">讲座</option>
                            </select>
                        </td>
                    </tr>
