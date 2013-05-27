@@ -83,12 +83,12 @@ require_once('../php/authorize.php');
                                         echo '<span class="label label-success">活动通过</span>';
                                     }
                                     echo '<td class="center">'.
-                                           '<a class="btn btn-info" href="approve-activity.php?id='.$row['activity_id'].'">'.
+                                           '<a class="btn btn-info" href="../php/approve-activity.php?id='.$row['activity_id'].'">'.
                                            '<i class="icon-zoom-in icon-white"></i> 查看</a> ';
-                                    echo '<a class="btn btn-success" href="approve-activity.php?id=' . $row['activity_id'] . '&amp;date=' . $row['activity_register_time'] .
+                                    echo '<a class="btn btn-success" href="../php/approve-activity.php?id=' . $row['activity_id'] . '&amp;date=' . $row['activity_register_time'] .
                                         '&amp;email=' . $row1['email'] . '&amp;title=' . $row['name'] .'&amp;place=' . $row['site'].'&amp;introduce='.
                                         $row['introduce'].'&amp;photo=' . $row2['photo'] .'"><i class="icon-edit icon-white" ></i> 通过</a> ';
-                                    echo '<a class="btn btn-danger" href="remove-activity.php?id=' . $row['activity_id'] . '&amp;date=' . $row['activity_register_time'] .
+                                    echo '<a class="btn btn-danger" href="../php/remove-activity.php?id=' . $row['activity_id'] . '&amp;date=' . $row['activity_register_time'] .
                                         '&amp;email=' . $row1['email'] . '&amp;title=' . $row['name']. '&amp;photo=' . $row2['photo'] .'"><i class="icon-trash icon-white" ></i> 删除</a></td></tr>';
                             }
                           ?>
