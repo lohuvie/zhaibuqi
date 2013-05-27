@@ -162,7 +162,7 @@
     echo '</form>';
   }
 
-  echo '<p><a href="admin.php">&lt;&lt; Back to admin page</a></p>';
+  echo '<p><a href="../admin/index.php">&lt;&lt; Back to admin page</a></p>';
 ?>
 
 </body> 

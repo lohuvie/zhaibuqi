@@ -69,7 +69,7 @@
 
 				<div class="top-nav nav-collapse">
 					<ul class="nav">
-						<li><a href="#">访问宅不起</a></li>
+						<li><a href="../index.php">访问宅不起</a></li>
 					</ul>
 				</div><!--/.nav-collapse -->
 			</div>
