@@ -152,11 +152,24 @@ div.btn-box{
     background: #EE0404;
     border: 1px solid #EE0404;
 }
+
+/* help */
 #help{
     float:right;
-    position: relative;
     width: 250px;
     height: 320px;
-    border-style: solid;
     padding: 10px;
+    margin: 50px 30px 0 0;
+}
+
+#help h2{
+    font-weight: normal;
+    font-size: 16px;
+    color: #84C43C;
+    margin: 10px 0;
+}
+
+#help p{
+    font-size: 13px;
+    color:#777;
 }

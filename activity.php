@@ -128,15 +128,47 @@ if($user_id == $creater_id || $approved != 0){
     }
     ?>
     <div id="sidebar" >
-        <div id="relevant-activity">
-            <h3>相关活动</h3>
-            <p>此 div 上显示相关活动
-            </p>
+        <div class="relevant r-person">
+            <h3>-最近喜欢该活动的人-</h3>
+            <div>
+                <!-- 循环dl -->
+                <dl>
+                    <dt>
+                        <a href=""><img src=""/></a>
+                    </dt>
+                    <dd><a href="">fuck</a></dd>
+                </dl>
+                <dl>
+                    <dt>
+                        <a href=""><img src=""/></a>
+                    </dt>
+                    <dd><a href="">fuck</a></dd>
+                </dl>
+                <dl>
+                    <dt>
+                        <a href=""><img src=""/></a>
+                    </dt>
+                    <dd><a href="">fuck</a></dd>
+                </dl>
+                <dl>
+                    <dt>
+                        <a href=""><img src=""/></a>
+                    </dt>
+                    <dd><a href="">fuck</a></dd>
+                </dl>
+            </div>
         </div>
-        <div id="recently-like">
-            <h3>最近喜欢这个活动的人</h3>
-            <p>此 div 上显示最近喜欢这个活动的人
-            </p>
+        <div class="relevant r-activity">
+            <h3>-参加这个活动的人还参加了-</h3>
+            <!-- 只有一个不需循环 -->
+            <div class="single-activity">
+                <a class="activity-pic" href="activity.php?activity=43">
+                    <img src="upload-images/cut_1363582196.png" alt="阿地方发大水">
+                </a>
+                <a class="activity-title" href="activity.php?activity=43">阿地方发大水</a>
+                <p>时间:03月19日 周二 00:20 - 16:40</p>
+                <p>地点:阿斯顿发阿道夫阿斯顿发</p>
+            </div>
         </div>
     </div>
     <!-- end #sidebar -->

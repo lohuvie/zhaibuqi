@@ -14,9 +14,9 @@
             <div class="abt-contact">
                 <h3>联系我们：</h3>
                 <p>
-                    电话：1234567
+                    电话：13668156129
                     <br />
-                    邮箱：<a href="#">abc@gmail.com</a>
+                    邮箱：<a href="mailto:lohuvie@gmail.com">lohuvie@gmail.com</a>
                 </p>
             </div>
         </div>

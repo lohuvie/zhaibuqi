@@ -47,19 +47,54 @@
 #header {
 	height: 40px;
 	border-bottom: 1px solid #DDDDDD;
-} 
+}
+/* sidebar */ 
 #sidebar {
 	float: right;
 	width: 200px;
-	background: #EBEBEB;
 	padding: 15px 5px;
     margin-top: 20px;
 }
+.board{
+	border-top: 3px solid #eee;
+	margin-bottom: 30px;
+}
+h3{
+	margin-top: -3px;
+	border-top: 3px solid #84C43C;
+	color: #222;
+	display: inline-block;
+	font-size: 15px;
+	font-weight: lighter;
+	padding: 5px 10px 0;
+}
+.board ol{
+	list-style-type: square;
+	padding: 5px;
+	color: #bbb;
+}
+.board li{
+	list-style-position: inside;
+	border-bottom: 1px dashed #eee;
+	font-size: 14px;
+	padding: 5px;
+}
+.board li a{
+	color: #444;
+}
+.board li a:hover{
+	color:#84C43C;
+}
+
+
+
+/* waterfall */
 #waterfall {
 	width:780px;
 	height: 500px;
 	margin-right: 200px;
 	padding-top: 10px;
+	position: relative;
 } 
 
 .single-activity {
