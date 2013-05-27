@@ -78,14 +78,26 @@ body  {
     min-height: 200px;
 }
 /* img */
-#main .result table td img{
-    border: 4px solid #FFFFFF;
-    outline: 1px solid #EEEEEE;
+#main .result table .left {
+    height: 163px;
+    width: 100px;
+    position: relative;
+    overflow: hidden;
 }
-#main .result table td img:hover{
-    border: 4px solid #C3E99E;
-    outline: 1px solid #C3E99E;
+.left a{
+    display:block;
+    left: 50%;
+    margin-left: -500px;
+    text-align: center;
+    position: absolute;
+    width: 1000px;
 }
+.left img{
+    height: 163px;
+    position: relative;
+    top: -50%;
+}
+
 /* content */
 #main .result .content{
     width: 435px;
@@ -139,6 +151,8 @@ body  {
 #main .result .page-nav a:hover{
     background: #C3E99E;
 }
-#main .result .page-nav a.active{
+#main .result .page-nav .active{
     background: #C3E99E;
+    padding: 5px;
+    cursor: default;
 }
