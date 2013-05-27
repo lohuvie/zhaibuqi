@@ -1,6 +1,8 @@
 
 <head>
     <link href="css/top-nav.css" type="text/css" rel="stylesheet" />
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" /> 
 </head>
 <?php
 require_once('php/start-session.php');
@@ -80,7 +82,7 @@ setcookie('URL',$URL, time() + (60));    // expires in 1 MINUTE
             ?>
             <!-- Search Part Starts Here -->
             <div class="search-body">
-                <form action="" method="get" id="search-form">
+                <form action="search-all.php" method="get" id="search-form">
                     <div>
                         <input type="text" id="search-text" name="search-text"/>
                         <input type="image" alt="搜索" src="images/search_btn.gif" name="search-btn" id="search-btn" />

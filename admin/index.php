@@ -1,11 +1,11 @@
 <?php
-require_once('authorize.php');
+require_once('../php/authorize.php');
 ?>
 <?php include('header.php'); ?>
 
 
             <?php
-                require_once('util.php');
+                require_once('../php/util.php');
 
                 // Connect to the database
                 $dbc = mysqli_connect(host,user, password, database);

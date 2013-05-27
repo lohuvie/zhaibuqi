@@ -22,8 +22,7 @@ $number_of_time=0;
 
     $email = mysqli_real_escape_string($dbc, trim($_POST['email']));
     $passwd = mysqli_real_escape_string($dbc, trim($_POST['passwd']));
-    echo $email;
-    echo $passwd;
+
 //判定验证码是否正确
     $user_pass_phrase = sha1($_POST['validate']);
 if(isset($_POST['validate'])){ //看验证码是否存在
@@ -70,7 +69,7 @@ if ($_SESSION['pass_phrase'] == $user_pass_phrase) {
 
             $present_time = date('Y-m-d H:i:s',time());//当前时间
 //              if(mysqli_num_rows($data) == 0){//如果还没有登陆过
-                    $query = "update user set login_time = /'$present_time/' where user_id =".$_SESSION['user_id']."";
+                    $query = "update user set login_time = '$present_time' where user_id =".$_SESSION['user_id']."";
                     $data = mysqli_query($dbc,$query)or die('fuck123');;
 //              }else{
 //                    $result = mysqli_fetch_array($data);
