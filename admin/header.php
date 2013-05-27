@@ -65,7 +65,7 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</a>
-				<a class="brand" href="index.html"> <img alt="Charisma Logo" src="img/logo20.png" /> <span>Zhaibuqi</span></a>
+				<a class="brand" href="../index.php"> <img alt="Charisma Logo" src="img/logo20.png" /> <span>Zhaibuqi</span></a>
 
 				<div class="top-nav nav-collapse">
 					<ul class="nav">

@@ -6,7 +6,7 @@ require_once('php/util.php');
     $dbc = mysqli_connect(host,user,password,database);
     $query = "select *
     from user left join  portrait on(user.user_id=portrait.user_id)
-    where nickname LIKE '%$text%' ";//包含搜索框的内容(名字里面)
+    where nickname LIKE '%$text%'  ";//包含搜索框的内容(名字里面)
     $result1 = mysqli_query($dbc,$query);
     $user_number = mysqli_num_rows($result1);//结果条数
 //如果收缩框为空值时的处理
@@ -15,7 +15,7 @@ require_once('php/util.php');
     $query="select * from activity  a join activity_time b on a.activity_id = b.activity_id
     left  join user c on a.user_id = c.user_id
     left join activity_photo d on a.activity_id = d.activity_id
-    where a.name like '%$text%'";//多个表的链接
+    where a.name like '%$text%' and approved =1";//多个表的链接
     $result2 = mysqli_query($dbc,$query);
     $activity_number = mysqli_num_rows($result2);//活动的查询
 
@@ -39,6 +39,9 @@ require_once('php/util.php');
     <div id="container">
         <div class="header">
             <h1>搜索结果: <span><?php echo $text; ?></span></h1>
+        </div>
+        <div class="aside">
+            <div class="box-head">滚你妹的</div>
         </div>
         <div id="main">
             <div class="selection">
@@ -127,7 +130,7 @@ require_once('php/util.php');
                         </td>
                         <td class="right">
                             <div class="content">
-                                <h3><a href="#"><?php echo $name; ?></a></h3>
+                                <h3><a href="activity.php?activity=<?php echo $activity_id?>"><?php echo $name; ?></a></h3>
                                 <p class="detail">
                                     时间：<?php echo $time ;?> <?php echo date('H:i',strtotime($begin_time)); ?>-<?php echo date('H:i',strtotime($end_time)); ?><br />
                                     地点：<?php echo $site; ?><br />

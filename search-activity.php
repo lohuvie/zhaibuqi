@@ -10,7 +10,7 @@ $dbc = mysqli_connect(host,user,password,database);
 $query="select * from activity  a join activity_time b on a.activity_id = b.activity_id
     left  join user c on a.user_id = c.user_id
     left join activity_photo d on a.activity_id = d.activity_id
-    where a.name like '%$text%'";//多个表的链接
+    where a.name like '%$text%' and approved =1";//多个表的链接
 $result2 = mysqli_query($dbc,$query);
 $activity_number = mysqli_num_rows($result2);//活动的查询
 
@@ -64,6 +64,9 @@ function generate_page_links( $cur_page, $num_pages) {
     <div id="container">
         <div class="header">
             <h1>搜索结果: <span><?php echo $text;?></span></h1>
+        </div>
+        <div class="aside">
+            <div class="box-head">滚你妹的</div>
         </div>
         <div id="main">
             <div class="selection">

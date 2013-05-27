@@ -120,10 +120,12 @@ while( $row = mysqli_fetch_array($result)){
             }
         }
     }
+    if(isset($_SESSION['user_id'])){
     $query = "select icon from portrait where user_id = ".$_SESSION['user_id']."";
     $result = mysqli_query($dbc,$query);
     $row = mysqli_fetch_array($result);
     $user_icon = $row['icon'];//用户的从属用户名
+    }
 ?>
 </ul>
 <form id="comment-form" action="php/<?php echo $url;?>" name="comment">

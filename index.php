@@ -1,5 +1,12 @@
 <?php
 require_once "php/start-session.php";
+require_once"php/util.php";
+$dbc = mysqli_connect(host,user,password,database);
+$query2="select name,a.activity_id ,count(a.user_id) from activity_love a join activity b on a.activity_id=b.activity_id  group by activity_id order by count(a.user_id) desc ";
+$result2 = mysqli_query($dbc,$query2);
+$query1 ="select name,a.activity_id ,count(a.user_id) from activity_join a join activity b on a.activity_id=b.activity_id  group by activity_id order by count(a.user_id) desc  ";
+$result1 = mysqli_query($dbc,$query1);
+
 ?>
 <!DOCTYPE html>
 <head>
@@ -57,21 +64,28 @@ require_once "php/start-session.php";
 			<div class="board">
                 <h3>最多人参与 Top5</h3>
 			    <ol>
-                    <li><a href="#">篮球赛</a></li>
-                    <li><a href="#">足球赛</a></li>
-                    <li><a href="#">乒乓球赛</a></li>
-                    <li><a href="#">AV分享</a></li>
-                    <li><a href="#">我要打打打打打打打打打打打打炮</a></li>
+                    <?php for($i=0;$i<5;$i++){
+                        $data = mysqli_fetch_array($result2);
+                        $nickname =$data['name'];
+                        $activity_id=$data['activity_id'];
+
+
+                        ?>
+
+                    <li><a href="activity.php?activity=<?php echo $activity_id;?>"><?php echo $nickname;?></a></li>
+                   <?php } ?>
                 </ol>
             </div>
             <div class="board">
                 <h3>最多人喜欢 Top5</h3>
                 <ol>
-                    <li><a href="#">篮球赛</a></li>
-                    <li><a href="#">足球赛</a></li>
-                    <li><a href="#">乒乓球赛</a></li>
-                    <li><a href="#">AV分享</a></li>
-                    <li><a href="#">打炮</a></li>
+                    <?php for($i=0;$i<5;$i++){
+                    $data1 = mysqli_fetch_array($result1);
+                    $nickname =$data1['name'];
+                    $activity_id=$data1['activity_id'];
+                    ?>
+                        <li><a href="activity.php?activity=<?php echo $activity_id;?>"><?php echo $nickname;?></a></li>
+                    <?php } ?>
                 </ol>
             </div>
 		</div>
