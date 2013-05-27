@@ -26,7 +26,7 @@ if($user_id != USER_NO_LOGIN){
     try{
         if($isLoveActivity == 0){
             //喜欢该活动 向数据库添加该活动
-            $query = "insert into activity_love values($activity_id,$user_id)";
+            $query = "insert into activity_love values($activity_id,$user_id,NOW())";
             $result = mysqli_query($dbc,$query);
             $isLoveActivity = 1;
         }else{
