@@ -202,7 +202,7 @@ if(!empty($_GET['id'])){
                 ?>
             </div>
         </div>
-        <div id="attention-host">
+        <div id="attention-host" style="display:none">
             <h4>
                 <span>-关注的主办方-</span>
                 <span class="more"><a>(更多)</a></span>

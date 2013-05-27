@@ -54,8 +54,26 @@ require_once "php/start-session.php";
 				</div>
 			</div>
 		<div id="sidebar">
-			<h3>动态内容</h3>
-				<p>此 div 上所显示的动态内容 </p>
+			<div class="board">
+                <h3>最多人参与 Top5</h3>
+			    <ol>
+                    <li><a href="#">篮球赛</a></li>
+                    <li><a href="#">足球赛</a></li>
+                    <li><a href="#">乒乓球赛</a></li>
+                    <li><a href="#">AV分享</a></li>
+                    <li><a href="#">我要打打打打打打打打打打打打炮</a></li>
+                </ol>
+            </div>
+            <div class="board">
+                <h3>最多人喜欢 Top5</h3>
+                <ol>
+                    <li><a href="#">篮球赛</a></li>
+                    <li><a href="#">足球赛</a></li>
+                    <li><a href="#">乒乓球赛</a></li>
+                    <li><a href="#">AV分享</a></li>
+                    <li><a href="#">打炮</a></li>
+                </ol>
+            </div>
 		</div>
 		<!-- end #sidebar -->
 		<div id="waterfall">
