@@ -20,7 +20,7 @@ $per_page = 5;//每个页面显示5条
 $skip = (($cur_page-1)*$per_page);
 $num_pages=ceil($activity_number/$per_page);//页面数,向上取整
 
-$query = $query."LIMIT $skip,$per_page ";//包含搜索框的内容(名字里面)
+$query = $query." LIMIT $skip,$per_page ";//包含搜索框的内容(名字里面)
 $result3 = mysqli_query($dbc,$query);
 
 
@@ -65,9 +65,7 @@ function generate_page_links( $cur_page, $num_pages) {
         <div class="header">
             <h1>搜索结果: <span><?php echo $text;?></span></h1>
         </div>
-        <div class="aside">
-            <div class="box-head">滚你妹的</div>
-        </div>
+
         <div id="main">
             <div class="selection">
                 <a href="search-all.php">全部</a>

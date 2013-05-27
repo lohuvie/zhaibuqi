@@ -40,9 +40,7 @@ require_once('php/util.php');
         <div class="header">
             <h1>搜索结果: <span><?php echo $text; ?></span></h1>
         </div>
-        <div class="aside">
-            <div class="box-head">滚你妹的</div>
-        </div>
+
         <div id="main">
             <div class="selection">
                 <a class="active" href="search-all.php">全部</a>
