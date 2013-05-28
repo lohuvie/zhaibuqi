@@ -56,6 +56,7 @@ define(function(require, exports, module){
             $toTop = $('#to-top'),
             $bodyAndHtml = $('body,html');
         $tips = $('.clear');
+        /* 通过是否有操作框来判定是否登录用户的个人主页 */
         if($('.operation').length !== 0){
             /* 头像框选中及取消动画 */
             $contactsBody.on('click','.user-display',function(){
