@@ -25,7 +25,7 @@
       $place=$_GET['place'];
       $introduce=$_GET['introduce'];
 
-      $photo= $_GET['photo'];
+      $photo= 'cut_'.$_GET['photo'];
   }
   else if (isset($_POST['id']) && isset($_POST['email']) && isset($_POST['title'])) {
       // Grab the score data from the POST
@@ -48,8 +48,8 @@
 
 
 
-  if (isset($_POST['submit'])) {
-    if ($_POST['confirm'] == 'Yes') {
+//  if (isset($_POST['submit'])) {
+//    if ($_POST['confirm'] == 'Yes') {
       // Connect to the database
       $dbc = mysqli_connect(host, user, password, database);
 
@@ -141,28 +141,30 @@
 
       // Confirm success with the user
       echo '<p>The activity  of ' . $email . ' for ' . $title . ' was successfully approved.';
-    }
-    else {
-      echo '<p class="error">Sorry, there was a problem approving the activity.</p>';
-    }
-  }
-  else if (isset($id) && isset($title) && isset($date) && isset($email)) {
-    echo '<p>Are you sure you want to approve the following activity?</p>';
-    echo '<p><strong>Email: </strong>' . $email . '<br /><strong>Date: </strong>' . $date .
-      '<br /><strong>Title: </strong>' . $title .'<br/>' .'<strong>Place: </strong>' . $place . '<br />
-      <strong>Introduce: </strong>' . $introduce . '<br /></p>';
-    echo '<form method="post" action="approve-activity.php">';
-    echo '<img src="' .UPLOADPATH . $photo . '" width="160" alt="Activity image" /><br />';
-    echo '<input type="radio" name="confirm" value="Yes" /> Yes ';
-    echo '<input type="radio" name="confirm" value="No" checked="checked" /> No <br />';
-    echo '<input type="submit" value="Submit" name="submit" />';
-    echo '<input type="hidden" name="id" value="' . $id . '" />';
-    echo '<input type="hidden" name="email" value="' . $email . '" />';
-    echo '<input type="hidden" name="title" value="' . $title . '" />';
-    echo '</form>';
-  }
+//    }
+//    else {
+//      echo '<p class="error">Sorry, there was a problem approving the activity.</p>';
+//    }
+//  }
+//  else if (isset($id) && isset($title) && isset($date) && isset($email)) {
+//    echo '<p>Are you sure you want to approve the following activity?</p>';
+//    echo '<p><strong>Email: </strong>' . $email . '<br /><strong>Date: </strong>' . $date .
+//      '<br /><strong>Title: </strong>' . $title .'<br/>' .'<strong>Place: </strong>' . $place . '<br />
+//      <strong>Introduce: </strong>' . $introduce . '<br /></p>';
+//    echo '<form method="post" action="approve-activity.php">';
+//    echo '<img src="' .UPLOADPATH . $photo . '" width="160" alt="Activity image" /><br />';
+//    echo '<input type="radio" name="confirm" value="Yes" /> Yes ';
+//    echo '<input type="radio" name="confirm" value="No" checked="checked" /> No <br />';
+//    echo '<input type="submit" value="Submit" name="submit" />';
+//    echo '<input type="hidden" name="id" value="' . $id . '" />';
+//    echo '<input type="hidden" name="email" value="' . $email . '" />';
+//    echo '<input type="hidden" name="title" value="' . $title . '" />';
+//    echo '</form>';
+//  }
 
   echo '<p><a href="../admin/index.php">&lt;&lt; Back to admin page</a></p>';
+  $home_url = 'http://' . $_SERVER['HTTP_HOST'] . dirname(dirname($_SERVER['PHP_SELF'])) . '/admin/index.php';
+  header('Location: ' . $home_url);//直接跳转回去
 ?>
 
 </body> 

@@ -75,7 +75,7 @@ $approved = $result['approved'];
 $ad_approved = $result['ad_approved'];
 
 //创建者 可以 看见 未通过的活动
-if($user_id == $creater_id || $approved != 0){
+if($user_id == $creater_id || $approved != 0||isset($_GET['admin'])){
     $activity_name = $result['name'];
     $site = $result['site'];
     $introduce = $result['introduce'];
