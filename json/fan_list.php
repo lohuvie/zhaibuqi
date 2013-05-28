@@ -2,6 +2,8 @@
 
 //关注的人
 require_once("../php/util.php");
+require_once("../vo/AttentionFunList.php");
+require_once("../vo/Fan.php");
 
 header('Content-type: text/json');
 header('Content-type: application/json');
