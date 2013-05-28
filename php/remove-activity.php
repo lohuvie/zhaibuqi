@@ -22,7 +22,7 @@ if (isset($_GET['id']) && isset($_GET['date']) && isset($_GET['email']) && isset
     $date = $_GET['date'];
     $email = $_GET['email'];
     $title = $_GET['title'];
-    $photo = $_GET['photo'];
+    $photo = 'cut_'.$_GET['photo'];
     echo "aaaaaaaaaaaaaaa";
 
 
@@ -45,8 +45,8 @@ $row = mysqli_fetch_array($result);
 $userName = $row['nickname'];
 
 
-if (isset($_POST['submit'])) {
-    if ($_POST['confirm'] == 'Yes') {
+//if (isset($_POST['submit'])) {
+//    if ($_POST['confirm'] == 'Yes') {
         // Delete the screen shot image file from the server
         @unlink(UPLOADPATH . $photo);
 
@@ -54,18 +54,27 @@ if (isset($_POST['submit'])) {
         // Connect to the database
         $dbc = mysqli_connect(host, user, password, database);
 
-        //从activity_photo中删除
-        $query = "DELETE FROM activity_photo WHERE activity_id = $id LIMIT 1";
-        mysqli_query($dbc, $query)or die(错误1);
-        //从activity_photo中删除
-        $query = "DELETE FROM activity_time WHERE activity_id = $id LIMIT 1";
-        mysqli_query($dbc, $query)or die(错误2);
-        //从activity_tag中删除
-        $query = "DELETE FROM activity_tag WHERE activity_id = $id ";
-        mysqli_query($dbc, $query)or die(错误3);
-        // 从activity中删除
-        $query = "DELETE FROM activity WHERE activity_id = $id LIMIT 1";
-        mysqli_query($dbc, $query)or die(错误4);
+$query = "DELETE FROM activity_photo WHERE activity_id = $id LIMIT 1";
+mysqli_query($dbc, $query)or die(错误1);
+//从activity_photo中删除
+$query = "DELETE FROM activity_time WHERE activity_id = $id LIMIT 1";
+mysqli_query($dbc, $query)or die(错误2);
+//从activity_tag中删除
+$query = "DELETE FROM activity_tag WHERE activity_id = $id ";
+
+mysqli_query($dbc, $query)or die(错误3);
+$query = "DELETE FROM activity_comment WHERE activity_id = $id ";
+mysqli_query($dbc, $query)or die(错误4);
+$query = "DELETE FROM activity_join WHERE activity_id = $id ";
+mysqli_query($dbc, $query)or die(错误5);
+$query = "DELETE FROM activity_love WHERE activity_id = $id ";
+mysqli_query($dbc, $query)or die(错误6);
+
+//    $query = "DELETE FROM activity_comment WHERE activity_id = $id ";
+//    mysqli_query($dbc, $query)or die(错误4);
+//    // 从activity中删除
+$query = "DELETE FROM activity WHERE activity_id = $id LIMIT 1";
+mysqli_query($dbc, $query)or die(错误7);
 
         //发送邮件给用户通知用户活动通过
         require_once('class.phpmailer.php'); //下载的文件必须放在该文件所在目录
@@ -158,26 +167,31 @@ if (isset($_POST['submit'])) {
 
         // Confirm success with the user
         echo '<p>The activity of ' . $title . ' for ' . $email . ' was successfully removed.';
-    }
-    else {
-        echo '<p class="error">The activity was not removed.</p>';
-    }
-}
-else if (isset($id) && isset($email) && isset($date) && isset($title)) {
-    echo '<p>Are you sure you want to delete the following activity?</p>';
-    echo '<p><strong>Email: </strong>' . $email . '<br /><strong>Date: </strong>' . $date .
-        '<br /><strong>Title: </strong>' . $title . '</p>';
-    echo '<form method="post" action="remove-activity.php">';
-    echo '<input type="radio" name="confirm" value="Yes" /> Yes ';
-    echo '<input type="radio" name="confirm" value="No" checked="checked" /> No <br />';
-    echo '<input type="submit" value="Submit" name="submit" />';
-    echo '<input type="hidden" name="id" value="' . $id . '" />';
-    echo '<input type="hidden" name="email" value="' . $email . '" />';
-    echo '<input type="hidden" name="title" value="' . $title . '" />';
-    echo '</form>';
-}
+//    }
+//    else {
+//        echo '<p class="error">The activity was not removed.</p>';
+//    }
+//}
+//else if (isset($id) && isset($email) && isset($date) && isset($title)) {
+//    echo '<p>Are you sure you want to delete the following activity?</p>';
+//    echo '<p><strong>Email: </strong>' . $email . '<br /><strong>Date: </strong>' . $date .
+//        '<br /><strong>Title: </strong>' . $title . '</p>';
+//    echo '<form method="post" action="remove-activity.php">';
+//    echo '<input type="radio" name="confirm" value="Yes" /> Yes ';
+//    echo '<input type="radio" name="confirm" value="No" checked="checked" /> No <br />';
+//    echo '<input type="submit" value="Submit" name="submit" />';
+//    echo '<input type="hidden" name="id" value="' . $id . '" />';
+//    echo '<input type="hidden" name="email" value="' . $email . '" />';
+//    echo '<input type="hidden" name="title" value="' . $title . '" />';
+//    echo '</form>';
+//}
 
-echo '<p><a href="admin.php">&lt;&lt; Back to admin page</a></p>';
+echo '<p><a href="../admin/index.php">&lt;&lt; Back to admin page</a></p>';
+
+$home_url = 'http://' . $_SERVER['HTTP_HOST'] . dirname(dirname($_SERVER['PHP_SELF'])) . '/admin/index.php';
+header('Location: ' . $home_url);//直接跳转回去
+mysql_close($dbc);
+
 ?>
 
 </body>
