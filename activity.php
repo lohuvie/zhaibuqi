@@ -24,6 +24,34 @@ require_once "php/start-session.php";
 <div id="container">
 <?php
 require_once("php/util.php");
+require_once("vo/User.php");
+require_once("vo/Activity.php");
+
+function timetostr($date,$time_begin,$time_end){
+
+    //计算星期几 月 日
+    $month = date("m",strtotime($date));
+    $day = date("d",strtotime($date));
+    switch(date("w",strtotime($date))){
+        case 0: $week = '周日';
+            break;
+        case 1: $week = '周一';
+            break;
+        case 2: $week = '周二';
+            break;
+        case 3: $week = '周三';
+            break;
+        case 4: $week = '周四';
+            break;
+        case 5: $week = '周五';
+            break;
+        case 6: $week = '周六';
+            break;
+    }
+    return $month.'月'.$day.'日 '.$week.' '.date("H:i",strtotime($time_begin))." - ".date("H:i",strtotime($time_end));
+
+}
+
 //获取活动ID
 $activity_id = $_GET['activity'];
 if(isset($_SESSION['user_id'])){
@@ -78,7 +106,7 @@ if($user_id == $creater_id || $approved != 0){
     $time_end = $result['time_end'];
 
     //计算星期几 月 日
-    $month = date("m",strtotime($date));
+  /*  $month = date("m",strtotime($date));
     $day = date("d",strtotime($date));
     switch(date("w",strtotime($date))){
         case 0: $week = '周日';
@@ -96,7 +124,7 @@ if($user_id == $creater_id || $approved != 0){
         case 6: $week = '周六';
             break;
     }
-
+*/
     //查询活动图片
 
     $photo_type = $_FILES['poster']['type'];
@@ -106,11 +134,72 @@ if($user_id == $creater_id || $approved != 0){
     $poster =  $result['photo'];
     $poster_path = UPLOAD_PATH_FRONT_TO_BACK.$poster;
 
-    //查询活动喜欢人数
-    $query = "select * from activity_love where activity_id = $activity_id";
-    $data = mysqli_query($dbc,$query);
+    //查询活动喜欢人数 以及最近喜欢这个活动的人
+    $query = "select u.user_id id,u.nickname name,p.icon icon
+        from activity_love al
+        join user u on al.user_id = u.user_id
+        left join portrait p on u.user_id = p.user_id
+        where activity_id = $activity_id order by love_time desc";
+    $data = mysqli_query($dbc,$query) or die('lover error');
     $love_activity_count = mysqli_num_rows($data);
+    $recent_lovers = array();
+    //查询最近喜欢这个活动的人
+    $i = 0;
+    while($i < 5 && $result = mysqli_fetch_array($data,MYSQLI_BOTH)){
+        $u = new User();
+        $u->setId($result['id']);
+        $u->setName($result['name']);
+        $u->setPortrait($result['icon']);
 
+        $recent_lovers[$i++] = $u;
+    }
+    unset($u);
+
+    //查询参加该活动的人还参加了
+    if($user_id != -1){
+        $query = "select activity_id
+                    from activity_join
+                    where (user_id in
+                    (select user_id from activity_join where activity_id = $activity_id and user_id <> $user_id))
+                    and activity_id <> $activity_id";
+        $data = mysqli_query($dbc,$query) or die('predict_acitivty error');
+        $activity_array = array();
+        while($row = mysqli_fetch_array($data,MYSQLI_BOTH)){
+            $activity_array[$row['activity_id']]++;
+        }
+
+        $predict_id = 0;
+        $predict_count = 0;
+        foreach($activity_array as $key => $value){
+            if($value > $predict_count){
+                $predict_id = $key;
+                $predict_count = $value;
+            }
+        }
+        unset($key);
+        unset($value);
+
+        $predict_activity = new Activity();
+        if($predict_id != 0){
+            $query = "select a.activity_id,a.name,a.site,ap.photo ,
+                        at.date,at.time_begin,at.time_end
+                        from activity a
+                        left join activity_photo ap on a.activity_id = ap.activity_id
+                        left join activity_time at on a.activity_id = at.activity_id
+                        where a.activity_id = $predict_id";
+            $data = mysqli_query($dbc,$query) or die('find predict_acitivty error');
+
+            if($row = mysqli_fetch_array($data,MYSQLI_BOTH)){
+                $predict_activity -> setId($row['activity_id']);
+                $predict_activity -> setName($row['name']);
+                $predict_activity -> setSite($row['site']);
+                $predict_activity -> setCover($row['photo']);
+                $predict_activity -> setDate($row['date']);
+                $predict_activity -> setTimeBegin($row['time_begin']);
+                $predict_activity -> setTimeEnd($row['time_end']);
+            }
+        }
+    }
     //查询活动参加人数
     $query = "select * from activity_join where activity_id = $activity_id";
     $data = mysqli_query($dbc,$query);
@@ -131,45 +220,36 @@ if($user_id == $creater_id || $approved != 0){
         <div class="relevant r-person">
             <h3>-最近喜欢该活动的人-</h3>
             <div>
-                <!-- 循环dl -->
-                <dl>
-                    <dt>
-                        <a href=""><img src=""/></a>
-                    </dt>
-                    <dd><a href="">fuck</a></dd>
-                </dl>
-                <dl>
-                    <dt>
-                        <a href=""><img src=""/></a>
-                    </dt>
-                    <dd><a href="">fuck</a></dd>
-                </dl>
-                <dl>
-                    <dt>
-                        <a href=""><img src=""/></a>
-                    </dt>
-                    <dd><a href="">fuck</a></dd>
-                </dl>
-                <dl>
-                    <dt>
-                        <a href=""><img src=""/></a>
-                    </dt>
-                    <dd><a href="">fuck</a></dd>
-                </dl>
+                <?php
+                //循环显示最近喜欢该活动的人
+                foreach($recent_lovers as $u){
+                ?>
+                    <dl>
+                        <dt>
+                            <a href="personal-page.php?id=<?php echo $u -> getId();?>"><img src="<?php echo UPLOAD_PORTRAIT_FRONT_TO_BACK.$u->getPortrait();?>"/></a>
+                        </dt>
+                        <dd><a href="personal-page.php?id=<?php echo $u -> getId();?>"><?php echo $u->getName();?></a></dd>
+                    </dl>
+                <?php
+                }
+                unset($u);
+                ?>
             </div>
         </div>
-        <div class="relevant r-activity">
-            <h3>-参加这个活动的人还参加了-</h3>
-            <!-- 只有一个不需循环 -->
-            <div class="single-activity">
-                <a class="activity-pic" href="activity.php?activity=43">
-                    <img src="upload-images/cut_1363582196.png" alt="阿地方发大水">
-                </a>
-                <a class="activity-title" href="activity.php?activity=43">阿地方发大水</a>
-                <p>时间:03月19日 周二 00:20 - 16:40</p>
-                <p>地点:阿斯顿发阿道夫阿斯顿发</p>
+        <?php if($user_id != -1){?>
+            <div class="relevant r-activity">
+                <h3>-参加这个活动的人还参加了-</h3>
+                <!-- 只有一个不需循环 -->
+                <div class="single-activity">
+                    <a class="activity-pic" href="activity.php?activity=43">
+                        <img src="<?php echo UPLOAD_PATH_FRONT_TO_BACK.$predict_activity->getCover();?>" alt="海报">
+                    </a>
+                    <a class="activity-title" href="activity.php?activity=<?php echo $predict_activity->getId();?>"><?php echo $predict_activity->getName();?></a>
+                    <p>时间:<?php echo timetostr($predict_activity->getDate(),$predict_activity->getTimeBegin(),$predict_activity->getTimeEnd());?></p>
+                    <p>地点:<?php echo $predict_activity->getSite();?></p>
+                </div>
             </div>
-        </div>
+        <?php }?>
     </div>
     <!-- end #sidebar -->
     <div class="article">
@@ -183,7 +263,7 @@ if($user_id == $creater_id || $approved != 0){
                 <div class="event-info" >
                     <h1><?php echo $activity_name?></h1>
                     <div id="event-time">
-                        <span class="pl">时间:  </span><?php echo $month.'月'.$day.'日 '.$week.' '.date("H:i",strtotime($time_begin))." - ".date("H:i",strtotime($time_end)); ?>
+                        <span class="pl">时间:  </span><?php echo timetostr($date,$time_begin,$time_end); ?>
                     </div>
                     <div id="event-location">
                         <span class="pl">地点:  </span><?php echo $site?>

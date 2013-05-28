@@ -8,7 +8,9 @@
 define(function(require, exports, module){
     var GROUP_ALL = -1;
     var queueAjax = require('queueAjax'),
-        url = 'json/attention_list.php'+location.search,
+        r_contacts = (location.pathname.indexOf('r-contacts') !== -1),
+        url = !r_contacts ?
+            'json/attention_list.php'+location.search : 'json/fan_list.php'+location.search,
         $tips,
         $clearLeft = $('<div></div>').css('clear','left'),
         $groupName,
@@ -43,7 +45,7 @@ define(function(require, exports, module){
                 type:"GET",
                 dataType:"JSON",
                 url: url,
-                data:{
+                data:r_contacts ? { "page":page } : {
                     "page":page,
                     "group":group
                 },
@@ -91,7 +93,11 @@ define(function(require, exports, module){
                     $userDisplay = $("<div></div>").attr('value',af_id).addClass("user-display");
                 $userInfo.append($name, $status, $academy);
                 $userDisplay.append($portrait.append($img),
-                    $userInfo,$clearLeft.clone(),$group).insertBefore($tips);
+                    $userInfo,$clearLeft.clone());
+                if($('.move').length !== 0){
+                    $userDisplay.append($group);
+                }
+                $userDisplay.insertBefore($tips);
                 $userDisplay.fadeIn(100);
             });
         }
