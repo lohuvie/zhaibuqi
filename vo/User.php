@@ -8,20 +8,9 @@
  */
 
 class User {
-    private $potrait;
+    private $portrait;
     private $id;
-    private $href;
     private $name;
-
-    public function setHref($href)
-    {
-        $this->href = $href;
-    }
-
-    public function getHref()
-    {
-        return $this->href;
-    }
 
     public function setId($id)
     {
@@ -43,14 +32,14 @@ class User {
         return $this->name;
     }
 
-    public function setPotrait($potrait)
+    public function setPortrait($portrait)
     {
-        $this->potrait = $potrait;
+        $this->portrait = $portrait;
     }
 
-    public function getPotrait()
+    public function getPortrait()
     {
-        return $this->potrait;
+        return $this->portrait;
     }
 
 
