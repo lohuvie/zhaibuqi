@@ -73,6 +73,8 @@ $result = mysqli_fetch_array($data,MYSQLI_BOTH);
 $creater_id = $result['user_id'];
 $approved = $result['approved'];
 $ad_approved = $result['ad_approved'];
+
+//创建者 可以 看见 未通过的活动
 if($user_id == $creater_id || $approved != 0){
     $activity_name = $result['name'];
     $site = $result['site'];
@@ -105,28 +107,7 @@ if($user_id == $creater_id || $approved != 0){
     $time_begin = $result['time_begin'];
     $time_end = $result['time_end'];
 
-    //计算星期几 月 日
-  /*  $month = date("m",strtotime($date));
-    $day = date("d",strtotime($date));
-    switch(date("w",strtotime($date))){
-        case 0: $week = '周日';
-            break;
-        case 1: $week = '周一';
-            break;
-        case 2: $week = '周二';
-            break;
-        case 3: $week = '周三';
-            break;
-        case 4: $week = '周四';
-            break;
-        case 5: $week = '周五';
-            break;
-        case 6: $week = '周六';
-            break;
-    }
-*/
     //查询活动图片
-
     $photo_type = $_FILES['poster']['type'];
 
 
