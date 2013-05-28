@@ -127,12 +127,14 @@ mysqli_close($dbc);
                     <span class="delete-group">删除分组</span><span class="rename">编辑分组名</span></div>
 
             <div id="operation-box">
+                <!--
                 <form action="" method="get">
                     <div>
                         <input type="text" name="friends-search" id="friends-search"/>
                         <button id="friends-search-btn" type="submit"><span></span></button>
                     </div>
                 </form>
+                -->
                 <?php if($is_user){?>
                 <div class="operation group">
                     <p>选择分组<span id="group"></span></p>

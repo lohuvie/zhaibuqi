@@ -120,28 +120,33 @@ if(mysqli_num_rows($result) != 0){
         <div class="fixed">
             <h1>关注<?php if($is_user){echo '我';}else{echo $name;}?>的人(<span><?php echo $fan_lists_count;?></span>)</h1>
             <div id="operation-box">
+                <!--
                 <form action="#" method="get">
                     <div>
                         <input type="text" name="friends-search" id="friends-search"/>
                         <button id="friends-search-btn" type="submit"><span></span></button>
                     </div>
                 </form>
+                -->
                 <?php if($is_user){?>
+                    <!--
                     <div class="operation add">
                         <p>关注<span id="add"></span></p>
                         <div class="group-selection">
                             <ul>
-                                <?php
+                                <?php/*
                                     //循环显示 移动至组
                                     foreach($groups as &$g){
                                         echo '<li value="'.$g['id'].'">'.$g['name'].'</li>';
                                     }
                                     unset($g);
+                                        */
                                 ?>
                                 <li value="0">未分组</li>
                             </ul>
                         </div>
                     </div>
+                    -->
                 <?php }?>
             </div>
             <div id="sidebar">
