@@ -118,7 +118,11 @@ if(mysqli_num_rows($result) != 0){
     <?php require_once("top-nav.php"); ?>
     <div id="container">
         <div class="fixed">
-            <h1>关注<?php if($is_user){echo '我';}else{echo $name;}?>的人(<span><?php echo $fan_lists_count;?></span>)</h1>
+            <h1>关注<?php if($is_user){echo '我';}else{echo $name;}?>的人</h1>
+
+            <div class="group-header">
+                <h2 class="group-name">全部(<span><?php echo $fan_lists_count;?></span>个)</h2></div>
+
             <div id="operation-box">
                 <!--
                 <form action="#" method="get">
