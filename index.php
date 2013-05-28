@@ -62,7 +62,7 @@ $result1 = mysqli_query($dbc,$query1);
 			</div>
 		<div id="sidebar">
 			<div class="board">
-                <h3>最多人参与 Top5</h3>
+                <h3>最多人喜欢 Top5</h3>
 			    <ol>
                     <?php for($i=0;$i<5;$i++){
                         $data = mysqli_fetch_array($result2);
@@ -77,7 +77,7 @@ $result1 = mysqli_query($dbc,$query1);
                 </ol>
             </div>
             <div class="board">
-                <h3>最多人喜欢 Top5</h3>
+                <h3>最多人参加 Top5</h3>
                 <ol>
                     <?php for($i=0;$i<5;$i++){
                     $data1 = mysqli_fetch_array($result1);

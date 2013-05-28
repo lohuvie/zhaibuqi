@@ -8,14 +8,27 @@
  */
 
 class Fan {
-    private $potrait;
-    private $id;
-    private $af_id;
-    private $href;
-    private $name;
-    private $academy;
-    private $status;
+    public $portrait;
+    public $id;
+    public $af_id;
+    public $href;
+    public $name;
+    public $academy;
+    public $status;
 
+    function __construct(){
+        $this -> academy = '';
+    }
+
+    public function setPortrait($portrait)
+    {
+        $this->portrait = $portrait;
+    }
+
+    public function getPortrait()
+    {
+        return $this->portrait;
+    }
     public function setAcademy($academy)
     {
         $this->academy = $academy;
@@ -64,16 +77,6 @@ class Fan {
     public function getName()
     {
         return $this->name;
-    }
-
-    public function setPotrait($potrait)
-    {
-        $this->potrait = $potrait;
-    }
-
-    public function getPotrait()
-    {
-        return $this->potrait;
     }
 
     public function setStatus($status)
