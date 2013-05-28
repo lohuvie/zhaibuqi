@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>新建活动</title>
+    <title>宅不起 | 新建活动</title>
 
     <!-- 在head标签内 引入Jquery -->
     <script src="js/jquery-1.8.3.min.js" type="text/javascript" ></script>
@@ -32,7 +32,19 @@
     <?php require_once("top-nav.php"); ?>
     <div id="container">
         <div id="help">
-
+            <h2>什么是合适的活动？</h2>
+            <p>1. 有能最终确定的活动起止日期<br />
+                2. 具备现实中能集体参与的活动地点<br />
+                3. 是多人在现实中能碰面的活动<br />
+                <br />
+            </p>
+            <h2>如何才能让你的活动更吸引人？</h2>
+            <p>1. 标题简单明了<br />
+                2. 活动内容和特点介绍详细<br />
+                3. 活动海报吸引人眼球<br />
+                <br />
+                更重要的是，邀请好友们都来参与！
+            </p>
         </div>
         <div id="new-activity">
             <form enctype="multipart/form-data" action="php/new_activity.php" method="post" id="frmNew">

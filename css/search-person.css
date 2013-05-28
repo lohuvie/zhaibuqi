@@ -79,10 +79,12 @@ body  {
 }
 #main .result .user-display .pic{
     float: left;
-    width: 85px;
-    height: 85px;
     border: 4px solid white;
 }
+#main .result .user-display .pic img{
+    height:85px;
+    width:85px;
+} 
 #main .result .user-display .user-info{
     float: left;
     width: 80px;
@@ -92,12 +94,16 @@ body  {
     font-size: 16px;
     font-weight: normal;
     color: #222222;
+    word-break: break-all;
 }
 #main .result .user-display .user-info .name:hover{
     color: #84C43C;
 }
 .add{
     color: #666666;
+}
+.add:hover{
+    color: #84C43C;
 }
 
 /* page-nav */
@@ -114,6 +120,9 @@ body  {
 #main .result .page-nav a:hover{
     background: #C3E99E;
 }
-#main .result .page-nav a.active{
+#main .result .page-nav .active{
     background: #C3E99E;
+    padding: 5px;
+    cursor: default;
 }
+

@@ -58,7 +58,7 @@ h2{
 #abt-content .abt-body p{
     padding: 0 0 15px 6px;
 }
-ul,ol{
+.order-list,.circle-list{
     margin-left: 26px;
 }
 .order-list li{

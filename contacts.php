@@ -1,7 +1,11 @@
 <?php
 require_once("php/start-session.php");
 require_once("php/util.php");
-
+if(!isset($_GET['id'])){
+    //跳转到404
+    $home_url = 'http://' . $_SERVER['HTTP_HOST'] . dirname($_SERVER['PHP_SELF']) . '/404.php';
+    header('Location: ' . $home_url);
+}
 $personal_id = $_GET['id'];
 $user_id = 0;
 if(isset($_SESSION['user_id'])){
@@ -169,7 +173,7 @@ mysqli_close($dbc);
             </div>
 
             <div id="sidebar">
-                <a href="r-contacts.php">关注<?php if($is_user){echo '我';}else{echo $name;}?>的人(<span><?php echo $fan_id_count;?></span>)</a>
+                <a href="r-contacts.php?id=<?php echo $personal_id;?>">关注<?php if($is_user){echo '我';}else{echo $name;}?>的人(<span><?php echo $fan_id_count;?></span>)</a>
                 <div class="tips">
                     <h3>操作提示</h3>
                     <p>
@@ -190,7 +194,9 @@ mysqli_close($dbc);
                 <a class="pic" href="personal-page.php?id=<?php echo $al['id'];?>"><img src="upload-portrait/<?php echo $al['portrait'];?>" alt="<?php echo $al['name'];?>" /></a>
                 <div class="user-info">
                     <p><a class="name" value="<?php echo $al['id'];?>" href="personal-page.php?id=<?php echo $al['id'];?>"><?php echo $al['name'];?></a></p>
-                    <p class='status' value=<?php echo $al['status'];?>><?php echo $al['status']==ATTENTION_EACH_OTHER?'互相关注':'已关注'; ?></p>
+                    <?php if($is_user){?>
+                        <p class='status' value=<?php echo $al['status'];?>><?php echo $al['status']==ATTENTION_EACH_OTHER?'互相关注':'已关注'; ?></p>
+                    <?php }?>
                     <p><?php echo isset($al['academy'])?$al['academy']:'';?></p>
                 </div>
                 <div style="clear: left;"></div>

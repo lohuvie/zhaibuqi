@@ -40,10 +40,10 @@ body  {
 	font-size: 13px;
 }
 #event-category a,#event-host a {
-	color: #03B3B2;
+	color: #5db2ff;
 }
 #event-category a:hover,#event-host a:hover{
-	border-bottom: 1px dotted #03B3B2;
+	border-bottom: 1px dotted #5db2ff;
 }
 .event-info h1{
 	font-size: 20px;
@@ -132,12 +132,75 @@ span.tags-left{
 	font-size: 13px; 
 	padding: 5px 0;
 }
+/* sidebar */
 #sidebar {
 	float: right;
 	width: 250px;
 	height:auto;
 	padding: 15px 10px;
 }
-#sidebar div{
-	padding: 10px;
+.relevant{
+	padding-bottom: 15px;
+    width: 280px;
+}
+.relevant h3 {
+	font-size: 13px;
+    padding: 5px;
+    background: #84C43C;
+    color: #FFFFFF;
+}    
+.relevant div{
+    height: 79px;
+    margin-bottom: 20px;
+}
+.relevant dl {
+    float: left;
+    margin-right: 11px;
+    overflow: hidden;
+    padding: 10px 0px 10px 0px;
+    text-align: center;
+    white-space: nowrap;
+    width: 59px;
+}
+.relevant dl{
+    list-style-type: none;
+}
+.r-person img{
+    height: 45px;
+    width: 45px;
+}
+.relevant dd a{
+    color: #888888;
+}
+.relevant dd a:hover{
+    border-bottom: 1px dotted #109eff;
+}
+
+/* r-activity */
+.r-activity div{
+	height: auto;
+	margin-top: 10px;
+}
+.single-activity {
+	width:225px;
+	height:auto;
+	border: 2px solid #eee;
+	padding:10px 5px;
+	position: relative;
+	margin:0 auto;
+}
+.single-activity img{
+    margin-left: 5px;
+    width: 215px;
+}
+.single-activity .activity-title{
+	margin-left: 5px;
+	font-size:15px;
+	font-weight: bold;
+	color: #222222; 
+}
+.single-activity p{
+	margin-left: 5px;
+	font-size:13px;
+	color: #555555;
 }

@@ -70,4 +70,10 @@ h2{
     background: #EEEEEE;
     padding: 15px;
 }
+.abt-contact a{
+    color: #777;
+}
+.abt-contact a:hover{
+    border-bottom: 1px dotted #5db2ff;
+}
 
