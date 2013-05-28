@@ -58,6 +58,26 @@ h2{
 #abt-content .abt-body p{
     padding: 0 0 15px 6px;
 }
+.abt-body ol{
+    list-style-type: square;
+}
+.abt-body li{
+    margin: 0px 0 5px 20px;
+}
+.abt-body dl {
+    display: inline-block;
+    margin-right: 25px;
+}
+.abt-body dt img{
+    width: 110px;
+    border: 4px solid #84C43C;
+}
+.abt-body dd {
+    text-align: center;
+}
+.member-pos{
+    color: #84C43C;
+}
 /*right*/
 #abt-contact-box {
     float: right;
